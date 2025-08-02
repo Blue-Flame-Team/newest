@@ -1,0 +1,540 @@
+/* نظام التباين الأسود للصفحات الفرعية - نصوص وأيقونات سوداء بدون خلفية */
+
+/* إجبار لون الفوتر في التباين الأسود - أولوية قصوى */
+body.dark-contrast footer,
+body.dark-contrast .main-footer,
+body.dark-contrast .footer-bottom,
+body.dark-contrast .footer-bottom .container,
+body.dark-contrast .footer-bottom .copyright-text,
+body.dark-contrast .footer-bottom .footer-bottom-links {
+    background-color: #090909 !important;
+    background: #090909 !important;
+}
+
+/* body.dark-contrast {
+    /* النصوص الرئيسية تصبح سوداء بدون خلفية */
+    /* h1, h2, h3, h4, h5, h6,
+    .terms-subtitle,
+    .simple-text,
+    .item-number,
+    .content-text,
+    .article-text,
+    .section-text,
+    .description-text,
+    p, span, div, a,
+    .main-content p,
+    .main-content span,
+    .main-content div,
+    .content-area p,
+    .content-area span,
+    .content-area div {
+        color: #000000 !important;
+        background: none !important;
+        background-color: transparent !important; */
+    /* } */ */
+    
+    /* عناوين محددة */
+    /* #about-site-title,
+    .section-title,
+    .terms-subtitle,
+    .page-title,
+    .content-title,
+    .article-title {
+        color: #000000 !important;
+        background: none !important;
+        background-color: transparent !important;
+    } */
+    
+    /* نص المشاركة الاجتماعية */
+    .social-share-section span,
+    .social-share-section p,
+    .social-share-section div {
+        color: #000000 !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* الأيقونات تصبح سوداء بدون خلفية */
+    .social-share-section img:not([src*="clock"]):not([src*="star"]),
+    img[src*="ln-soc.svg"],
+    img[src*="x-soc.svg"], 
+    img[src*="in-sco.svg"],
+    img[src*="fb-soc.svg"],
+    img[src*="linkedin"],
+    img[src*="twitter"],
+    img[src*="instagram"],
+    img[src*="facebook"] {
+        filter: brightness(0) !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* أيقونات أخرى للتباين الأسود */
+    .details-icon,
+    .details-button img,
+    .content-icon,
+    .page-icon,
+    .service-icon,
+    img[src*="Vector.png"],
+    img[src*="icon"] {
+        filter: brightness(0) !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* حماية أيقونات التوب بار من التأثر */
+    .top-bar img,
+    .top-icons img,
+    .zoom-group img,
+    .main-icons-group img,
+    .mobile-icons img,
+    .icon-btn img,
+    img[src*="question.svg"],
+    img[src*="search-zoom-out.svg"],
+    img[src*="search-zoom-in.svg"],
+    img[src*="search.png"],
+    img[src*="location.png"],
+    img[src*="call.png"],
+    img[src*="setting-2.png"],
+    img[src*="profile-circle.svg"],
+    img[src*="logo.png"] {
+        filter: none !important;
+        opacity: 1 !important;
+        brightness: 1 !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* حماية أيقونات الفوتر */
+    .footer-content img,
+    .social-icons img,
+    .contact-btn img,
+    footer img {
+        filter: none !important;
+        opacity: 1 !important;
+        brightness: 1 !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* أيقونات النجوم والساعة تبقى بلونها الطبيعي */
+    img[src*="star"],
+    img[src*="clock"],
+    img[src*="rating"],
+    img[src*="time"] {
+        filter: none !important;
+        opacity: 1 !important;
+        brightness: 1 !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* النصوص في القوائم والجداول */
+    li, td, th,
+    .menu-item,
+    .nav-item,
+    .list-item,
+    .table-text {
+        color: #000000 !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* النصوص في الأزرار والروابط */
+    button, 
+    .btn,
+    .button,
+    a.link,
+    .nav-link {
+        color: #000000 !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* النصوص في النماذج */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select,
+    option,
+    label {
+        color: #000000 !important;
+        background: none !important;
+        background-color: transparent !important;
+        border-color: #000000 !important;
+    }
+    
+    /* تسميات وتوضيحات */
+    .label,
+    .caption,
+    .note,
+    .info,
+    .description {
+        color: #000000 !important;
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* حماية عناصر محددة من التباين الداكن */
+    .preserve-color,
+    .no-dark-contrast {
+        filter: none !important;
+        color: initial !important;
+        background: initial !important;
+        background-color: initial !important;
+    }
+
+
+/* CSS لأزرار التباين في الصفحات الفرعية */
+.contrast-dark,
+.contrast-light {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contrast-dark:hover,
+.contrast-light:hover {
+    opacity: 0.8;
+}
+
+/* إضافة تأثيرات خاصة للنصوص في التباين الأسود */
+body.dark-contrast .highlighted-text {
+    color: #000000 !important;
+    font-weight: bold !important;
+    background: none !important;
+    background-color: transparent !important;
+}
+
+body.dark-contrast .important-text {
+    color: #000000 !important;
+    background: none !important;
+    background-color: transparent !important;
+    border-left: 3px solid #000000 !important;
+    padding-left: 10px !important;
+}
+
+/* Footer وقسم المشاركة الاجتماعية في حالة التباين الأسود */
+/* body.dark-contrast .footer-bottom,
+body.dark-contrast .footer-bottom *,
+.dark-contrast .footer-bottom,
+.dark-contrast .footer-bottom *,
+body.dark-contrast .copyright,
+.dark-contrast .copyright,
+body.dark-contrast .main-footer,
+.dark-contrast .main-footer,
+body.dark-contrast footer,
+.dark-contrast footer,
+body.dark-contrast .social-share-section,
+.dark-contrast .social-share-section {
+    background-color: #090909 !important;
+} */
+
+/* تطبيق اللون على كل عناصر الفوتر بقوة */
+/* body.dark-contrast footer,
+body.dark-contrast footer *,
+body.dark-contrast .main-footer,
+body.dark-contrast .main-footer *,
+body.dark-contrast .footer-bottom,
+body.dark-contrast .footer-bottom *,
+body.dark-contrast .footer-bottom .container,
+body.dark-contrast .footer-bottom .container *,
+body.dark-contrast .copyright-text,
+body.dark-contrast .footer-bottom-links,
+body.dark-contrast .footer-bottom-links * {
+    background-color: #090909 !important;
+    background: #090909 !important;
+} */
+
+/* التأكد من أن العناصر الداخلية في social-share-section تحافظ على خلفيتها */
+/* body.dark-contrast .social-share-section > div,
+.dark-contrast .social-share-section > div {
+    background-color: #f5f5f5 !important;
+    background: #f5f5f5 !important;
+} */
+
+/* إضافة تنسيق للعناوين والنصوص في حالة التباين الأسود */
+/* body.dark-contrast .terms-title,
+body.dark-contrast h1,
+body.dark-contrast h2, 
+body.dark-contrast h3,
+body.dark-contrast h4,
+body.dark-contrast h5,
+body.dark-contrast h6,
+body.dark-contrast p,
+body.dark-contrast span,
+body.dark-contrast div {
+    color: #000000 !important;
+    background: none !important;
+    background-color: transparent !important;
+} */
+
+/* تنسيق الأيقونات في كروت الخدمات في وضع التباين الداكن */
+body.dark-contrast .service-card img,
+.dark-contrast .service-card img,
+body.dark-contrast .service-card svg,
+.dark-contrast .service-card svg {
+    filter: brightness(0) !important;
+}
+
+/* تأكيد تطبيق اللون الأسود على الأيقونات */
+body.dark-contrast .service-card img[src*="assets/icons"],
+.dark-contrast .service-card img[src*="assets/icons"],
+body.dark-contrast .service-card img[src*="our-services"],
+.dark-contrast .service-card img[src*="our-services"],
+body.dark-contrast .service-card img[src*=".png"],
+.dark-contrast .service-card img[src*=".png"] {
+    filter: brightness(0) !important;
+}
+
+/* تأكيد تطبيق اللون الأسود على الأيقونات SVG */
+body.dark-contrast .service-card svg path,
+.dark-contrast .service-card svg path,
+body.dark-contrast .service-card svg rect,
+.dark-contrast .service-card svg rect,
+body.dark-contrast .service-card svg circle,
+.dark-contrast .service-card svg circle {
+    fill: #000000 !important;
+    stroke: #000000 !important;
+}
+
+/* معالجة خاصة لأيقونة الدعم في وضع التباين الأسود */
+body.dark-contrast .support-icon-fixed img {
+    filter: brightness(0) !important;
+    opacity: 1 !important;
+}
+
+/* معالجة خاصة لأيقونات الكروت في وضع التباين الأسود */
+body.dark-contrast [style*="background-color: white; border-radius: 18px;"] img,
+body.dark-contrast [style*="display: flex; align-items: center; justify-content: center; height: 130px;"] img {
+    filter: brightness(0) !important;
+    opacity: 1 !important;
+}
+
+/* تأكيد تطبيق اللون الأسود على أيقونات الكروت في الصفحات الفرعية */
+body.dark-contrast .services-container img[src*="our-services"],
+body.dark-contrast .services-container img[src*="tick-square"],
+body.dark-contrast .services-container img[src*="timer"],
+body.dark-contrast .services-container img[src*="minus-square"],
+body.dark-contrast .services-container img[src*="close-square"],
+body.dark-contrast .services-container img[src*="message-question"],
+body.dark-contrast .services-container img[src*="book"],
+body.dark-contrast .services-container img[src*="bank"],
+body.dark-contrast .services-container img[src*="mosq"] {
+    filter: brightness(0) !important;
+    opacity: 1 !important;
+}
+
+/* تغيير لون زر "الحصول على الخدمة" في وضع التباين الأسود - قواعد أقوى */
+body.dark-contrast div[style*="background-color: white; border-radius: 18px;"] .hover-overlay a[href*="../index.html"],
+body.dark-contrast div[style*="background-color: white; border-radius: 18px;"] .hover-overlay a[style*="background-color: #ff6b35"] {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    color: white !important;
+}
+
+/* تأثيرات التحويم على الزر في وضع التباين الأسود */
+body.dark-contrast div[style*="background-color: white; border-radius: 18px;"] .hover-overlay a[href*="../index.html"]:hover,
+body.dark-contrast div[style*="background-color: white; border-radius: 18px;"] .hover-overlay a[style*="background-color: #ff6b35"]:hover {
+    background: #333333 !important;
+    background-color: #333333 !important;
+}
+
+/* تغيير لون خلفية القائمة المنسدلة في وضع التباين الأسود */
+body.dark-contrast .hover-overlay {
+    background-color: #000000 !important;
+}
+
+/* تغيير لون زر الحصول على الخدمة */
+body.dark-contrast .hover-overlay a {
+    background-color: #000000 !important;
+    color: white !important;
+}
+
+body.dark-contrast .hover-overlay a:hover {
+    background-color: #333333 !important;
+}
+
+/* تغيير لون أيقونات الشبكات الاجتماعية */
+body.dark-contrast .social-share-section img:not([src*="clock"]):not([src*="star"]) {
+    filter: brightness(0) !important;
+    -webkit-filter: brightness(0) !important;
+}
+
+/* تغيير لون أيقونات البحث والترتيب */
+body.dark-contrast .search-icon svg {
+    stroke: #000000 !important;
+}
+
+body.dark-contrast .search-container {
+    border-color: #000000 !important;
+}
+
+/* تغيير لون الأزرار في شريط التصفية */
+body.dark-contrast .services-tabs button {
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+body.dark-contrast .services-tabs button.active {
+    background-color: #000000 !important;
+    color: white !important;
+}
+
+/* تغيير لون الأيقونات في كروت الخدمات */
+body.dark-contrast .services-container img[src*="our-services"],
+body.dark-contrast .services-container img[src*="tick-square"],
+body.dark-contrast .services-container img[src*="minus-square"],
+body.dark-contrast .services-container img[src*="canceld"],
+body.dark-contrast .services-container img[src*="message-question"],
+body.dark-contrast .services-container img[src*="Mask group"],
+body.dark-contrast .services-container img[src*="bank"],
+body.dark-contrast .services-container img[src*="mosq"],
+body.dark-contrast .services-container img[src*="book"] {
+    filter: brightness(0) !important;
+    -webkit-filter: brightness(0) !important;
+} 
+
+/* أنماط التباين الأسود للصفحات الفرعية */
+
+/* تغيير لون النصوص المحددة إلى الأسود في وضع التباين الأسود */
+.dark-mode span[style*="color: #158885"] {
+    color: #000000 !important;
+}
+
+/* تحديد النصوص المحددة بدقة أكثر */
+.dark-mode span[style*="color: #158885;"]:contains("تقييم المحتوى") {
+    color: #000000 !important;
+}
+
+.dark-mode span[style*="color: #158885;"]:contains("آخر تعديل") {
+    color: #000000 !important;
+}
+
+.dark-mode span[style*="color: #158885;"]:contains("عدد الأصوات") {
+    color: #000000 !important;
+}
+
+/* عنوان طلب الاشتراك */
+.dark-mode .subscribe-title {
+    color: #000000 !important;
+}
+
+.dark-mode h1.subscribe-title {
+    color: #000000 !important;
+}
+
+.dark-mode .subscription-request-title {
+    color: #000000 !important;
+}
+
+.dark-mode h1.subscription-request-title {
+    color: #000000 !important;
+}
+
+.dark-mode h2[style*="color: #00a19a"]:contains("طلب الاشتراك") {
+    color: #000000 !important;
+}
+
+/* أي عنصر يحتوي على النصوص المطلوبة */
+.dark-mode [style*="color: #158885"] {
+    color: #000000 !important;
+}
+
+/* استهداف أكثر دقة باستخدام سمات البيانات أو الفئات */
+.dark-mode .rating-text,
+.dark-mode .modification-date,
+.dark-mode .votes-count,
+.dark-mode .subscription-title {
+    color: #000000 !important;
+}
+
+/* استهداف النصوص باستخدام محددات أكثر تحديداً */
+.dark-mode span[style*="font-family: 'Droid Arabic Kufi'"][style*="color: #158885"] {
+    color: #000000 !important;
+}
+
+/* استهداف العناصر التي تحتوي على النصوص المحددة */
+.dark-mode *:contains("تقييم المحتوى") {
+    color: #000000 !important;
+}
+
+.dark-mode *:contains("آخر تعديل 19 ذو القعدة 1444") {
+    color: #000000 !important;
+}
+
+.dark-mode *:contains("عدد الأصوات:") {
+    color: #000000 !important;
+}
+
+.dark-mode *:contains("طلب الاشتراك") {
+    color: #000000 !important;
+}
+
+/* حل بديل باستخدام JavaScript selector */
+.dark-mode .content-rating-text {
+    color: #000000 !important;
+}
+
+.dark-mode .last-modified-text {
+    color: #000000 !important;
+}
+
+.dark-mode .votes-count-text {
+    color: #000000 !important;
+}
+
+.dark-mode .subscription-request-title {
+    color: #000000 !important;
+}
+
+/* زر التسجيل في وضع التباين الأسود */
+.dark-mode .submit-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+}
+
+.dark-mode .submit-btn:hover {
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+}
+
+/* القائمة المنسدلة في وضع التباين الأسود */
+.dark-mode .menu-item.dropdown .dropdown-menu {
+    background-color: #ffffff !important;
+}
+
+.dark-mode .menu-item.dropdown .dropdown-menu a {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+.dark-mode .menu-item.dropdown .dropdown-menu a:hover {
+    background-color: #f5f5f5 !important;
+}
+
+.dark-mode .menu-item.dropdown .dropdown-menu a.active {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+/* قوة قصوى - جميع القوائم المنسدلة أسوداء دائماً */
+.dropdown-menu,
+.dropdown-menu *,
+.dropdown-menu a,
+.menu-item.dropdown .dropdown-menu,
+.menu-item.dropdown .dropdown-menu *,
+.menu-item.dropdown .dropdown-menu a,
+.dark-mode .dropdown-menu,
+.dark-mode .dropdown-menu *,
+.dark-mode .dropdown-menu a,
+.dark-mode .menu-item.dropdown .dropdown-menu,
+.dark-mode .menu-item.dropdown .dropdown-menu *,
+.dark-mode .menu-item.dropdown .dropdown-menu a,
+.dark-mode .menu-item.dropdown .dropdown-menu a[style*="color"],
+.dark-mode .menu-item.dropdown .dropdown-menu a[style*="background-color"] {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+} 

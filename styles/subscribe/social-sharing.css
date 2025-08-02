@@ -1,0 +1,135 @@
+﻿/* تنسيقات قسم مشاركة وسائل التواصل الاجتماعي والتقييم */
+
+.social-sharing-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+    padding: 15px 20px;
+    margin: 40px 0 20px;
+    flex-wrap: wrap;
+}
+
+/* آخر تعديل */
+.last-update {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: var(--font-sm);
+    margin: 5px 0;
+}
+
+.last-update img {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+/* تقييم المحتوى */
+.content-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.content-rating span {
+    font-size: var(--font-sm);
+    color: #333;
+}
+
+.star-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.star-rating img {
+    width: 16px;
+    height: 16px;
+}
+
+/* عدد المتابعين */
+.followers-count {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: var(--font-sm);
+    margin: 5px 0;
+}
+
+.followers-count .count-label {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* مشاركة على السوشيال ميديا */
+.social-share {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.social-share span {
+    margin-right: 5px;
+    font-size: var(--font-sm);
+    color: #00a19a;
+}
+
+.social-share a {
+    color: #00a19a;
+}
+
+.social-share img {
+    width: 26px;
+    height: 26px;
+}
+
+/* تخطيط متجاوب لقسم المشاركة */
+@media (max-width: 767px) {
+    .social-sharing-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .social-share, .followers-count, .content-rating, .last-update {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .social-share {
+        order: 1;
+    }
+    
+    .content-rating {
+        order: 2;
+    }
+    
+    .followers-count {
+        order: 3;
+    }
+    
+    .last-update {
+        order: 4;
+    }
+}
+
+/* تنسيق الهواتف الصغيرة */
+@media (min-width: 320px) and (max-width: 375px) {
+    .social-sharing-container {
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .social-share img, .content-rating img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .social-share span, .content-rating span, .followers-count, .last-update {
+        font-size: var(--font-xs);
+    }
+}
+

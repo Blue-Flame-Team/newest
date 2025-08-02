@@ -1,0 +1,62 @@
+<!-- نافذة الإشعارات -->
+<div id="notifications-modal" style="
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    direction: rtl;
+    overflow: auto;
+    padding-top: 60px;
+">
+    <div style="
+        background-color: white;
+        margin: 20px auto;
+        width: calc(100% - 40px);
+        max-width: 600px;
+        border-radius: 20px;
+        padding: 25px;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        margin-bottom: 40px;
+    ">
+        <span onclick="closeNotificationsModal()" style="
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        ">&times;</span>
+        
+        <h2 style="text-align: center; margin-bottom: 20px;">الإشعارات</h2>
+        
+        <div id="notifications-list" class="notifications-content">
+            <!-- سيتم إضافة الإشعارات هنا ديناميكياً -->
+            <div class="notification-item">
+                <div class="notification-icon">🔔</div>
+                <div class="notification-text">
+                    <strong>تسجيل دخول جديد</strong>
+                    <p>تم تسجيل الدخول من جهاز جديد في 10 دقائق مضت</p>
+                </div>
+                <div class="notification-time">الآن</div>
+            </div>
+            
+            <div class="notification-item">
+                <div class="notification-icon">📝</div>
+                <div class="notification-text">
+                    <strong>تحديث الملف الشخصي</strong>
+                    <p>تم تحديث معلوماتك الشخصية بنجاح</p>
+                </div>
+                <div class="notification-time">أمس</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="clearAllNotifications()">مسح كل الإشعارات</button>
+        </div>
+    </div>
+</div> 

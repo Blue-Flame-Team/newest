@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب خدمة الأسانيد القانونية</title>
+    
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/font-normalization.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/shared/universal-settings-menu.css">
+    <!-- Font Awesome لأيقونات التواصل الاجتماعي -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- أوراق الأنماط -->
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/home/topbar.css">
+    <link rel="stylesheet" href="../styles/home/navbar.css">
+    <link rel="stylesheet" href="../styles/faq/footer.css">
+    <link rel="stylesheet" href="../styles/login-modal.css">
+    <link rel="stylesheet" href="../styles/all-subpages.css">
+    
+    <style>
+        /* تطبيق خط Droid Arabic Kufi على كامل الصفحة */
+        * {
+            font-family: "Droid Arabic Kufi", sans-serif !important;
+        }
+        
+        body, html {
+            font-family: "Droid Arabic Kufi", sans-serif !important;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        /* تنسيق الصفحة الرئيسية */
+        .page-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        /* تنسيق النموذج */
+        .form-container {
+            background-color: white;
+            margin: auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 20px;
+            padding: 50px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 40px;
+        }
+        
+        .form-title {
+            font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            text-align: center;
+            color: #00a19a;
+            margin-bottom: 40px;
+        }
+        
+        .asanid-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            padding: 0;
+        }
+        
+        .form-input {
+            width: 100%;
+            height: 55px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            padding: 0 20px;
+            text-align: right;
+            font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            margin: 0;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #00a19a;
+            box-shadow: 0 0 0 3px rgba(0, 161, 154, 0.1);
+            background-color: white;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            height: 140px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            text-align: right;
+            font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            resize: vertical;
+            min-height: 140px;
+            margin: 0;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-textarea:focus {
+            outline: none;
+            border-color: #00a19a;
+            box-shadow: 0 0 0 3px rgba(0, 161, 154, 0.1);
+            background-color: white;
+        }
+        
+        .phone-group {
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+        
+        .phone-input {
+            flex: 1;
+        }
+        
+        .country-code {
+            width: 100px;
+            height: 55px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            gap: 8px;
+        }
+        
+        .country-code img {
+            width: 24px;
+            height: 18px;
+        }
+        
+        .country-code span {
+            font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .note-text {
+            font-family: Droid Arabic Kufi;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            text-align: right;
+            color: black;
+            margin: 0;
+        }
+        
+        .note-text .asterisk {
+            color: #FF5959;
+        }
+        
+        .description-section {
+            padding: 0;
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .description-title {
+            font-family: Droid Arabic Kufi;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            text-align: right;
+            color: #00a19a;
+            margin: 0 0 8px 0;
+        }
+        
+        .description-text {
+            font-family: Droid Arabic Kufi;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            text-align: right;
+            color: #666;
+            margin: 0;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            height: 55px;
+            background-color: #00a19a;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0 0 0;
+            box-shadow: 0 4px 15px rgba(0, 161, 154, 0.3);
+        }
+        
+        .submit-btn:hover {
+            background-color: #008f89;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 161, 154, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* تحسينات responsive للـ tablet */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 30px;
+                margin: 20px;
+                width: calc(100% - 40px);
+            }
+            
+            .form-title {
+                font-size: 24px;
+            }
+            
+            .phone-group {
+                flex-direction: column;
+            }
+            
+            .country-code {
+                width: 100%;
+                justify-content: flex-end;
+                padding: 0 20px;
+            }
+        }
+        
+        /* إخفاء النموذج في الموبايل الصغير */
+        @media (max-width: 480px) {
+            .form-container {
+                display: none;
+            }
+            
+            .main-content::before {
+                content: "يرجى استخدام النافذة المنبثقة في الموبايل للوصول لخدمة الأسانيد";
+                display: block;
+                text-align: center;
+                padding: 40px 20px;
+                background-color: white;
+                border-radius: 15px;
+                margin: 20px;
+                font-size: 16px;
+                color: #00a19a;
+                font-weight: bold;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="logo">
+                        <a href="../index.html" class="logo-link">
+                            <img src="../assets/images/logo.png" alt="محامون المملكة">
+                        </a>
+                    </div>
+                    <div class="top-elements">           
+                        <div class="top-icons">
+                            <a href="faq.html" class="common-questions">
+                                <span class="question-mark">
+                                    <img src="../assets/icons/question.svg" alt="الأسئلة الشائعة">
+                                </span>
+                                <span class="questions-text">الأسئلة الشائعة</span>
+                            </a>
+                            <div class="zoom-group">
+                                <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص">
+                                    <img src="../assets/icons/search-zoom-out.svg" alt="تصغير">
+                                </button>
+                                <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص">
+                                    <img src="../assets/icons/search-zoom-in.svg" alt="تكبير">
+                                </button>
+                            </div>
+                            
+                            <div class="main-icons-group">
+                                <button class="icon-btn search-btn">
+                                    <img src="../assets/icons/search.png" alt="بحث">
+                                </button>
+                                <button class="icon-btn" onclick="window.location.href='../index.html#contact'">
+                                    <img src="../assets/icons/location.png" alt="الموقع">
+                                </button>
+                                <button class="icon-btn">
+                                    <img src="../assets/icons/call.png" alt="اتصال">
+                                </button>
+                                <button class="icon-btn settings-toggle-btn">
+                                    <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-actions">
+                        <a href="../index.html#subscribe" class="join-btn">إشترك معنا</a>
+                        <a href="#" class="login-btn" id="login-btn">تسجيل الدخول</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <ul class="main-menu">
+                        <li class="menu-item"><a href="../index.html">الرئيسية</a></li>
+                        <li class="menu-item dropdown">
+                            <a href="javascript:void(0);">نبذة عنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                            <div class="dropdown-hover-area"></div>
+                            <div class="dropdown-menu">
+                                <a href="about-site.html">عن الموقع</a>
+                                <a href="#">عن الشبكة</a>
+                            </div>
+                        </li>
+                        <li class="menu-item dropdown">
+                            <a href="javascript:void(0);">سياستنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                            <div class="dropdown-hover-area"></div>
+                            <div class="dropdown-menu">
+                                <a href="privacy-policy.html">سياسة الخصوصية</a>
+                                <a href="terms.html">شروط الإشتراك</a>
+                            </div>
+                        </li>
+                        <li class="menu-item"><a href="jornal-profile-view.html">جريدة أم القرى</a></li>
+                        <li class="menu-item"><a href="asanid-service.html" class="active">خدمة الأسانيد</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="form-container">
+                <h1 class="form-title">خدمة الاسانيد القانونية</h1>
+                
+                <form class="asanid-form" id="asanidPcForm">
+                    <!-- الاسم بالكامل -->
+                    <div class="form-group">
+                        <input type="text" id="fullName" class="form-input" placeholder="الاسم بالكامل" required>
+                    </div>
+                    
+                    <!-- اسم المستخدم -->
+                    <div class="form-group">
+                        <input type="text" id="username" class="form-input" placeholder="اسم المستخدم" required>
+                    </div>
+                    
+                    <!-- البريد الإلكتروني -->
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-input" placeholder="البريد الالكتروني" required>
+                    </div>
+                    
+                    <!-- نص تحت البريد الإلكتروني -->
+                    <div class="form-group">
+                        <p class="note-text">
+                            <span class="asterisk">*</span>سيتم التواصل معكم عن طريق البريد الالكتروني
+                        </p>
+                    </div>
+                    
+                    <!-- رقم الهاتف مع كود الدولة -->
+                    <div class="phone-group">
+                        <input type="tel" id="phone" class="form-input phone-input" placeholder="رقم الهاتف" required>
+                        <div class="country-code">
+                            <img src="../assets/icons/egypt-flag.svg" alt="Egypt Flag">
+                            <span>+20</span>
+                        </div>
+                    </div>
+                    
+                    <!-- الموضوع -->
+                    <div class="form-group">
+                        <textarea id="subject" class="form-textarea" placeholder="الموضوع" required></textarea>
+                    </div>
+                    
+                    <!-- النص التوضيحي -->
+                    <div class="description-section">
+                        <h4 class="description-title">عزيزنا العميل:</h4>
+                        <p class="description-text">شكرا لكم سوف يتم اعداد الاسانيد المطلوبة في اقرب وقت ممكن وسنقوم بارسالها لكم علي بريدكم الالكتروني</p>
+                    </div>
+                    
+                    <!-- زر الإرسال -->
+                    <button type="submit" class="submit-btn">إرسال</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+  
+            <section class="social-share-section">
+                <div style="display: flex; align-items: center; justify-content: space-between; background-color: rgb(245, 245, 245); border-radius: 143px; padding: 10px 20px; margin: 40px 0px 20px; width: 1200px; height: 91px; font-size: 12.8px;" data-original-font-size="16">
+                 <!-- Social Media Sharing - Left Side -->
+                     <!-- Last Update - Right Side -->
+                     <div style="display: flex; align-items: center; color: #158885; font-size: 16px;">
+                         <img src="../assets/icons/clock.svg" alt="الساعة" width="16" height="16" style="margin-left: 5px;">
+                         <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">آخر تعديل 19 ذو القعدة 1444</span>
+                     </div>
+                            <!-- Rating - Middle Right -->
+                 <div style="display: flex; align-items: center; gap: 8px;">
+                     <div style="display: flex; align-items: center; gap: 3px;">
+                         <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">تقييم المحتوى</span>
+                         <div style="display: flex; gap: 2px;">
+                             <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                             <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                             <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                             <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                             <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                         </div>
+                     </div>
+                     <!-- Followers Count - Middle -->
+                     <div style="display: flex; align-items: center; gap: 3px;">
+                         <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">عدد الأصوات:</span>
+                         <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">9130</span>
+                     </div>
+                 </div>
+                 <div style="display: flex; align-items: center; gap: 5px;">
+                     <span style="margin-right: 5px; font-size: 14px; color: #00a19a;">شارك على</span>
+                     <a href="#" style="color: #00a19a;">
+                         <img src="../assets/icons/ln-soc.svg" alt="لينكد إن" width="26" height="26">
+                     </a>
+                     <a href="#" style="color: #00a19a;">
+                         <img src="../assets/icons/x-soc.svg" alt="تويتر" width="26" height="26">
+                     </a>
+                     <a href="#" style="color: #00a19a;">
+                         <img src="../assets/icons/in-sco.svg" alt="انستغرام" width="26" height="26">
+                     </a>
+                     <a href="#" style="color: #00a19a;">                
+                         <img src="../assets/icons/fb-soc.svg" alt="فيسبوك" width="26" height="26">
+                     </a>
+                 </div>   
+             </div>
+         </section>
+         
+         <!-- Footer -->
+         <footer>
+             <!-- Main Footer -->
+             <div class="main-footer">
+                     <div class="footer-content">
+                         <div class="footer-column about-column">
+                             <h3 class="footer-title">عن محامو المملكة</h3>
+                             <p class="footer-text">البوابة القانونية الشاملة للمحامين والمستشارين القانونيين بالسعودية</p>
+                             <p class="footer-text">العربية السعوية</p>
+                         </div>
+                         <div class="footer-column links-column">
+                             <h3 class="footer-title">روابط سريعة</h3>
+                             <ul class="footer-links">
+                                 <li><a href="../index.html">الرئيسية</a></li>
+                                 <li><a href="#">عن الموقع</a></li>
+                                 <li><a href="#">الأسئلة الشائعة</a></li>
+                             </ul>
+                         </div>
+                         <div class="footer-column contact-column">
+                             <h3 class="footer-title">تواصل معنا</h3>
+                             <p class="contact-item email">info@mohamoon-ksa.com</p>
+                             <p class="contact-item phone">الهاتف: xxx xxxx 11 966+</p>
+                             <p class="contact-item address">العنوان: الرياض, المملكة العربية السعودية</p>
+                         </div>
+                         <div class="footer-column social-column">
+                             <h3 class="footer-title">تابعنا</h3>
+                             <div class="footer-social">
+                                 <a href="#" class="footer-social-icon"><img src="../assets/icons/facebook.png" alt="فيس بوك"></a>
+                                 <a href="#" class="footer-social-icon"><img src="../assets/icons/insta.png" alt="إنستجرام"></a>
+                                 <a href="#" class="footer-social-icon"><img src="../assets/icons/x.png" alt="تويتر"></a>
+                                 <a href="#" class="footer-social-icon"><img src="../assets/icons/ln.png" alt="لينكد إن"></a>
+                             </div>
+                             <a href="#" class="contact-btn">
+                                 <img src="../assets/icons/call.svg" alt="اتصال">
+                                 اتصل بنا
+                             </a>
+                         </div>
+                     </div>
+             </div>
+        
+             <!-- Footer Bottom -->
+             <div class="footer-bottom">
+                 <div class="container">
+                     <div class="copyright-text">جميع الحقوق محفوظة © 2024 محامو المملكة</div>
+                     <div class="footer-bottom-links">
+                         <a href="../pages/terms.html">الشروط والأحكام</a> | 
+                         <a href="#">سياسة الخصوصية</a>
+                     </div>
+                 </div>
+             </div>
+         </footer>
+    </div>
+
+    <script>
+        // تفعيل دالة تغيير حجم الخط
+        function changeFontSize(change) {
+            const elements = document.querySelectorAll('*');
+            elements.forEach(element => {
+                const currentSize = parseInt(window.getComputedStyle(element).fontSize);
+                if (currentSize > 0) {
+                    element.style.fontSize = (currentSize + change) + 'px';
+                }
+            });
+        }
+
+        // معالجة إرسال النموذج
+        document.getElementById('asanidPcForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+
+            // التحقق من ملء الحقول الأساسية
+            if (!fullName || !email || !subject) {
+                alert('يرجى ملء الحقول المطلوبة: الاسم بالكامل، البريد الإلكتروني، والموضوع');
+                return;
+            }
+
+            // التحقق من صحة البريد الإلكتروني
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('يرجى إدخال بريد إلكتروني صحيح');
+                return;
+            }
+
+            // رسالة نجاح
+            alert('تم إرسال طلبكم بنجاح! سنتواصل معكم قريباً على البريد الإلكتروني المذكور.');
+            
+            // إعادة تعيين النموذج
+            this.reset();
+        });
+
+        // تأثيرات hover للحقول
+        const inputs = document.querySelectorAll('.form-input, .form-textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+        <script src="scripts/asanid-modal.js"></script>
+<script src="scripts/global-components.js"></script>
+<script src="scripts/global-functions.js"></script>
+<script src="scripts/sub-settings.js"></script>
+
+
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+<script src="../scripts/unified-settings.js"></script>
+<!-- نظام المصادقة والتسجيل -->
+<script src="../scripts/auth-system.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+
+
+
+<!-- Core Sliders -->
+<script src="../scripts/slider.js"></script>
+<script src="../scripts/services-slider.js"></script>
+<script src="../scripts/partners-slider.js"></script>
+<script src="../scripts/updates-slider.js"></script>
+<script src="../scripts/load-asanid-service-modal.js"></script>
+
+<!-- Settings and Icons -->
+<script src="../scripts/unified-icons.js"></script>
+
+<!-- Navigation and Menu Scripts -->
+<script src="../scripts/services-menu.js"></script>
+<script src="../scripts/unified-navbar.js"></script>
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+<script src="../scripts/mobile-menu.js"></script>
+
+<!-- Search and Popup -->
+<script src="../scripts/search-popup.js"></script>
+
+<!-- Zoom and Accessibility -->
+<script src="../scripts/simple-zoom.js"></script>
+<script src="../scripts/zoom-control.js"></script>
+
+<!-- Authentication and Profile -->
+        <script src="../scripts/fix-profile-button.js"></script>
+        <script src="../scripts/load-login-from-file.js"></script>
+        <script src="../scripts/login-fix.js"></script>
+<script src="../scripts/settings-menu-handler.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/edit-profile-modal.js"></script>
+
+<!-- Modals and Selectors -->
+<script src="../scripts/asanid-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/enhanced-country-dropdown.js"></script>
+<script src="../scripts/country-selector-modal.js"></script>
+
+<!-- Utility Scripts -->
+<script src="../scripts/link-fixer.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/services-darkmode-fix.js"></script>
+<script src="../scripts/star-rating.js"></script>
+<script src="../scripts/subpages-dark-contrast.js"></script>
+<script src="../scripts/contrast-submenu-fix.js"></script>
+
+<!-- Subscription and Renewal -->
+<script src="../scripts/modify-subscription-modal.js"></script>
+<script src="../scripts/load-modify-subscription-modal.js"></script>
+<script src="../scripts/load-renew-subscription-modal.js"></script>
+<script src="../scripts/renew-subscription-modal.js"></script>
+<!-- Additional Containers -->
+<div id="modify-subscription-modal-container"></div>
+<div id="country-selector-container">
+    <!-- This will be loaded dynamically or included here -->
+</div>
+
+</body>
+</html> 

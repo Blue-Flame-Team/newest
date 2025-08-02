@@ -1,0 +1,82 @@
+/* تنسيقات تكبير وتصغير النصوص */
+
+/* المتغير الأساسي لحجم الخط */
+:root {
+    --font-scale: 1;
+}
+
+/* تطبيق التكبير على جميع العناصر النصية */
+body * {
+    font-size: calc(var(--font-scale) * 1em) !important;
+}
+
+/* العناوين */
+h1 { font-size: calc(var(--font-scale) * 2.5em) !important; }
+h2 { font-size: calc(var(--font-scale) * 2em) !important; }
+h3 { font-size: calc(var(--font-scale) * 1.75em) !important; }
+h4 { font-size: calc(var(--font-scale) * 1.5em) !important; }
+h5 { font-size: calc(var(--font-scale) * 1.25em) !important; }
+h6 { font-size: calc(var(--font-scale) * 1.1em) !important; }
+
+/* النصوص العادية */
+p, span, div, a, button, input, textarea, label, li, td, th,
+.text, .title, .subtitle, .description, .content {
+    font-size: 1rem;
+}
+
+/* تنسيقات أساسية */
+.text-content, p, h1, h2, h3, h4, h5, h6, span, div, a, button, input, textarea, label, li, td, th {
+    transform-origin: right top;
+    transition: transform 0.3s ease;
+}
+
+/* أزرار التكبير والتصغير */
+.zoom-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.zoom-in-btn,
+.zoom-out-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.zoom-in-btn img,
+.zoom-out-btn img {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain !important;
+}
+
+/* استثناءات */
+.icon-btn *,
+.logo *,
+.settings-toggle-btn *,
+img,
+svg,
+.hamburger-menu *,
+.mobile-menu-overlay *,
+.zoom-group * {
+    transform: none !important;
+}
+
+/* تأثير تغيير حجم النص */
+.font-size-changed {
+    animation: zoomEffect 0.3s ease;
+}
+
+@keyframes zoomEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+} 

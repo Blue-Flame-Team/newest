@@ -1,0 +1,379 @@
+﻿/**
+ * أنماط صفحة تعديل بيانات المستخدم
+ */
+
+/* إعادة تعيين شاملة لتجنب التعارضات */
+.profile-edit-modal * {
+  box-sizing: border-box !important;
+}
+
+.profile-edit-modal {
+  display: none;
+  position: fixed;
+  z-index: 1200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  direction: rtl;
+}
+
+.profile-edit-modal.show {
+  display: block;
+}
+
+.profile-edit-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 550px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.profile-edit-title {
+  color: #00a59a;
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.profile-edit-section {
+  margin-bottom: 10px !important;
+}
+
+.profile-edit-section-title {
+  color: #00a59a !important;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center !important;
+}
+
+.profile-edit-form .form-group {
+  margin-bottom: 10px !important;
+}
+
+.profile-edit-input, 
+.profile-edit-select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  direction: rtl;
+  font-family: 'Droid Arabic Kufi', Arial, sans-serif !important;
+}
+
+.profile-edit-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 0.75rem center;
+  background-size: 16px 12px;
+  padding-left: 30px;
+}
+
+.profile-edit-label {
+  display: block;
+  text-align: right;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* container الهاتف - تصميم بسيط وواضح */
+.profile-edit-modal .phone-input-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.profile-edit-modal .phone-input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  direction: rtl;
+  font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.profile-edit-modal .country-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.profile-edit-modal .country-code span {
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+}
+
+.profile-edit-modal .country-code img {
+  width: 20px;
+  height: 15px;
+}
+
+.subscription-note {
+  color: #00a59a;
+  margin: 10px 0 !important;
+  font-size: 0.9rem;
+}
+
+.subscription-expiry {
+  text-align: center;
+  color: #666;
+  margin-bottom: 10px !important;
+  font-size: 0.9rem;
+}
+
+.profile-edit-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.profile-password-btn {
+  flex: 1;
+  background-color: #ff7a45;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Droid Arabic Kufi', Arial, sans-serif !important;
+}
+
+.profile-update-btn {
+  flex: 1;
+  background-color: #00a59a;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Droid Arabic Kufi', Arial, sans-serif !important;
+}
+
+.profile-edit-close {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #888;
+  font-size: var(--font-2xl);
+  cursor: pointer;
+}
+
+/* تحسينات للموبايل مع أولوية عالية */
+@media (max-width: 768px) {
+  .profile-edit-modal {
+    z-index: 10000;
+  }
+
+  .profile-edit-content {
+    width: 343px;
+    max-width: 343px;
+    height: 513px;
+    max-height: 513px;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: auto;
+    border-radius: 9.33px;
+  }
+
+  /* البريد الإلكتروني */
+  .profile-edit-input[type="email"] {
+    width: 265.825px;
+    height: 28.494px;
+    border-radius: 4.14px;
+    padding: 10.36px 11.4px;
+    border: 0.52px solid #718096;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  /* عنوان تفاصيل اخري */
+  .profile-edit-section-title {
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  /* القوائم المنسدلة */
+  .profile-edit-select {
+    width: 265.825px;
+    height: 28.494px;
+    justify-content: space-between;
+    border-radius: 4.14px;
+    padding: 10.36px 11.4px;
+    border: 0.52px solid #718096;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  /* حقول النص العامة */
+  .profile-edit-input[type="text"] {
+    width: 265.825px;
+    height: 28.494px;
+    border-radius: 4.14px;
+    padding: 10.36px 11.4px;
+    border: 0.52px solid #718096;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  /* container الهاتف للموبايل */
+  .profile-edit-modal .phone-input-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* حقل الجوال */
+  .profile-edit-modal .phone-input {
+    width: 215.0546875px;
+    height: 25.903223037719727px;
+    gap: 5.33px;
+    border-radius: 4.14px;
+    padding-top: 7.61px;
+    padding-right: 8.37px;
+    padding-bottom: 7.61px;
+    padding-left: 8.37px;
+    border-width: 0.38px;
+    border-style: solid;
+    border-color: #718096;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    box-sizing: border-box;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /* كود الدولة */
+  .profile-edit-modal .country-code {
+    width: 46.62580490112305px;
+    height: 25.903223037719727px;
+    gap: 1.9px;
+    border-radius: 4.14px;
+    padding-top: 7.61px;
+    padding-right: 8.37px;
+    padding-bottom: 7.61px;
+    padding-left: 8.37px;
+    border-width: 0.38px;
+    border-style: solid;
+    border-color: #718096;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .profile-edit-modal .country-code img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .profile-edit-modal .country-code span {
+    font-size: 10px;
+    color: #333;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+  }
+
+  /* الأزرار */
+  .profile-edit-buttons {
+    gap: 5.18px;
+    justify-content: center;
+  }
+
+  .profile-password-btn,
+  .profile-update-btn {
+    width: 130.462px;
+    height: 24.5px;
+    border-radius: 4.14px;
+    padding: 8.29px 20.72px;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    box-sizing: border-box;
+    font-size: 12px;
+  }
+}
+
+/* قواعد CSS قوية جداً لضمان ظهور خلفيات الأزرار */
+#changePasswordBtn,
+#saveEditProfile,
+button[style*="width"],
+button[onclick*="saveSubscriptionModification"],
+.profile-password-btn,
+.profile-update-btn {
+    background-color: #00a19a !important;
+    background: #00a19a !important;
+    color: white !important;
+    border: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+#changePasswordBtn {
+    background-color: #ff8c42 !important;
+    background: #ff8c42 !important;
+}
+
+/* تطبيق اللون الأخضر على زر الإرسال */
+button[onclick*="saveSubscriptionModification"] {
+    background-color: #00a19a !important;
+    background: #00a19a !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* قواعد CSS عالمية لجميع الأزرار داخل المودال */
+.profile-edit-modal button,
+#edit-profile-modal button,
+#password-change-modal button {
+    background-color: #00a19a !important;
+    background: #00a19a !important;
+    color: white !important;
+    border: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+.profile-edit-modal #changePasswordBtn,
+#edit-profile-modal #changePasswordBtn {
+    background-color: #ff8c42 !important;
+    background: #ff8c42 !important;
+}
+

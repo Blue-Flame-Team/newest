@@ -1,0 +1,329 @@
+<div class="profile-menu">
+    <div class="profile-menu-content">
+        <span class="close-modal">&times;</span>
+        <h2 class="profile-title">الوصول السريع</h2>
+        <p class="welcome-text">مرحبا Manal Mohamed taha</p>
+        
+        <div class="profile-buttons">
+            <a href="#" class="profile-btn">
+                <img src="assets/icons/profile-circle.svg" alt="عدل بياناتك">
+                <span>عدل بياناتك</span>
+            </a>
+            <a href="#" class="profile-btn">
+                <span>خدمة العملاء</span>
+            </a>
+            <a href="#" class="profile-btn">
+                <img src="assets/icons/message-search.svg" alt="المساعدة الذاتية">
+                <span>المساعدة الذاتية</span>
+            </a>
+            <a href="#" class="profile-btn">
+                <span>طلب خدمة الأساند</span>
+            </a>
+            <button class="profile-btn logout">
+                <img src="assets/icons/logout.svg" alt="تسجيل الخروج">
+                <span>تسجيل الخروج</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+.profile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-menu.show {
+    display: flex !important;
+}
+
+.profile-menu-content {
+    background-color: #2A3A63;
+    width: 320px;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.profile-title {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.welcome-text {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.profile-btn img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.profile-btn span {
+    flex-grow: 1;
+}
+
+.profile-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-btn.logout {
+    background-color: #D92D20;
+    justify-content: center;
+    margin-top: 10px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const profileButtons = document.querySelectorAll('.profile-btn.profile-icon-btn');
+    const profileMenu = document.querySelector('.profile-menu');
+    const closeProfileMenu = document.querySelector('.profile-menu .close-modal');
+
+    // Function to toggle profile menu
+    function toggleProfileMenu() {
+        if (profileMenu) {
+            profileMenu.classList.toggle('show');
+        }
+    }
+
+    // Add click event to profile buttons
+    profileButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleProfileMenu();
+        });
+    });
+
+    // Close profile menu when clicking outside or on close button
+    if (profileMenu) {
+        profileMenu.addEventListener('click', (e) => {
+            if (e.target === profileMenu) {
+                toggleProfileMenu();
+            }
+        });
+    }
+
+    if (closeProfileMenu) {
+        closeProfileMenu.addEventListener('click', toggleProfileMenu);
+    }
+
+    // Specific button click handlers
+    const buttons = document.querySelectorAll('.profile-menu .profile-btn:not(.logout)');
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            switch(index) {
+                case 0:
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+            }
+            toggleProfileMenu();
+        });
+    });
+
+    // Logout button
+    const logoutBtn = document.querySelector('.profile-btn.logout');
+    logoutBtn?.addEventListener('click', () => {
+
+        if (typeof logoutUser === 'function') {
+            logoutUser();
+        }
+        toggleProfileMenu();
+    });
+
+    // Expose toggle function globally
+    window.toggleProfileMenu = toggleProfileMenu;
+});</script> 
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const profileButtons = document.querySelectorAll('.profile-btn.profile-icon-btn');
+    const profileMenu = document.querySelector('.profile-menu');
+    const closeProfileMenu = document.querySelector('.profile-menu .close-modal');
+
+    // Comprehensive Logout Function
+    function performLogout() {
+
+        
+        // Clear ALL localStorage data related to authentication
+        const logoutKeys = [
+            'currentUser', 
+            'userLoggedIn', 
+            'isLoggedIn', 
+            'username',
+            'token'
+        ];
+        
+        logoutKeys.forEach(key => {
+
+            localStorage.removeItem(key);
+        });
+
+        // Hide profile-related buttons
+        const profileSelectors = [
+            '.profile-icon-btn', 
+            '.profile-btn', 
+            '#mobile-profile-btn',
+            '.main-icons-group .profile-icon-btn',
+            '.mobile-icons .profile-btn'
+        ];
+        
+        profileSelectors.forEach(selector => {
+            const buttons = document.querySelectorAll(selector);
+            buttons.forEach(btn => {
+
+                btn.style.display = 'none';
+                btn.style.visibility = 'hidden';
+            });
+        });
+
+        // Show login buttons
+        const loginSelectors = [
+            '.login-btn#login-btn', 
+            '.login-btn#mobile-login-btn', 
+            '.top-actions .login-btn'
+        ];
+        
+        loginSelectors.forEach(selector => {
+            const buttons = document.querySelectorAll(selector);
+            buttons.forEach(btn => {
+
+                btn.style.display = 'block';
+                btn.style.visibility = 'visible';
+            });
+        });
+
+        // Close settings and profile menus
+        const settingsMenu = document.querySelector('.settings-menu');
+        if (settingsMenu) {
+            settingsMenu.classList.remove('show');
+        }
+
+        // Close profile menu
+        if (profileMenu) {
+            profileMenu.classList.remove('show');
+        }
+
+        // Alert and redirect
+        alert('تم تسجيل الخروج بنجاح');
+        window.location.href = 'index.html';
+    }
+
+    // Function to toggle profile menu
+    function toggleProfileMenu() {
+        if (profileMenu) {
+            profileMenu.classList.toggle('show');
+        }
+    }
+
+    // Add click event to profile buttons
+    profileButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleProfileMenu();
+        });
+    });
+
+    // Close profile menu when clicking outside or on close button
+    if (profileMenu) {
+        profileMenu.addEventListener('click', (e) => {
+            if (e.target === profileMenu) {
+                toggleProfileMenu();
+            }
+        });
+    }
+
+    if (closeProfileMenu) {
+        closeProfileMenu.addEventListener('click', toggleProfileMenu);
+    }
+
+    // Specific button click handlers
+    const buttons = document.querySelectorAll('.profile-menu .profile-btn:not(.logout)');
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            switch(index) {
+                case 0:
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+            }
+            toggleProfileMenu();
+        });
+    });
+
+         // Logout button
+         const logoutBtn = document.querySelector('.profile-btn.logout');
+        logoutBtn?.addEventListener('click', () => {
+
+            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+                performLogout();
+            }
+        });
+    
+        // Expose functions globally
+        window.toggleProfileMenu = toggleProfileMenu;
+        window.performLogout = performLogout;
+});
+</script>

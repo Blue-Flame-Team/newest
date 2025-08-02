@@ -1,0 +1,309 @@
+﻿/* تعديلات تصميم الناف بار للموبايل مطابقة للتصميم المطلوب */
+
+/* نمط مشترك لجميع الهواتف */
+@media (max-width: 767px) {
+    /* الناف بار بالكامل - ثابت في أعلى الشاشة */
+    .top-bar {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 60px !important;
+        /* background-color: #000 !important; خلفية سوداء */
+        /* position: fixed !important; */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 !important;
+        padding: 0 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        direction: rtl !important;
+        z-index: 10000 !important;
+        transform: none !important;
+    }
+    
+    /* تثبيت الناف بار نفسه أيضاً */
+    .navbar {
+        position: fixed !important;
+        top: 60px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        /* background-color: #000 !important; */
+        z-index: 9999 !important;
+        display: none !important; /* إخفاء الناف بار في الموبايل */
+    }
+    
+    /* إزالة المساحة العلوية للجسم لأن الشريط لم يعد مثبتاً */
+    body {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* إعادة ترتيب العناصر في الشريط العلوي - مطابق للصورة */
+    .top-bar-content {
+        width: 100%;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        padding: 0 10px !important;
+        justify-content: space-between !important;
+    }
+    
+    /* قسم اللوجو وتنسيقه */
+    .top-bar .logo {
+        order: 3 !important; /* على الطرف الأيمن */
+        margin-right: 0 !important;
+    }
+    
+    .top-bar .logo img {
+        width: 127.9px !important;
+        height: 32px !important;
+        object-fit: contain !important;
+    }
+
+    /* زر اشترك معنا */
+    .mobile-subscribe-btn {
+        order: 2 !important; /* في الوسط قبل اللوجو */
+        width: 64px !important;
+        height: 24px !important;
+        background-color: #00a59a !important;
+        color: white !important;
+        border-radius: 4px;
+        font-size: 11px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none;
+        padding: 0 !important;
+        margin: 0 8px !important;
+    }
+
+    /* قسم الأيقونات والقائمة */
+    .top-elements {
+        order: 1 !important; /* على الطرف الأيسر */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin-left: 5px !important;
+    }
+    
+    /* أيقونات الموبايل */
+    .mobile-icons {
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+    }
+    
+    /* المسافات بين الأيقونات */
+    .mobile-icons .icon-btn,
+    .mobile-icons .search-btn,
+    .mobile-icons .settings-toggle-btn {
+        margin: 0 4px !important;
+        padding: 0 !important;
+    }
+
+    /* حجم الأيقونات بالضبط */
+    .mobile-icons .icon-btn img,
+    .mobile-icons .search-btn img,
+    .mobile-icons .settings-toggle-btn img,
+    .zoom-group .icon-btn img {
+        width: 15.48px !important;
+        height: 15.48px !important;
+        object-fit: contain !important;
+    }
+    
+    /* إخفاء مجموعة أيقونات التكبير والتصغير لضبط الترتيب */
+    .zoom-group {
+        display: none !important;
+    }
+
+    /* قائمة الهامبرغر */
+    .hamburger-menu {
+        width: 32px !important;
+        height: 23px !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        /* إعادة تعيين الهوامش */
+        margin: 0 !important;
+        cursor: pointer !important;
+        z-index: 2000 !important;
+    }
+
+    .hamburger-menu span {
+        display: block !important;
+        width: 22px !important;
+        height: 2px !important;
+        background-color: white !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* المسافة بين شرائط الهامبرغر */
+    .hamburger-menu span:nth-child(1) {
+        top: 4px !important;
+    }
+    
+    .hamburger-menu span:nth-child(2) {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+    
+    .hamburger-menu span:nth-child(3) {
+        bottom: 4px !important;
+    }
+    
+    /* إخفاء العناصر غير المطلوبة في الموبايل */
+    .top-bar .main-menu,
+    .top-bar .top-actions,
+    .top-bar .common-questions {
+        display: none !important;
+    }
+}
+
+/* الهواتف الصغيرة (320px - 375px) */
+@media (min-width: 320px) and (max-width: 375px) {
+    .top-bar {
+        max-width: 360px;
+    }
+    
+    /* ضبط حجم اللوجو للشاشات الصغيرة */
+    .top-bar .logo img {
+        width: 115px !important;
+        height: 28px !important;
+    }
+    
+    /* ضبط حجم زر اشترك معنا */
+    .mobile-subscribe-btn {
+        width: 58px !important;
+        height: 22px !important;
+        font-size: 10px !important;
+    }
+    
+    /* تصغير الأيقونات */
+    .mobile-icons .icon-btn img,
+    .mobile-icons .search-btn img,
+    .mobile-icons .settings-toggle-btn img {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    
+    /* ضبط حجم قائمة الهامبرغر */
+    .hamburger-menu {
+        width: 28px !important;
+        height: 20px !important;
+    }
+    
+    .hamburger-menu span {
+        width: 20px !important;
+    }
+}
+
+/* هواتف متوسطة الحجم (376px - 414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+    .top-bar {
+        max-width: 400px;
+    }
+    
+    /* إعادة ضبط المسافات لشاشات متوسطة */
+    .top-bar-content {
+        padding: 0 8px !important;
+    }
+}
+
+/* هواتف كبيرة الحجم (415px - 767px) */
+@media (min-width: 415px) and (max-width: 767px) {
+    .top-bar {
+        max-width: 100%;
+        padding: 0 15px !important;
+    }
+    
+    /* زيادة حجم اللوجو للشاشات الكبيرة */
+    .top-bar .logo img {
+        width: 135px !important;
+        height: 34px !important;
+    }
+    
+    /* زيادة حجم زر اشترك معنا */
+    .mobile-subscribe-btn {
+        width: 70px !important;
+        height: 26px !important;
+        font-size: var(--font-xs) !important;
+    }
+    
+    /* زيادة المسافة بين العناصر */
+    .mobile-icons .icon-btn,
+    .mobile-icons .search-btn,
+    .mobile-icons .settings-toggle-btn {
+        margin: 0 6px !important;
+    }
+    
+    /* تكبير الأيقونات */
+    .mobile-icons .icon-btn img,
+    .mobile-icons .search-btn img,
+    .mobile-icons .settings-toggle-btn img {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
+/* قواعد إضافية لضمان ثبات الناف بار في جميع أحجام الموبايل */
+@media (max-width: 767px) {
+    /* منع أي تحرك للناف بار */
+    .top-bar,
+    .top-bar-content,
+    .navbar {
+        /* position: fixed !important; */
+        will-change: auto !important;
+    }
+    
+    /* التأكد من أن التوب بار يبقى في المقدمة */
+    .top-bar {
+        /* position: fixed !important; */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 10001 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* منع تأثير السكرول على العناصر */
+    .top-bar * {
+        position: relative !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* استثناء للعناصر المنسدلة */
+    .settings-menu,
+    .dropdown-menu,
+    .contrast-submenu {
+        position: absolute !important;
+        top: 100% !important;
+    }
+    
+    /* قاعدة نهائية لإزالة أي مسافة على اليمين للوجو */
+    .top-bar .logo,
+    .top-bar .logo-link,
+    .top-bar .logo img {
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+        right: 0 !important;
+    }
+    
+    /* إزالة أي مسافة من الحاوي الرئيسي */
+    .top-bar,
+    .top-bar-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+

@@ -1,0 +1,70 @@
+﻿/* تطبيق خلفية بيضاء على المحتوى الأساسي فقط بدون الناف بار والتوب بار */
+body:not(.home-page) main,
+body:not(.home-page) .terms-content {
+    background-color: #FFFFFF;
+}
+
+/* المحافظة على خلفية بيضاء للمحتوى حتى في الوضع الداكن */
+body:not(.home-page).dark-mode main,
+body:not(.home-page).dark-mode .terms-content,
+body:not(.home-page).dark-mode .breadcrumb {
+    background-color: #ffffff !important;
+}
+
+/* إعادة تعيين الناف بار والتوب بار ليتبعا الوضع الداكن */
+body:not(.home-page).dark-mode .top-bar,
+body:not(.home-page).dark-mode .navbar {
+    background-color: #000000 !important;
+}
+
+/* إعادة لون النص في الناف بار الداكن */
+body:not(.home-page).dark-mode .navbar a,
+body:not(.home-page).dark-mode .top-bar a,
+body:not(.home-page).dark-mode .top-bar span,
+body:not(.home-page).dark-mode .top-icons {
+    color: #ffffff !important;
+}
+
+/* تطبيق خلفية بيضاء ونص أسود على منطقة المحتوى الكتابي */
+.terms-content,
+.terms-content .container,
+.terms-item,
+.terms-subitem,
+.terms-section,
+.section-content,
+.item-content,
+.subitem-content {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* التأكد من أن العناصر داخل المحتوى تظل بألوانها الأصلية */
+.terms-content h1,
+.terms-content h2,
+.terms-content h3,
+.terms-title,
+.terms-subtitle,
+.item-number,
+.subitem-number,
+.section-number,
+/* .faq-title, */
+.faq-subtitle {
+    text-align: right;
+    color: #E66B2E ;
+    font-size: var(--font-2xl);
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-weight: bold;
+    /* color: var(--primary-color) !important; */
+}
+
+/* الحفاظ على لون النص الأسود في منطقة المحتوى حتى في الوضع الداكن */
+body:not(.home-page).dark-mode .terms-content p,
+body:not(.home-page).dark-mode .item-content p,
+body:not(.home-page).dark-mode .subitem-content p,
+body:not(.home-page).dark-mode .section-content p {
+    color: #333333 !important;
+}
+.breadcrumb {
+    background-color: #F5FFFF;
+}
+

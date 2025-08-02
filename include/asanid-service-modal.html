@@ -1,0 +1,185 @@
+<div id="asanid-service-modal" style="display: none; position: fixed; z-index: 10000; left: 0px; top: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); direction: rtl; overflow: auto; padding: 60px 0px 20px;">
+    <div style="
+        background-color: white;
+        margin: auto;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 20px;
+        padding: 20px;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        margin-bottom: 40px;
+        max-height: 90vh;
+        overflow-y: auto;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    ">
+        <style>
+            /* WebKit browsers (Chrome, Safari) */
+            div::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
+        <span id="closeAsanidModal" style="
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        ">×</span>
+        
+        <h2 style="
+            font-family: 'Droid Arabic Kufi';
+            font-weight: 700;
+            font-size: 21.99px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            text-align: center;
+            color: #00a19a;
+            margin-bottom: 25px !important;
+        ">خدمة الاسانيد القانونية</h2>
+        
+        <form id="asanidContactForm" style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        ">
+            <!-- الاسم بالكامل -->
+            <div style="padding: 0 !important;">
+                <input type="text" id="fullName" placeholder="الاسم بالكامل" style="
+                    width: 100%;
+                    height: 45px;
+                    border-radius: 10px;
+                    border: 1px solid #e0e0e0;
+                    padding: 0 15px;
+                    text-align: right;
+                    font-family: 'Droid Arabic Kufi';
+                    font-size: 14px;
+                    box-sizing: border-box;
+                    background-color: #f8f9fa;
+                    margin: 0 !important;
+                ">
+            </div>
+            
+            <!-- البريد الإلكتروني -->
+            <div style="padding: 0 !important;">
+                <input type="email" id="email" placeholder="البريد الالكتروني" style="
+                    width: 100%;
+                    height: 45px;
+                    border-radius: 10px;
+                    border: 1px solid #e0e0e0;
+                    padding: 0 15px;
+                    text-align: right;
+                    font-family: 'Droid Arabic Kufi';
+                    font-size: 14px;
+                    box-sizing: border-box;
+                    background-color: #f8f9fa;
+                    margin: 0 !important;
+                ">
+            </div>
+            
+            <!-- رقم الهاتف -->
+            <div style="
+                padding: 0 !important; 
+                display: flex; 
+                gap: 8px; 
+                width: 100%;
+                box-sizing: border-box;
+            ">
+                <input type="tel" id="phone" placeholder="رقم الهاتف" style="
+                    flex: 1;
+                    min-width: 0;
+                    height: 45px;
+                    border-radius: 10px;
+                    border: 1px solid #e0e0e0;
+                    padding: 0 12px;
+                    text-align: right;
+                    font-family: 'Droid Arabic Kufi';
+                    font-size: 14px;
+                    box-sizing: border-box;
+                    background-color: #f8f9fa;
+                    margin: 0 !important;
+                ">
+                <div class="country-code-select" style="
+                    width: 80px;
+                    height: 45px;
+                    border-radius: 12px;
+                    border: 1px solid #ddd;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #f8f9fa;
+                    gap: 3px;
+                    flex-shrink: 0;
+                    box-sizing: border-box;
+                    padding: 0 8px;
+                " data-enhanced="true">
+                    <img src="../assets/icons/call-arrow.svg" alt="Arrow" class="arrow-icon" style="width: 8px; height: 8px; opacity: 0.6;">
+                    <span class="code" style="font-family: 'Droid Arabic Kufi'; font-size: 12px; color: #666; font-weight: 500;">+20</span>
+                </div>
+            </div>
+            
+            <!-- الموضوع -->
+            <div style="padding: 0 !important;">
+                <textarea id="subject" placeholder="الموضوع" style="
+                    width: 100%;
+                    height: 120px;
+                    border-radius: 10px;
+                    border: 1px solid #e0e0e0;
+                    padding: 15px;
+                    text-align: right;
+                    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                    font-size: 14px;
+                    box-sizing: border-box;
+                    background-color: #f8f9fa;
+                    resize: vertical;
+                    min-height: 120px;
+                    margin: 0 !important;
+                "></textarea>
+            </div>
+            
+            <!-- النص التوضيحي -->
+            <div style="padding: 0 !important; text-align: right;">
+                <h4 style="
+                    font-family: Droid Arabic Kufi;
+                    font-weight: 400;
+                    font-size: 8.57px;
+                    line-height: 150%;
+                    letter-spacing: 0%;
+                    text-align: right;
+                    color: #00a19a;
+                    margin: 0 0 5px 0 !important;
+                ">عزيزنا العميل:</h4>
+                <p style="
+                    font-family: Droid Arabic Kufi;
+                    font-weight: 400;
+                    font-size: 7.35px;
+                    line-height: 150%;
+                    letter-spacing: 0%;
+                    text-align: right;
+                    color: #666;
+                    margin: 0 !important;
+                ">شكرا لكم سوف يتم اعداد الاسانيد المطلوبة في اقرب وقت ممكن وسنقوم بارسالها لكم علي بريدكم الالكتروني</p>
+            </div>
+            
+            <!-- زر الإرسال -->
+            <button type="button" id="submitAsanidForm" style="
+                width: 100%;
+                height: 45px;
+                background-color: #00a19a;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin: 0 !important;
+            ">إرسال</button>
+        </form>
+    </div>
+</div> 

@@ -1,0 +1,590 @@
+﻿/* Footer */
+/* .main-footer {
+    background-color: #00827a;
+    padding: 40px 0 0;
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    display: block;
+} */
+
+.footer-content {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    padding: 60px 0 !important;
+    background: #158885 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    direction: rtl !important;
+    gap: 84px !important;
+    text-align: center !important;
+}
+
+.footer-column, .about-column, .links-column, .contact-column, .social-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.footer-title, .footer-text, .contact-item, .social-title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.about-column {
+    width: 400px;
+    margin-left: 0;
+}
+
+.about-column .footer-text {
+    color: #fff;
+    font-size: var(--font-sm);
+    line-height: 1.6;
+    margin: 0;
+    text-align: right;
+}
+
+/* عمود روابط سريعة */
+.links-column {
+    width: 200px;
+    margin-left: 0;
+}
+
+.footer-title {
+    color: #fff;
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 24px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    margin-bottom: 18px !important;
+}
+
+.footer-text {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    color: #fff;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+    text-align: right;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: var(--font-sm);
+}
+
+/* عمود تواصل معنا */
+.contact-column {
+    width: 250px;
+    margin-left: 0;
+}
+
+.contact-item {
+    color: #fff;
+    font-size: var(--font-sm);
+    margin-bottom: 12px;
+    text-align: right;
+    direction: rtl;
+}
+
+/* عمود التواصل الاجتماعي */
+.social-column {
+    width: 200px;
+    margin-left: 0;
+}
+
+.social-title {
+    color: #fff;
+    font-size: var(--font-sm);
+    font-weight: normal;
+    margin-bottom: 18px !important;
+    text-align: right;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 38px !important;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.contact-btn {
+    background-color: #fff;
+    color: #2D3748 !important;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 19px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    border: none;
+    margin-top: 8px;
+}
+
+.contact-btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Copyright Section */
+.copyright {
+    background-color: #00716E !important;
+    margin: 0 !important;
+    padding: 20px 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.copyright-content {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    text-align: center !important;
+}
+
+.copyright-row {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+.copyright-text {
+    font-family: 'Droid Arabic Kufi' !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 150% !important;
+    color: #fff !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.policy-links {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+.policy-links a {
+    font-family: 'Droid Arabic Kufi' !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 150% !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-align: center !important;
+}
+
+.separator {
+    color: #fff !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 1200px) {
+    .footer-content {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-footer {
+        padding: 30px 0 0;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .about-column {
+        flex: 0 0 100%;
+    }
+    
+    .links-column,
+    .contact-column,
+    .social-column {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 40px 0 0 !important;
+        /* background-color: #158885 !important; */
+        text-align: center !important;
+        margin-bottom: 0 !important;
+    }
+
+    .footer-content {
+        padding: 0 20px !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        max-width: 390px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* قواعد قوية لضمان التوسيط */
+    .main-footer .footer-content,
+    .main-footer .footer-content *,
+    .main-footer .about-column,
+    .main-footer .links-column,
+    .main-footer .contact-column,
+    .main-footer .social-column {
+        text-align: center !important;
+    }
+    
+    /* جميع الأعمدة */
+    .about-column,
+    .links-column,
+    .contact-column,
+    .social-column {
+        flex: 0 0 100%;
+        text-align: center !important;
+        margin-bottom: 30px;
+    }
+    
+    /* جميع العناوين - قواعد قوية */
+    .main-footer .footer-title,
+    .main-footer .social-title,
+    .main-footer h1,
+    .main-footer h2,
+    .main-footer h3,
+    .main-footer h4,
+    .main-footer h5,
+    .main-footer h6,
+    .main-footer .about-column .footer-title,
+    .main-footer .links-column .footer-title,
+    .main-footer .contact-column .footer-title,
+    .main-footer .social-column .social-title {
+        font-size: var(--font-lg) !important;
+        font-weight: 600 !important;
+        color: #fff !important;
+        margin: 15px auto !important;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .main-footer .about-column .footer-title {
+        font-size: var(--font-xl) !important;
+    }
+    
+    /* جميع النصوص - قواعد قوية */
+    .main-footer .footer-text,
+    .main-footer .contact-item,
+    .main-footer p,
+    .main-footer .about-column .footer-text,
+    .main-footer .contact-column .contact-item {
+        font-size: var(--font-sm) !important;
+        color: #fff !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        margin: 10px auto !important;
+        direction: ltr !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    /* الروابط - قواعد قوية */
+    .main-footer .footer-links,
+    .main-footer .links-column .footer-links,
+    .main-footer ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: center !important;
+        text-align: center !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+    
+    .main-footer .footer-links li,
+    .main-footer .links-column .footer-links li,
+    .main-footer ul li {
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        display: block !important;
+    }
+    
+    .main-footer .footer-links a,
+    .main-footer .links-column .footer-links a,
+    .main-footer ul li a,
+    .main-footer a {
+        color: #fff !important;
+        font-size: var(--font-sm) !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* الأيقونات الاجتماعية */
+    .social-icons {
+        justify-content: center !important;
+        gap: 15px !important;
+        margin-bottom: 20px !important;
+        display: flex !important;
+    }
+    
+    .social-icon {
+        width: 32px !important;
+        height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .social-icon img {
+        width: 24px !important;
+        height: 24px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    /* زر الاتصال */
+    .contact-btn-container {
+        display: flex !important;
+        justify-content: center !important;
+        margin-top: 20px !important;
+        text-align: center !important;
+    }
+    
+    .contact-btn {
+        background-color: #fff !important;
+        color: #2D3748 !important;
+        width: 156px !important;
+        height: 45px !important;
+        gap: 6px !important;
+        border-radius: 10px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        box-shadow: 0px 4px 9.8px 0px #00000040 !important;
+        font-family: 'Droid Arabic Kufi' !important;
+        font-weight: 400 !important;
+        font-size: 19px !important;
+        line-height: 150% !important;
+        letter-spacing: 0% !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: row !important;
+    }
+    
+    .contact-btn-icon {
+        width: 20px !important;
+        height: 20px !important;
+        margin-left: 6px !important;
+        filter: none !important;
+    }
+    
+    /* حقوق النشر */
+    .copyright {
+        background-color: #00716E !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 20px 0 !important;
+    }
+    
+    .copyright-content {
+        padding: 0 20px !important;
+        text-align: center !important;
+        gap: 12px !important;
+        max-width: 390px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .copyright-row {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+    
+    .copyright-text {
+        font-family: 'Droid Arabic Kufi' !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 150% !important;
+        color: #fff !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .policy-links {
+        justify-content: center !important;
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .policy-links a {
+        font-family: 'Droid Arabic Kufi' !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 150% !important;
+        color: #fff !important;
+        text-decoration: none !important;
+        text-align: center !important;
+    }
+    
+    .separator {
+        color: #fff !important;
+        font-size: 16px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* قاعدة شاملة نهائية لضمان التوسيط */
+    .main-footer .footer-content div,
+    .main-footer .footer-content span,
+    .main-footer .footer-content p,
+    .main-footer .footer-content h1,
+    .main-footer .footer-content h2,
+    .main-footer .footer-content h3,
+    .main-footer .footer-content h4,
+    .main-footer .footer-content h5,
+    .main-footer .footer-content h6,
+    .main-footer .footer-content a,
+    .main-footer .footer-content li {
+        text-align: center !important;
+        font-family: Droid Arabic Kufi;
+font-weight: 400 !important;
+font-size: 19px !important;
+line-height: 150% !important;
+letter-spacing: 0% !important;
+text-align: center !important;
+color: #2D3748 !important;
+    }
+    
+    /* ضمان عدم وجود تأثير للنصوص العربية والـ direction */
+    .main-footer .footer-content * {
+        unicode-bidi: embed !important;
+    }
+    
+    /* قاعدة قوية للتغلب على أي direction خارجي */
+    .main-footer,
+    .main-footer * {
+        direction: ltr !important;
+    }
+    
+    /* قاعدة أقوى للنصوص العربية في الفوتر */
+    .main-footer .footer-content,
+    .main-footer .footer-content p,
+    .main-footer .footer-content h3,
+    .main-footer .footer-content a,
+    .main-footer .footer-content span,
+    .main-footer .footer-content div {
+        direction: ltr !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* قواعد خاصة لمعلومات الاتصال والبريد الإلكتروني */
+    .main-footer .contact-item {
+        direction: ltr !important;
+        text-align: center !important;
+        unicode-bidi: plaintext !important;
+        text-orientation: mixed !important;
+        writing-mode: horizontal-tb !important;
+    }
+    
+    /* ضمان أن كل شيء في الفوتر موسط حتى لو كان نص مختلط */
+    .main-footer [dir="rtl"],
+    .main-footer [dir="ltr"] {
+        text-align: center !important;
+        direction: ltr !important;
+    }
+    
+}
+
+
+/* إخفاء شريط التمرير الجانبي مع بقاء إمكانية التمرير */
+body, html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}

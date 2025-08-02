@@ -1,0 +1,411 @@
+﻿/* تنسيقات قائمة الهامبرغر المتنقلة */
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 999999999 !important;
+    display: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: auto;
+    pointer-events: auto;
+}
+
+.mobile-side-menu {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 203px !important;
+    height: 484px !important;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 999999999 !important;
+    padding: 32px !important;
+    border-radius: 12px !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-overflow-scrolling: touch;
+    visibility: visible;
+    box-sizing: border-box;
+    opacity: 1;
+    transform: none;
+    text-align: center;
+}
+
+.mobile-menu-overlay.show {
+    display: block;
+}
+
+.mobile-side-menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* تنسيق روابط القائمة */
+.mobile-side-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 24px !important;
+    width: 100%;
+    margin-bottom: 24px;
+    flex: 1;
+    text-align: center;
+}
+
+.mobile-side-menu-links a {
+    color: #2D3748;
+    text-decoration: none;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 150%;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.mobile-side-menu-links a.active {
+    color: var(--primary-color) !important;
+}
+
+.mobile-side-menu-links a:hover {
+    color: #158885;
+}
+
+/* تنسيق أيقونة السهم في القائمة المنسدلة */
+.mobile-side-menu-links a.has-dropdown::after {
+    content: "∨";
+    display: inline-block;
+    margin-right: 5px;
+    font-size: var(--font-xs);
+    transition: transform 0.3s ease;
+    position: relative;
+    top: -2px;
+}
+
+/* تنسيق أزرار القائمة */
+.mobile-side-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 24px !important;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-side-menu-buttons .subscribe-btn {
+    background-color: white;
+    color: #2D3748;
+    border: 1px solid #121212CC;
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-align: center;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-weight: 400;
+    font-size: 19px !important;
+    line-height: 150%;
+    text-decoration: none;
+    margin: 0;
+    width: 111px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.mobile-side-menu-buttons .login-btn {
+    background: #158885;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 9px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    text-align: center;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 150%;
+    text-decoration: none;
+    margin: 0;
+    width: 139px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+/* تلوين روابط خاصة */
+.mobile-side-menu-links a.colored-link {
+    color: #2D3748;
+}
+
+/* زر القائمة المنسدلة */
+.dropdown-button {
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #2D3748;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 150%;
+    padding: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.dropdown-button.active {
+    color: var(--primary-color) !important;
+}
+
+.dropdown-button:focus {
+    outline: none;
+}
+
+.dropdown-button .dropdown-arrow {
+    font-size: 12px;
+    color: #718096;
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+}
+
+.dropdown-button .dropdown-arrow-svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.dropdown-button.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-button.active .dropdown-arrow-svg {
+    transform: rotate(180deg);
+}
+
+/* القائمة الفرعية في قائمة الموبايل */
+.submenu-container {
+    display: none;
+    border-radius: 8px;
+    background-color: #F7FAFC;
+    margin: 12px 0 0 0;
+    padding: 12px;
+    border: 1px solid #E2E8F0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.submenu-container.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submenu-container.open {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submenu-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    color: #2D3748;
+    text-decoration: none;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    border-bottom: 1px solid #E2E8F0;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+.submenu-container a:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.submenu-container a:hover {
+    background-color: #f0f0f0;
+    color: #158885;
+}
+
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-submenu .submenu-item {
+    display: block;
+    padding: 10px;
+    color: #2D3748;
+    text-decoration: none;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 5px;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.mobile-submenu .submenu-item:hover {
+    background-color: #f0f0f0;
+    color: #158885;
+}
+
+/* الزر المنسدل للقائمة الفرعية */
+.dropdown-toggle.active {
+    color: #158885;
+}
+
+.dropdown-toggle.active::after {
+    transform: rotate(180deg);
+}
+
+/* إزالة الخطوط من بين الروابط */
+.mobile-side-menu-links > a,
+.mobile-side-menu-links .dropdown-button {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* تحسين ظهور القائمة على الجوال */
+@media (max-width: 767px) {
+    .mobile-side-menu {
+        width: 203px !important;
+        height: 484px !important;
+        max-width: none;
+        padding: 32px !important;
+        border-radius: 12px !important;
+    }
+    
+    .mobile-side-menu-buttons .subscribe-btn {
+        width: 111px !important;
+        height: 40px !important;
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        border: 1px solid #121212CC !important;
+        background-color: white !important;
+        color: #2D3748 !important;
+        justify-content: center !important;
+    }
+    
+    .mobile-side-menu-buttons .login-btn {
+        width: 139px !important;
+        height: 40px !important;
+        border-radius: 9px !important;
+        padding-top: 8px !important;
+        padding-right: 16px !important;
+        padding-bottom: 8px !important;
+        padding-left: 16px !important;
+        background: #158885 !important;
+        color: #FFFFFF !important;
+        border: none !important;
+    }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .mobile-side-menu-buttons .subscribe-btn {
+        /* width: 111px !important;
+        height: 40px !important; */
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        border: 1px solid #121212CC !important;
+        background-color: white !important;
+        color: #2D3748 !important;
+        justify-content: center !important;
+    }
+    
+    .mobile-side-menu-buttons .login-btn {
+        width: 139px !important;
+        height: 40px !important;
+        border-radius: 9px !important;
+        padding-top: 8px !important;
+        padding-right: 16px !important;
+        padding-bottom: 8px !important;
+        padding-left: 16px !important;
+        background: #158885 !important;
+        color: #FFFFFF !important;
+        border: none !important;
+    }
+}
+
+/* للشاشات المتوسطة */
+@media (max-width: 768px) and (min-width: 481px) {
+    .mobile-side-menu-buttons .subscribe-btn {
+        /* width: 111px !important;
+        height: 40px !important; */
+        border-radius: 8px !important;
+        padding: 8px 16px !important;
+        border: 1px solid #121212CC !important;
+        background-color: white !important;
+        color: #2D3748 !important;
+    }
+    
+    .mobile-side-menu-buttons .login-btn {
+        width: 139px !important;
+        height: 40px !important;
+        border-radius: 9px !important;
+        padding-top: 8px !important;
+        padding-right: 16px !important;
+        padding-bottom: 8px !important;
+        padding-left: 16px !important;
+        background: #158885 !important;
+        color: #FFFFFF !important;
+        border: none !important;
+    }
+}
+
+
+

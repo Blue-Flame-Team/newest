@@ -1,0 +1,131 @@
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    /* background: #fff; */
+    padding: 8px 16px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.05); */
+}
+
+.rating-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: right;
+    color: #158885;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.stars-container {
+    display: flex;
+    gap: 4px;
+    flex-direction: row;
+}
+
+.star-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.star-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.star-icon.active {
+    filter: drop-shadow(0 2px 4px rgba(255, 200, 0, 0.3));
+}
+
+.rating-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #666;
+    background: #f5f5f5;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.rating-count span {
+    font-weight: 400;
+}
+
+.votes-count {
+    font-weight: 600 !important;
+    color: #158885;
+}
+
+/* تأثيرات التحويم */
+.stars-container:hover .star-icon {
+    opacity: 0.6;
+}
+
+.star-icon:hover,
+.star-icon:hover ~ .star-icon {
+    opacity: 1;
+}
+
+/* تحسينات للتجاوب */
+@media (max-width: 768px) {
+    .rating-container {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .rating-title {
+        font-size: 14px;
+    }
+
+    .star-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .rating-count {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
+}
+
+/* تحسينات للوضع المظلم */
+.dark-mode .rating-container {
+    background: #2a2a2a;
+}
+
+.dark-mode .rating-title {
+    color: #7dd3d1;
+}
+
+.dark-mode .rating-count {
+    background: #333;
+    color: #ccc;
+}
+
+.dark-mode .votes-count {
+    color: #7dd3d1;
+}
+
+/* تحسينات للتباين العالي */
+.high-contrast .rating-container {
+    background: #fff;
+    border: 2px solid #000;
+}
+
+.high-contrast .rating-title,
+.high-contrast .rating-count,
+.high-contrast .votes-count {
+    color: #000;
+    font-weight: 600;
+}
+
+.high-contrast .rating-count {
+    background: #f0f0f0;
+    border: 1px solid #000;
+} 

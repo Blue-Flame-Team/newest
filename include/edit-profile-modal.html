@@ -1,0 +1,513 @@
+<div id="edit-profile-modal" style="display: none; position: fixed; z-index: 10000; left: 0px; top: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); direction: rtl; overflow: hidden; align-items: center; justify-content: center;">
+    <div style="
+        background-color: white;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 450px;
+        max-height: 90vh;
+        border-radius: 15px;
+        padding: 25px;
+        position: relative;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        overflow-y: auto;
+    ">
+        <span id="closeEditProfileModal" style="
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999;
+        ">×</span>
+        
+        <h2 style="
+            font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            color: #00a19a;
+            margin: 0 0 15px 0;
+        ">تعديل بيانات مستخدم</h2>
+        
+        <form id="editProfileForm" style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        ">
+            <!-- نوع المستخدم -->
+            <div style="position: relative;">
+                <select id="userType" style="
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 10px;
+                    border: 1px solid #ddd;
+                    padding: 0 15px 0 45px;
+                    text-align: right;
+                    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                    font-size: 14px;
+                    background-color: #f8f9fa;
+                    color: #999;
+                    appearance: none;
+                    box-sizing: border-box;
+                ">
+                    <option value="">نوع المستخدم</option>
+                    <option value="individual">فرد</option>
+                    <option value="company">شركة</option>
+                    <option value="organization">مؤسسة</option>
+                </select>
+                <div style="
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid #999;
+                    pointer-events: none;
+                "></div>
+            </div>
+            
+            <!-- البريد الإلكتروني -->
+            <input type="email" id="editEmail" value="" placeholder="البريد الالكتروني" style="
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid #ddd;
+                padding: 0 15px;
+                text-align: right;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 14px;
+                background-color: #f8f9fa;
+                color: #999;
+                box-sizing: border-box;
+            ">
+            
+            <!-- عنوان تفاصيل أخرى -->
+            <h3 style="
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                text-align: center;
+                color: #00a19a;
+                margin: 10px 0 8px 0;
+            ">تفاصيل أخرى</h3>
+            
+            <!-- المدينة -->
+            <div style="position: relative;">
+                <select id="city" style="
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 10px;
+                    border: 1px solid #ddd;
+                    padding: 0 15px 0 45px;
+                    text-align: right;
+                    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                    font-size: 14px;
+                    background-color: #f8f9fa;
+                    color: #999;
+                    appearance: none;
+                    box-sizing: border-box;
+                ">
+                    <option value="">المدينة</option>
+                    <option value="riyadh">الرياض</option>
+                    <option value="jeddah">جدة</option>
+                    <option value="dammam">الدمام</option>
+                    <option value="mecca">مكة المكرمة</option>
+                    <option value="medina">المدينة المنورة</option>
+                </select>
+                <div style="
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid #999;
+                    pointer-events: none;
+                "></div>
+            </div>
+            
+            <!-- العنوان التفصيلي -->
+            <input type="text" id="detailedAddress" placeholder="العنوان التفصيلي" style="
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid #ddd;
+                padding: 0 15px;
+                text-align: right;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 14px;
+                background-color: #f8f9fa;
+                color: #999;
+                box-sizing: border-box;
+            ">
+            
+            <!-- رقم الهاتف -->
+            <input type="tel" id="editPhone" value="" placeholder="رقم الهاتف" style="
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid #ddd;
+                padding: 0 15px;
+                text-align: right;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 14px;
+                background-color: #f8f9fa;
+                color: #999;
+                box-sizing: border-box;
+            ">
+            
+            <!-- رقم الهاتف والجوال في صف واحد -->
+            <div style="display: flex; gap: 10px;">
+                <input type="tel" id="mobilePhone" placeholder="الجوال" style="
+                    width: 100%;
+                    max-width: 351.11px;
+                    height: 40px;
+                    border-radius: 10px;
+                    border: 1px solid #ddd;
+                    padding: 0 15px;
+                    text-align: right;
+                    font-family: 'Droid Arabic Kufi';
+                    font-size: 14px;
+                    background-color: #f8f9fa;
+                    color: #999;
+                    box-sizing: border-box;
+                ">
+                <div style="
+                    width: 80px;
+                    height: 40px;
+                    border-radius: 12px;
+                    border: 1px solid #ddd;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #f8f9fa;
+                    gap: 3px;
+                    padding: 0 8px;
+                    cursor: pointer;
+                    position: relative;
+                " onclick="openCountryDropdown(this)">
+                    <span style="font-family: 'Droid Arabic Kufi', Arial, sans-serif; font-size: 12px; color: #666; font-weight: 500;">+20</span>
+                    <img src="../assets/icons/call-arrow.svg" alt="Arrow" style="width: 8px; height: 8px; opacity: 0.6;">
+                    <img src="../assets/icons/flag-for-flag-egypt-svgrepo-com 1.svg" alt="Egypt Flag" style="width: 16px; height: 11px;">
+                </div>
+            </div>
+            
+            <!-- الفاكس -->
+            <input type="tel" id="fax" placeholder="الفاكس" style="
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid #ddd;
+                padding: 0 15px;
+                text-align: right;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 14px;
+                background-color: #f8f9fa;
+                color: #999;
+                box-sizing: border-box;
+            ">
+            
+            <!-- صندوق البريد -->
+            <input type="text" id="poBox" placeholder="صندوق البريد" style="
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid #ddd;
+                padding: 0 15px;
+                text-align: right;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 14px;
+                background-color: #f8f9fa;
+                color: #999;
+                box-sizing: border-box;
+            ">
+            
+            <!-- الرمز البريدي -->
+            <input type="text" id="postalCode" placeholder="الرمز البريدي" style="
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid #ddd;
+                padding: 0 15px;
+                text-align: right;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 14px;
+                background-color: #f8f9fa;
+                color: #999;
+                box-sizing: border-box;
+            ">
+            
+            <!-- نص الاحتفاظ بالاشتراك -->
+            <div style="
+                text-align: center;
+                margin: 10px 0 5px 0;
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-size: 14px;
+                color: #00a19a;
+            ">
+                <div style="font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 150%;
+                    letter-spacing: 0%;
+                    text-align: right;
+                    cursor: pointer;"
+                    onclick="window.openModifySubscriptionModal()">احتفظ بالاشتراك ساريا</div>
+                <div style="font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 150%;
+                    letter-spacing: 0%;
+                    text-align: right;
+                    color: #2D3748 !important;
+                ">
+                    تنتهي صلاحية اشتراككم بتاريخ 31/12/2025
+                </div>
+            </div>
+            
+            <!-- أزرار العمل -->
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+               <button type="button" id="changePasswordBtn" onclick="window.showPasswordChangeModal()" style="
+    flex: 1;
+    height: 40px;
+    background-color: #ff8c42 !important;
+    background: #ff8c42 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(255, 140, 66, 0.3) !important;
+    transition: all 0.3s ease !important;
+    outline: none !important;
+    display: block !important;
+    min-height: 40px !important;
+    line-height: 40px !important;
+    text-align: center !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+">تعديل كلمة المرور</button>
+                
+                <button type="button" id="saveEditProfile" style="
+                    flex: 1;
+                    height: 40px;
+                    background-color: #00a19a !important;
+                    background: #00a19a !important;
+                    color: white !important;
+                    border: none !important;
+                    border-radius: 10px !important;
+                    font-family: 'Droid Arabic Kufi', Arial, sans-serif !important;
+                    font-size: 14px !important;
+                    font-weight: bold !important;
+                    cursor: pointer !important;
+                    box-shadow: 0 2px 8px rgba(0, 161, 154, 0.3) !important;
+                    transition: all 0.3s ease !important;
+                    outline: none !important;
+                    display: block !important;
+                    min-height: 40px !important;
+                    line-height: 40px !important;
+                    text-align: center !important;
+                    -webkit-appearance: none !important;
+                    -moz-appearance: none !important;
+                    appearance: none !important;
+                ">تعديل بياناتي</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Password Change Modal -->
+    <div id="password-change-modal" style="
+        display: none;
+        position: fixed;
+        z-index: 99999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        direction: rtl;
+        overflow: auto;
+        padding-top: 60px;
+    ">
+        <div style="
+            background-color: white;
+            margin: 20px auto;
+            width: calc(100% - 40px);
+            max-width: 600px;
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 40px;
+        ">
+            <span onclick="window.closePasswordModal()" style="
+                position: absolute;
+                left: 15px;
+                top: 10px;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                color: #aaa;
+                line-height: 1;
+            ">&times;</span>
+            
+            <h2 style="
+                font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                font-weight: 700;
+                font-size: 21.99px;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: center;
+                color: #00a19a;
+                margin: 0 0 20px 0;
+                padding: 0 30px 0 0;
+            ">تعديل كلمة المرور</h2>
+            
+            <form onsubmit="window.handlePasswordSubmit(event)" style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            ">
+                <input type="text" name="username" autocomplete="username" style="display: none;">
+
+                <!-- كلمة المرور الحالية -->
+                <div style="padding: 0; margin: 0 0 10px 0;">
+                    <input type="password" id="currentPassword" placeholder="كلمة المرور الحالية" style="
+                        width: 100%;
+                        height: 50px;
+                        border-radius: 10px;
+                        border: 1px solid #e0e0e0;
+                        padding: 0 15px;
+                        text-align: right;
+                        font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                        font-size: 16px;
+                        box-sizing: border-box;
+                        background-color: #f8f9fa;
+                        margin: 0;
+                    " required autocomplete="current-password">
+                </div>
+                
+                <!-- كلمة المرور الجديدة -->
+                <div style="padding: 0; margin: 0 0 10px 0;">
+                    <input type="password" id="newPassword" placeholder="كلمة المرور الجديدة" style="
+                        width: 100%;
+                        height: 50px;
+                        border-radius: 10px;
+                        border: 1px solid #e0e0e0;
+                        padding: 0 15px;
+                        text-align: right;
+                        font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                        font-size: 16px;
+                        box-sizing: border-box;
+                        background-color: #f8f9fa;
+                        margin: 0;
+                    " required autocomplete="current-password">
+                </div>
+                
+                <!-- تأكيد كلمة المرور الجديدة -->
+                <div style="padding: 0; margin: 0 0 10px 0;">
+                    <input type="password" id="confirmPassword" placeholder="تأكيد كلمة المرور الجديدة" style="
+                        width: 100%;
+                        height: 50px;
+                        border-radius: 10px;
+                        border: 1px solid #e0e0e0;
+                        padding: 0 15px;
+                        text-align: right;
+                        font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                        font-size: 16px;
+                        box-sizing: border-box;
+                        background-color: #f8f9fa;
+                        margin: 0;
+                    " required autocomplete="new-password">
+                </div>
+                
+                <!-- زر الإرسال -->
+                <button type="submit" id="submitPasswordChange" style="
+                    width: 100%;
+                    height: 50px;
+                    background-color: #00a19a;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+                    font-size: 18px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    margin: 15px 0 0 0;
+                ">أرسل</button>
+            </form>
+        </div>
+    </div>
+</div> 
+
+<script>
+function openCountryDropdown(element) {
+    // العثور على القائمة المنسدلة
+    const dropdown = element.querySelector('#country-dropdown');
+    
+    if (!dropdown) {
+
+        return;
+    }
+    
+    // التبديل بين الظهور والإخفاء
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+        // إغلاق أي قوائم منسدلة أخرى مفتوحة
+        const openDropdowns = document.querySelectorAll('#country-dropdown');
+        openDropdowns.forEach(openDropdown => {
+            if (openDropdown !== dropdown) {
+                openDropdown.style.display = 'none';
+            }
+        });
+        
+        // عرض القائمة
+        dropdown.style.display = 'block';
+        
+        // إضافة معالج حدث للنقر خارج القائمة
+        const closeDropdown = (e) => {
+            if (!dropdown.contains(e.target) && e.target !== element) {
+                dropdown.style.display = 'none';
+                document.removeEventListener('click', closeDropdown);
+            }
+        };
+        
+        // تأخير إضافة الحدث لتجنب إغلاق القائمة فورًا
+        setTimeout(() => {
+            document.addEventListener('click', closeDropdown);
+        }, 0);
+    } else {
+        // إخفاء القائمة
+        dropdown.style.display = 'none';
+    }
+    
+    // معالج حدث اختيار الدولة
+    const countryOptions = dropdown.querySelectorAll('.country-option');
+    countryOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const code = option.getAttribute('data-code');
+            const flag = option.getAttribute('data-flag');
+            
+            // تحديث الزر بالدولة المختارة
+            const codeSpan = element.querySelector('span');
+            const flagImg = element.querySelector('img[alt="Egypt Flag"]');
+            
+            if (codeSpan) codeSpan.textContent = code;
+            if (flagImg) flagImg.src = flag;
+            
+            // إخفاء القائمة
+            dropdown.style.display = 'none';
+        });
+    });
+}
+</script>
+<button onclick="saveSubscriptionModification()" style="width: 600px; height: 50px; border-width: initial; border-style: none; border-image: initial; border-radius: 8px; font-family: &quot;Droid Arabic Kufi&quot;, Arial, sans-serif; font-size: 18px; padding: 6px 32px; opacity: 1; background-color: #00a19a !important; background: #00a19a !important; color: white !important;">ارسال</button>

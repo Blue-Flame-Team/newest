@@ -1,0 +1,180 @@
+/* نظام تكبير الخطوط المحسن - يعمل مع النظام الموحد للخطوط */
+:root {
+    --zoom-factor: 1; /* عامل التكبير الافتراضي */
+    
+    /* أحجام الخطوط الموحدة مع إمكانية التكبير */
+    --font-xs-zoomed: calc(var(--font-xs) * var(--zoom-factor));
+    --font-sm-zoomed: calc(var(--font-sm) * var(--zoom-factor));
+    --font-base-zoomed: calc(var(--font-base) * var(--zoom-factor));
+    --font-lg-zoomed: calc(var(--font-lg) * var(--zoom-factor));
+    --font-xl-zoomed: calc(var(--font-xl) * var(--zoom-factor));
+    --font-2xl-zoomed: calc(var(--font-2xl) * var(--zoom-factor));
+    --font-3xl-zoomed: calc(var(--font-3xl) * var(--zoom-factor));
+    --font-4xl-zoomed: calc(var(--font-4xl) * var(--zoom-factor));
+    --font-5xl-zoomed: calc(var(--font-5xl) * var(--zoom-factor));
+}
+
+/* تطبيق عامل التكبير على العناصر الأساسية */
+body {
+    transition: all 0.3s ease;
+}
+
+/* استخدام الخطوط المكبرة للعناصر */
+h1 {
+    font-size: calc(var(--font-4xl, 2.25rem) * var(--zoom-factor)) !important;
+}
+
+h2 {
+    font-size: calc(var(--font-3xl, 1.875rem) * var(--zoom-factor)) !important;
+}
+
+h3 {
+    font-size: calc(var(--font-2xl, 1.5rem) * var(--zoom-factor)) !important;
+}
+
+h4 {
+    font-size: calc(var(--font-xl, 1.25rem) * var(--zoom-factor)) !important;
+}
+
+h5 {
+    font-size: calc(var(--font-lg, 1.125rem) * var(--zoom-factor)) !important;
+}
+
+h6 {
+    font-size: calc(var(--font-base, 1rem) * var(--zoom-factor)) !important;
+}
+
+/* تطبيق التكبير على جميع العناصر النصية */
+p, div, span, li, td, th, a, button, input, textarea, label {
+    font-size: calc(var(--font-base, 1rem) * var(--zoom-factor)) !important;
+}
+
+/* العناصر الكبيرة */
+.hero-title, .main-title {
+    font-size: calc(var(--font-5xl, 3rem) * var(--zoom-factor)) !important;
+}
+
+.section-title {
+    font-size: calc(var(--font-4xl, 2.25rem) * var(--zoom-factor)) !important;
+}
+
+.sub-title {
+    font-size: calc(var(--font-3xl, 1.875rem) * var(--zoom-factor)) !important;
+}
+
+/* تطبيق التكبير على عناصر خاصة */
+.navbar a, .menu-item a {
+    font-size: calc(var(--font-base, 1rem) * var(--zoom-factor)) !important;
+}
+
+.btn, .button {
+    font-size: calc(var(--font-base, 1rem) * var(--zoom-factor)) !important;
+}
+
+/* عناصر القوائم والأيقونات */
+.top-icons span, .top-icons a, .top-actions a {
+    font-size: calc(var(--font-sm, 0.875rem) * var(--zoom-factor)) !important;
+}
+
+/* محتوى الصفحات */
+.content p, .content div, .content span {
+    font-size: calc(var(--font-base, 1rem) * var(--zoom-factor)) !important;
+}
+
+/* تحسينات بصرية لتكبير الخط */
+.font-size-changed {
+    animation: fontSizeChange 0.3s ease;
+}
+
+@keyframes fontSizeChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* تحديد مستويات التكبير */
+.zoom-level-small {
+    --zoom-factor: 0.875; /* 87.5% */
+}
+
+.zoom-level-normal {
+    --zoom-factor: 1; /* 100% */
+}
+
+.zoom-level-medium {
+    --zoom-factor: 1.125; /* 112.5% */
+}
+
+.zoom-level-large {
+    --zoom-factor: 1.25; /* 125% */
+}
+
+.zoom-level-extra-large {
+    --zoom-factor: 1.375; /* 137.5% */
+}
+
+/* تنسيق أزرار التكبير */
+.zoom-btn {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+.zoom-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.zoom-btn:active {
+    transform: scale(0.95);
+}
+
+.zoom-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.zoom-btn.disabled:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: none;
+}
+
+/* تحسين قراءة النصوص عند التكبير */
+.zoom-level-large p,
+.zoom-level-extra-large p {
+    line-height: 1.8;
+}
+
+.zoom-level-large li,
+.zoom-level-extra-large li {
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+
+/* ضمان عدم تجاوز النصوص للحدود */
+p, div, span, li, td, th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* تحسينات للموبايل */
+@media (max-width: 768px) {
+    .zoom-level-large {
+        --zoom-factor: 1.2; /* تقليل التكبير قليلاً على الموبايل */
+    }
+    
+    .zoom-level-extra-large {
+        --zoom-factor: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .zoom-level-large {
+        --zoom-factor: 1.15;
+    }
+    
+    .zoom-level-extra-large {
+        --zoom-factor: 1.25;
+    }
+}

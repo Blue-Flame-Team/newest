@@ -1,0 +1,123 @@
+﻿/* أنماط صفحة الملف الصحفي */
+
+.article-main {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    color: #00a59a;
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    margin-bottom: 10px;
+}
+
+.article-divider {
+    width: 80px;
+    height: 3px;
+    background-color: #ff7a45;
+    margin: 10px auto 0;
+}
+
+.article-image {
+    float: right;
+    width: 250px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.article-meta {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.article-source {
+    color: #ff7a45;
+    font-size: var(--font-lg);
+    margin-bottom: 5px;
+}
+
+.article-date {
+    color: #00a59a;
+    font-size: var(--font-sm);
+    margin-bottom: 5px;
+}
+
+.article-full-date {
+    text-align: right !important;
+    color: #00a59a;
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    line-height: 100% !important;
+    letter-spacing: 0% !important;
+    margin-bottom: 15px;
+}
+
+.article-content {
+    color: #121212;
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    color: #121212;
+
+}
+
+.article-content p {
+    margin-bottom: 0px;
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+}
+
+.article-footer {
+    color: #00a59a;
+    text-align: right;
+    font-size: var(--font-sm);
+    margin-top: 20px;
+    clear: both;
+}
+
+.related-section {
+    margin-top: 40px;
+}
+
+.related-title {
+    color: #ff7a45;
+    font-size: var(--font-xl);
+    margin-bottom: 15px;
+}
+
+.related-items {
+    color: #00a59a;
+    font-size: var(--font-sm);
+    line-height: 1.7;
+}
+
+.related-items p {
+    margin-bottom: 12px;
+}
+
+.separator {
+    width: 80px;
+    height: 3px;
+    background-color: #ff7a45;
+    margin: 40px auto;
+}
+

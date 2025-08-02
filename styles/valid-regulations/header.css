@@ -1,0 +1,438 @@
+﻿/* Header Styling for Terms Page */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #00a19a;
+    --secondary-color: #005f59;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --border-color: #ddd;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    direction: rtl;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.top-bar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    max-height: 40px;
+    width: auto;
+}
+
+.top-elements {
+    display: flex;
+    align-items: center;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.common-questions {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    margin-left: 10px;
+}
+
+.questions-text {
+    font-size: var(--font-sm);
+    margin-left: 5px;
+}
+
+.question-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.icon-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.main-icons-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn, .join-btn {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: var(--font-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: none;
+}
+
+.join-btn {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.menu-item a {
+    color: var(--white);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    z-index: 9999;
+    display: none;
+    margin-top: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu a {
+    color: #4a4a4a !important;
+    padding: 12px 20px;
+    display: block;
+    transition: all 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #000 !important;
+    padding-right: 25px;
+}
+
+.dropdown-hover-area {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 10px;
+    width: 100%;
+}
+
+/* Breadcrumb styles */
+.breadcrumb {
+    background-color: var(--white);
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0f2f2;
+}
+
+.breadcrumb ul {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: var(--font-sm);
+}
+
+.breadcrumb li:not(:last-child):after {
+    content: '>';
+    margin: 0 10px;
+    color: var(--primary-color);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+}
+
+.breadcrumb span {
+    color: #777;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .top-bar-content {
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .common-questions {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .top-actions {
+        margin-top: 10px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* Mobile-only horizontal layout (keep all elements side by side) */
+@media (max-width: 480px) {
+    .top-bar {
+        background-color: #00a59a !important;
+        width: 100% !important;
+        height: 58px !important;
+        display: flex !important;
+        align-items: center !important;
+        position: static !important;
+    }
+    
+    .top-bar-content {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+        padding: 0 15px !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+    }
+    
+    .logo {
+        order: 1 !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .logo-image {
+        max-height: 28px !important;
+        width: auto !important;
+        display: block !important;
+    }
+    
+    .top-actions {
+        order: 2 !important;
+        margin-top: 0 !important;
+        gap: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .join-btn {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        display: block !important;
+        background-color: white !important;
+        color: #00a59a !important;
+        border-radius: 8px !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+    
+    .login-btn {
+        display: none !important;
+    }
+    
+    .top-elements {
+        order: 3 !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .top-icons {
+        gap: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    /* Show only 4 specific icons */
+    .zoom-out-btn,
+    .zoom-in-btn,
+    .search-btn,
+    .settings-toggle-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 24px !important;
+        height: 24px !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        cursor: pointer !important;
+    }
+    
+    /* Hide other icons */
+    .location-btn,
+    .call-btn {
+        display: none !important;
+    }
+    
+    .icon-btn img {
+        width: 18px !important;
+        height: 18px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    .main-icons-group {
+        gap: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .hamburger-menu {
+        display: block !important;
+        order: 4 !important;
+        font-size: 20px !important;
+        cursor: pointer !important;
+        padding: 5px !important;
+        color: #fff !important;
+        width: 30px !important;
+        height: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .questions-text {
+        display: none !important;
+    }
+    
+    .question-mark {
+        display: none !important;
+    }
+    
+    .common-questions {
+        display: none !important;
+    }
+    
+    .common-questions-link {
+        display: none !important;
+    }
+    
+    /* Hide settings submenu on mobile */
+    .settings-menu {
+        display: none !important;
+    }
+}
+
+/* Hide hamburger menu on desktop */
+.hamburger-menu {
+    display: none;
+}

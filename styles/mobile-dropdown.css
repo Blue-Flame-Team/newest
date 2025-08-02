@@ -1,0 +1,208 @@
+﻿/* تنسيق القوائم المنسدلة في الموبايل - لكل أحجام الشاشات */
+
+/* تنسيق حاوية زر نبذة عنا */
+.mobile-about-dropdown-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 1001;
+}
+
+/* تنسيق زر نبذة عنا */
+.mobile-about-btn {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: var(--font-base);
+    font-weight: 600;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
+}
+
+/* أيقونة السهم */
+.dropdown-arrow {
+    font-size: 10px;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+    color: #666;
+}
+
+/* صندوق القائمة المنسدلة */
+.mobile-dropdown {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+/* عناصر القائمة المنسدلة */
+.mobile-dropdown a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #00a59a;
+    font-size: var(--font-base);
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.3s ease;
+    font-weight: 500;
+}
+
+/* تنسيق خاص للقائمة المنسدلة لمطابقة الصورة */
+.about-dropdown {
+    width: 300px;
+    border-radius: 8px;
+}
+
+.about-dropdown a {
+    padding: 16px 20px;
+    font-size: var(--font-lg);
+    color: #00a59a;
+    border-width: 1px;
+    border-bottom-color: #eaeaea;
+    background-color: white;
+}
+
+.mobile-dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* استعلامات وسائط للتوافق مع مختلف أحجام الهواتف */
+
+/* الهواتف الصغيرة (320px - 375px) */
+@media (min-width: 320px) and (max-width: 375px) {
+    .mobile-dropdown {
+        width: 280px;
+        max-width: 90%;
+    }
+    
+    .mobile-dropdown a {
+        font-size: var(--font-sm);
+        padding: 12px 15px;
+    }
+    
+    .dropdown-arrow {
+        font-size: 9px;
+    }
+}
+
+/* هواتف متوسطة الحجم (376px - 414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+    .mobile-dropdown {
+        width: 300px;
+        max-width: 90%;
+    }
+    
+    .mobile-dropdown a {
+        padding: 14px 18px;
+    }
+}
+
+/* هواتف كبيرة الحجم (415px - 767px) */
+@media (min-width: 415px) and (max-width: 767px) {
+    .mobile-dropdown {
+        width: 320px;
+        max-width: 90%;
+    }
+    
+    .mobile-dropdown a {
+        font-size: var(--font-lg);
+        padding: 16px 20px;
+    }
+}
+
+/* ضمان ظهور القائمة المنسدلة عند تفعيلها */
+.mobile-dropdown.show {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
+/* أيقونة السهم عند فتح القائمة */
+.dropdown-open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown a:hover, 
+.mobile-dropdown a:active {
+    background-color: #f9f9f9;
+}
+
+/* أيقونة السهم لأسفل */
+.dropdown-arrow {
+    display: inline-block;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* تدوير السهم عند فتح القائمة */
+.dropdown-open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* القائمة المنسدلة مفتوحة */
+.mobile-dropdown.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+/* تأثير الظهور */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
+/* التنسيق على الموبايل */
+@media (max-width: 767px) {
+    .has-dropdown {
+        position: relative;
+    }
+    
+    /* تنسيق خاص بالقائمة المنسدلة "نبذة عنا" */
+    .about-dropdown a {
+        background-color: white;
+        color: #00a59a;
+        font-weight: normal;
+        border-radius: 5px;
+    }
+}
+

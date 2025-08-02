@@ -1,0 +1,458 @@
+/* التوب بار والناف بار - شفاف دائماً */
+.top-bar,
+.nav-menu,
+.dark-mode .top-bar,
+.dark-mode .nav-menu,
+.dark-contrast .top-bar,
+.dark-contrast .nav-menu,
+[class*="dark"] .top-bar,
+[class*="dark"] .nav-menu,
+body.dark-mode .top-bar,
+body.dark-mode .nav-menu,
+body.dark-contrast .top-bar,
+body.dark-contrast .nav-menu {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+.top-bar *,
+.nav-menu *,
+.dark-mode .top-bar *,
+.dark-mode .nav-menu *,
+.dark-contrast .top-bar *,
+.dark-contrast .nav-menu *,
+[class*="dark"] .top-bar *,
+[class*="dark"] .nav-menu *,
+body.dark-mode .top-bar *,
+body.dark-mode .nav-menu *,
+body.dark-contrast .top-bar *,
+body.dark-contrast .nav-menu * {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* تنسيق العناصر الأخرى */
+.dark-mode .main-content *:not(.top-bar):not(.top-bar *):not(.nav-menu):not(.nav-menu *) {
+    color: #2A2A2A !important;
+}
+
+/* Primary button in contrast/dark mode */
+body.contrast-mode .btn.primary-btn,
+body.dark-mode .btn.primary-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+body.contrast-mode .btn.primary-btn:hover,
+body.dark-mode .btn.primary-btn:hover {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+}
+
+/* Footer وقسم المشاركة الاجتماعية في حالة التباين الأسود */
+body.dark-contrast .footer-bottom,
+.dark-contrast .footer-bottom,
+body.dark-contrast .copyright,
+.dark-contrast .copyright,
+body.dark-contrast .main-footer,
+.dark-contrast .main-footer,
+body.dark-contrast footer,
+.dark-contrast footer,
+body.dark-contrast .social-share-section,
+.dark-contrast .social-share-section {
+    background-color: #090909 !important;
+    background: #090909 !important;
+}
+
+/* تطبيق اللون على كل عناصر الفوتر بقوة */
+body.dark-contrast footer *,
+body.dark-contrast .main-footer *,
+body.dark-contrast .footer-bottom *,
+body.dark-contrast .footer-bottom .container,
+body.dark-contrast .footer-bottom .container *,
+body.dark-contrast .copyright *,
+body.dark-contrast .copyright-text,
+body.dark-contrast .footer-bottom-links,
+body.dark-contrast .footer-bottom-links * {
+    background-color: #090909 !important;
+    background: #090909 !important;
+}
+
+/* التأكد من أن العناصر الداخلية في social-share-section تحافظ على خلفيتها */
+body.dark-contrast .social-share-section > div,
+.dark-contrast .social-share-section > div {
+    background-color: #f5f5f5 !important;
+    background: #f5f5f5 !important;
+}
+
+/* القوائم المنسدلة أسوداء دائماً - قوة قصوى */
+.dropdown-menu,
+.dropdown-menu *,
+.dropdown-menu a,
+.dropdown-menu[style*="color"],
+.dropdown-menu[style*="white"],
+.dropdown-menu[style*="color: white"],
+.dropdown-menu[style*="color: white !important"],
+.dropdown-menu[style*="color: white !important; display: none"],
+.dropdown-menu[style*="display: none; color: white !important"] {
+    color: black !important;
+    background-color: white !important;
+}
+
+/* جميع العناصر داخل القوائم المنسدلة */
+.dropdown-menu * {
+    color: black !important;
+}
+
+/* الروابط داخل القوائم المنسدلة */
+.dropdown-menu a,
+.dropdown-menu a:link,
+.dropdown-menu a:visited,
+.dropdown-menu a:active {
+    color: black !important;
+    background-color: transparent !important;
+}
+
+/* عند المرور بالماوس */
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    color: black !important;
+    background-color: #f0f0f0 !important;
+}
+
+/* في جميع أوضاع التباين */
+body.dark-contrast .dropdown-menu,
+body.dark-mode .dropdown-menu,
+body.contrast-mode .dropdown-menu,
+.dark-contrast .dropdown-menu,
+.dark-mode .dropdown-menu,
+.contrast-mode .dropdown-menu {
+    color: black !important;
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+}
+
+/* عناصر القوائم في أوضاع التباين */
+body.dark-contrast .dropdown-menu *,
+body.dark-mode .dropdown-menu *,
+body.contrast-mode .dropdown-menu *,
+.dark-contrast .dropdown-menu *,
+.dark-mode .dropdown-menu *,
+.contrast-mode .dropdown-menu * {
+    color: black !important;
+}
+
+/* حماية قصوى ضد أي تعارضات في التباين الأسود */
+body.dark-contrast .dropdown-menu,
+body.dark-contrast .dropdown-menu a,
+body.dark-contrast .dropdown-menu span,
+body.dark-contrast .dropdown-menu div,
+body.dark-contrast .dropdown-menu *,
+.dark-contrast .dropdown-menu,
+.dark-contrast .dropdown-menu a,
+.dark-contrast .dropdown-menu span,
+.dark-contrast .dropdown-menu div,
+.dark-contrast .dropdown-menu * {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+/* تأكيد إضافي للقوائم المنسدلة مع أي inline styles */
+body.dark-contrast .dropdown-menu[style],
+body.dark-contrast .dropdown-menu a[style],
+.dark-contrast .dropdown-menu[style],
+.dark-contrast .dropdown-menu a[style] {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+/* تنسيقات محرك البحث العام في حالة التباين الأسود فقط */
+body.dark-contrast .search-engine-container,
+body.dark-contrast .search-engine-container *,
+body.dark-contrast .search-engine-title,
+body.dark-contrast .search-instructions,
+body.dark-contrast .search-instructions h3,
+body.dark-contrast .contact-help,
+body.dark-contrast .search-explanation,
+body.dark-contrast .search-explanation p,
+body.dark-contrast .search-tab,
+body.dark-contrast .search-input,
+body.dark-contrast .radio-text,
+body.dark-contrast .search-scope-title,
+body.dark-contrast .search-scope-option label,
+body.dark-contrast .document-number-note,
+body.dark-contrast .dropdown-selected,
+body.dark-contrast .dropdown-option,
+body.dark-contrast .search-results-container,
+body.dark-contrast .search-results,
+body.dark-contrast .search-result-card,
+body.dark-contrast .result-text,
+body.dark-contrast .results-count,
+body.dark-contrast .help-text,
+body.dark-contrast .main-search-header h1,
+body.dark-contrast .main-search-header h3,
+body.dark-contrast .search-explanation-simple,
+body.dark-contrast .tab-button,
+body.dark-contrast .radio-label,
+body.dark-contrast .radio-text,
+body.dark-contrast .document-number-note-press,
+body.dark-contrast .saudi-judgments-search-form .form-input,
+body.dark-contrast .saudi-judgments-search-form .dropdown-selected,
+body.dark-contrast .saudi-judgments-search-form .dropdown-option,
+.dark-contrast .search-engine-container,
+.dark-contrast .search-engine-container *,
+.dark-contrast .search-engine-title,
+.dark-contrast .search-instructions,
+.dark-contrast .search-instructions h3,
+.dark-contrast .contact-help,
+.dark-contrast .search-explanation,
+.dark-contrast .search-explanation p,
+.dark-contrast .search-tab,
+.dark-contrast .search-input,
+.dark-contrast .radio-text,
+.dark-contrast .search-scope-title,
+.dark-contrast .search-scope-option label,
+.dark-contrast .document-number-note,
+.dark-contrast .dropdown-selected,
+.dark-contrast .dropdown-option,
+.dark-contrast .search-results-container,
+.dark-contrast .search-results,
+.dark-contrast .search-result-card,
+.dark-contrast .result-text,
+.dark-contrast .results-count,
+.dark-contrast .help-text,
+.dark-contrast .main-search-header h1,
+.dark-contrast .main-search-header h3,
+.dark-contrast .search-explanation-simple,
+.dark-contrast .tab-button,
+.dark-contrast .radio-label,
+.dark-contrast .radio-text,
+.dark-contrast .document-number-note-press,
+.dark-contrast .saudi-judgments-search-form .form-input,
+.dark-contrast .saudi-judgments-search-form .dropdown-selected,
+.dark-contrast .saudi-judgments-search-form .dropdown-option {
+    color: #000000 !important;
+}
+
+/* زر البحث في حالة التباين الأسود - خلفية سوداء */
+body.dark-contrast .search-button,
+body.dark-contrast .saudi-judgments-search-form .search-button,
+body.dark-contrast .press-search-button,
+.dark-contrast .search-button,
+.dark-contrast .saudi-judgments-search-form .search-button,
+.dark-contrast .press-search-button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+}
+
+/* حالة hover لزر البحث في التباين الأسود */
+body.dark-contrast .search-button:hover,
+body.dark-contrast .saudi-judgments-search-form .search-button:hover,
+body.dark-contrast .press-search-button:hover,
+.dark-contrast .search-button:hover,
+.dark-contrast .saudi-judgments-search-form .search-button:hover,
+.dark-contrast .press-search-button:hover {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border: 1px solid #333333 !important;
+}
+
+/* ============================================================
+   إعدادات التباين الداكن الشامل
+   ============================================================ */
+body.dark-contrast {
+    .btn.primary-btn,
+    .hero-buttons .btn.primary-btn,
+    a.btn.primary-btn,
+    a[class*="btn primary-btn"],
+    .hero-buttons a.btn.primary-btn,
+    .hero-content .btn.primary-btn {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid #000000 !important;
+        border-color: #000000 !important;
+    }
+    
+    .section-title {
+        color: #000000 !important;
+    }
+    
+    .sidebar-btn {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+    }
+    
+    .service-card .card-icon img,
+    .services-cards .card-icon img {
+        filter: brightness(0) !important;
+    }
+    
+    .details-icon,
+    .details-button img:not([src*="services-arrow"]),
+    img[src*="Vector.png"] {
+        filter: brightness(0) !important; 
+    }
+    
+    .section-title.text-center {
+        color: #000000 !important;
+    }
+    
+    .footer-content {
+        background-color: #121212 !important;
+    }
+    
+    .copyright {
+        background-color: #090909 !important;
+    }
+    
+    .tab-publish.active,
+    .tab-publish {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border-color: #000000 !important;
+    }
+    
+    h2.section-title.text-center {
+        color: #000000 !important;
+        background-color: transparent !important;
+    }
+    
+    .contact-title {
+        color: #000000 !important;
+    }
+    
+    .subscribe-title {
+        color: #000000 !important;
+    }
+    
+    .subscribe-btn,
+    .subscribe-button {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border-color: #000000 !important;
+    }
+    
+    .partners-title {
+        color: #000000 !important;
+    }
+    
+    .register-text,
+    .register-text .subscribe-question,
+    .register-text .register-link {
+        color: #000000 !important;
+    }
+    
+    img[src*="logo.png"],
+    .slide-img,
+    .arrow-icon,
+    img[src*="services-arrow.svg"],
+    .slider-arrow img,
+    img[src*="support.svg"],
+    img[src*="support.png"] {
+        filter: none !important;
+    }
+    
+    .top-bar .top-icons img,
+    .top-bar .zoom-group img,
+    .top-bar .main-icons-group img,
+    .top-bar .icon-btn img,
+    .top-bar .mobile-icons img,
+    .top-icons img,
+    .zoom-group img,
+    .main-icons-group img,
+    .mobile-icons img,
+    .icon-btn img,
+    img[src*="question.svg"],
+    img[src*="search-zoom-out.svg"],
+    img[src*="search-zoom-in.svg"],
+    img[src*="search-zoom-out.png"],
+    img[src*="search-zoom-in.png"],
+    img[src*="search.png"],
+    img[src*="location.png"],
+    img[src*="call.png"],
+    img[src*="setting-2.png"],
+    img[src*="profile-circle.svg"] {
+        filter: none !important;
+        opacity: 1 !important;
+        brightness: 1 !important;
+        -webkit-filter: none !important;
+    }
+    
+    .community-programs-section h3,
+    h3[data-original-font-size="24"] {
+        color: #000000 !important;
+    }
+    
+    .sub-header h3,
+    .sub-header.desktop-only h3,
+    .sub-header.mobile-only h3 {
+        color: #000000 !important;
+    }
+    
+    .btn.primary-btn,
+    .hero-buttons .btn.primary-btn,
+    a.btn.primary-btn,
+    button.btn.primary-btn,
+    a[class*="btn primary-btn"],
+    .hero-buttons a.btn.primary-btn,
+    .hero-content .btn.primary-btn,
+    .hero-content a.btn.primary-btn {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid #000000 !important;
+        border-color: #000000 !important;
+    }
+    
+    .btn.primary-btn:hover,
+    .btn.primary-btn:focus,
+    .btn.primary-btn:active,
+    .btn.primary-btn:visited,
+    a.btn.primary-btn:hover,
+    a.btn.primary-btn:focus,
+    a.btn.primary-btn:active,
+    a.btn.primary-btn:visited,
+    .hero-content .btn.primary-btn:hover,
+    .hero-content .btn.primary-btn:focus,
+    .hero-content .btn.primary-btn:active,
+    .hero-content .btn.primary-btn:visited {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border-color: #000000 !important;
+    }
+    
+    * .btn.primary-btn,
+    * a.btn.primary-btn,
+    .hero-section .btn.primary-btn,
+    .hero-section a.btn.primary-btn {
+        background-color: #000000 !important;
+        background: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid #000000 !important;
+    }
+}
+
+body.dark-contrast .top-bar img,
+body.dark-contrast .top-icons img,
+body.dark-contrast .zoom-group img,
+body.dark-contrast .main-icons-group img,
+body.dark-contrast .mobile-icons img,
+body.dark-contrast .icon-btn img,
+body.dark-contrast img[src*="question.svg"],
+body.dark-contrast img[src*="search-zoom-out.svg"], 
+body.dark-contrast img[src*="search-zoom-in.svg"],
+body.dark-contrast img[src*="search-zoom-out.png"],
+body.dark-contrast img[src*="search-zoom-in.png"], 
+body.dark-contrast img[src*="search.png"],
+body.dark-contrast img[src*="location.png"],
+body.dark-contrast img[src*="call.png"],
+body.dark-contrast img[src*="setting-2.png"],
+body.dark-contrast img[src*="profile-circle.svg"] {
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    brightness: 1 !important;
+}

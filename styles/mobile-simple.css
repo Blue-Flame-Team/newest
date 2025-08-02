@@ -1,0 +1,123 @@
+/* MOBILE LAYOUT - SIMPLE AND FINAL */
+@media screen and (max-width: 480px) {
+    /* إعادة تعيين top bar للموبايل */
+    body .top-bar {
+        background-color: #00a59a !important;
+        height: 58px !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        position: static !important;
+        margin: 0 !important;
+    }
+    
+    body .top-bar .container {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    body .top-bar-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 10px !important;
+        height: 100% !important;
+    }
+    
+    /* Logo - العنصر الأول من اليمين */
+    body .logo {
+        order: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    body .logo img {
+        height: 30px !important;
+        width: auto !important;
+    }
+    
+    /* Join Button - العنصر الثاني */
+    body .join-btn {
+        order: 2 !important;
+        background: white !important;
+        color: #00a59a !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        border: none !important;
+        font-size: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Icons Group - العنصر الثالث */
+    body .main-icons-group {
+        order: 3 !important;
+        display: flex !important;
+        gap: 8px !important;
+        align-items: center !important;
+    }
+    
+    body .icon-btn {
+        width: 24px !important;
+        height: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    body .icon-btn img {
+        width: 18px !important;
+        height: 18px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    /* Hamburger Menu - العنصر الأخير على الشمال */
+    body .hamburger-menu {
+        order: 4 !important;
+        display: flex !important;
+        width: 30px !important;
+        height: 30px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255,255,255,0.1) !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+    }
+    
+    body .hamburger-menu img {
+        width: 20px !important;
+        height: 20px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    /* إخفاء العناصر غير المطلوبة */
+    body .login-btn,
+    body .location-btn,
+    body .call-btn,
+    body .common-questions-link,
+    body .settings-menu,
+    body .navbar {
+        display: none !important;
+    }
+    
+    /* إعادة ترتيب العناصر في الـ top elements */
+    body .top-elements {
+        order: 3 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    body .top-actions {
+        order: 2 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+} 

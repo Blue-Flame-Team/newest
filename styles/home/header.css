@@ -1,0 +1,470 @@
+﻿/* Header Styles */
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    color: var(--white);
+    text-align: right;
+    overflow: hidden;
+    direction: rtl;
+    padding-top: 0; 
+    margin-top: -150px; /* زيادة القيمة السالبة لضمان عدم وجود مساحة بيضاء */
+    z-index: 0; /* ضبط z-index لضمان أن التوبار والنافبار فوق الهيدر */
+    font-size: inherit !important;
+    transform: none !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+}
+
+/* Slider Styles */
+.hero-section .slider-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-top: 0; /* التأكد من عدم وجود هوامش إضافية */
+    font-size: inherit !important;
+    transform: none !important;
+    left: 0 !important;
+    bottom: 0 !important;
+}
+
+.slider-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: inherit !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@keyframes slideRight {
+    0% { 
+        transform: translateX(120%); 
+        opacity: 0;
+        filter: blur(5px);
+    }
+    10% {
+        opacity: 0.2;
+    }
+    100% { 
+        transform: translateX(0); 
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% { 
+        transform: translateX(-120%); 
+        opacity: 0;
+        filter: blur(5px);
+    }
+    10% {
+        opacity: 0.2;
+    }
+    100% { 
+        transform: translateX(0); 
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+    /* حماية من تأثير التكبير */
+    font-size: inherit !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide.slide-right {
+    display: block;
+    animation: slideRight 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.slide.slide-left {
+    display: block;
+    animation: slideLeft 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    /* حماية من تأثير التكبير */
+    font-size: inherit !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* طبقة شفافة سوداء فوق الصورة */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.slide .container {
+    position: relative;
+    z-index: 2;
+    direction: rtl;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 70px; /* إضافة مسافة لأسفل لإظهار المحتوى بعد التوبار والنافبار */
+}
+
+.hero-title {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 48px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 36px !important;
+}
+
+.hero-text {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 120px !important;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.primary-btn {
+    /* width: 128px !important; */
+    /* height: 51px !important; */
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    background: linear-gradient(83.41deg, #158885 0.86%, #00AFA9 136.38%) !important;
+    color: #fff !important;
+    font-family: 'Almarai', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: transparent;
+    color: var(--white);
+}
+
+.secondary-btn {
+    width: 173;
+    height: 51;
+    gap: 6px;
+    border-radius: 8px;
+    padding-top: 12px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    border-width: 1px;
+    border: 1px solid #FFFFFF
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Slider dots */
+.hero-section .slider-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.hero-section .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section .dot.active {
+    background-color: var(--white);
+    transform: scale(1.2); /* تكبير النقطة النشطة قليلاً */
+}
+
+/* Slider controls */
+.hero-section .slider-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    gap: 10px;
+    z-index: 10; /* زيادة قيمة z-index للتأكد من ظهورها */
+}
+
+.next-btn, .prev-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-btn:hover, .prev-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Details button */
+.details-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+}
+
+.details-button span {
+    color: var(--white);
+    font-size: var(--font-sm);
+}
+
+.details-button img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.details-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: var(--font-4xl);
+        white-space: normal;
+    }
+    
+    .hero-text {
+        font-size: var(--font-base);
+        white-space: normal;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 20px !important;
+        line-height: 150% !important;
+        letter-spacing: 0% !important;
+        text-align: center !important;
+    }
+    
+    .hero-text {
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        line-height: 150% !important;
+        letter-spacing: 0% !important;
+        text-align: center !important;
+    }
+    
+    .hero-buttons {
+        width: 195px !important;
+        height: 30px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 18.63px !important;
+        margin: 0 auto 16px auto !important;
+        padding: 0 !important;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    /* تحسينات إضافية للهواتف */
+    .slide::before {
+        background: rgba(0, 0, 0, 0.8); /* زيادة التعتيم للنصوص الواضحة */
+    }
+    
+    .hero-content {
+        padding-top: 50px; /* تقليل المسافة في الشاشات الصغيرة */
+    }
+
+    .primary-btn {
+        width: 75px !important;
+        height: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 3.49px !important;
+        border-radius: 4.66px !important;
+        padding: 7px 14px !important;
+        background: linear-gradient(83.41deg, #158885 0.86%, #00AFA9 136.38%) !important;
+        color: #fff !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 14px !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: background 0.2s;
+    }
+
+    .secondary-btn {
+        width: 101px !important;
+        height: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 3.49px !important;
+        border-radius: 4.66px !important;
+        padding: 7px 14px !important;
+        background: transparent !important;
+        color: #fff !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 14px !important;
+        border-width: 0.5px !important;
+        border-style: solid !important;
+        border-color: #fff !important;
+        box-shadow: none !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: background 0.2s;
+    }
+
+    .primary-btn, .secondary-btn {
+        white-space: nowrap !important;
+    }
+}
+
+/* تحسينات إضافية للهواتف الصغيرة */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--font-2xl);
+    }
+    
+    .hero-text {
+        font-size: var(--font-sm);
+    }
+    
+    .hero-section .slider-dots {
+        bottom: 60px;
+    }
+    
+    .hero-section .slider-controls {
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+.details-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 416px;
+    height: 86px;
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.details-icon:hover {
+    transform: scale(1.1);
+}
+

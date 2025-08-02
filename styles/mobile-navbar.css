@@ -1,0 +1,214 @@
+﻿
+
+/* أنماط الشريط العلوي للهاتف المحمول */
+
+@media (max-width: 767px) {
+    /* تخطيط الشريط العلوي للجوال */
+    body .top-bar {
+        /* background-color: #000 !important; */
+        padding: 12px 0 !important;
+        /* position: fixed !important; */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001 !important;
+        height: 50px !important;
+    }
+    
+    /* إخفاء العناصر غير المطلوبة في واجهة الجوال */
+    body .top-bar .top-icons,
+    body .main-navbar,
+    body .top-elements > .top-icons,
+    body .top-elements > div:not(:first-child) {
+        display: none !important;
+    }
+    
+    /* إظهار عناصر الموبايل في حاوية اللوجو */
+    body .logo .mobile-icons {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+    
+    body .logo .mobile-icons .zoom-group {
+        display: flex !important;
+        align-items: center !important;
+        gap: 3px !important;
+    }
+    
+    body .logo .mobile-icons .icon-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 28px !important;
+        height: 28px !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 4px !important;
+        cursor: pointer !important;
+    }
+    
+    body .logo .mobile-icons .icon-btn img {
+        width: 18px !important;
+        height: 18px !important;
+        object-fit: contain !important;
+    }
+    
+    /* عرض الشعار والقائمة فقط في الجوال */
+    body .top-bar .top-bar-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 !important;
+    }
+    
+    /* حذف كل المحتويات المضافة بواسطة before و after */
+    body .top-bar-content *::before,
+    body .top-bar-content *::after {
+        display: none !important;
+        content: none !important;
+    }
+    
+    /* إيقونات التكبير والتصغير والبحث والإعدادات */
+    body .top-elements {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        z-index: 10 !important;
+    }
+    
+    body .top-elements > button.icon-btn {
+        display: inline-block !important;
+        margin: 0 5px !important;
+    }
+    
+    /* تنسيق الشعار */
+    body .logo {
+        text-align: right !important;
+    }
+    
+    body .logo img {
+        width: 127px !important;
+        height: 32px !important;
+        object-fit: contain !important;
+    }
+    
+    /* تنسيق زر الاشتراك */
+    body .join-btn {
+        display: inline-block !important;
+        background-color: white !important;
+        color: #00a59a !important;
+        border: none !important;
+        border-radius: 25px !important;
+        padding: 3px 10px !important;
+        font-size: var(--font-sm) !important;
+        font-weight: bold !important;
+        width: 64px !important;
+        height: 26px !important;
+        line-height: 20px !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        margin-right: 0 !important;
+    }
+    
+    /* إخفاء زر تسجيل الدخول */
+    body .login-btn {
+        display: none !important;
+    }
+    
+    /* ترتيب العناصر لتبدو مثل الصورة المرجعية */
+    body .top-actions {
+        display: flex !important;
+        align-items: center !important;
+        order: 3 !important;
+    }
+    
+    body .logo {
+        order: 2 !important;
+    }
+    
+    /* إضافة القائمة الجانبية (الهامبرغر) */
+    body .hamburger-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 24px !important;
+        height: 18px !important;
+        position: relative !important;
+        order: 1 !important;
+        margin-right: 0 !important;
+        margin-left: 8px !important;
+        cursor: pointer !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    body .hamburger-menu span {
+        display: block !important;
+        height: 2px !important;
+        width: 100% !important;
+        background-color: white !important;
+        position: absolute !important;
+        left: 0 !important;
+        border-radius: 3px !important;
+    }
+    
+    body .hamburger-menu span:nth-child(1) {
+        top: 0 !important;
+    }
+    
+    body .hamburger-menu span:nth-child(2) {
+        top: 8px !important;
+    }
+    
+    body .hamburger-menu span:nth-child(3) {
+        top: 16px !important;
+    }
+    
+    /* تنسيق عام - إضافة مساحة للشريط المثبت */
+    body {
+        padding-top: 60px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* التأكد من ثبات الشريط العلوي */
+    body .top-bar {
+        /* position: fixed !important; */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 10001 !important;
+        transform: none !important;
+        will-change: auto !important;
+    }
+    
+    /* تأكيد إظهار أيقونات الزوم في صفحات FAQ وباقي الصفحات */
+    body .logo .mobile-icons .zoom-out-btn,
+    body .logo .mobile-icons .zoom-in-btn {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+    
+    /* تأكيد إظهار جميع أيقونات الموبايل */
+    body .mobile-icons,
+    body .logo .mobile-icons,
+    .mobile-icons {
+        display: flex !important;
+        align-items: center !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* إصلاح أي تداخل في CSS */
+    body .logo .mobile-icons * {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+

@@ -1,0 +1,939 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمة الأسانيد - محامون المملكة</title>
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- أوراق الأنماط -->
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/font-normalization.css">
+    <link rel="stylesheet" href="../styles/asanid-service/header.css">
+    <link rel="stylesheet" href="../styles/faq/footer.css">
+    <link rel="stylesheet" href="../styles/home/settings.css">
+    <link rel="stylesheet" href="../styles/search-popup.css">
+    <link rel="stylesheet" href="../styles/login-modal.css">
+
+    <!-- ناف بار بالخلفية الفيروزية للصفحات الفرعية -->
+    <link rel="stylesheet" href="../styles/subpages-navbar.css">
+    <!-- إصلاح لقائمة الموبايل -->
+     <!-- أوراق الأنماط للموبايل -->
+     <link rel="stylesheet" href="../styles/shared/universal-settings-menu.css">
+    <link rel="stylesheet" href="../styles/home/topbar.css">
+    <link rel="stylesheet" href="../styles/mobile-navbar.css">
+    <link rel="stylesheet" href="../styles/mobile-view.css">
+    <link rel="stylesheet" href="../styles/mobile-menu.css">
+    <link rel="stylesheet" href="../styles/hamburger-fix.css">
+    <link rel="stylesheet" href="../styles/mobile-dropdown.css">
+    <link rel="stylesheet" href="../styles/navbar-mobile-fix.css">
+    <link rel="stylesheet" href="../styles/home/mobile-settings.css">
+    <link rel="stylesheet" href="../styles/subpage.css">
+    <link rel="stylesheet" href="../styles/faq/responsive.css">
+    <link rel="stylesheet" href="../styles/social-share-section.css">
+    <link rel="stylesheet" href="../styles/simple-zoom.css">
+<style>
+/* ?????????? ???? Droid Arabic Kufi ?????? ???????? ?????????????? */
+* {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+body, html {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td, th, select, option {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+.title, .text, .content, .description, .heading, .label, .item, .menu-item, .nav-item {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+body:not(.home-page).light-mode *[style*="black"]:not(h5.terms-subtitle),
+body:not(.home-page).light-mode *[style*="#000000"]:not(h5.terms-subtitle),
+body:not(.home-page).light-mode *[style*="rgb(0, 0, 0)"]:not(h5.terms-subtitle),
+body:not(.home-page).light-mode *[style*="rgb(0,0,0)"]:not(h5.terms-subtitle) {
+    color: rgb(0, 147, 123) !important;
+    background-color: rgb(0, 147, 123) !important;
+    border-color: rgb(0, 147, 123) !important;
+}
+</style></head>
+<body>
+  
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-side-menu">
+            <div class="mobile-side-menu-links">
+                <a href="../index.html" style="color: var(--primary-color);">الرئيسية</a>
+                
+                <!-- زر نبذة عنا -->
+                <a href="javascript:void(0);" id="about-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                    نبذة عنا
+                    <img src="../assets/icons/menu-Down.svg" alt="سهم" class="dropdown-arrow-svg">
+                </a>
+                
+                <!-- القائمة المنسدلة لنبذة عنا -->
+                <div id="about-submenu" class="submenu-container">
+                    <a href="about-site.html">عن الموقع</a>
+                    <a href="about-site.html">عن الشبكة</a>
+                </div>
+                
+                <!-- زر سياستنا -->
+                <a href="javascript:void(0);" id="policies-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                    سياستنا
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                
+                <!-- القائمة المنسدلة لسياستنا -->
+                <div id="policies-submenu" class="submenu-container">
+                    <a href="privacy-policy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">الشروط والأحكام</a>
+                </div>
+                
+                <a href="jornal-profile-view.html">جريدة أم القرى</a>
+                <a href="asanid-service.html">خدمة الأسانيد</a>
+                <a href="faq.html" class="colored-link active">الأسئلة الشائعة</a>
+            </div>
+            <div class="mobile-side-menu-buttons">
+                <a href="../index.html#subscribe" class="subscribe-btn">اشترك معنا</a>
+                <a href="#login-modal" class="login-btn" id="mobile-login-btn">تسجيل الدخول</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+     <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="logo">
+                    <!-- 1. اللوجو على اليمين -->
+                    <a href="../index.html" class="logo-link" data-original-font-size="16">
+                        <img src="../assets/images/logo.png" alt="محامون المملكة">
+                    </a>
+                    
+                    <!-- 2. زر اشترك معنا -->
+                    <a href="../index.html#subscribe" class="mobile-subscribe-btn" data-original-font-size="16">اشترك معنا</a>
+                    
+                    <!-- 3. جميع الأيقونات معاً -->
+                    <div class="mobile-icons">
+                        <!-- 4. قائمة الهامبرغر في البداية (على اليسار) -->
+                        <div class="hamburger-menu" style="opacity: 1; visibility: visible; display: flex; z-index: 9999;">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                        <div class="zoom-group">
+                            <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                                <img src="../assets/icons/search-zoom-out.png" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                                <img src="../assets/icons/search-zoom-in.png" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <!-- أيقونة البحث -->
+                        <button class="icon-btn search-btn" data-original-font-size="16">
+                            <img src="../assets/icons/search.png" alt="بحث">
+                        </button>
+                        
+                        <!-- أيقونة الملف الشخصي (تظهر بعد تسجيل الدخول) -->
+                        
+                        <!-- أيقونة الإعدادات -->
+                        <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                            <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                        </button>
+                        
+                        <button class="icon-btn profile-btn" id="mobile-profile-btn" style="display: none;" data-original-font-size="16">
+                            <img src="../assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                        </button>
+                    </div>
+                    
+                    <!-- قائمة الإعدادات -->
+                    <div class="settings-menu">
+                        <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                            <span>تباين</span>
+                            <img src="../assets/icons/Eye off.svg" alt="تباين">
+                        </a>
+                        <!-- قائمة خيارات التباين الفرعية -->
+                        <div class="contrast-submenu">
+                            <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                <span>تباين فاتح</span>
+                                <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                            </a>
+                            <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                <span>تباين داكن</span>
+                                <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                            </a>
+                        </div>
+                        <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                            <span>الاحصائيات</span>
+                            <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                        </a>
+                        <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                            <span>خروج</span>
+                            <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="top-elements">           
+                    <!-- Elementos originales para vista desktop -->
+                    <div class="top-icons">
+                        <a href="faq.html" class="common-questions" data-original-font-size="16">
+                            <span class="question-mark">
+                                <img src="../assets/icons/question.svg" alt="الأسئلة الشائعة">
+                            </span>
+                            <span class="questions-text">الأسئلة الشائعة</span>
+                        </a>
+                        <div class="zoom-group">
+                            <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-out.svg" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-in.svg" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <div class="main-icons-group">
+                            <button class="icon-btn search-btn" data-original-font-size="16">
+                                <img src="../assets/icons/search.png" alt="بحث">
+                            </button>
+                            <button class="icon-btn" onclick="window.location.href='../index.html#contact'" data-original-font-size="16">
+                                <img src="../assets/icons/location.png" alt="الموقع">
+                            </button>
+                            <button class="icon-btn" data-original-font-size="16">
+                                <img src="../assets/icons/call.png" alt="اتصال">
+                            </button>
+                            <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                                <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                            </button>
+                            <div class="settings-menu">
+                                <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                                    <span>تباين</span>
+                                    <img src="../assets/icons/Eye off.svg" alt="تباين">
+                                </a>
+                                <!-- قائمة خيارات التباين الفرعية -->
+                                <div class="contrast-submenu">
+                                    <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                        <span>تباين فاتح</span>
+                                        <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                                    </a>
+                                    <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                        <span>تباين داكن</span>
+                                        <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                                    </a>
+                                </div>
+                                <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                                    <span>الاحصائيات</span>
+                                    <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                                </a>
+                                <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                                    <span>خروج</span>
+                                    <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <a href="../index.html#subscribe" class="join-btn" data-original-font-size="16">إشترك معنا</a>
+                    <a href="#" class="login-btn" id="login-btn" data-original-font-size="16">تسجيل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <ul class="main-menu">
+                    <li class="menu-item"><a href="../index.html">الرئيسية</a></li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);" class="active">نبذة عنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="about-site.html" class="active">عن الموقع</a>
+                            <a href="about-site.html">عن الشبكة</a>
+                        </div>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);">سياستنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="privacy-policy.html">سياسة الخصوصية</a>
+                            <a href="terms.html">شروط الإشتراك</a>
+                        </div>
+                    </li>
+                    <li class="menu-item"><a href="jornal-profile-view.html">جريدة أم القرى</a></li>
+                    <li class="menu-item"><a href="asanid-service.html">خدمة الأسانيد</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">محامو المملكة</a></li>
+                <li><span>خدمة الأسانيد</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="terms-content">
+        <div class="container">
+            <h1 class="terms-title" style="text-align: center; font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 700; font-size: 28px; line-height: 150%; letter-spacing: 0%; color: #00a19a; margin-bottom: 30px;">خدمة تحضير الأسانيد القانونية</h1>
+            
+            <div class="orange-divider" style="margin-bottom: 40px;"></div>
+            
+            <div class="terms-section" style="margin-bottom: 40px;">
+                <p style="margin-bottom: 25px; line-height: 1.8;">تقدم شبكة المحامين العرب لعملائها خدمة " تحضير الأسانيد " خدمة قانونية مدفوعة التكاليف ، وللتعريف بهذه الخدمة فقد اعدت الشبكة هذا التعريف :</p>
+                
+                <h5 class="terms-subtitle" style="color: #000000; ; margin: 30px 0 20px 0;">ما المقصود بخدمة تحضير الأسانيد القانونية؟</h3>
+                <p style="margin-bottom: 20px; line-height: 1.8;">بداية نوضح أن فكرة خدمة "تحضير الأسانيد القانونية" تقوم على تحقيق التفاعل بين شبكة المحامين العرب وبين العميل، من خلال المساعدة في البحث وتأصيل المعلومة القانونية.</p>
+                <p style="margin-bottom: 20px; line-height: 1.8;">فمن خلال هذه الخدمة تنتقل الشبكة من مرحلة عرض التشريعات والأحكام القضائية الصادرة في الدولة، إلى مرحلة متقدمة تتعلق بتجميع التشريعات والأحكام القضائية، التي تتعلق بموضوع قانوني محدد بناء على رغبة العميل.</p>
+                <p style="margin-bottom: 25px; line-height: 1.8;">أي أن العميل الذي يطلب "خدمة تحضير الأسانيد القانونية" ليس عليه سوى تحديد التكييف القانوني للوقائع التي يريد البحث فيها، أو فليتقدم بطلبه وسيقوم القسم بتكييفه، بعد ذلك يقوم المستشارون في الشبكة بالبحث عن كل ما يتعلق بهذا الموضوع، من قوانين (أنظمة)، أو مراسيم، أو قرارات، أو أحكام قضائية... إلخ، تكون قد صدرت في الدولة التي ينتمي إليها العميل .</p>
+
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">ماهي مستويات البحث لتحضير الأسانيد ؟</h3>
+                <p style="margin-bottom: 20px; line-height: 1.8;">هناك ثلاث مستويات للبحث عن الأسانيد كما يلي :</p>
+                <ul style="margin-bottom: 25px; padding-right: 20px;">
+                    <li style="margin-bottom: 15px; line-height: 1.8;">المستوى الأول :- ويقصد به البحث عن التشريعات والأحكام القضائية في نطاق دولة محددة من الدول التي نشرت الشبكة موسوعاتها .</li>
+                    <li style="margin-bottom: 15px; line-height: 1.8;">المستوى الثاني :- ويقصد به البحث عن التشريعات والأحكام القضائية عن الموضوع في نطاق دول الخليج .</li>
+                    <li style="margin-bottom: 15px; line-height: 1.8;">المستوى الثالث :- ويقصد به البحث عن التشريعات والأحكام القضائية في أحكام المحاكم المصرية المنشورة مثل محكمة النقض والإدارية العليا والدستورية والاستئناف الاقتصادية .. وكذلك ايضا رأي الفقه من خلال ابرز من كتب في الموضوع ..</li>
+                    <li style="margin-bottom: 15px; line-height: 1.8;">المستوى الرابع :- ويقصد به الأبحاث الموسعة ذات الطابع الأكاديمي ، وهذه تختلف من موضوع لآخر وتتم من خلال تعاقد الشبكة مع باحثين أكاديميين ذوي تخصص وخبرة .</li>
+                </ul>
+            </div>
+
+            <div class="terms-item" style="margin-bottom: 40px;">
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">ما هو دور العميل الطالب لخدمة تحضير الأسانيد القانونية؟</h3>
+                <p style="margin-bottom: 20px; line-height: 1.8;">لا يطلب من العميل سوى أن يقدم طلب البحث في الموضوع الذي يحدده ، دون حاجة لذكر الوقائع التي هو بصددها ..</p>
+                <p style="margin-bottom: 20px; line-height: 1.8;">وعلى سبيل المثال ( للمستوى الأول ) يمكن للعميل طلب ما يلي :</p>
+                <ul style="margin-bottom: 25px; padding-right: 20px;">
+                    <li style="margin-bottom: 15px; line-height: 1.8;">بحث عن النصوص والاحكام المتعلقة بموضوع الاستيلاء على المال العام وفقا للتشريعات التي تنظمها في المملكة العربية السعودية .</li>
+                    <li style="margin-bottom: 15px; line-height: 1.8;">بحث عن النصوص والاحكام المتعلقة بالتعويض عن الضرر الناتج عن حادث مرور وفقا للتشريعات السعودية .</li>
+                    <li style="margin-bottom: 15px; line-height: 1.8;">مسؤولية المقاول فى عقد المقاولة ( اعمال البناء والتشييد )</li>
+                </ul>
+                <p style="margin-bottom: 20px; line-height: 1.8;">أو أن يطلب تحديد ماهية القصد الجنائي في جريمة الرشوة ..</p>
+                <p style="margin-bottom: 20px; line-height: 1.8;">وهكذا......... إلخ.</p>
+                <p style="margin-bottom: 25px; line-height: 1.8;">وفي جميع الأحوال سيقوم فريق البحث بمحاولة تكييف الطلبات لتسهيل البحث في موضوعاتها .</p>
+            </div>
+
+            <div class="terms-item" style="margin-bottom: 40px;">
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">هل تطرق الخدمة إلى قيام مركز بحوث الشبكة بكتابة مذكرة قانونية للعميل؟</h3>
+                <p style="margin-bottom: 20px; line-height: 1.8;">هذه الخدمة قاصرة فقط على تجميع كافة الأسانيد القانونية بحسب مستوى الخدمة ، من تشريعات منظمة، وسوابق قضائية، ومراجع فقهية.</p>
+                <p style="margin-bottom: 25px; line-height: 1.8;">دون التطرق بأي حال من الأحوال الى إبداء رأي أو كتابة مذكرة للعميل، وعلى العميل استخلاص النتائج التي يتوصل إليها من خلال المعلومات القانونية التي قام مركز بحوث الشبكة بتجميعها، وكتابة مذكرته القانونية على النحو الذي يراه.</p>
+            </div>
+
+            <div class="terms-item" style="margin-bottom: 40px;">
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">هل هناك عدد محدد للأسانيد التي يطلبها العميل المشترك في هذه الخدمة ؟</h3>
+                <p style="margin-bottom: 25px; line-height: 1.8;">نعم للعميل الذي في عدد إثني عشر طلبا يحق له طلبها في السنة الواحدة. وينتهي إلتزام الشبكة تجاهه بعد إنتهاء إما بإستكماله عدد إثني عشر طلب أسانيد ، أو مضي مدة سنة واحدة من تاريخ دفعه قيمة الخدمة .</p>
+            </div>
+
+            <div class="terms-item" style="margin-bottom: 40px;">
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">ما هي ضوابط الطلب الواحد وفقاً لمفهوم الشبكة والتي يتم التعاقد عليها؟</h3>
+                <p style="margin-bottom: 20px; line-height: 1.8;">1- يجب أن يكون الطلب واقعي وحقيقي أساسه قضية منظورة في المحكمة .. وذلك حرصا على تحديد إطار واضح لهذه الخدمة .</p>
+                <p style="margin-bottom: 25px; line-height: 1.8;">2- أن يكون لموضوع واحد وأي طلب من عدة مواضيع مايزة يحتسب كل موضوع بطلب واحد</p>
+            </div>
+
+            <div class="terms-item" style="margin-bottom: 40px;">
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">ما هي المدة التي يتم بعدها الرد على طلب العميل للاستفادة من الخدمة؟</h3>
+                <p style="margin-bottom: 25px; line-height: 1.8;">الرد سيكون - بمشيئة الله تعالى - وفي المتوسط خلال ( يومين عمل ) من طلب العميل وتتضاعف المدة بحسب مستوى الاشتراك من محلي الى اقليمي الى دولي ، وبشكل عام فالموضوع يحكم المدة ..</p>
+            </div>
+
+            <div class="terms-item" style="margin-bottom: 40px;">
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">هل المواد الذي سترسل للعميل للرد على طلبه تتضمن لينكات(روابط) للموقع، أم ملفات وورد؟</h3>
+                <p style="margin-bottom: 25px; line-height: 1.8;">الرد سيكون من خلال رسالة على بريد العميل ومرفق معها روابط ( لنكات ) للموضوعات ذات الصلة بحسب نتائج البحث وبحسب الموضوع ..</p>
+            </div>
+
+            <div class="terms-item" style="margin-bottom: 40px;">
+                <h5 class="terms-subtitle" style="color: #000000; font-weight: bold; margin: 30px 0 20px 0;">ما هو الفرق بين كل من خدمة تحضير الأسانيد القانونية. وخدمات العملاء في شبكة المحامين العرب ؟</h3>
+                <p style="margin-bottom: 20px; line-height: 1.8;">يمكن إجمال الفروق بين كلا الخدمتين في الآتي:</p>
+                
+                <P style=" font-weight: bold; margin: 25px 0 15px 0; font-size: 18px;">1- من حيث المفهوم:</h4>
+                <p style="margin-bottom: 20px; line-height: 1.8;">خدمة تحضير الأسانيد تقوم على فكرة تجميع كافة التشريعات المنظمة والأحكام القضائية وعناوين الكتب والمراجع الفقهية التي تتعلق بموضوع قانوني يحدده العميل. أما خدمات العملاء في شبكة المحامين العرب فهي تتعلق بمساعدة العميل الذي يبحث في أحد مواقع الشبكة. وتعذر عليه الوصول إلى تشريع (نظام) أو حكم قضائي محدد (أي تشريع معين برقم .... أو تحت مسمى ....... أو حكم قضائي تحت رقم .......) كما تتم مساعدته الفنية أيضا ..</p>
+                <p style="margin-bottom: 25px; line-height: 1.8;">وبمعنى آخر فخدمة تحضير الأسانيد هي خدمة موسعة تتناول التشريعات والأحكام القضائية، والمراجع الفقهية لموضوع معين، أما خدمة الباحث القانوني فهي تقتصر على تشريع أو حكم قضائي محدد يريده المشترك وتعذر عليه الوصول إليه.</p>
+                
+                <P style=" font-weight: bold; margin: 25px 0 15px 0; font-size: 18px;">2- من حيث الدور الذي يتعين على العميل القيام به للاستفادة من الخدمتين:</h4>
+                <p style="margin-bottom: 25px; line-height: 1.8;">العميل في خدمة تحضير الأسانيد القانونية لا يطلب منه سوى تحديد الموضوع الذي يريده. ويقوم مركز بحوث الشبكة بتجميع كافة التشريعات والسوابق القضائية والمراجع الفقهية المتعلقة بهذا الموضوع. إذا لدى خدمات العملاء فسيطلب منه تحديد رقم التشريع أو عنوانه الذي يريده أو رقم الحكم القضائي الذي يريده أيضا، وتقوم إدارة البحث في الشبكة بالبحث عنه وإرساله للعميل.</p>
+                
+                <p style=" font-weight: bold; margin: 25px 0 15px 0; font-size: 18px;">3- من حيث ضوابط وشروط الاستفادة من كلا الخدمتين:</h4>
+                <p style="margin-bottom: 25px; line-height: 1.8;">خدمة تحضير الأسانيد القانونية نشاط مستقل متعدد المستويات مدفوع التكاليف، يطلبه عملاء الشبكة بمقابل مادي خاص ، ولها شروط وضوابط محددة للاستفادة منها. وهي بشكل عام التزام من شبكة المحامين العرب ببذل الجهد قدر الإمكان في البحث عن الأسانيد ذات الصلة بموضوع محدد ، وهي أسانيد ليست على سبيل الحصر كونها تخضع لجهد الباحث . أما خدمة الباحث القانوني فهي خدمة مجانية متاحة لكافة عملاء مواقع الشبكة من ذوي الاشتراكات السارية ، فلا يشترط لها سوى كون اشتراك العميل ما زال سارياً.</p>
+            </div>
+
+            <div class="terms-item" style="text-align: center; margin-top: 30px;">
+                <button onclick="document.getElementById('modalPopup').style.display='block'" class="btn" style="display: inline-block;  background-color: #17a891; color: white; padding: 10px 30px; text-decoration: none; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">للتسجيل اضغط هنا</button>
+            </div>
+            
+            <!-- النافذة المنبثقة للتسجيل -->
+            <div id="modalPopup" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); padding-top: 50px; direction: rtl;">
+                <div style="background-color: white; margin: auto; width: 80%; max-width: 550px; border-radius: 20px; padding: 20px; position: relative;">
+                    <span onclick="document.getElementById('modalPopup').style.display='none'" style="position: absolute; left: 20px; top: 10px; font-size: 30px; font-weight: bold; cursor: pointer;">&times;</span>
+                    <h2 style="text-align: center; color: #00a19a; margin-bottom: 20px;">طلب الاشتراك</h2>
+                    
+                    <form>
+                        <div style="margin-bottom: 15px;">
+                            <input type="text" placeholder="الاسم بالكامل / اسم الجهة" style="width: 100%; padding: 10px; border-radius: 50px; border: 1px solid #ddd; text-align: right;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <input type="email" placeholder="البريد الالكتروني" style="width: 100%; padding: 10px; border-radius: 50px; border: 1px solid #ddd; text-align: right;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <input type="text" placeholder="اسم المستخدم" style="width: 100%; padding: 10px; border-radius: 50px; border: 1px solid #ddd; text-align: right;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <input type="password" placeholder="كلمة السر" style="width: 100%; padding: 10px; border-radius: 50px; border: 1px solid #ddd; text-align: right;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <input type="password" placeholder="تأكيد كلمة السر" style="width: 100%; padding: 10px; border-radius: 50px; border: 1px solid #ddd; text-align: right;">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px; display: flex; align-items: center;">
+                            <div style="display: flex; align-items: center; background-color: #f5f5f5; border-radius: 50px; padding: 5px 15px; margin-left: 10px; border: 1px solid #ddd;">
+                                <span>۲۰+</span>
+                            </div>
+                            <input type="tel" placeholder="رقم الهاتف" style="flex: 1; padding: 10px; border-radius: 50px; border: 1px solid #ddd; text-align: right;">
+                        </div>
+                        
+                        <div style="margin-top: 20px; margin-bottom: 10px;">
+                            <h3 style="font-size: 16px; margin-bottom: 10px;">خدمات إضافية</h3>
+                            <div style="display: flex; align-items: center;">
+                                <input type="checkbox" id="extraService" checked style="margin-left: 10px;">
+                                <label for="extraService">خدمة الأسانيد القانونية</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <select style="width: 100%; padding: 10px; border-radius: 50px; border: 1px solid #ddd; text-align: right; appearance: none; background-position: left 10px center; background-repeat: no-repeat; background-size: 10px;">
+                                <option disabled selected>مدة الاشتراك</option>
+                                <option>3 أشهر</option>
+                                <option>6 أشهر</option>
+                                <option>سنة</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px; display: flex; align-items: center;">
+                            <input type="checkbox" id="terms" checked style="margin-left: 10px;">
+                            <label for="terms">أوافق على اتفاقية الاستخدام و سياسة الخصوصية معا</label>
+                        </div>
+                        
+                        <button type="button" style="width: 100%; background-color: #00a19a; color: white; border: none; padding: 12px; border-radius: 50px; font-weight: bold; cursor: pointer; margin-top: 10px;">تسجيل</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="orange-divider" style="margin-top: 40px;"></div>
+        </div>
+    </main>
+                
+              <!-- Footer Social Section - Separate from Footer -->
+              <footer>
+  
+                <section class="social-share-section">
+                    <div style="display: flex; align-items: center; justify-content: space-between; background-color: rgb(245, 245, 245); border-radius: 143px; padding: 10px 20px; margin: 40px 0px 20px; width: 1200px; height: 91px; font-size: 12.8px;" data-original-font-size="16">
+                     <!-- Social Media Sharing - Left Side -->
+                         <!-- Last Update - Right Side -->
+                         <div style="display: flex; align-items: center; color: #158885; font-size: 16px;">
+                             <img src="../assets/icons/clock.svg" alt="الساعة" width="16" height="16" style="margin-left: 5px;">
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">آخر تعديل 19 ذو القعدة 1444</span>
+                         </div>
+                                <!-- Rating - Middle Right -->
+                     <div style="display: flex; align-items: center; gap: 8px;">
+                         <div style="display: flex; align-items: center; gap: 3px;">
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">تقييم المحتوى</span>
+                             <div style="display: flex; gap: 2px;">
+                                 <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                             </div>
+                         </div>
+                         <!-- Followers Count - Middle -->
+                         <div style="display: flex; align-items: center; gap: 3px;">
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">عدد الأصوات:</span>
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">9130</span>
+                         </div>
+                     </div>
+                     <div style="display: flex; align-items: center; gap: 5px;">
+                         <span style="margin-right: 5px; font-size: 14px; color: #00a19a;">شارك على</span>
+                         <a href="#" style="color: #00a19a;">
+                             <img src="../assets/icons/ln-soc.svg" alt="لينكد إن" width="26" height="26">
+                         </a>
+                         <a href="#" style="color: #00a19a;">
+                             <img src="../assets/icons/x-soc.svg" alt="تويتر" width="26" height="26">
+                         </a>
+                         <a href="#" style="color: #00a19a;">
+                             <img src="../assets/icons/in-sco.svg" alt="انستغرام" width="26" height="26">
+                         </a>
+                         <a href="#" style="color: #00a19a;">                
+                             <img src="../assets/icons/fb-soc.svg" alt="فيسبوك" width="26" height="26">
+                         </a>
+                     </div>   
+                 </div>
+             </section>
+             
+             <!-- Footer -->
+             <footer>
+                 <!-- Main Footer -->
+                 <div class="main-footer">
+                         <div class="footer-content">
+                             <div class="footer-column about-column">
+                                 <h3 class="footer-title">عن محامو المملكة</h3>
+                                 <p class="footer-text">البوابة القانونية الشاملة للمحامين والمستشارين القانونيين بالسعودية</p>
+                                 <p class="footer-text">العربية السعوية</p>
+                             </div>
+                             <div class="footer-column links-column">
+                                 <h3 class="footer-title">روابط سريعة</h3>
+                                 <ul class="footer-links">
+                                     <li><a href="../index.html">الرئيسية</a></li>
+                                     <li><a href="about-site.html">عن الموقع</a></li>
+                                     <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                                 </ul>
+                             </div>
+                             <div class="footer-column contact-column">
+                                 <h3 class="footer-title">تواصل معنا</h3>
+                                 <p class="contact-item email">info@mohamoon-ksa.com</p>
+                                 <p class="contact-item phone">الهاتف: xxx xxxx 11 966+</p>
+                                 <p class="contact-item address">العنوان: الرياض, المملكة العربية السعودية</p>
+                             </div>
+                             <div class="footer-column social-column">
+                                 <h3 class="footer-title">تابعنا</h3>
+                                 <div class="footer-social">
+                                     <a href="https://facebook.com/mohamoon.ksa" class="footer-social-icon"><img src="../assets/icons/facebook.png" alt="فيس بوك"></a>
+                                     <a href="https://instagram.com/mohamoon_ksa" class="footer-social-icon"><img src="../assets/icons/insta.png" alt="إنستجرام"></a>
+                                     <a href="https://twitter.com/mohamoon_ksa" class="footer-social-icon"><img src="../assets/icons/x.png" alt="تويتر"></a>
+                                     <a href="https://linkedin.com/company/mohamoon-ksa" class="footer-social-icon"><img src="../assets/icons/ln.png" alt="لينكد إن"></a>
+                                 </div>
+                                 <a href="tel:+966114567890" class="contact-btn">
+                                     <img src="../assets/icons/call.svg" alt="اتصال">
+                                     اتصل بنا
+                                 </a>
+                             </div>
+                         </div>
+                 </div>
+            
+                 <!-- Footer Bottom -->
+                 <div class="footer-bottom">
+                     <div class="container">
+                         <div class="copyright-text">جميع الحقوق محفوظة © 2024 محامو المملكة</div>
+                         <div class="footer-bottom-links">
+                             <a href="terms.html">الشروط والأحكام</a> | 
+                             <a href="privacy-policy.html">سياسة الخصوصية</a>
+                         </div>
+                     </div>
+                 </div>
+             </footer>
+
+    
+
+    <!-- نافذة طلب الاشتراك المنبثقة -->
+    <div class="subscribe-modal" id="subscribe-modal">
+        <div class="subscribe-modal-content">
+            <div class="subscribe-modal-header">
+                <span class="close-subscribe-modal">&times;</span>
+            </div>
+            <div class="subscribe-modal-body">
+                <h2 class="subscribe-title">طلب الاشتراك</h2>
+                
+                <form class="subscribe-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="الاسم بالكامل / اسم الجهة" class="subscribe-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" placeholder="البريد الالكتروني" class="subscribe-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="اسم المستخدم" class="subscribe-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" placeholder="كلمة السر" class="subscribe-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" placeholder="تأكيد كلمة السر" class="subscribe-input">
+                    </div>
+                    
+                    <div class="form-group phone-group">
+                        <div class="country-code">
+                            <img src="../assets/icons/flag-for-flag-egypt-svgrepo-com 1.png" alt="مصر" class="flag-img">
+                            <span class="code">+20</span>
+                        </div>
+                        <input type="tel" placeholder="رقم الهاتف" class="subscribe-input phone-input">
+                    </div>
+                    
+                    <div class="additional-services">
+                        <h3>خدمات إضافية</h3>
+                        <div class="service-checkbox">
+                            <input type="checkbox" id="asanid-service" checked>
+                            <label for="asanid-service">خدمة الأسانيد القانونية</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group subscription-duration">
+                        <select class="subscribe-select">
+                            <option value="" disabled selected>مدة الاشتراك</option>
+                            <option value="3">3 أشهر</option>
+                            <option value="6">6 أشهر</option>
+                            <option value="12">سنة</option>
+                        </select>
+                    </div>
+                    
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms-agreement" checked>
+                        <label for="terms-agreement">أوافق على اتفاقية الاستخدام و سياسة الخصوصية معا</label>
+                    </div>
+                    
+                    <button type="submit" class="subscribe-submit-btn">تسجيل</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    /* أنماط نافذة طلب الاشتراك المنبثقة */
+    #subscribe-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        direction: rtl;
+        overflow: auto;
+        padding-top: 50px;
+    }
+
+    .subscribe-modal-content {
+        background-color: #fff;
+        margin: auto;
+        max-width: 550px;
+        width: 90%;
+        border-radius: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+        padding: 30px;
+        direction: rtl;
+    }
+
+    .subscribe-modal-header {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .close-subscribe-modal {
+        font-size: 28px;
+        font-weight: bold;
+        color: #aaa;
+        cursor: pointer;
+        margin-right: auto;
+    }
+
+    .close-subscribe-modal:hover {
+        color: #000;
+    }
+
+    .subscribe-title {
+        color: #00a59a;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 25px;
+        font-weight: 500;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .phone-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .country-code {
+        display: flex;
+        align-items: center;
+        background-color: #f5f5f5;
+        border-radius: 100px;
+        padding: 8px 15px;
+        border: 1px solid #e2e2e2;
+    }
+
+    .flag-img {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+    }
+
+    .code {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .phone-input {
+        flex: 1;
+    }
+
+    .subscribe-input, .subscribe-select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #e2e2e2;
+        border-radius: 100px;
+        font-size: 16px;
+        color: #333;
+        text-align: right;
+        background-color: #fff;
+    }
+
+    .subscribe-select {
+        appearance: none;
+        background-image: url('../assets/icons/Down.png');
+        background-repeat: no-repeat;
+        background-position: left 15px center;
+        background-size: 12px;
+        padding-left: 30px;
+    }
+
+    .additional-services {
+        margin: 25px 0;
+    }
+
+    .additional-services h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+        text-align: right;
+    }
+
+    .service-checkbox, .terms-checkbox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .service-checkbox input, .terms-checkbox input {
+        margin-left: 10px;
+        width: 18px;
+        height: 18px;
+        accent-color: #00a59a;
+    }
+
+    .service-checkbox label, .terms-checkbox label {
+        font-size: 14px;
+        color: #333;
+    }
+
+    .terms-checkbox {
+        margin: 20px 0;
+    }
+
+    .subscribe-submit-btn {
+        background-color: #00a59a;
+        color: white;
+        border: none;
+        border-radius: 100px;
+        padding: 14px 20px;
+        width: 100%;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    .subscribe-submit-btn:hover {
+        background-color: #008c82;
+    }
+    </style>
+
+<script>
+// سكريبت بسيط للتأكد من عمل النافذة المنبثقة
+document.addEventListener('DOMContentLoaded', function() {
+    // التأكد من أن النافذة تعمل بشكل صحيح
+    
+    // إضافة حدث إغلاق للنقر خارج النافذة
+    window.onclick = function(event) {
+        if (event.target.id === 'modalPopup') {
+            document.getElementById('modalPopup').style.display = 'none';
+        }
+    };
+});
+</script>
+
+    
+    
+      <!-- نافذة تسجيل الدخول المنبثقة -->
+      <div class="login-modal" id="login-modal">
+        <div class="login-modal-content">
+            <div class="login-modal-header">
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="login-modal-body">
+                <h2 class="login-title">الوصول السريع</h2>
+                
+                <div class="phone-login-section">
+                    <div class="phone-input-row">
+                        <div class="country-code-select">
+                            <div class="country-flag">
+                                <img src="../assets/icons/flag-for-flag-egypt-svgrepo-com 1.png" alt="مصر" class="flag-img">
+                            </div>
+                            <span class="code">+20</span>
+                        </div>
+                        <div class="phone-field">
+                            <input type="tel" placeholder="رقم الهاتف" class="login-input">
+                        </div>
+                    </div>
+                    
+                    <button class="send-code-btn">ارسل رمز التحقق</button>
+                    <p class="error-msg">يجب إدخال رقم الهاتف</p>
+                </div>
+                
+                <div class="separator">
+                    <span>أو يمكنك تسجيل الدخول باسم المستخدم وكلمة المرور</span>
+                </div>
+                
+                <div class="credentials-login-section">
+                    <input type="text" placeholder="اسم المستخدم" class="login-input">
+                    <div class="password-field">
+                        <input type="password" placeholder="كلمة المرور" class="login-input">
+                        <button class="toggle-password">
+                            <img src="../assets/icons/eye.png" alt="إظهار" class="eye-icon">
+                        </button>
+                    </div>
+                    <button class="login-submit-btn">دخول</button>
+                    <a href="#" class="forgot-password">هل نسيت كلمة السر؟</a>
+                </div>
+                
+                <div class="help-section">
+                    <a href="mailto:support@mohamoon-ksa.com" class="help-btn customer-service">
+                        <span>خدمة العملاء</span>
+                        <img src="../assets/icons/support.png" alt="خدمة" class="help-icon">
+                    </a>
+                    <a href="faq.html" class="help-btn self-help">
+                        <span>المساعدة الذاتية</span>
+                        <img src="../assets/icons/message-search.png" alt="مساعدة" class="help-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ملفات JavaScript بالترتيب الصحيح -->
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+
+<!-- نظام المصادقة والتسجيل -->
+<script src="../scripts/auth-system.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+
+<!-- وظائف التوب بار -->
+<script src="../scripts/unified-icons.js"></script>
+<script src="../scripts/search-popup.js"></script>
+<script src="../scripts/settings.js"></script>
+<script src="../scripts/simple-zoom.js"></script>
+
+<!-- وظائف الموبايل -->
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+
+<!-- النافبار (آخر شيء) -->
+<script src="../scripts/unified-navbar.js"></script>
+    <!-- Ø£ÙŠÙ‚ÙˆÙ†Ø© Ø§Ù„Ø¯Ø¹Ù… Ø§Ù„Ø«Ø§Ø¨ØªØ© -->
+    <div class="support-icon-fixed">
+        <img src="../assets/icons/support.svg" alt="الدعم والمساعدة">
+    </div>
+    <script src="scripts/asanid-modal.js"></script>
+
+  <!-- Core Sliders -->
+<script src="../scripts/slider.js"></script>
+<script src="../scripts/services-slider.js"></script>
+<script src="../scripts/partners-slider.js"></script>
+<script src="../scripts/updates-slider.js"></script>
+<script src="../scripts/load-asanid-service-modal.js"></script>
+
+<!-- Settings and Icons -->
+<script src="../scripts/unified-icons.js"></script>
+
+<!-- Navigation and Menu Scripts -->
+<script src="../scripts/services-menu.js"></script>
+<script src="../scripts/unified-navbar.js"></script>
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+<script src="../scripts/mobile-menu.js"></script>
+
+<!-- Search and Popup -->
+<script src="../scripts/search-popup.js"></script>
+
+<!-- Zoom and Accessibility -->
+<script src="../scripts/simple-zoom.js"></script>
+<script src="../scripts/zoom-control.js"></script>
+
+<!-- Authentication and Profile -->
+        <script src="../scripts/fix-profile-button.js"></script>
+        <script src="../scripts/load-login-from-file.js"></script>
+        <script src="../scripts/login-fix.js"></script>
+<script src="../scripts/settings-menu-handler.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/edit-profile-modal.js"></script>
+
+<!-- Modals and Selectors -->
+<script src="../scripts/asanid-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/enhanced-country-dropdown.js"></script>
+<script src="../scripts/country-selector-modal.js"></script>
+
+<!-- Utility Scripts -->
+<script src="../scripts/link-fixer.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/services-darkmode-fix.js"></script>
+<script src="../scripts/star-rating.js"></script>
+<script src="../scripts/subpages-dark-contrast.js"></script>
+<script src="../scripts/contrast-submenu-fix.js"></script>
+
+<!-- Subscription and Renewal -->
+<script src="../scripts/modify-subscription-modal.js"></script>
+<script src="../scripts/load-modify-subscription-modal.js"></script>
+<script src="../scripts/load-renew-subscription-modal.js"></script>
+<script src="../scripts/renew-subscription-modal.js"></script>
+
+</body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

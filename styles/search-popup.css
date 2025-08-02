@@ -1,0 +1,117 @@
+﻿/* Search Popup Styling */
+.search-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    z-index: 9999;
+}
+
+.search-popup {
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    flex-direction: row-reverse; /* Reverse the direction to place buttons on left in RTL */
+}
+
+.search-popup-input {
+    flex-grow: 1;
+    border: none;
+    height: 60px;
+    padding: 0 20px;
+    font-size: var(--font-lg);
+    color: #555;
+    text-align: right;
+    direction: rtl;
+    outline: none;
+    background-color: white;
+    order: 2; /* Ensure input appears first in row-reverse */
+}
+
+.search-popup-input::placeholder {
+    color: #aaa;
+    text-align: right;
+    direction: rtl;
+}
+
+.search-popup-button {
+    height: 51px; /* u0637u0648u0644 u0645u0648u062du062f u0644u062cu0645u064au0639 u0627u0644u0623u0632u0631u0627u0631 */
+    border: none;
+    color: white;
+    font-size: var(--font-xl);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.search-popup-button.search {
+    background-color: #00a59a;
+    border-radius: 8.96px;
+    width: 123px; /* العرض المطلوب لزر البحث */
+    padding: 8px 40px 8px 40px;
+}
+
+.search-popup-button.engine {
+    background-color: #e67e22;
+    border-radius: 8.96px;
+    width: 186px; /* العرض المطلوب لزر محرك البحث */
+    margin-right: 5px; /* Changed from margin-right to margin-left for left alignment */
+}
+
+.search-popup.active {
+    animation: popIn 0.3s ease-out forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add styles for the button container */
+.search-buttons-container {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    order: 1; /* Ensure buttons container appears after the input visually */
+    justify-content: flex-start; /* Align buttons to the start of container (left in RTL) */
+    min-width: 320px; /* Ensure enough space for both buttons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-popup {
+        width: 95%;
+    }
+    
+    .search-popup-button {
+        padding: 0 15px;
+        font-size: var(--font-lg);
+    }
+    
+    .search-buttons-container {
+        flex-direction: row;
+    }
+}
+

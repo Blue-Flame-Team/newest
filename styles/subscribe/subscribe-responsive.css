@@ -1,0 +1,175 @@
+﻿/* CSS لجعل صفحة الاشتراك متجاوبة مع جميع أحجام الهواتف */
+
+/* قواعد عامة للتجاوب */
+@media (max-width: 767px) {
+    .subscribe-content {
+        padding: 20px 10px;
+    }
+    
+    .subscribe-content .container {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+    .subscribe-title {
+        font-size: var(--font-xl);
+        margin-bottom: 30px;
+    }
+    
+    /* إعادة تنسيق الصفوف لتصبح عمودية على الهواتف */
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* إزالة عرض ثابت من جميع الحقول */
+    .form-control,
+    #full-name, 
+    .subscribe-form #full-name,
+    #payment-method,
+    .subscribe-form #payment-method,
+    #subscription-type, 
+    .subscribe-form #subscription-type,
+    .select-wrapper,
+    #bank-name, 
+    .subscribe-form #bank-name,
+    #transfer-date, 
+    .subscribe-form #transfer-date,
+    #transfer-amount, 
+    .subscribe-form #transfer-amount,
+    #website, 
+    .subscribe-form #website,
+    #beneficiary-name, 
+    .subscribe-form #beneficiary-name,
+    #id-number, 
+    .subscribe-form #id-number {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 50px !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* تصغير حجم النص والتباعد */
+    .form-control {
+        font-size: var(--font-sm);
+        padding: 10px;
+    }
+    
+    /* تعديل حجم الأزرار */
+    .subscribe-btns .subscribe-submit {
+        width: 100% !important;
+        height: auto !important;
+        padding: 12px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    /* تعديل مسافات حقول الهاتف */
+    .phone-row {
+        gap: 5px;
+    }
+    
+    /* تعديل مرفقات الملفات */
+    .file-input-wrapper {
+        flex-direction: column;
+    }
+    
+    .file-input-label {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .file-name {
+        width: 100%;
+    }
+}
+
+/* هواتف صغيرة (320px - 375px) */
+@media (min-width: 320px) and (max-width: 375px) {
+    .subscribe-title {
+        font-size: var(--font-xl);
+    }
+    
+    .subscribe-title:after {
+        width: 60px;
+    }
+    
+    .form-control {
+        padding: 8px;
+        font-size: var(--font-sm);
+    }
+    
+    .transfer-note {
+        font-size: var(--font-xs);
+    }
+}
+
+/* هواتف متوسطة (376px - 414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+    .subscribe-title {
+        font-size: var(--font-xl);
+    }
+    
+    .form-control {
+        padding: 9px;
+    }
+}
+
+/* هواتف أكبر (415px - 767px) */
+@media (min-width: 415px) and (max-width: 767px) {
+    .subscribe-title {
+        font-size: var(--font-xl);
+    }
+    
+    .subscribe-content .container {
+        padding: 0 15px;
+    }
+    
+    /* أجهزة اللوحية الصغيرة */
+    @media (min-width: 600px) {
+        .form-row {
+            flex-direction: row;
+        }
+        
+        .subscribe-btns .subscribe-submit {
+            width: auto !important;
+            margin-left: 10px !important;
+        }
+    }
+}
+
+/* مشاكل مشتركة مع تنسيق الهواتف */
+@media (max-width: 767px) {
+    /* إصلاح ارتفاع المدخلات النصية */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+        height: 50px !important;
+    }
+    
+    /* إصلاح العناصر المخفية */
+    .hidden-mobile {
+        display: none !important;
+    }
+    
+    /* إصلاح أحجام الخط في النموذج */
+    .form-title {
+        font-size: var(--font-lg) !important;
+        margin: 15px 0 !important;
+    }
+    
+    /* تحسين المسافات بين عناصر النموذج */
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    /* إصلاح مشاكل تخطي السطر في العناصر */
+    .form-label, .form-check-label {
+        white-space: normal;
+        font-size: var(--font-sm);
+    }
+}
+

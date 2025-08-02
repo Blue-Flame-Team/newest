@@ -1,0 +1,1087 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا - محامون المملكة</title>
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <!-- أوراق الأنماط -->
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/font-normalization.css">
+    <link rel="stylesheet" href="../styles/terms/header.css">
+    <link rel="stylesheet" href="../styles/terms/main.css">
+    <link rel="stylesheet" href="../styles/faq/footer.css">
+    <link rel="stylesheet" href="../styles/home/settings.css">
+    <link rel="stylesheet" href="../styles/search-popup.css">
+    <link rel="stylesheet" href="../styles/login-modal.css">
+
+    <!-- ناف بار بالخلفية الفيروزية للصفحات الفرعية -->
+    <link rel="stylesheet" href="../styles/subpages-navbar.css">
+    <!-- إصلاح لقائمة الموبايل -->
+     <!-- أوراق الأنماط للموبايل -->
+    <link rel="stylesheet" href="../styles/home/topbar.css">
+    <link rel="stylesheet" href="../styles/mobile-navbar.css">
+    <link rel="stylesheet" href="../styles/mobile-view.css">
+    <link rel="stylesheet" href="../styles/mobile-menu.css">
+    <link rel="stylesheet" href="../styles/hamburger-fix.css">
+    <link rel="stylesheet" href="../styles/mobile-dropdown.css">
+    <link rel="stylesheet" href="../styles/navbar-mobile-fix.css">
+    <link rel="stylesheet" href="../styles/home/mobile-settings.css">
+    <link rel="stylesheet" href="../styles/subpage.css">
+    <link rel="stylesheet" href="../styles/faq/responsive.css">
+    <link rel="stylesheet" href="../styles/social-share-section.css">
+    <link rel="stylesheet" href="../styles/simple-zoom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .services-header a {
+            color: #00a19a;
+            text-decoration: none;
+        }
+        .page-title {
+            color: #00a19a;
+            text-align: center;
+            font-size: 28px;
+            margin: 40px 0;
+        }
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: nowrap;
+            min-height: 80px;
+            overflow-x: auto;
+        }
+        .service-tab {
+            width: 280px;
+            height: 80px;
+            border: none;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            font-family: 'Almarai', sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            line-height: 150% !important;
+            letter-spacing: 0% !important;
+            text-align: center !important;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-decoration: none !important;
+            white-space: nowrap !important;
+        }
+        .service-tab.active {
+            background-color: #00a19a;
+            color: white;
+        }
+        .search-container {
+            width: 559px;
+            height: 75px;
+            margin: 30px 0 30px auto;
+            position: relative;
+            border-radius: 12px;
+            padding: 12px;
+            gap: 6px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+        .search-input {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            font-family: 'Tajawal', sans-serif;
+            outline: none;
+            box-shadow: none;
+            background: transparent;
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #00a19a;
+        }
+        .sort-button {
+            display: none;
+        }
+        .user-icon {
+            position: absolute;
+            left: 20px;
+            top: 160px;
+            width: 40px;
+            height: 40px;
+            background-color: #00a19a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .services-container {
+                /* padding: 0 15px; */
+                max-width: 100%;
+            }
+
+            .page-title {
+                font-size: 24px;
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            /* Service Tabs - Mobile Scrollable */
+            .services-tabs {
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                padding: 0 10px;
+                margin: 20px 0;
+                gap: 10px;
+                justify-content: flex-start;
+            }
+
+            .services-tabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .service-tab {
+                min-width: 81.64px !important;
+                width: auto !important;
+                height: 27.08px !important;
+                border-radius: 4.1px !important;
+                font-family: Almarai !important;
+                font-weight: 400 !important;
+                font-size: 8.2px !important;
+                line-height: 150% !important;
+                letter-spacing: 0% !important;
+                text-align: center !important;
+                padding: 4px 8px !important;
+                white-space: nowrap;
+                flex-shrink: 0;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                max-width: 120px !important;
+            }
+
+            /* Search and Sort Container */
+            .services-tabs + div {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                margin: 20px 15px !important;
+                gap: 15px;
+            }
+
+            .search-container {
+                width: 190.96px !important;
+                height: 25.39px !important;
+                gap: 2.05px !important;
+                border-radius: 4.1px !important;
+                padding: 4.1px !important;
+                margin: 0 !important;
+                max-width: none !important;
+            }
+
+            .search-input {
+                font-size: 10px;
+                padding: 4.1px !important;
+                border-radius: 4.1px !important;
+            }
+
+            .search-icon {
+                left: 8px;
+            }
+
+            .search-icon svg {
+                width: 12px !important;
+                height: 12px !important;
+            }
+
+            /* Sort Button Mobile */
+            .services-tabs + div > div:last-child {
+                width: 24.84px !important;
+                height: 13.54px !important;
+                align-self: flex-end;
+                margin-right: 0;
+                border-radius: 4.1px !important;
+            }
+
+            .services-tabs + div > div:last-child img {
+                width: 12px !important;
+                height: 8px !important;
+            }
+
+            /* Services Grid - Mobile Layout */
+            div[style*="grid-template-columns: repeat(4, 285px)"] {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+                margin: 20px 15px !important;
+                padding: 0 !important;
+            }
+
+            /* Service Cards - Mobile */
+            div[style*="width: 285px; height: 225px"] {
+                width: 100% !important;
+                height: 180px !important;
+                padding: 20px 15px !important;
+                margin: 0 !important;
+                border-radius: 12px !important;
+            }
+
+            /* Service Card Icons */
+            div[style*="width: 285px; height: 225px"] div[style*="height: 130px"] {
+                height: 80px !important;
+                margin-bottom: 8px !important;
+            }
+
+            div[style*="width: 285px; height: 225px"] img[width="80"] {
+                width: 50px !important;
+                height: 50px !important;
+            }
+
+            /* Service Card Titles */
+            div[style*="width: 285px; height: 225px"] h3 {
+                font-size: 14px !important;
+                line-height: 130% !important;
+                margin: 0 !important;
+            }
+
+            /* Hover Overlay - Mobile */
+            .hover-overlay {
+                padding: 15px !important;
+            }
+
+            .hover-overlay h3 {
+                font-size: 14px !important;
+                margin: 0 0 8px 0 !important;
+            }
+
+            .hover-overlay p {
+                font-size: 12px !important;
+                margin: 0 0 15px 0 !important;
+            }
+
+            .hover-overlay a {
+                padding: 8px 15px !important;
+                font-size: 12px !important;
+                min-width: 120px !important;
+            }
+
+            /* Last Two Cards Container */
+            div[style*="justify-content: center; gap: 20px; margin-bottom: 40px;"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+                margin: 15px 15px 40px !important;
+                display: grid !important;
+            }
+
+            /* Social Share Section - Mobile */
+            .social-share-section div[style*="width: 1200px"] {
+                width: calc(100% - 30px) !important;
+                height: auto !important;
+                padding: 15px !important;
+                margin: 20px 15px !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+                border-radius: 20px !important;
+            }
+
+            .social-share-section div[style*="width: 1200px"] > div {
+                width: 100% !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
+
+            .social-share-section span {
+                font-size: 14px !important;
+            }
+
+            .social-share-section img {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+            /* Breadcrumb - Mobile */
+            .breadcrumb {
+                padding: 10px 0;
+            }
+
+            .breadcrumb ul {
+                margin: 0 15px;
+            }
+
+            .breadcrumb li {
+                font-size: 14px;
+            }
+
+            /* Footer Responsive */
+            .main-footer .footer-content {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                text-align: center !important;
+            }
+
+            .footer-bottom {
+                padding: 20px 0 !important;
+            }
+
+            .footer-bottom .container {
+                flex-direction: column !important;
+                gap: 15px !important;
+                text-align: center !important;
+            }
+        }
+
+        /* Tablet Responsive */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .services-container {
+                padding: 0 20px;
+            }
+
+            .services-tabs {
+                gap: 12px;
+            }
+
+            .service-tab {
+                width: 240px;
+                height: 70px;
+                font-size: 16px !important;
+            }
+
+            .search-container {
+                width: 400px !important;
+            }
+
+            div[style*="grid-template-columns: repeat(4, 285px)"] {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 18px !important;
+                margin: 25px 20px !important;
+            }
+
+            div[style*="width: 285px; height: 225px"] {
+                width: 100% !important;
+                height: 200px !important;
+            }
+
+            .social-share-section div[style*="width: 1200px"] {
+                width: calc(100% - 40px) !important;
+                margin: 30px 20px !important;
+            }
+        }
+    </style>
+<style>
+/* تطبيق خط Droid Arabic Kufi على جميع العناصر */
+* {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+body, html {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td, th, select, option {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+.title, .text, .content, .description, .heading, .label, .item, .menu-item, .nav-item {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+</style></head>
+<body>
+   
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-side-menu">
+            <div class="mobile-side-menu-links">
+                <a href="../index.html" style="color: var(--primary-color);">الرئيسية</a>
+                
+                <!-- زر نبذة عنا -->
+                <a href="#" id="about-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                    نبذة عنا
+                    <img src="../assets/icons/menu-Down.svg" alt="سهم" class="dropdown-arrow-svg">
+                </a>
+                
+                <!-- القائمة المنسدلة لنبذة عنا -->
+                <div id="about-submenu" class="submenu-container">
+                    <a href="about-site.html">عن الموقع</a>
+                    <a href="about-site.html">عن الشبكة</a>
+                </div>
+                
+                <!-- زر سياستنا -->
+                <a href="#" id="policies-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                    سياستنا
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                
+                <!-- القائمة المنسدلة لسياستنا -->
+                <div id="policies-submenu" class="submenu-container">
+                    <a href="privacy-policy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">الشروط والأحكام</a>
+                </div>
+                
+                <a href="jornal-profile-view.html">جريدة أم القرى</a>
+                <a href="asanid-service.html">خدمة الأسانيد</a>
+                <a href="faq.html" class="colored-link active">الأسئلة الشائعة</a>
+            </div>
+            <div class="mobile-side-menu-buttons">
+                <a href="../index.html#subscribe" class="subscribe-btn">اشترك معنا</a>
+                <a href="#login-modal" class="login-btn" id="mobile-login-btn">تسجيل الدخول</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+     <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="logo">
+                    <!-- 1. اللوجو على اليمين -->
+                    <a href="../index.html" class="logo-link" data-original-font-size="16">
+                        <img src="../assets/images/logo.png" alt="محامون المملكة">
+                    </a>
+                    
+                    <!-- 2. زر اشترك معنا -->
+                    <a href="../index.html#subscribe" class="mobile-subscribe-btn" data-original-font-size="16">اشترك معنا</a>
+                    
+                    <!-- 3. جميع الأيقونات معاً -->
+                    <div class="mobile-icons">
+                        <!-- 4. قائمة الهامبرغر في البداية (على اليسار) -->
+                        <div class="hamburger-menu" style="opacity: 1; visibility: visible; display: flex; z-index: 9999;">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                        <div class="zoom-group">
+                            <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                                <img src="../assets/icons/search-zoom-out.png" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                                <img src="../assets/icons/search-zoom-in.png" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <!-- أيقونة البحث -->
+                        <button class="icon-btn search-btn" data-original-font-size="16">
+                            <img src="../assets/icons/search.png" alt="بحث">
+                        </button>
+                        
+                        <!-- أيقونة الملف الشخصي (تظهر بعد تسجيل الدخول) -->
+                        
+                        <!-- أيقونة الإعدادات -->
+                        <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                            <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                        </button>
+                        
+                        <button class="icon-btn profile-btn" id="mobile-profile-btn" style="display: none;" data-original-font-size="16">
+                            <img src="../assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                        </button>
+                    </div>
+                    
+                    <!-- قائمة الإعدادات -->
+                    <div class="settings-menu">
+                        <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                            <span>تباين</span>
+                            <img src="../assets/icons/Eye off.svg" alt="تباين">
+                        </a>
+                        <!-- قائمة خيارات التباين الفرعية -->
+                        <div class="contrast-submenu">
+                            <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                <span>تباين فاتح</span>
+                                <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                            </a>
+                            <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                <span>تباين داكن</span>
+                                <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                            </a>
+                        </div>
+                        <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                            <span>الاحصائيات</span>
+                            <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                        </a>
+                        <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                            <span>خروج</span>
+                            <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="top-elements">           
+                    <!-- Elementos originales para vista desktop -->
+                    <div class="top-icons">
+                        <a href="faq.html" class="common-questions" data-original-font-size="16">
+                            <span class="question-mark">
+                                <img src="../assets/icons/question.svg" alt="الأسئلة الشائعة">
+                            </span>
+                            <span class="questions-text">الأسئلة الشائعة</span>
+                        </a>
+                        <div class="zoom-group">
+                            <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-out.svg" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-in.svg" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <div class="main-icons-group">
+                            <button class="icon-btn search-btn" data-original-font-size="16">
+                                <img src="../assets/icons/search.png" alt="بحث">
+                            </button>
+                            <button class="icon-btn" onclick="window.location.href='../index.html#contact'" data-original-font-size="16">
+                                <img src="../assets/icons/location.png" alt="الموقع">
+                            </button>
+                            <button class="icon-btn" data-original-font-size="16">
+                                <img src="../assets/icons/call.png" alt="اتصال">
+                            </button>
+                            <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                                <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                            </button>
+                            <div class="settings-menu">
+                                <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                                    <span>تباين</span>
+                                    <img src="../assets/icons/Eye off.svg" alt="تباين">
+                                </a>
+                                <!-- قائمة خيارات التباين الفرعية -->
+                                <div class="contrast-submenu">
+                                    <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                        <span>تباين فاتح</span>
+                                        <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                                    </a>
+                                    <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                        <span>تباين داكن</span>
+                                        <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                                    </a>
+                                </div>
+                                <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                                    <span>الاحصائيات</span>
+                                    <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                                </a>
+                                <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                                    <span>خروج</span>
+                                    <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <a href="../index.html#subscribe" class="join-btn" data-original-font-size="16">إشترك معنا</a>
+                    <a href="#" class="login-btn" id="login-btn" data-original-font-size="16">تسجيل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li class="menu-item"><a href="../index.html">الرئيسية</a></li>
+                <li class="menu-item dropdown">
+                    <a href="javascript:void(0);">نبذة عنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                    <div class="dropdown-hover-area"></div>
+                    <div class="dropdown-menu">
+                        <a href="#">عن الموقع</a>
+                        <a href="#">عن الشبكة</a>
+                    </div>
+                </li>
+                <li class="menu-item dropdown">
+                    <a href="javascript:void(0);">سياساتنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                    <div class="dropdown-hover-area"></div>
+                    <div class="dropdown-menu">
+                        <a href="#">سياسة الخصوصية</a>
+                        <a href="../pages/terms.html">شروط الإشتراك</a>
+                    </div>
+                </li>
+                <li class="menu-item"><a href="#">جريدة أم القرى</a></li>
+                <li class="menu-item"><a href="#">خدمة الأسانيد</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">محامو المملكة</a></li>
+                <li><span>خدماتنا</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="services-container">
+        <!-- Título de la página -->
+        <h1 class="page-title">خدماتنا</h1>
+        
+        <!-- Pestañas de servicios -->
+        <div class="services-tabs">
+            <button class="service-tab active">كل الخدمات</button>
+            <button class="service-tab">الأكثر استخداماً</button>
+            <button class="service-tab">الخدمات حسب الأعمال</button>
+            <button class="service-tab">الخدمات حسب المستخدمين</button>
+        </div>
+        
+        <!-- Search Bar and Sort Button Row -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0; width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <!-- Sort Button - Left side (under الخدمات حسب المستخدمين) -->
+            
+            <!-- Search Bar - Right side (under كل الخدمات) -->
+            <div class="search-container" style="margin: 0 !important;">
+            <input type="text" class="search-input" placeholder="ابحث عن الخدمة...">
+            <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00a19a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </div>
+            <div style="width: 72.73px; height: 40px; background-color: #E8E8EA; border-radius: 30.3px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <img src="../assets/icons/sort2.svg" alt="ترتيب" width="30.91" height="24.24">
+            </div>
+        </div>
+        
+        <!-- Services Grid -->
+        <div style="display: grid; grid-template-columns: repeat(4, 285px); gap: 20px; margin-top: 20px; margin-bottom: 40px; justify-content: center; position: relative;">
+            <!-- Service Card 1 (أنظمة سارية) -->
+            <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                        <img src="../assets/icons/our-services/tick-square.png" alt="أنظمة سارية" width="80" height="80">
+                    </div>
+                <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">أنظمة سارية</h3>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">أنظمة سارية</h3>
+                    <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                    <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                </div>
+            </div>
+            
+
+            <!-- Service Card 3 -->
+            <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                    <img src="../assets/icons/our-services/timer.png" alt="أنظمة سارية جزئيا" width="80" height="80">
+                </div>
+                <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">أنظمة سارية جزئيا</h3>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">أنظمة سارية جزئيا</h3>
+                    <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                    <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                </div>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                    <img src="../assets/icons/our-services/close-square.png" alt="أنظمة مؤجلة النفاذ" width="80" height="80">
+                </div>
+                <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">أنظمة مؤجلة النفاذ</h3>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">أنظمة مؤجلة النفاذ</h3>
+                    <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                    <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                </div>
+            </div>
+
+       <!-- Service Card 5 -->
+       <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+        <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+            <img src="../assets/icons/our-services/book.png" alt="بوابة الأحكام السعودية" width="80" height="80">
+        </div>
+        <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">بوابة الأحكام السعودية</h3>
+        <!-- Hover Overlay -->
+        <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+            <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">بوابة الأحكام السعودية</h3>
+            <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+            <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+        </div>
+    </div>
+
+
+                                     <!-- Service Card 8 -->
+                    <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                      <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                         <img src="../assets/icons/minus-square.svg" alt="أنظمة موقوفة" width="80" height="80">
+                      </div>
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">أنظمة موقوفة</h3>
+                    <!-- Hover Overlay -->
+                    <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                        <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">أنظمة موقوفة</h3>
+                        <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                        <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                    </div>
+                </div>
+            <!-- Service Card 7 -->
+            <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                    <img src="../assets/icons/canceld.svg" width="80" height="80">
+                </div>
+                <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">أنظمة ملغاة</h3>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">أنظمة ملغاة</h3>
+                    <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                    <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                </div>
+            </div>
+
+
+
+                 <!-- Service Card 6 -->
+                 <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                        <img src="../assets/icons/our-services/message-question.png" alt="أنظمة صدرت ولم يستدل على نشرها" width="80" height="80">
+                    </div>
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">أنظمة صدرت ولم يستدل على نشرها</h3>
+                    <!-- Hover Overlay -->
+                    <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                        <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">أنظمة صدرت ولم يستدل على نشرها</h3>
+                        <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                        <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                    </div>
+                </div>
+
+            <!-- Service Card 4 -->
+            <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                    <img src="../assets/icons/our-services/Mask group.png" alt="أنظمة صدرت ولم تنشر بعد بالجريدة الرسمية" width="80" height="80">
+                </div>
+                <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">أنظمة صدرت ولم تنشر بعد بالجريدة الرسمية</h3>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">أنظمة صدرت ولم تنشر بعد بالجريدة الرسمية</h3>
+                    <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                    <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                </div>
+            </div>
+            
+     
+            
+
+    
+            
+      
+            
+        </div>
+        
+        <!-- Last two cards centered -->
+        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+            <!-- Service Card 9 -->
+     
+            
+            <!-- Service Card 10 -->
+            <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                    <img src="../assets/icons/our-services/bank.png" alt="جلسات مجلس الوزراء" width="80" height="80">
+                </div>
+                <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">جلسات مجلس الوزراء</h3>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">جلسات مجلس الوزراء</h3>
+                    <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                    <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                </div>
+            </div>
+
+            <div style="background-color: white; border-radius: 18px; padding: 31.5px 30px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); width: 285px; height: 225px; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.querySelector('.hover-overlay').style.transform='translateY(0)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.05)'; this.querySelector('.hover-overlay').style.transform='translateY(100%)'">
+                <div style="display: flex; align-items: center; justify-content: center; height: 130px; margin-bottom: 12px;">
+                    <img src="../assets/icons/our-services/mosq.png" alt="الفتاوى الشرعية" width="80" height="80">
+                </div>
+                <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0; color: #333;">الفتاوى الشرعية</h3>
+                <!-- Hover Overlay -->
+                <div class="hover-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #00a19a; border-radius: 18px; padding: 31.5px 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateY(100%); transition: transform 0.3s ease-in-out;">
+                    <h3 style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-weight: 700 !important; font-size: 18px !important; line-height: 150% !important; letter-spacing: 0% !important; text-align: center !important; margin: 0 0 10px 0; color: white;">الفتاوى الشرعية</h3>
+                    <p style="font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 14px !important; line-height: 150% !important; text-align: center !important; margin: 0 0 20px 0; color: white;">أرشيف الأنظمة والقوانين التي تم إقرارها أحدث التحديثات</p>
+                    <a href="../index.html" style="background-color: #ff6b35 !important; color: white !important; border: none !important; border-radius: 50px !important; padding: 12px 25px !important; font-family: 'Droid Arabic Kufi', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; cursor: pointer !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important; transition: all 0.3s ease !important; min-width: 160px !important; z-index: 1000 !important; position: relative !important; text-decoration: none !important; display: inline-block !important; text-align: center !important; pointer-events: auto !important;" onmouseover="this.style.backgroundColor='#e55a2b'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.5)'" onmouseout="this.style.backgroundColor='#ff6b35'; this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.4)'" onclick="window.location.href='../index.html'; return false;">الحصول علي الخدمة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+              <!-- Footer Social Section - Separate from Footer -->
+              <footer>
+  
+                <section class="social-share-section">
+                    <div style="display: flex; align-items: center; justify-content: space-between; background-color: rgb(245, 245, 245); border-radius: 143px; padding: 10px 20px; margin: 40px 0px 20px; width: 1200px; height: 91px; font-size: 12.8px;" data-original-font-size="16">
+                     <!-- Social Media Sharing - Left Side -->
+                         <!-- Last Update - Right Side -->
+                         <div style="display: flex; align-items: center; color: #158885; font-size: 16px;">
+                             <img src="../assets/icons/clock.svg" alt="الساعة" width="16" height="16" style="margin-left: 5px;">
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">آخر تعديل 19 ذو القعدة 1444</span>
+                         </div>
+                                <!-- Rating - Middle Right -->
+                     <div style="display: flex; align-items: center; gap: 8px;">
+                         <div style="display: flex; align-items: center; gap: 3px;">
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">تقييم المحتوى</span>
+                             <div style="display: flex; gap: 2px;">
+                                 <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                                 <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                             </div>
+                         </div>
+                         <!-- Followers Count - Middle -->
+                         <div style="display: flex; align-items: center; gap: 3px;">
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">عدد الأصوات:</span>
+                             <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">9130</span>
+                         </div>
+                     </div>
+                     <div style="display: flex; align-items: center; gap: 5px;">
+                         <span style="margin-right: 5px; font-size: 14px; color: #00a19a;">شارك على</span>
+                         <a href="#" style="color: #00a19a;">
+                             <img src="../assets/icons/ln1.png" alt="لينكد إن" width="26" height="26">
+                         </a>
+                         <a href="#" style="color: #00a19a;">
+                             <img src="../assets/icons/x2.png" alt="تويتر" width="26" height="26">
+                         </a>
+                         <a href="#" style="color: #00a19a;">
+                             <img src="../assets/icons/in2.png" alt="انستغرام" width="26" height="26">
+                         </a>
+                         <a href="#" style="color: #00a19a;">                
+                             <img src="../assets/icons/f3.png" alt="فيسبوك" width="26" height="26">
+                         </a>
+                     </div>   
+                 </div>
+             </section>
+             
+             <!-- Footer -->
+             <footer>
+                 <!-- Main Footer -->
+                 <div class="main-footer">
+                     <div class="container">
+                         <div class="footer-content">
+                             <div class="footer-column about-column">
+                                 <h3 class="footer-title">عن محامو المملكة</h3>
+                                 <p class="footer-text">البوابة القانونية الشاملة للمحامين والمستشارين القانونيين بالسعودية</p>
+                                 <p class="footer-text">العربية السعوية</p>
+                             </div>
+                             <div class="footer-column links-column">
+                                 <h3 class="footer-title">روابط سريعة</h3>
+                                 <ul class="footer-links">
+                                     <li><a href="../index.html">الرئيسية</a></li>
+                                     <li><a href="#">عن الموقع</a></li>
+                                     <li><a href="#">الأسئلة الشائعة</a></li>
+                                 </ul>
+                             </div>
+                             <div class="footer-column contact-column">
+                                 <h3 class="footer-title">تواصل معنا</h3>
+                                 <p class="contact-item email">info@mohamoon-ksa.com</p>
+                                 <p class="contact-item phone">الهاتف: xxx xxxx 11 966+</p>
+                                 <p class="contact-item address">العنوان: الرياض, المملكة العربية السعودية</p>
+                             </div>
+                             <div class="footer-column social-column">
+                                 <h3 class="footer-title">تابعنا</h3>
+                                 <div class="footer-social">
+                                     <a href="#" class="footer-social-icon"><img src="../assets/icons/facebook.png" alt="فيس بوك"></a>
+                                     <a href="#" class="footer-social-icon"><img src="../assets/icons/insta.png" alt="إنستجرام"></a>
+                                     <a href="#" class="footer-social-icon"><img src="../assets/icons/x.png" alt="تويتر"></a>
+                                     <a href="#" class="footer-social-icon"><img src="../assets/icons/ln.png" alt="لينكد إن"></a>
+                                 </div>
+                                 <a href="#" class="contact-btn">
+                                     <img src="../assets/icons/call.svg" alt="اتصال">
+                                     اتصل بنا
+                                 </a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            
+                 <!-- Footer Bottom -->
+                 <div class="footer-bottom">
+                     <div class="container">
+                         <div class="copyright-text">جميع الحقوق محفوظة © 2024 محامو المملكة</div>
+                         <div class="footer-bottom-links">
+                             <a href="../pages/terms.html">الشروط والأحكام</a> | 
+                             <a href="#">سياسة الخصوصية</a>
+                         </div>
+                     </div>
+                 </div>
+             </footer>
+
+    <!-- نافذة تسجيل الدخول المنبثقة -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-modal-content">
+            <div class="login-modal-header">
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="login-modal-body">
+                <h2 class="login-title">الوصول السريع</h2>
+                
+                <div class="phone-login-section">
+                    <div class="phone-input-row">
+                        <div class="country-code-select">
+                            <div class="country-flag">
+                                <img src="../assets/icons/flag-for-flag-egypt-svgrepo-com 1.png" alt="مصر" class="flag-img">
+                            </div>
+                            <span class="code">+20</span>
+                        </div>
+                        <div class="phone-field">
+                            <input type="tel" placeholder="رقم الهاتف" class="login-input">
+                        </div>
+                    </div>
+                    
+                    <button class="send-code-btn">ارسل رمز التحقق</button>
+                    <p class="error-msg">يجب إدخال رقم الهاتف</p>
+                </div>
+                
+                <div class="separator">
+                    <span>أو يمكنك تسجيل الدخول باسم المستخدم وكلمة المرور</span>
+                </div>
+                
+                <div class="credentials-login-section">
+                    <input type="text" placeholder="اسم المستخدم" class="login-input">
+                    <div class="password-field">
+                        <input type="password" placeholder="كلمة المرور" class="login-input">
+                        <button class="toggle-password">
+                            <img src="../assets/icons/eye.png" alt="إظهار" class="eye-icon">
+                        </button>
+                    </div>
+                    <button class="login-submit-btn">دخول</button>
+                    <a href="#" class="forgot-password">هل نسيت كلمة السر؟</a>
+                </div>
+                
+                <div class="help-section">
+                    <a href="#" class="help-btn customer-service">
+                        <span>خدمة العملاء</span>
+                        <img src="../assets/icons/support.png" alt="خدمة" class="help-icon">
+                    </a>
+                    <a href="#" class="help-btn self-help">
+                        <span>المساعدة الذاتية</span>
+                        <img src="../assets/icons/message-search.png" alt="مساعدة" class="help-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/pages-login-modal.js"></script>
+
+    
+<!-- سكريبت تصحيح الروابط وربط الأزرار -->
+<script src="scripts/global-components.js"></script>
+<script src="scripts/global-functions.js"></script>
+<script src="scripts/sub-settings.js"></script>
+
+
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+<script src="../scripts/unified-settings.js"></script>
+<!-- نظام المصادقة والتسجيل -->
+<script src="../scripts/auth-system.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+
+
+
+
+<!-- Core Sliders -->
+<script src="../scripts/slider.js"></script>
+<script src="../scripts/services-slider.js"></script>
+<script src="../scripts/partners-slider.js"></script>
+<script src="../scripts/updates-slider.js"></script>
+<script src="../scripts/load-asanid-service-modal.js"></script>
+
+<!-- Settings and Icons -->
+<script src="../scripts/unified-icons.js"></script>
+
+<!-- Navigation and Menu Scripts -->
+<script src="../scripts/services-menu.js"></script>
+<script src="../scripts/unified-navbar.js"></script>
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+<script src="../scripts/mobile-menu.js"></script>
+
+<!-- Search and Popup -->
+<script src="../scripts/search-popup.js"></script>
+
+<!-- Zoom and Accessibility -->
+<script src="../scripts/simple-zoom.js"></script>
+<script src="../scripts/zoom-control.js"></script>
+
+<!-- Authentication and Profile -->
+        <script src="../scripts/fix-profile-button.js"></script>
+        <script src="../scripts/load-login-from-file.js"></script>
+        <script src="../scripts/login-fix.js"></script>
+<script src="../scripts/settings-menu-handler.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/edit-profile-modal.js"></script>
+
+<!-- Modals and Selectors -->
+<script src="../scripts/asanid-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/enhanced-country-dropdown.js"></script>
+<script src="../scripts/country-selector-modal.js"></script>
+
+<!-- Utility Scripts -->
+<script src="../scripts/link-fixer.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/services-darkmode-fix.js"></script>
+<script src="../scripts/star-rating.js"></script>
+<script src="../scripts/subpages-dark-contrast.js"></script>
+<script src="../scripts/contrast-submenu-fix.js"></script>
+
+<!-- Subscription and Renewal -->
+<script src="../scripts/modify-subscription-modal.js"></script>
+<script src="../scripts/load-modify-subscription-modal.js"></script>
+<script src="../scripts/load-renew-subscription-modal.js"></script>
+<script src="../scripts/renew-subscription-modal.js"></script>
+<!-- Additional Containers -->
+<div id="modify-subscription-modal-container"></div>
+<div id="country-selector-container">
+    <!-- This will be loaded dynamically or included here -->
+</div>
+    <!-- Ø£ÙŠÙ‚ÙˆÙ†Ø© Ø§Ù„Ø¯Ø¹Ù… Ø§Ù„Ø«Ø§Ø¨ØªØ© -->
+    <div class="support-icon-fixed">
+        <img src="../assets/icons/support.svg" alt="Ø§Ù„Ø¯Ø¹Ù… ÙˆØ§Ù„Ù…Ø³Ø§Ø¹Ø¯Ø©">
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

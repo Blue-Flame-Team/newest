@@ -1,0 +1,342 @@
+﻿/* Contact Section Styles */
+.contact-section {
+    padding: 50px 0 40px;
+    background-color: #fff;
+    direction: rtl;
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+}
+
+.contact-title {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    color: #17a891;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.contact-title::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #f7913d;
+    margin: 0 auto 8px;
+    border-radius: 1.5px;
+}
+
+/* إزالة الخط من تحت العنوان */
+.contact-title::after {
+    display: none;
+}
+
+.contact-content {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 380px;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    z-index: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-title {
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.map-directions {
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-size: var(--font-base);
+    color: #000;
+    text-decoration: underline;
+    display: block;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contact-info-card {
+    width: 1000px !important;
+    height: 526px !important;
+    border-radius: 25px !important;
+    box-shadow: 2px 1px 8.6px 0px #00000042 !important;
+    background-color: #ffffff;
+    display: flex;
+    margin: -70px auto 0;
+    position: relative;
+    z-index: 2;
+    font-family: "Droid Arabic Kufi", sans-serif;
+}
+
+/* القسم الأيمن (معلومات العنوان) */
+.info-right {
+    width: 50%;
+    padding: 60px 60px 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* القسم الأيسر (معلومات الاتصال) */
+.info-left {
+    width: 50%;
+    padding: 60px 40px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-section {
+    margin-bottom: 45px;
+    text-align: right;
+    width: 100%;
+}
+
+.info-title, .follow-us-title {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 26px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.info-text, .contact-email, .contact-phone, .contact-whatsapp {
+    font-size: var(--font-2xl);
+    font-weight: 400;
+    color: #000000;
+    font-family: "Droid Arabic Kufi", sans-serif;
+}
+
+.info-text {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 24px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+}
+
+.email-info {
+    margin-bottom: 45px;
+    text-align: right;
+    width: 100%;
+}
+
+.email-link, .phone-link, .whatsapp-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: var(--font-2xl);
+    font-weight: 400;
+    margin-bottom: 15px;
+    width: 100%;
+    justify-content: flex-start;
+    font-family: "Noto Kufi Arabic", sans-serif;
+}
+
+.email-link img, .whatsapp-link img {
+    width: 24px;
+    height: 24px;
+    order: 0;
+}
+
+.phone-link img {
+    width: 20px;
+    height: 20px;
+    order: 0;
+}
+
+.contact-email, .contact-phone, .contact-whatsapp {
+    direction: ltr;
+    order: 1;
+    text-align: right;
+    display: inline-block;
+}
+
+/* إزالة التنسيقات المكررة */
+.contact-phone, .contact-whatsapp {
+    direction: ltr; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    margin-top: 0;
+    width: 100%;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    transition: all 0.3s ease;
+}
+
+.social-link img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-link:hover {
+    background-color: transparent;
+    color: #17a891;
+}
+
+/* تخصيص البريد الإلكتروني */
+.email-info {
+    margin-bottom: 25px;
+}
+
+.contact-email {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 24px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+}
+
+/* تخصيص معلومات الاتصال */
+.contact-info {
+    margin-bottom: 25px;
+}
+
+/* تحديث المسافة بين آخر قسم والنهاية */
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .contact-info-card {
+        width: 95%;
+        height: auto;
+    }
+    
+    .info-right, .info-left {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-info-card {
+        flex-direction: column;
+        margin-top: -40px;
+    }
+    
+    .info-right, .info-left {
+        width: 100%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-card {
+        margin-top: -30px;
+    }
+    
+    .info-right, .info-left {
+        padding: 25px;
+    }
+    
+    .info-title, .follow-us-title {
+        font-size: var(--font-xl);
+    }
+    
+    .info-text, .email-link, .phone-link, .whatsapp-link, .contact-email, .contact-phone, .contact-whatsapp {
+        font-size: var(--font-xl);
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info-card {
+        margin: -25px auto 0;
+    }
+    
+    .info-right, .info-left {
+        padding: 20px;
+    }
+    
+    .social-links {
+        gap: 20px;
+    }
+    
+    .social-link {
+        width: 32px;
+        height: 32px;
+        font-size: var(--font-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-card {
+        width: 100% !important;
+        max-width: 100vw !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+}
+
+.contact-phone {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 24px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+}
+
+.contact-whatsapp {
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 24px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+}
+

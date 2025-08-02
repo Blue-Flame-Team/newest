@@ -1,0 +1,166 @@
+﻿/* أنماط متجاوبة لصفحة الإحصائيات - تدعم جميع أحجام الشاشات والموبايل */
+
+/* تنسيق أساسي لجميع الشاشات */
+.stats-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.visits-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+    min-height: 250px;
+}
+
+.recently-viewed {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+    min-height: 250px;
+}
+
+.recently-viewed {
+    flex: 2;
+    padding: 15px 20px;
+    width: auto;
+}
+
+.visits-section {
+    flex: 1;
+    padding: 12px 15px;
+    width: auto;
+}
+
+.visits-table {
+    width: 100%;
+}
+
+/* أنماط للشاشات المتوسطة والصغيرة */
+@media (max-width: 992px) {
+    .stats-wrapper {
+        flex-direction: column;
+    }
+    
+    .recently-viewed,
+    .visits-section {
+        width: 100%;
+    }
+    
+    .recently-viewed {
+        margin-bottom: 20px;
+    }
+    
+    .visits-table th,
+    .visits-table td {
+        padding: 8px 5px;
+        font-size: var(--font-sm);
+    }
+    
+    .visits-header {
+        font-size: var(--font-base);
+    }
+}
+
+/* أنماط خاصة للموبايل */
+@media (max-width: 768px) {
+    .terms-title {
+        font-size: var(--font-2xl);
+        margin: 20px auto;
+    }
+    
+    .section-title {
+        font-size: var(--font-xl);
+    }
+    
+    .visits-header {
+        font-size: var(--font-sm);
+    }
+    
+    .recently-viewed-list,
+    .recently-used-docs-list,
+    .printed-docs-list {
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+    
+    .recently-viewed-item,
+    .recently-used-docs-item,
+    .printed-docs-item {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+    
+    .visits-table tbody td:first-child {
+        min-width: 60px;
+    }
+    
+    .visits-total-cell {
+        font-size: var(--font-base);
+    }
+    
+    .view-all-btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* تنسيق إضافي للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .visits-table thead th,
+    .visits-table tbody td {
+        padding: 6px 3px;
+        font-size: var(--font-sm);
+    }
+    
+    .visits-total-cell {
+        font-size: var(--font-sm);
+    }
+    
+    .recent-title {
+        font-size: var(--font-base);
+        margin-bottom: 15px;
+    }
+    
+    .recently-viewed-item,
+    .recently-used-docs-item,
+    .printed-docs-item {
+        font-size: var(--font-sm);
+    }
+    
+    .social-share-wrap {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .social-share-section .container {
+        padding: 0 10px;
+    }
+    
+    .share-content {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .forum-rating, .followers-count, .last-update {
+        margin: 5px 0;
+    }
+}
+
+/* تنسيق قائمة الموبايل */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .navbar .nav-menu {
+        display: none;
+    }
+}
+

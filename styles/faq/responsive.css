@@ -1,0 +1,133 @@
+﻿/* أنماط متجاوبة لصفحة الأسئلة الشائعة - تدعم جميع أحجام الشاشات والموبايل */
+
+/* تنسيقات أساسية */
+.faq-content {
+    padding: 20px 15px 50px;
+}
+
+/* تنسيقات للشاشات المتوسطة */
+@media (max-width: 992px) {
+    .faq-items {
+        max-width: 100%;
+    }
+    
+    .faq-title {
+        font-size: var(--font-2xl);
+        margin-top: 30px;
+    }
+}
+
+/* تنسيقات للموبايل */
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: var(--font-xl);
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .orange-divider {
+        margin-bottom: 15px;
+    }
+    
+    .faq-subtitle {
+        font-size: var(--font-sm);
+        margin-bottom: 20px;
+    }
+    
+    .faq-items {
+        margin: 20px auto;
+    }
+    
+    .faq-item {
+        margin-bottom: 20px;
+    }
+    
+    .faq-question {
+        align-items: flex-start;
+    }
+    
+    .faq-question p {
+        font-size: var(--font-sm);
+    }
+    
+    .faq-answer {
+        margin-right: 15px;
+    }
+    
+    .faq-answer p {
+        font-size: var(--font-sm);
+        line-height: 1.5;
+    }
+    
+    /* تخفي Navbar العادي وتظهر زر الهامبرغر في حالة الموبايل */
+    .navbar .navbar-content {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* تعديل شكل البريدكرامب */
+    .breadcrumb {
+        padding: 10px 0;
+    }
+    
+    .breadcrumb ul li {
+        font-size: var(--font-xs);
+    }
+    
+    /* تعديل شكل الفوتر */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .footer-column {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* تنسيقات للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .faq-title {
+        font-size: var(--font-xl);
+    }
+    
+    .faq-question p {
+        font-size: var(--font-sm);
+    }
+    
+    .faq-answer p {
+        font-size: var(--font-sm);
+    }
+    
+    .social-share-section .container .share-content {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .top-bar-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .top-elements {
+        width: 100%;
+    }
+}
+

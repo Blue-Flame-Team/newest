@@ -1,0 +1,80 @@
+/* نظام تكبير بسيط وفعال */
+:root {
+    --zoom-factor: 1;
+    --base-font-size: 16px;
+}
+
+/* تطبيق التكبير على جميع العناصر النصية */
+body * {
+    font-size: calc(var(--base-font-size) * var(--zoom-factor)) !important;
+}
+
+/* تأكد من تطبيق التكبير على النصوص */
+p, span, div, a, button, input, textarea, label, li, td, th {
+    font-size: calc(var(--base-font-size) * var(--zoom-factor)) !important;
+}
+
+/* استثناءات للعناصر التي لا تحتاج تكبير */
+.zoom-btn, .icon-btn, .settings-menu,
+/* استثناء الناف بار والتوب بار لمنع النزول والمساحة الفارغة */
+.top-bar, .top-bar *,
+.navbar, .navbar *,
+.top-bar-content, .top-bar-content *,
+.navbar-content, .navbar-content *,
+.main-menu, .main-menu *,
+.menu-item, .menu-item *,
+.dropdown-menu, .dropdown-menu *,
+.top-actions, .top-actions *,
+.top-elements, .top-elements *,
+.top-icons, .top-icons *,
+.logo, .logo *,
+.hamburger-menu {
+    font-size: inherit !important;
+}
+
+/* عناصر خاصة */
+h1 {
+    font-size: calc(2.5rem * var(--zoom-factor)) !important;
+}
+
+h2 {
+    font-size: calc(2rem * var(--zoom-factor)) !important;
+}
+
+h3 {
+    font-size: calc(1.75rem * var(--zoom-factor)) !important;
+}
+
+h4 {
+    font-size: calc(1.5rem * var(--zoom-factor)) !important;
+}
+
+h5 {
+    font-size: calc(1.25rem * var(--zoom-factor)) !important;
+}
+
+h6 {
+    font-size: calc(1.125rem * var(--zoom-factor)) !important;
+}
+
+/* تأثير بصري للتغيير */
+.font-size-changed {
+    animation: zoomEffect 0.3s ease;
+}
+
+@keyframes zoomEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* ضمان ثبات الناف بار في الموبايل - قاعدة نهائية */
+@media (max-width: 767px) {
+    .top-bar,
+    .navbar {
+        /* position: fixed !important; */
+        transform: none !important;
+        will-change: auto !important;
+        backface-visibility: hidden !important;
+    }
+} 

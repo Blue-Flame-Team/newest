@@ -1,0 +1,177 @@
+/* حل مشكلة ظهور زر القائمة على جميع الهواتف المحمولة */
+
+/* قواعد لجميع الأجهزة المحمولة - السمات الأساسية */
+@media screen and (max-width: 767px) {
+    /* قواعد قوية وأكثر تحديداً لزر الهامبرغر */
+    body .hamburger-menu,
+    .hamburger-menu,
+    .logo .hamburger-menu,
+    .mobile-icons .hamburger-menu {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 24px !important;
+        height: 18px !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 1500 !important;
+        pointer-events: auto !important;
+        margin: 0 !important;
+    }
+
+    body .hamburger-menu span,
+    .hamburger-menu span,
+    .logo .hamburger-menu span,
+    .mobile-icons .hamburger-menu span {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 100% !important;
+        height: 2px !important;
+        background-color: #fff !important;
+        border-radius: 1px !important;
+        pointer-events: none !important;
+    }
+
+    /* ترتيب الشرائط الثلاثة */
+    body .hamburger-menu span:nth-child(1),
+    .hamburger-menu span:nth-child(1),
+    .logo .hamburger-menu span:nth-child(1),
+    .mobile-icons .hamburger-menu span:nth-child(1) {
+        top: 0 !important;
+    }
+
+    body .hamburger-menu span:nth-child(2),
+    .hamburger-menu span:nth-child(2),
+    .logo .hamburger-menu span:nth-child(2),
+    .mobile-icons .hamburger-menu span:nth-child(2) {
+        top: 8px !important;
+    }
+
+    body .hamburger-menu span:nth-child(3),
+    .hamburger-menu span:nth-child(3),
+    .logo .hamburger-menu span:nth-child(3),
+    .mobile-icons .hamburger-menu span:nth-child(3) {
+        top: 16px !important;
+    }
+
+    /* تحسينات إضافية للقائمة الجانبية */
+    .mobile-menu-overlay {
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        z-index: 2000 !important;
+    }
+
+    .mobile-side-menu {
+        visibility: visible !important;
+        display: flex !important;
+        opacity: 1 !important;
+        z-index: 2001 !important;
+    }
+}
+
+/* قواعد تجاوب الهامبرغر مع مختلف أحجام الهواتف */
+
+/* الهواتف الصغيرة (320px - 375px) */
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .mobile-icons .hamburger-menu,
+    .hamburger-menu {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+        width: 20px !important;
+        height: 14px !important;
+        z-index: 9999 !important;
+        margin-left: 3px !important;
+        padding: 2px !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    /* إظهار الشرائط الثلاثة بقوة */
+    .hamburger-menu span {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background-color: #fff !important;
+        position: absolute !important;
+        width: 100% !important;
+        height: 2px !important;
+    }
+
+    .hamburger-menu span:nth-child(1) {
+        top: 0 !important;
+    }
+
+    .hamburger-menu span:nth-child(2) {
+        top: 6px !important;
+    }
+
+    .hamburger-menu span:nth-child(3) {
+        top: 12px !important;
+    }
+}
+
+/* هواتف متوسطة الحجم (376px - 414px) */
+@media screen and (min-width: 376px) and (max-width: 414px) {
+    .mobile-icons .hamburger-menu,
+    .hamburger-menu {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+        width: 22px !important;
+        height: 16px !important;
+        z-index: 9999 !important;
+        margin-left: 5px !important;
+        padding: 3px !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .hamburger-menu span:nth-child(1) {
+        top: 0 !important;
+    }
+
+    .hamburger-menu span:nth-child(2) {
+        top: 7px !important;
+    }
+
+    .hamburger-menu span:nth-child(3) {
+        top: 14px !important;
+    }
+}
+
+/* هواتف كبيرة الحجم (415px - 767px) */
+@media screen and (min-width: 415px) and (max-width: 767px) {
+    .mobile-icons .hamburger-menu,
+    .hamburger-menu {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+        width: 24px !important;
+        height: 18px !important;
+        z-index: 9999 !important;
+        margin-left: 5px !important;
+        padding: 3px !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .hamburger-menu span:nth-child(1) {
+        top: 0 !important;
+    }
+
+    .hamburger-menu span:nth-child(2) {
+        top: 8px !important;
+    }
+
+    .hamburger-menu span:nth-child(3) {
+        top: 16px !important;
+    }
+}

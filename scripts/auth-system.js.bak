@@ -1,0 +1,975 @@
+/**
+ * نظام تسجيل الدخول الموحد - محامون المملكة
+ * 
+ * ملف نظام المصادقة الرئيسي الذي يتعامل مع جميع وظائف تسجيل الدخول وواجهة المستخدم
+ * تم هيكلته ليكون سهل الدمج مع نظام الباك إند مستقبلاً
+ */
+
+// تنفيذ النظام باستخدام نمط IIFE لتجنب التداخل مع المتغيرات العالمية
+const AuthSystem = (function() {
+    // المتغيرات الخاصة بالنظام
+    let _currentUser = null;
+    const LOCAL_STORAGE_KEY = 'currentUser';
+    
+    // بيانات المستخدمين للنسخة التجريبية فقط - سيتم استبدالها بباك إند حقيقي
+    const _testUsers = [
+        { username: 'test', password: '123456', name: 'مستخدم تجريبي' },
+        { username: 'admin', password: 'admin123', name: 'مشرف النظام' },
+        { username: 'lawyer', password: 'lawyer123', name: 'المحامي عبدالله' },
+        { username: 'manal', password: 'manal123', name: 'Manal Mohamed taha' }
+    ];
+    
+    // عناصر واجهة المستخدم
+    let _elements = {
+        loginBtns: null,
+        loginModal: null,
+        closeModal: null,
+        togglePassword: null,
+        passwordField: null,
+        usernameInput: null,
+        loginSubmitBtn: null,
+        phoneInput: null,
+        sendCodeBtn: null,
+        errorMsg: null,
+        forgotPasswordLink: null,
+        forgotPasswordModal: null,
+        closeForgotModal: null,
+        mainIconsGroup: null,
+        profileIconBtn: null
+    };
+    
+    /**
+     * تهيئة النظام عند تحميل الصفحة
+     */
+    function init() {
+        
+        // الحصول على كافة عناصر واجهة المستخدم
+        _cacheElements();
+        
+        // تهيئة الأحداث لعناصر واجهة المستخدم
+        _setupEventListeners();
+        
+        // التحقق من وجود مستخدم مسجل الدخول مسبقاً
+        _checkLoggedInUser();
+    }
+    
+    /**
+     * تخزين مراجع لعناصر DOM المطلوبة
+     * يسهل الوصول إليها بدل البحث المتكرر في DOM
+     */
+    function _cacheElements() {
+        _elements.loginBtns = document.querySelectorAll('.login-btn');
+        _elements.loginModal = document.getElementById('login-modal');
+        _elements.closeModal = document.querySelector('.close-modal');
+        _elements.togglePassword = document.querySelector('.toggle-password');
+        _elements.passwordField = document.querySelector('.password-field input');
+        _elements.usernameInput = document.querySelector('.credentials-login-section input[type="text"]');
+        _elements.loginSubmitBtn = document.querySelector('.login-submit-btn');
+        _elements.phoneInput = document.querySelector('.phone-field input');
+        _elements.sendCodeBtn = document.querySelector('.send-code-btn');
+        _elements.errorMsg = document.querySelector('.error-msg');
+        _elements.forgotPasswordLink = document.querySelector('.forgot-password');
+        _elements.forgotPasswordModal = document.getElementById('forgot-password-modal');
+        _elements.closeForgotModal = document.querySelector('.close-forgot-modal');
+        _elements.mainIconsGroup = document.querySelector('.main-icons-group');
+        _elements.profileIconBtn = document.querySelector('.profile-icon-btn');
+    }
+    
+    /**
+     * إعداد مستمعي الأحداث للعناصر المختلفة
+     */
+    function _setupEventListeners() {
+        // التحقق من وجود العناصر المطلوبة قبل إضافة الأحداث
+        
+        // 1. أزرار تسجيل الدخول في جميع أنحاء الموقع
+        if (_elements.loginBtns && _elements.loginBtns.length > 0) {
+            _elements.loginBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    _showLoginModal();
+                });
+            });
+        }
+        
+        // 2. زر إغلاق النافذة المنبثقة
+        if (_elements.closeModal && _elements.loginModal) {
+            _elements.closeModal.addEventListener('click', _hideLoginModal);
+        }
+        
+        // 3. إغلاق النافذة عند النقر خارجها
+        window.addEventListener('click', function(e) {
+            if (_elements.loginModal && e.target === _elements.loginModal) {
+                _hideLoginModal();
+            } else if (_elements.forgotPasswordModal && e.target === _elements.forgotPasswordModal) {
+                _elements.forgotPasswordModal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // 4. تبديل رؤية كلمة المرور
+        if (_elements.togglePassword && _elements.passwordField) {
+            _elements.togglePassword.addEventListener('click', function() {
+                const type = _elements.passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                _elements.passwordField.setAttribute('type', type);
+            });
+        }
+        
+        // 5. إرسال نموذج تسجيل الدخول بواسطة اسم المستخدم وكلمة المرور
+        if (_elements.loginSubmitBtn && _elements.usernameInput && _elements.passwordField) {
+            _elements.loginSubmitBtn.addEventListener('click', function() {
+                const username = _elements.usernameInput.value.trim();
+                const password = _elements.passwordField.value;
+                
+                if (!username || !password) {
+                    alert('الرجاء إدخال اسم المستخدم وكلمة المرور');
+                    return;
+                }
+                
+                login(username, password);
+            });
+        }
+        
+        // 6. إرسال رمز التحقق للهاتف
+        if (_elements.sendCodeBtn && _elements.phoneInput && _elements.errorMsg) {
+            _elements.sendCodeBtn.addEventListener('click', function() {
+                const phone = _elements.phoneInput.value.trim();
+                
+                if (!phone) {
+                    _elements.errorMsg.style.display = 'block';
+                    return;
+                }
+                
+                _elements.errorMsg.style.display = 'none';
+                alert('تم إرسال رمز التحقق إلى الرقم: ' + phone);
+                
+                // محاكاة تسجيل الدخول بعد التحقق من رقم الهاتف
+                setTimeout(function() {
+                    // تسجيل الدخول كمستخدم تجريبي بعد 2 ثانية
+                    login('test', '123456');
+                }, 2000);
+            });
+        }
+        
+        // 7. رابط استعادة كلمة المرور
+        if (_elements.forgotPasswordLink && _elements.forgotPasswordModal) {
+            _elements.forgotPasswordLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                _elements.loginModal.classList.remove('show');
+                _elements.forgotPasswordModal.classList.add('show');
+            });
+        }
+        
+        // 8. إغلاق نافذة استعادة كلمة المرور
+        if (_elements.closeForgotModal) {
+            _elements.closeForgotModal.addEventListener('click', function() {
+                _elements.forgotPasswordModal.classList.remove('show');
+                document.body.style.overflow = '';
+            });
+        }
+    }
+    
+    /**
+     * إظهار النافذة المنبثقة لتسجيل الدخول
+     */
+    function _showLoginModal() {
+        if (!_elements.loginModal) return;
+        
+        _elements.loginModal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // منع التمرير في الصفحة الخلفية
+    }
+    
+    /**
+     * إخفاء النافذة المنبثقة لتسجيل الدخول
+     */
+    function _hideLoginModal() {
+        if (!_elements.loginModal) return;
+        
+        _elements.loginModal.classList.remove('show');
+        document.body.style.overflow = ''; // إعادة التمرير إلى وضعه الطبيعي
+    }
+    
+    /**
+     * تسجيل الدخول باستخدام اسم المستخدم وكلمة المرور
+     * @param {string} username - اسم المستخدم
+     * @param {string} password - كلمة المرور
+     * @return {boolean} نجاح أو فشل تسجيل الدخول
+     */
+    function login(username, password) {
+        // البحث عن المستخدم في قائمة المستخدمين التجريبية
+        // ملاحظة: سيتم استبدال هذا بطلب API في النظام الحقيقي
+        let user = null;
+        
+        for (let i = 0; i < _testUsers.length; i++) {
+            if (_testUsers[i].username === username && _testUsers[i].password === password) {
+                user = _testUsers[i];
+                break;
+            }
+        }
+        
+        if (user) {
+            // تسجيل الدخول ناجح
+            _currentUser = {
+                username: user.username,
+                name: user.name,
+                isLoggedIn: true
+            };
+            
+            // حفظ بيانات المستخدم في التخزين المحلي
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(_currentUser));
+            
+            // إخفاء زر تسجيل الدخول وإظهار أيقونة الملف الشخصي
+            _updateUIAfterLogin();
+            
+            // إغلاق نافذة تسجيل الدخول
+            _hideLoginModal();
+            
+            return true;
+        } else {
+            // فشل تسجيل الدخول
+            alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+            return false;
+        }
+    }
+    
+    /**
+     * تسجيل الخروج من النظام
+     */
+    function logout() {
+        // حذف بيانات المستخدم من الذاكرة والتخزين المحلي
+        _currentUser = null;
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
+        
+        // إخفاء أيقونة الملف الشخصي وإظهار زر تسجيل الدخول
+        _updateUIAfterLogout();
+        
+        // إغلاق أي نوافذ مفتوحة للمستخدم
+        _hideUserDashboard();
+        
+    }
+    
+    /**
+     * فحص حالة تسجيل الدخول عند تحميل الصفحة
+     */
+    function _checkLoggedInUser() {
+        try {
+            const userData = localStorage.getItem(LOCAL_STORAGE_KEY);
+            if (!userData) return;
+            
+            const storedUser = JSON.parse(userData);
+            
+            if (storedUser && storedUser.isLoggedIn) {
+                _currentUser = storedUser;
+                _updateUIAfterLogin();
+            }
+        } catch (error) {
+
+        }
+    }
+    
+    /**
+     * تحديث واجهة المستخدم بعد تسجيل الدخول
+     */
+    function _updateUIAfterLogin() {
+        // إخفاء أزرار تسجيل الدخول
+        if (_elements.loginBtns && _elements.loginBtns.length > 0) {
+            _elements.loginBtns.forEach(function(btn) {
+                btn.style.display = 'none';
+            });
+        }
+        
+        // إضافة أيقونة الملف الشخصي
+        _addProfileIcon();
+    }
+    
+    /**
+     * تحديث واجهة المستخدم بعد تسجيل الخروج
+     */
+    function _updateUIAfterLogout() {
+        // إظهار أزرار تسجيل الدخول
+        if (_elements.loginBtns && _elements.loginBtns.length > 0) {
+            _elements.loginBtns.forEach(function(btn) {
+                btn.style.display = 'block';
+            });
+        }
+        
+        // إزالة أيقونة الملف الشخصي
+        const profileBtn = document.querySelector('.profile-icon-btn');
+        if (profileBtn) {
+            profileBtn.remove();
+        }
+    }
+    
+    /**
+     * إضافة أيقونة الملف الشخصي إلى شريط الأدوات
+     */
+    function _addProfileIcon() {
+        // التحقق من وجود عنصر mainIconsGroup
+        if (!_elements.mainIconsGroup) {
+
+            return;
+        }
+        
+        // إزالة أي أيقونة ملف شخصي موجودة مسبقاً
+        const existingProfileBtn = document.querySelector('.profile-icon-btn');
+        if (existingProfileBtn) {
+            existingProfileBtn.remove();
+        }
+        
+        // إنشاء زر الملف الشخصي
+        const profileButton = document.createElement('button');
+        profileButton.className = 'icon-btn profile-icon-btn';
+        profileButton.title = 'الملف الشخصي';
+        
+        // إنشاء أيقونة الملف الشخصي
+        const profileIcon = document.createElement('img');
+        profileIcon.src = '../assets/icons/profile-circle.png';
+        if (!fileExists(profileIcon.src)) {
+            // استخدام أيقونة بديلة إذا كانت الأيقونة المفضلة غير موجودة
+            profileIcon.src = '../assets/icons/Vector.png';
+        }
+        profileIcon.alt = 'الملف الشخصي';
+        
+        // إضافة الأيقونة للزر
+        profileButton.appendChild(profileIcon);
+        
+        // إضافة الزر كأول عنصر في مجموعة الأيقونات
+        _elements.mainIconsGroup.insertBefore(profileButton, _elements.mainIconsGroup.firstChild);
+        
+        // إضافة حدث النقر على الزر
+        profileButton.addEventListener('click', _showUserDashboard);
+        
+        // تحديث مرجع أيقونة الملف الشخصي
+        _elements.profileIconBtn = profileButton;
+    }
+    
+    /**
+     * عرض لوحة المستخدم
+     */
+    function _showUserDashboard() {
+        // التحقق من وجود مستخدم مسجل الدخول
+        if (!_currentUser || !_currentUser.isLoggedIn) return;
+        
+        // إنشاء وإضافة لوحة المستخدم إلى الصفحة
+        _createUserDashboardModal(_currentUser);
+    }
+    
+    /**
+     * إخفاء لوحة المستخدم
+     */
+    function _hideUserDashboard() {
+        const dashboardModal = document.getElementById('user-dashboard-modal');
+        if (dashboardModal) {
+            dashboardModal.style.display = 'none';
+        }
+    }
+    
+    /**
+     * إنشاء لوحة تحكم المستخدم
+     * @param {object} user - بيانات المستخدم
+     */
+    function _createUserDashboardModal(user) {
+        // إزالة أي لوحة موجودة سابقاً
+        const existingDashboard = document.getElementById('user-dashboard-modal');
+        if (existingDashboard) {
+            existingDashboard.remove();
+        }
+        
+        // إنشاء عنصر modal للوحة المستخدم
+        const dashboardModal = document.createElement('div');
+        dashboardModal.id = 'user-dashboard-modal';
+        dashboardModal.className = 'modal';
+        dashboardModal.style.display = 'block';
+        dashboardModal.style.position = 'fixed';
+        dashboardModal.style.zIndex = '1000';
+        dashboardModal.style.left = '0';
+        dashboardModal.style.top = '0';
+        dashboardModal.style.width = '100%';
+        dashboardModal.style.height = '100%';
+        dashboardModal.style.backgroundColor = 'rgba(0,0,0,0.4)';
+        dashboardModal.style.overflow = 'auto';
+        dashboardModal.style.direction = 'rtl';
+        
+        // محتوى اللوحة
+        const dashboardContent = document.createElement('div');
+        dashboardContent.className = 'modal-content';
+        dashboardContent.style.backgroundColor = '#444';
+        dashboardContent.style.margin = '15% auto';
+        dashboardContent.style.padding = '20px';
+        dashboardContent.style.width = '90%';
+        dashboardContent.style.maxWidth = '500px';
+        dashboardContent.style.borderRadius = '8px';
+        dashboardContent.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+        dashboardContent.style.position = 'relative';
+        dashboardContent.style.textAlign = 'center';
+        
+        // إضافة العنوان
+        const title = document.createElement('h2');
+        title.textContent = 'مرحبا ' + user.name;
+        title.style.color = '#ced4da';
+        title.style.margin = '10px 0 20px';
+        title.style.fontSize = '1.5rem';
+        dashboardContent.appendChild(title);
+        
+        // إضافة الإطار الرئيسي للأزرار
+        const buttonFrame = document.createElement('div');
+        buttonFrame.style.color = '#ced4da';
+        buttonFrame.style.fontSize = '0.8rem';
+        buttonFrame.style.margin = '10px 0';
+        dashboardContent.appendChild(buttonFrame);
+        
+        // إنشاء حاوية للأزرار في صفين
+        const btnContainer = document.createElement('div');
+        btnContainer.style.display = 'grid';
+        btnContainer.style.gridTemplateColumns = '1fr 1fr';
+        btnContainer.style.gap = '15px';
+        btnContainer.style.margin = '15px 0';
+        
+        // وظيفة لإنشاء زر في اللوحة
+        function createDashboardButton(text, iconPath, bgColor = '#2b3a63') {
+            const btn = document.createElement('button');
+            btn.style.backgroundColor = bgColor;
+            btn.style.color = '#fff';
+            btn.style.border = 'none';
+            btn.style.borderRadius = '8px';
+            btn.style.padding = '15px 20px';
+            btn.style.cursor = 'pointer';
+            btn.style.display = 'flex';
+            btn.style.alignItems = 'center';
+            btn.style.justifyContent = 'space-between';
+            btn.style.width = '100%';
+            btn.style.fontSize = '1rem';
+            
+            const textSpan = document.createElement('span');
+            textSpan.textContent = text;
+            
+            const icon = document.createElement('img');
+            icon.src = iconPath;
+            icon.alt = text;
+            icon.style.width = '24px';
+            icon.style.height = '24px';
+            
+            btn.appendChild(textSpan);
+            btn.appendChild(icon);
+            
+            return btn;
+        }
+        
+        // إنشاء الأزرار الأربعة الرئيسية بالترتيب المطابق للصورة
+        const asanidBtn = createDashboardButton('طلب خدمة الأسانيد', '../assets/icons/document-icon.svg');
+        const editProfileBtn = createDashboardButton('عدل بياناتك', '../assets/icons/edit.png');
+        const customerServiceBtn = createDashboardButton('خدمة العملاء', '../assets/icons/support.png');
+        const selfHelpBtn = createDashboardButton('المساعدة الذاتية', '../assets/icons/message-search2.png');
+        
+        // إضافة الأزرار إلى الحاوية بالترتيب المطابق للصورة
+        btnContainer.appendChild(editProfileBtn);
+        btnContainer.appendChild(asanidBtn);
+        btnContainer.appendChild(selfHelpBtn);
+        btnContainer.appendChild(customerServiceBtn);
+        
+        // إضافة حاوية الأزرار إلى المحتوى
+        dashboardContent.appendChild(btnContainer);
+        
+        // إنشاء زر تسجيل الخروج
+        const logoutBtn = createDashboardButton('تسجيل الخروج', '../assets/icons/exit.png', '#d9534f');
+        logoutBtn.style.margin = '20px auto';
+        logoutBtn.style.width = '70%';
+        
+        // إضافة حدث لزر تسجيل الخروج
+        logoutBtn.addEventListener('click', function() {
+            logout();
+            dashboardModal.style.display = 'none';
+        });
+        
+        dashboardContent.appendChild(logoutBtn);
+        
+        // إضافة زر إغلاق
+        const closeBtn = document.createElement('span');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.className = 'close-modal';
+        closeBtn.style.position = 'absolute';
+        closeBtn.style.top = '10px';
+        closeBtn.style.left = '10px';
+        closeBtn.style.color = '#aaa';
+        closeBtn.style.fontSize = '28px';
+        closeBtn.style.fontWeight = 'bold';
+        closeBtn.style.cursor = 'pointer';
+        
+        closeBtn.addEventListener('click', function() {
+            dashboardModal.style.display = 'none';
+        });
+        
+        dashboardContent.appendChild(closeBtn);
+        
+        // إضافة حدث النقر خارج اللوحة لإغلاقها
+        dashboardModal.addEventListener('click', function(event) {
+            if (event.target === dashboardModal) {
+                dashboardModal.style.display = 'none';
+            }
+        });
+        
+        // إضافة الأحداث للأزرار
+        asanidBtn.addEventListener('click', function() {
+            _showAsanidServiceForm();
+        });
+        
+        editProfileBtn.addEventListener('click', function() {
+            _navigateToProfileEditPage();
+        });
+        
+        selfHelpBtn.addEventListener('click', function() {
+            _navigateToSelfHelpPage();
+        });
+        
+        customerServiceBtn.addEventListener('click', function() {
+            _navigateToCustomerServicePage();
+        });
+        
+        // إضافة محتوى اللوحة إلى modal
+        dashboardModal.appendChild(dashboardContent);
+        
+        // إضافة اللوحة إلى الصفحة
+        document.body.appendChild(dashboardModal);
+    }
+    
+    /**
+     * عرض نموذج طلب خدمة الأسانيد
+     */
+    function _showAsanidServiceForm() {
+        // إزالة أي نموذج سابق
+        const existingForm = document.getElementById('asanid-form-modal');
+        if (existingForm) {
+            existingForm.remove();
+        }
+        
+        // إنشاء عنصر النموذج
+        const formModal = document.createElement('div');
+        formModal.id = 'asanid-form-modal';
+        formModal.className = 'asanid-form-modal';
+        formModal.style.display = 'block';
+        
+        // محتوى النموذج
+        const formContent = document.createElement('div');
+        formContent.className = 'asanid-form-content';
+        
+        // عنوان النموذج
+        const formTitle = document.createElement('h2');
+        formTitle.className = 'asanid-form-title';
+        formTitle.textContent = 'تعديل الاشتراك في الخدمات';
+        formContent.appendChild(formTitle);
+        
+        // صف الاشتراك في
+        const serviceRow = document.createElement('div');
+        serviceRow.className = 'asanid-form-row';
+        
+        const serviceLabel = document.createElement('div');
+        serviceLabel.className = 'asanid-form-label';
+        serviceLabel.textContent = 'الاشتراك في';
+        
+        const serviceSelect = document.createElement('div');
+        serviceSelect.className = 'asanid-form-select';
+        
+        const serviceSelectElement = document.createElement('select');
+        
+        // قائمة خيارات الخدمات
+        const serviceOptions = [
+            { text: 'خدمة الأسانيد القانونية', selected: true },
+            { text: 'باقة الأحكام القضائية', selected: false },
+            { text: 'خدمة البحث القانوني المتقدم', selected: false },
+            { text: 'منصة المراجع القانونية', selected: false },
+            { text: 'الحزمة الذهبية الشاملة', selected: false }
+        ];
+        
+        // إضافة جميع الخيارات إلى القائمة المنسدلة
+        serviceOptions.forEach(function(option) {
+            const optionElement = document.createElement('option');
+            optionElement.textContent = option.text;
+            optionElement.selected = option.selected;
+            serviceSelectElement.appendChild(optionElement);
+        });
+        
+        const dropdownArrow1 = document.createElement('span');
+        dropdownArrow1.className = 'dropdown-arrow';
+        dropdownArrow1.innerHTML = '&#9662;';
+        
+        serviceSelect.appendChild(serviceSelectElement);
+        serviceSelect.appendChild(dropdownArrow1);
+        
+        serviceRow.appendChild(serviceLabel);
+        serviceRow.appendChild(serviceSelect);
+        
+        formContent.appendChild(serviceRow);
+        
+        // صف مدة الاشتراك
+        const durationRow = document.createElement('div');
+        durationRow.className = 'asanid-form-row';
+        
+        const durationLabel = document.createElement('div');
+        durationLabel.className = 'asanid-form-label';
+        durationLabel.textContent = 'مدة الاشتراك';
+        
+        const durationSelect = document.createElement('div');
+        durationSelect.className = 'asanid-form-select';
+        
+        const durationSelectElement = document.createElement('select');
+        
+        // قائمة خيارات المدة
+        const durationOptions = [
+            { text: 'شهر', selected: false },
+            { text: 'ثلاثة أشهر', selected: false },
+            { text: 'ستة أشهر', selected: false },
+            { text: 'سنة', selected: true },
+            { text: 'سنتين', selected: false },
+            { text: 'ثلاث سنوات', selected: false }
+        ];
+        
+        // إضافة جميع خيارات المدة إلى القائمة المنسدلة
+        durationOptions.forEach(function(option) {
+            const optionElement = document.createElement('option');
+            optionElement.textContent = option.text;
+            optionElement.selected = option.selected;
+            durationSelectElement.appendChild(optionElement);
+        });
+        
+        const dropdownArrow2 = document.createElement('span');
+        dropdownArrow2.className = 'dropdown-arrow';
+        dropdownArrow2.innerHTML = '&#9662;';
+        
+        durationSelect.appendChild(durationSelectElement);
+        durationSelect.appendChild(dropdownArrow2);
+        
+        durationRow.appendChild(durationLabel);
+        durationRow.appendChild(durationSelect);
+        
+        formContent.appendChild(durationRow);
+        
+        // زر الإرسال
+        const submitButton = document.createElement('button');
+        submitButton.className = 'asanid-form-submit';
+        submitButton.textContent = 'ارسال';
+        submitButton.style.marginTop = '25px';
+        formContent.appendChild(submitButton);
+        
+        // زر الإغلاق
+        const closeBtn = document.createElement('span');
+        closeBtn.className = 'asanid-form-close';
+        closeBtn.innerHTML = '&times;';
+        formContent.appendChild(closeBtn);
+        
+        // إضافة المحتوى إلى النموذج
+        formModal.appendChild(formContent);
+        
+        // إضافة النموذج إلى الصفحة
+        document.body.appendChild(formModal);
+        
+        // إضافة الأحداث
+        closeBtn.addEventListener('click', function() {
+            formModal.style.display = 'none';
+        });
+        
+        submitButton.addEventListener('click', function() {
+            // إغلاق نموذج طلب خدمة الأسانيد
+            formModal.style.display = 'none';
+            
+            // عرض نافذة طلب الاشتراك المنبثقة
+            // التحقق من أننا في صفحة خدمة الأسانيد أو عرض نافذة الاشتراك من هذه الصفحة
+            const subscribeModal = document.getElementById('subscribe-modal');
+            
+            if (subscribeModal) {
+                // إذا كنا في صفحة خدمة الأسانيد
+                subscribeModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            } else {
+                // إذا كنا في صفحة أخرى، نطلب من المستخدم الذهاب إلى صفحة خدمة الأسانيد
+                if (confirm('سيتم توجيهك إلى صفحة طلب خدمة الأسانيد لإكمال طلبك. هل ترغب في المتابعة؟')) {
+                    window.location.href = '../pages/asanid-service.html';
+                }
+            }
+        });
+        
+        formModal.addEventListener('click', function(event) {
+            if (event.target === formModal) {
+                formModal.style.display = 'none';
+            }
+        });
+        
+        // إضافة عنصر النافذة المنبثقة للصفحة إذا لم تكن موجودة لإمكانية عرضها إن لم نكن في صفحة خدمة الأسانيد
+        if (!document.getElementById('subscribe-modal') && window.location.pathname.indexOf('asanid-service.html') === -1) {
+            _createSubscribeModal();
+        }
+        
+        // التأكد من إضافة أنماط CSS للنموذج
+        _loadAsanidFormStyles();
+    }
+    
+    /**
+     * تحميل أنماط CSS لنموذج الأسانيد
+     */
+    function _loadAsanidFormStyles() {
+        // التحقق مما إذا كانت الأنماط محملة بالفعل
+        const existingStyle = document.getElementById('asanid-form-styles');
+        if (existingStyle) return;
+        
+        // إضافة ملف CSS الخارجي
+        const styleLink = document.createElement('link');
+        styleLink.id = 'asanid-form-styles';
+        styleLink.rel = 'stylesheet';
+        styleLink.href = '../styles/asanid-form.css';
+        document.head.appendChild(styleLink);
+    }
+    
+    /**
+     * إنشاء نافذة طلب الاشتراك المنبثقة
+     */
+    function _createSubscribeModal() {
+        // التحقق من وجود النافذة بالفعل
+        if (document.getElementById('subscribe-modal')) return;
+
+        // إنشاء النافذة المنبثقة
+        const subscribeModal = document.createElement('div');
+        subscribeModal.className = 'subscribe-modal';
+        subscribeModal.id = 'subscribe-modal';
+        
+        // إنشاء محتوى النافذة
+        const modalContent = document.createElement('div');
+        modalContent.className = 'subscribe-modal-content';
+        
+        // رأس النافذة مع زر الإغلاق
+        const modalHeader = document.createElement('div');
+        modalHeader.className = 'subscribe-modal-header';
+        
+        const closeButton = document.createElement('span');
+        closeButton.className = 'close-subscribe-modal';
+        closeButton.innerHTML = '&times;';
+        modalHeader.appendChild(closeButton);
+        
+        // جسم النافذة
+        const modalBody = document.createElement('div');
+        modalBody.className = 'subscribe-modal-body';
+        
+        // العنوان
+        const title = document.createElement('h2');
+        title.className = 'subscribe-title';
+        title.textContent = 'طلب الاشتراك';
+        modalBody.appendChild(title);
+        
+        // نموذج الاشتراك
+        const form = document.createElement('form');
+        form.className = 'subscribe-form';
+        
+        // حقول النموذج
+        const formFields = [
+            { placeholder: 'الاسم بالكامل / اسم الجهة', type: 'text' },
+            { placeholder: 'البريد الالكتروني', type: 'email' },
+            { placeholder: 'اسم المستخدم', type: 'text' },
+            { placeholder: 'كلمة السر', type: 'password' },
+            { placeholder: 'رقم الجوال', type: 'tel' }
+        ];
+        
+        formFields.forEach(field => {
+            const formGroup = document.createElement('div');
+            formGroup.className = 'form-group';
+            
+            const input = document.createElement('input');
+            input.type = field.type;
+            input.placeholder = field.placeholder;
+            input.className = 'subscribe-input';
+            
+            formGroup.appendChild(input);
+            form.appendChild(formGroup);
+        });
+        
+        // زر إرسال النموذج
+        const submitButton = document.createElement('button');
+        submitButton.type = 'submit';
+        submitButton.className = 'subscribe-submit-btn';
+        submitButton.textContent = 'إرسال';
+        
+        form.appendChild(submitButton);
+        modalBody.appendChild(form);
+        
+        // تجميع النافذة
+        modalContent.appendChild(modalHeader);
+        modalContent.appendChild(modalBody);
+        subscribeModal.appendChild(modalContent);
+        
+        // إضافة النافذة إلى الصفحة
+        document.body.appendChild(subscribeModal);
+        
+        // إضافة الأحداث
+        closeButton.addEventListener('click', function() {
+            subscribeModal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        
+        submitButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('تم إرسال طلب الاشتراك بنجاح!');
+            subscribeModal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        
+        subscribeModal.addEventListener('click', function(e) {
+            if (e.target === subscribeModal) {
+                subscribeModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // إضافة أنماط CSS لنافذة الاشتراك
+        _loadSubscribeModalStyles();
+    }
+    
+    /**
+     * تحميل الأنماط المطلوبة لنافذة طلب الاشتراك
+     */
+    function _loadSubscribeModalStyles() {
+        // التحقق من وجود الأنماط بالفعل
+        const existingStyle = document.getElementById('subscribe-modal-styles');
+        if (existingStyle) return;
+        
+        // إضافة الأنماط مباشرة بدلاً من إضافة ملف خارجي
+        const styleElement = document.createElement('style');
+        styleElement.id = 'subscribe-modal-styles';
+        styleElement.textContent = `
+            .subscribe-modal {
+                display: none;
+                position: fixed;
+                z-index: 1200;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                overflow: auto;
+                direction: rtl;
+            }
+            
+            .subscribe-modal-content {
+                background-color: #fff;
+                margin: 10% auto;
+                padding: 30px;
+                width: 90%;
+                max-width: 500px;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                position: relative;
+            }
+            
+            .subscribe-modal-header {
+                text-align: left;
+            }
+            
+            .close-subscribe-modal {
+                color: #888;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            
+            .subscribe-title {
+                color: #00a59a;
+                text-align: center;
+                font-size: 1.7rem;
+                margin-bottom: 30px;
+                font-weight: bold;
+            }
+            
+            .subscribe-form .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .subscribe-input {
+                width: 100%;
+                padding: 12px 15px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                font-size: 1rem;
+                direction: rtl;
+            }
+            
+            .subscribe-submit-btn {
+                background-color: #00a59a;
+                color: white;
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 10px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                margin-top: 20px;
+                transition: background-color 0.3s;
+            }
+            
+            .subscribe-submit-btn:hover {
+                background-color: #008e85;
+            }
+        `;
+    
+    // رأس النافذة مع زر الإغلاق
+    const modalHeader = document.createElement('div');
+    modalHeader.className = 'subscribe-modal-header';
+    
+    const closeButton = document.createElement('span');
+    closeButton.className = 'close-subscribe-modal';
+    closeButton.innerHTML = '&times;';
+    modalHeader.appendChild(closeButton);
+        alert('صفحة المساعدة الذاتية');
+    }
+    
+    /**
+     * الانتقال إلى صفحة خدمة العملاء
+     */
+    function _navigateToCustomerServicePage() {
+        // قم بالتوجيه إلى صفحة خدمة العملاء عندما تكون جاهزة
+        alert('صفحة خدمة العملاء');
+    }
+    
+    /**
+     * الحصول على بيانات المستخدم الحالي
+     * @return {object|null} بيانات المستخدم أو null إذا لم يكن هناك مستخدم مسجل الدخول
+     */
+    function getCurrentUser() {
+        return _currentUser;
+    }
+    
+    /**
+     * التحقق مما إذا كان المستخدم مسجل الدخول أم لا
+     * @return {boolean} حالة تسجيل الدخول
+     */
+    function isLoggedIn() {
+        return _currentUser !== null && _currentUser.isLoggedIn === true;
+    }
+    
+    // كشف الوظائف العامة فقط للاستخدام الخارجي
+    return {
+        init: init,
+        login: login,
+        logout: logout,
+        getCurrentUser: getCurrentUser,
+        isLoggedIn: isLoggedIn
+    };
+})();
+
+/**
+ * فحص ما إذا كان الملف موجوداً
+ * @param {string} url - مسار الملف
+ * @return {boolean} - إذا كان الملف موجوداً
+ */
+function fileExists(url) {
+    try {
+        const http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status !== 404;
+    } catch (e) {
+        return false;
+    }
+}
+
+// تهيئة نظام المصادقة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    AuthSystem.init();
+    
+    // إتاحة وظيفة تسجيل الخروج عالمياً للاختبار (سيتم إزالتها في الإنتاج)
+    window.logoutDemo = AuthSystem.logout;
+});

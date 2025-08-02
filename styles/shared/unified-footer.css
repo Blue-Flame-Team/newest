@@ -1,0 +1,242 @@
+/* Unified Footer Styles - يطابق تصميم index.html */
+
+.main-footer {
+    background-color: #f8f9fa;
+    padding: 50px 0 0 0;
+    margin-top: 50px;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    text-align: right;
+}
+
+.footer-title {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00a19a;
+    padding-bottom: 10px;
+}
+
+.social-title {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00a19a;
+    padding-bottom: 10px;
+}
+
+.footer-text {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00a19a;
+}
+
+.contact-item {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+}
+
+.social-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.contact-btn-container {
+    text-align: right;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #00a19a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+}
+
+.contact-btn:hover {
+    background-color: #008b7f;
+}
+
+.contact-btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.copyright {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.copyright-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.copyright-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.copyright-row:last-child {
+    margin-bottom: 0;
+}
+
+.copyright-text {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    margin: 0;
+    color: white;
+}
+
+.policy-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.policy-links a {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.policy-links a:hover {
+    color: #00a19a;
+}
+
+.separator {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Social Share Section Styles */
+.social-share-section {
+    margin: 40px auto 20px;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.social-share-section > div {
+    background-color: rgb(245, 245, 245);
+    border-radius: 143px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 91px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-column {
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .contact-btn-container {
+        text-align: center;
+    }
+    
+    .copyright-row {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .policy-links {
+        justify-content: center;
+    }
+    
+    .social-share-section > div {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 20px;
+    }
+} 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار زر الملف الشخصي - دليل سريع</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 0;
+        }
+        .test-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .login-btn {
+            background: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+        }
+        .login-btn:hover {
+            background: #0056b3;
+        }
+        .profile-btn {
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            display: none;
+        }
+        .profile-btn.show {
+            display: inline-block;
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .status.logged-out {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.logged-in {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: right;
+        }
+        .instructions h3 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+        .instructions ol {
+            margin: 10px 0;
+            padding-right: 20px;
+        }
+        .instructions li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>اختبار نظام تسجيل الدخول</h1>
+        
+        <div id="status" class="status logged-out">
+            الحالة: غير مسجل الدخول ❌
+        </div>
+        
+        <button class="login-btn" onclick="simulateLogin()">تسجيل الدخول (تجريبي)</button>
+        <button class="login-btn" onclick="simulateLogout()" style="background: #dc3545;">تسجيل الخروج</button>
+        
+        <div id="profile-section" style="margin-top: 30px;">
+            <h3>زر الملف الشخصي:</h3>
+            <button class="profile-btn" id="profile-btn">الملف الشخصي</button>
+            <p style="color: #666; font-size: 14px;">هذا الزر يظهر فقط بعد تسجيل الدخول بنجاح</p>
+        </div>
+        
+        <div class="instructions">
+            <h3>كيفية اختبار النظام:</h3>
+            <ol>
+                <li>اضغط على زر "تسجيل الدخول (تجريبي)" أعلاه</li>
+                <li>ستلاحظ ظهور زر "الملف الشخصي" تلقائياً</li>
+                <li>اضغط على "تسجيل الخروج" لاختبار إخفاء الزر</li>
+            </ol>
+            
+            <h3>في الموقع الرئيسي:</h3>
+            <ol>
+                <li>افتح الصفحة الرئيسية: <a href="index.html" target="_blank">index.html</a></li>
+                <li>اضغط على "تسجيل الدخول" في أعلى الصفحة</li>
+                <li>استخدم بيانات الاختبار: اسم المستخدم: testuser، كلمة المرور: testpass123</li>
+                <li>سيتم إضافة كلاس "user-logged-in" تلقائياً للـ body</li>
+                <li>سيعمل CSS على إظهار زر الملف الشخصي فوراً</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function simulateLogin() {
+            document.body.classList.add('user-logged-in');
+            document.getElementById('status').innerHTML = 'الحالة: مسجل الدخول ✅';
+            document.getElementById('status').className = 'status logged-in';
+            document.getElementById('profile-btn').classList.add('show');
+            alert('تم تسجيل الدخول! يجب أن يظهر زر الملف الشخصي الآن.');
+        }
+
+        function simulateLogout() {
+            document.body.classList.remove('user-logged-in');
+            document.getElementById('status').innerHTML = 'الحالة: غير مسجل الدخول ❌';
+            document.getElementById('status').className = 'status logged-out';
+            document.getElementById('profile-btn').classList.remove('show');
+            alert('تم تسجيل الخروج! يجب أن يختفي زر الملف الشخصي الآن.');
+        }
+
+        // التحقق من الكلاس عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+
+
+        });
+    </script>
+</body>
+</html>

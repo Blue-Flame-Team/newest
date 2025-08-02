@@ -1,0 +1,1260 @@
+﻿/* محرك البحث العام - تنسيق الصفحة */
+.search-engine-container {
+    /* background-color: white; */
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1200px;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); */
+    direction: rtl;
+    text-align: center;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    font-weight: 400;
+}
+
+.search-engine-title {
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    color: #00a59a;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* أزرار التبويبات */
+.search-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+}
+
+/* أزرار التبويبات داخل محتوى التبويبات */
+.tab-content .search-tabs {
+    position: relative;
+    z-index: 5;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* عندما تكون التبويبات داخل محتوى التبويبات، لا يتم إخفاؤها */
+.search-tabs-in-content {
+    display: flex !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    z-index: 100;
+    position: relative;
+}
+
+.search-tab {
+    background-color: #f5f5f5;
+    border: 1.51px solid #718096;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 0;
+    cursor: pointer;
+    font-weight: normal;
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    color: #333;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 160px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.search-tab:hover {
+    background-color: #e8f5f8;
+    border-color: #00b3b3;
+}
+
+.search-tab.active {
+    background-color: #00b3b3;
+    color: white;
+    border-color: #009999;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #f5822a;
+    margin: 30px auto 15px;
+}
+
+.search-instructions {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.search-instructions h3 {
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 28px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-help {
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    color: #00a59a;
+    margin-bottom: 25px;
+}
+
+.contact-help .underlined {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 0%;
+    text-decoration-thickness: auto;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+}
+
+.search-explanation {
+    text-align: right;
+    margin-bottom: 35px;
+    line-height: 150%;
+    font-size: 12px;
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0% !important;
+}
+
+.search-explanation p {
+    margin-bottom: 5px;
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    direction: rtl;
+}
+
+/* محتويات التبويبات */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* حقل البحث */
+.search-input-container {
+    width: 100%;
+    margin-bottom: 25px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.search-input {
+    width: 1200px;
+    height: 85px;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 22px;
+    font-size: var(--font-base);
+    outline: none;
+    text-align: right;
+    direction: rtl;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* خيارات البحث */
+.search-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    text-align: right;
+    width: 100%;
+}
+
+.search-option-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 45%;
+}
+
+.search-option-group.right-options {
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.search-option-group.left-options {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    cursor: pointer;
+    width: 100%;
+    gap: 8px;
+}
+
+.search-radio {
+    margin-left: 0 !important;
+    margin-right: 8px !important;
+    transform: scale(1.3);
+    accent-color: #00a59a;
+    flex-shrink: 0;
+}
+
+.radio-text {
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 23.57px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* مجال البحث */
+.search-scope {
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.search-scope-title {
+    font-size: var(--font-lg);
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.search-scope-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+}
+
+.search-scope-row {
+    display: contents;
+}
+
+.search-scope-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-scope-option.column-1,
+.search-scope-option.column-2,
+.search-scope-option.column-3 {
+    text-align: right;
+    justify-content: flex-start;
+}
+
+.search-scope-option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Almarai', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    gap: 8px;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.search-checkbox {
+    margin: 0 !important;
+    transform: scale(1.3);
+    accent-color: #00a59a;
+    flex-shrink: 0;
+    position: relative;
+    left: 0;
+}
+
+/* أسلوب باحث أرقام الوثائق */
+.document-number-note {
+    text-align: right;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    direction: rtl;
+    font-size: var(--font-sm);
+    color: #666;
+}
+
+.document-number-input-container {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.document-number-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: var(--font-base);
+    outline: none;
+    text-align: right;
+    direction: rtl;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+}
+
+.document-type-container {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.dropdown-select {
+    width: 100%;
+    position: relative;
+    direction: rtl;
+    text-align: right;
+}
+
+.dropdown-selected {
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: var(--font-base);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+}
+
+.dropdown-arrow {
+    border: solid #999;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    position: relative;
+    top: -3px;
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.dropdown-option {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: var(--font-base);
+    transition: background-color 0.2s;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+}
+
+.dropdown-option:hover {
+    background-color: #f5f5f5;
+}
+
+/* زر البحث */
+.search-button-container {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.search-button {
+    background-color: #00a59a;
+    color: white;
+    border: none;
+    padding: 22px 60px;
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 28px !important;
+    line-height: 160% !important;
+    letter-spacing: 0% !important;
+    text-align: center;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button:hover {
+    background-color: #00897b;
+}
+
+/* تنسيقات باحث الأحكام السعودية */
+#saudi-judgments-search-content {
+    text-align: right;
+}
+
+#saudi-judgments-search-content .search-instructions {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#saudi-judgments-search-content h1 {
+    font-size: var(--font-2xl);
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #333;
+    text-align: right;
+}
+
+#saudi-judgments-search-content h3 {
+    font-size: var(--font-lg);
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #555;
+    text-align: right;
+}
+
+#saudi-judgments-search-content .help-text {
+    color: #08a88a;
+    font-size: var(--font-sm);
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* فورم البحث للأحكام السعودية */
+.saudi-judgments-search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.saudi-judgments-search-form .search-field {
+    width: 100%;    
+    margin-bottom: 8px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.saudi-judgments-search-form .form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    font-size: var(--font-sm);
+    direction: rtl;
+    text-align: right;
+}
+
+.saudi-judgments-search-form .dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.saudi-judgments-search-form .dropdown-selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    font-size: var(--font-sm);
+}
+
+.saudi-judgments-search-form .dropdown-arrow {
+    border: solid #999;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    position: relative;
+    top: -3px;
+}
+
+.saudi-judgments-search-form .dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+}
+
+.saudi-judgments-search-form .dropdown-option {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    font-size: var(--font-sm);
+    text-align: right;
+}
+
+.saudi-judgments-search-form .dropdown-option:hover {
+    background-color: #f5f5f5;
+}
+
+.saudi-judgments-search-form .search-button {
+    background-color: #00a59a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    font-size: var(--font-base);
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* باحث الملف الصحفي */
+.main-search-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-search-header h1 {
+    font-size: var(--font-2xl);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.main-search-header h3 {
+    font-size: var(--font-xl);
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: #555;
+}
+
+.search-explanation-simple {
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.tabs-horizontal {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.tab-button {
+    padding: 12px 15px;
+    margin: 0 5px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: var(--font-sm);
+    color: #333;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 120px;
+}
+
+.tab-button.active {
+    background-color: #00a59a;
+    color: white;
+}
+
+.press-file-search-input {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.press-file-search-input .search-field {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: var(--font-base);
+    outline: none;
+    text-align: right;
+    direction: rtl;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+}
+
+.search-options-horizontal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    padding: 20px;
+    /* max-width: 800px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-options-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+        cursor: pointer;
+        width: 100%;
+        gap: 8px;
+}
+
+.radio-label:hover {
+    background-color: rgba(0, 165, 154, 0.1);
+}
+
+.radio-input {
+    margin-left: 8px;
+    margin-right: 0;
+    transform: scale(1.3);
+    accent-color: #00a59a;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.radio-text {
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: right !important;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.press-search-button {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Document Number elements in Press File Search Tab */
+.document-number-note-press,
+.document-number-input-press,
+.document-type-container-press {
+    width: 100%;
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+.document-number-note-press {
+    text-align: right;
+    color: #666;
+    font-size: var(--font-sm);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.document-number-input-press input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: right;
+    direction: rtl;
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    font-size: var(--font-sm);
+}
+
+.document-type-container-press {
+    margin-bottom: 20px;
+}
+
+/* تنسيقات الأزرار الأفقية في باحث أرقام الوثائق */
+.horizontal-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horizontal-tab {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--font-sm);
+    font-family: 'Noto Kufi Arabic', 'Arial', sans-serif;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.horizontal-tab:hover {
+    background-color: #e8f5f8;
+    border-color: #00b3b3;
+}
+
+.horizontal-tab.active {
+    background-color: #00b3b3;
+    color: white;
+    border-color: #009999;
+}
+
+/* تجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    /* Container الرئيسي */
+    .search-engine-container {
+        padding: 20px 15px !important;
+        margin: 10px auto !important;
+        max-width: 95% !important;
+        background: white !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* العنوان الرئيسي */
+    .search-engine-title {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        color: #333 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+    }
+    
+    /* تعليمات البحث */
+    .search-instructions {
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .search-instructions h3 {
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+        color: #333 !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+    }
+    
+    .contact-help {
+        font-size: 14px !important;
+        margin-bottom: 15px !important;
+        color: #00a59a !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+    }
+    
+    .search-explanation {
+        font-size: 12px !important;
+        text-align: right !important;
+        margin-bottom: 20px !important;
+        padding: 15px !important;
+        background: #f9f9f9 !important;
+        border-radius: 10px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .search-explanation p {
+        font-size: 12px !important;
+        margin-bottom: 8px !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+    }
+    
+    /* التبويبات */
+    .search-tabs {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+        background: #f8f9fa !important;
+        border-radius: 12px !important;
+    }
+    
+    .search-tab {
+        flex: 1 1 calc(50% - 4px) !important;
+        min-width: 120px !important;
+        height: 40px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        padding: 8px 12px !important;
+        border-radius: 8px !important;
+        background: white !important;
+        border: 1px solid #ddd !important;
+        color: #333 !important;
+        text-align: center !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        transition: all 0.3s ease !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .search-tab.active {
+        background: #00a59a !important;
+        color: white !important;
+        border-color: #00a59a !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 12px rgba(0,165,154,0.3) !important;
+    }
+    
+    /* حقل البحث */
+    .search-input-container {
+        margin: 20px 0 !important;
+        width: 100% !important;
+    }
+    
+    .search-input {
+        width: 100% !important;
+        height: 50px !important;
+        padding: 15px 18px !important;
+        border: 2px solid #e0e0e0 !important;
+        border-radius: 12px !important;
+        font-size: 14px !important;
+        background: #fafafa !important;
+        color: #333 !important;
+        direction: rtl !important;
+        text-align: right !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        transition: all 0.3s ease !important;
+        box-sizing: border-box !important;
+    }
+    
+    .search-input:focus {
+        border-color: #00a59a !important;
+        background: white !important;
+        outline: none !important;
+        box-shadow: 0 0 0 3px rgba(0,165,154,0.2) !important;
+    }
+    
+    .search-input::placeholder {
+        color: #888 !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+    }
+    
+    /* خيارات البحث */
+    .search-options {
+        background: white !important;
+        padding: 20px !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+        border: 1px solid #e0e0e0 !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .search-option-group {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .radio-option {
+        width: 100% !important;
+        height: 45px !important;
+        background: #f9f9f9 !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 10px !important;
+        padding: 12px 15px !important;
+        margin-bottom: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .radio-option:hover {
+        background: white !important;
+        border-color: #00a59a !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    .search-radio {
+        margin: 0 !important;
+        transform: scale(1.2) !important;
+        accent-color: #00a59a !important;
+    }
+    
+    .radio-text {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        color: #333 !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        flex: 1 !important;
+        text-align: right !important;
+        margin-right: 10px !important;
+    }
+    
+    /* مجال البحث */
+    .search-scope {
+        background: white !important;
+        padding: 20px !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+        border: 1px solid #e0e0e0 !important;
+    }
+    
+    .search-scope-title {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #333 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+    }
+    
+    .search-scope-options {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .search-scope-option {
+        width: 100% !important;
+        background: #f9f9f9 !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 10px !important;
+        padding: 15px !important;
+        margin-bottom: 0 !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+    
+    .search-scope-option:hover {
+        background: white !important;
+        border-color: #00a59a !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    .search-scope-option label {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        color: #333 !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        cursor: pointer !important;
+        gap: 12px !important;
+        width: 100% !important;
+        line-height: 1.4 !important;
+    }
+    
+    .search-checkbox {
+        transform: scale(1.2) !important;
+        accent-color: #00a59a !important;
+        margin: 0 !important;
+    }
+    
+    /* زر البحث */
+    .search-button-container {
+        margin-top: 25px !important;
+        width: 100% !important;
+    }
+    
+    .search-button {
+        width: 100% !important;
+        height: 55px !important;
+        background: linear-gradient(135deg, #00a59a 0%, #158885 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 12px !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 6px 20px rgba(0,165,154,0.3) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .search-button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(0,165,154,0.4) !important;
+    }
+    
+    .search-button:active {
+        transform: translateY(0) !important;
+    }
+    
+    /* تبويبات أفقية */
+    .tabs-horizontal {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .tab-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .search-options-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-scope-option {
+        width: 100%;
+    }
+}
+
+/* تنسيقات قسم نتائج البحث */
+.search-results-container {
+    background-color: #f8f8f8;
+    padding: 30px 0;
+    display: none; /* إخفاء قسم نتائج البحث افتراضيًا */
+}
+
+.search-results {
+    direction: rtl;
+    text-align: right;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* بطاقة نتيجة البحث */
+.search-result-card {
+    background: #fff;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 16px 12px !important;
+    display: flex;
+    flex-direction: column;
+    width: 666px !important;
+    min-height: 133px;
+    height: fit-content;
+    gap: 8px !important;
+}
+
+.result-text {
+    margin: 0 0 8px 0;
+    font-size: 18px !important;
+    line-height: 1.6;
+    color: #333;
+    text-align: right;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    direction: rtl;
+}
+
+.result-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: var(--font-sm);
+    cursor: pointer;
+    border: none;
+    flex: 1;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.reference-btn {
+    background-color: #00a59a;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 8px 24px !important;
+    width: fit-content !important;
+    min-width: 242px;
+    height: fit-content !important;
+    min-height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none !important;
+}
+
+.reference-btn:hover {
+    background-color: #008c82;
+}
+
+.info-btn {
+    background-color: #158885 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 8px 24px !important;
+    width: fit-content !important;
+    min-width: 212px;
+    height: fit-content !important;
+    min-height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none !important;
+}
+
+.info-btn:hover {
+    background-color: #126d6a !important;
+}
+
+/* أرقام الصفحات */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.results-count {
+    color: #666;
+    font-size: var(--font-sm);
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: var(--font-sm);
+}
+
+.pagination-control:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination-control.active {
+    background-color: #00a59a;
+    color: white;
+}
+
+.pagination-control.first,
+.pagination-control.last,
+.pagination-control.prev,
+.pagination-control.next {
+    font-size: var(--font-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .result-actions {
+        flex-direction: column;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.help-text {
+    font-family: 'Droid Arabic Kufi', 'Noto Kufi Arabic', 'Arial', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 25px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+    text-align: center !important;
+    color: #00a59a;
+    margin-bottom: 25px;
+}
+
+.help-text .underlined {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 0%;
+    
+    text-decoration-thickness: auto;
+}
+

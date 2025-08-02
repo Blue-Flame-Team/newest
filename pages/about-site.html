@@ -1,0 +1,911 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - محامون المملكة</title>
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+    <!-- أوراق الأنماط -->
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/font-normalization.css">
+    <link rel="stylesheet" href="../styles/jornal-profile-view/header.css">
+    <link rel="stylesheet" href="../styles/jornal-profile-view/main.css">
+    <link rel="stylesheet" href="../styles/faq/footer.css">
+    <link rel="stylesheet" href="../styles/faq/main.css">
+    <link rel="stylesheet" href="../styles/faq/faq.css">
+    <link rel="stylesheet" href="../styles/home/settings.css">
+    <link rel="stylesheet" href="../styles/search-popup.css">
+    <link rel="stylesheet" href="../styles/login-modal.css">
+    
+    <!-- نظام التباين الأسود والفوتر الموحد -->
+    <!-- <link rel="stylesheet" href="../styles/shared/dark-contrast-subpages.css"> -->
+    <!-- <link rel="stylesheet" href="../styles/shared/unified-footer.css"> -->
+
+    <!-- ناف بار بالخلفية الفيروزية للصفحات الفرعية -->
+    <link rel="stylesheet" href="../styles/subpages-navbar.css">
+    <!-- إصلاح لقائمة الموبايل -->
+     <!-- أوراق الأنماط للموبايل -->
+     <link rel="stylesheet" href="../styles/shared/universal-settings-menu.css">
+<link rel="stylesheet" href="../styles/home/topbar.css">
+<link rel="stylesheet" href="../styles/mobile-navbar.css">
+<link rel="stylesheet" href="../styles/mobile-view.css">
+<link rel="stylesheet" href="../styles/mobile-menu.css">
+<link rel="stylesheet" href="../styles/hamburger-fix.css">
+<link rel="stylesheet" href="../styles/mobile-dropdown.css">
+<link rel="stylesheet" href="../styles/navbar-mobile-fix.css">
+<link rel="stylesheet" href="../styles/home/mobile-settings.css">
+<link rel="stylesheet" href="../styles/home/settings.css">
+    <link rel="stylesheet" href="../styles/mobile-menu.css">
+    <link rel="stylesheet" href="../styles/hamburger-fix.css">
+    <link rel="stylesheet" href="../styles/mobile-dropdown.css">
+    <link rel="stylesheet" href="../styles/subpage.css">
+    <link rel="stylesheet" href="../styles/faq/responsive.css">
+    <link rel="stylesheet" href="../styles/social-share-section.css">
+    <link rel="stylesheet" href="../styles/simple-zoom.css">
+    <link rel="stylesheet" href="../styles/modify-subscription-modal.css">
+    <link rel="stylesheet" href="../styles/country-selector-modal.css">
+    
+    <style>
+/* تطبيق خط Droid Arabic Kufi على جميع العناصر */
+* {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+body, html {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td, th, select, option {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+.title, .text, .content, .description, .heading, .label, .item, .menu-item, .nav-item {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+
+/* تصميم الموبايل فقط */
+@media (max-width: 768px) {
+    /* إخفاء النافبار في الموبايل */
+
+    /* تعديل البريد كرامب للموبايل */
+    .breadcrumb {
+        margin-top: 0 !important;
+        padding: 10px 0 !important;
+    }
+}
+
+/* عرض عناصر الموبايل بشكل صحيح */
+@media (min-width: 769px) {
+    .mobile-left-section, .mobile-center-section, .mobile-right-section, .mobile-hamburger-btn {
+        display: none !important;
+    }
+}
+
+/* تأكيد إظهار أيقونات الزوم على الموبايل في FAQ */
+@media (max-width: 768px) {
+    .logo .mobile-icons {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .logo .mobile-icons .zoom-group {
+        display: flex !important;
+        align-items: center !important;
+        gap: 3px !important;
+    }
+    
+    .logo .mobile-icons .zoom-out-btn,
+    .logo .mobile-icons .zoom-in-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        width: 28px !important;
+        height: 28px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+    
+    .logo .mobile-icons .icon-btn img {
+        width: 18px !important;
+        height: 18px !important;
+        opacity: 1 !important;
+    }
+    
+    .hamburger-menu {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+/* أنماط زر الإعدادات من index.html */
+.settings-menu {
+    /* position: absolute !important; */
+    /* top: 100% !important; */
+    /* right: 0 !important;
+    transform: none !important;
+    margin-top: 5px !important; */
+}
+.main-icons-group {
+    position: relative !important;
+}
+
+.settings-toggle-btn {
+    position: relative !important;
+}
+</style></head>
+<body>
+
+
+<!-- القائمة الجانبية للموبايل -->
+<div class="mobile-menu-overlay">
+    <div class="mobile-side-menu">
+        <div class="mobile-side-menu-links">
+            <a href="../index.html" style="color: var(--primary-color);">الرئيسية</a>
+            
+            <!-- زر نبذة عنا -->
+            <a href="javascript:void(0);" id="about-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                نبذة عنا
+                <img src="../assets/icons/menu-Down.svg" alt="سهم" class="dropdown-arrow-svg">
+            </a>
+            
+            <!-- القائمة المنسدلة لنبذة عنا -->
+            <div id="about-submenu" class="submenu-container">
+                <a href="about-site.html">عن الموقع</a>
+                <a href="about-site.html">عن الشبكة</a>
+            </div>
+            
+            <!-- زر سياستنا -->
+            <a href="javascript:void(0);" id="policies-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                سياستنا
+                <span class="dropdown-arrow">▼</span>
+            </a>
+            
+            <!-- القائمة المنسدلة لسياستنا -->
+            <div id="policies-submenu" class="submenu-container">
+                <a href="privacy-policy.html">سياسة الخصوصية</a>
+                <a href="terms.html">الشروط والأحكام</a>
+            </div>
+            
+            <a href="jornal-profile-view.html">جريدة أم القرى</a>
+            <a href="asanid-service.html">خدمة الأسانيد</a>
+            <a href="faq.html" class="colored-link active">الأسئلة الشائعة</a>
+        </div>
+        <div class="mobile-side-menu-buttons">
+            <a href="../index.html#subscribe" class="subscribe-btn">اشترك معنا</a>
+            <a href="#login-modal" class="login-btn" id="mobile-login-btn">تسجيل الدخول</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-content">
+            <div class="logo">
+                <!-- 1. اللوجو على اليمين -->
+                <a href="../index.html" class="logo-link" data-original-font-size="16">
+                    <img src="../assets/images/logo.png" alt="محامون المملكة">
+                </a>
+                
+                <!-- 2. زر اشترك معنا -->
+                <a href="../index.html#subscribe" class="mobile-subscribe-btn" data-original-font-size="16">اشترك معنا</a>
+                
+                <!-- 3. جميع الأيقونات معاً -->
+                <div class="mobile-icons">
+                    <!-- 4. قائمة الهامبرغر في البداية (على اليسار) -->
+                    <div class="hamburger-menu" style="opacity: 1; visibility: visible; display: flex; z-index: 9999;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <div class="zoom-group">
+                        <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                            <img src="../assets/icons/search-zoom-out.png" alt="تصغير">
+                        </button>
+                        <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                            <img src="../assets/icons/search-zoom-in.png" alt="تكبير">
+                        </button>
+                    </div>
+                    
+                    <!-- أيقونة البحث -->
+                    <button class="icon-btn search-btn" data-original-font-size="16">
+                        <img src="../assets/icons/search.png" alt="بحث">
+                    </button>
+                    
+                    <!-- أيقونة الملف الشخصي (تظهر بعد تسجيل الدخول) -->
+                    
+                    <!-- أيقونة الإعدادات -->
+                    <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                        <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                    </button>
+                    
+                    <button class="icon-btn profile-btn" id="mobile-profile-btn" style="display: none;" data-original-font-size="16">
+                        <img src="../assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                    </button>
+                </div>
+                 <script src="../scripts/profile-button.js"></script>
+
+                <!-- قائمة الإعدادات -->
+                <div class="settings-menu">
+                    <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                        <span>تباين</span>
+                        <img src="../assets/icons/Eye off.svg" alt="تباين">
+                    </a>
+                    <!-- قائمة خيارات التباين الفرعية -->
+                    <div class="contrast-submenu">
+                        <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                            <span>تباين فاتح</span>
+                            <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                        </a>
+                        <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                            <span>تباين داكن</span>
+                            <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                        </a>
+                    </div>
+                    <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                        <span>الاحصائيات</span>
+                        <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                    </a>
+                    <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                        <span>خروج</span>
+                        <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                    </a>
+                </div>
+            </div>
+
+            <div class="top-elements">           
+                <!-- Elementos originales para vista desktop -->
+                <div class="top-icons">
+                    <a href="faq.html" class="common-questions" data-original-font-size="16">
+                        <span class="question-mark">
+                            <img src="../assets/icons/question.svg" alt="الأسئلة الشائعة">
+                        </span>
+                        <span class="questions-text">الأسئلة الشائعة</span>
+                    </a>
+                    <div class="zoom-group">
+                        <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16">
+                            <img src="../assets/icons/search-zoom-out.svg" alt="تصغير">
+                        </button>
+                        <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16">
+                            <img src="../assets/icons/search-zoom-in.svg" alt="تكبير">
+                        </button>
+                    </div>
+                    
+                    <div class="main-icons-group">
+                        <button class="icon-btn search-btn" data-original-font-size="16">
+                            <img src="../assets/icons/search.png" alt="بحث">
+                        </button>
+                        <button class="icon-btn" onclick="window.location.href='../index.html#contact'" data-original-font-size="16">
+                            <img src="../assets/icons/location.png" alt="الموقع">
+                        </button>
+                        <button class="icon-btn" data-original-font-size="16">
+                            <img src="../assets/icons/call.png" alt="اتصال">
+                        </button>
+                        <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                            <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                        </button>
+                        <button class="icon-btn profile-btn profile-icon-btn" style="display: none;" data-original-font-size="16" data-profile-setup="true">
+                            <img src="../assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                        </button>
+                        <div class="settings-menu">
+                            <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                                <span>تباين</span>
+                                <img src="../assets/icons/Eye off.svg" alt="تباين">
+                            </a>
+                            <!-- قائمة خيارات التباين الفرعية -->
+                            <div class="contrast-submenu">
+                                <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                    <span>تباين فاتح</span>
+                                    <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                                </a>
+                                <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                    <span>تباين داكن</span>
+                                    <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                                </a>
+                            </div>
+                            <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                                <span>الاحصائيات</span>
+                                <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                            </a>
+                            <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                                <span>خروج</span>
+                                <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-actions">
+                <a href="../index.html#subscribe" class="join-btn" data-original-font-size="16">إشترك معنا</a>
+                <a href="#" class="login-btn" id="login-btn" data-original-font-size="16">تسجيل الدخول</a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <ul class="main-menu">
+                    <li class="menu-item"><a href="../index.html">الرئيسية</a></li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);" class="active">نبذة عنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="about-site.html" class="active">عن الموقع</a>
+                            <a href="about-site.html">عن الشبكة</a>
+                        </div>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);">سياستنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="privacy-policy.html">سياسة الخصوصية</a>
+                            <a href="terms.html">شروط الإشتراك</a>
+                        </div>
+                    </li>
+                    <li class="menu-item"><a href="jornal-profile-view.html">جريدة أم القرى</a></li>
+                    <li class="menu-item"><a href="asanid-service.html">خدمة الأسانيد</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">محامي المملكة</a></li>
+                <li><a href="#">نبذة عنا</a></li>
+                <li><span>عن الموقع</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="terms-content">
+        <div class="container">
+            <h1 id="about-site-title">عن الموقع</h1>
+            
+            <div class="orange-divider"></div>
+            
+            <h2 class="terms-subtitle" style="color: #E66B2E !important;">الموسوعة القانونية الإلكترونية للأنظمة والأحكام القضائية السعودية ...</h2>
+
+            <p class="simple-text"><span class="item-number">1.</span> أول موسوعة قانونية إلكترونية في المملكة العربية السعـودية عملت على تحويل جميع ما نشرته جريدة (أم القرى) -من أنظمة ولوائح وقرارات- من صور ورقية إلى نصوص إلكترونية وقد تم إطلاقها في العام 2001م.</p>
+
+            <p class="simple-text"><span class="item-number">2.</span>تبدأ التشريعات في الموسوعة من أول عدد لأم القرى بتاريخ15 جمادى الأولى 1343هـ الموافق 12 ديسمبر 1924م، وحتى تاريخ اليوم وفقًا لتصنيف وفهرسة خاصة بالموسوعة.</p>
+
+            <p class="simple-text"><span class="item-number">3.</span>  تصنف الموسوعة المواقع الرسمية للجهات الحكومية كمصادر للتشريعات الفرعية، وتضيف كل جديد منها إلى الموسوعة.
+ 
+</p>
+
+            <p class="simple-text"><span class="item-number">4.</span>أول موسوعة قانونية تنشر التشريعات وفقًا لستة تصنيفات، وهذا التصنيف مبتكَر والشبكة أول من قام به، وذلك كما يلي:</p>
+            <ul class="terms-list">
+                <li>التشريعات (الأنظمة) السارية.</li>
+                <li>التشريعات (الأنظمة) الملغاة.</li>
+                <li>التشريعات (الأنظمة) الموقوفة.</li>
+                <li>التشريعات (الأنظمة) المؤجلة النفاذ.</li>
+                <li>التشريعات (الأنظمة) التي تنشرها المواقع الحكومية ولم تنشر بعد في الجريدة الرسمية.</li>
+                <li>التشريعات التي صدرت ولم تنشر في الجريدة الرسمية أو في المواقع الحكومية.</li>
+            </ul>
+
+            <p class="simple-text"><span class="item-number">5.</span>أول موسوعة قانونية سعودية تنشر "بطاقة تعريف للنظام" تتضمن أهم البيانات التي يحتاج إليها الباحث بشكل سريع ومنها ما يلي:
+ تاريخ النفاذ).</p>
+            <p class="simple-text">(أداة الصدور- تاريخ النشر- تاريخ النفاذ).</p>
+
+            <p class="simple-text"><span class="item-number">6.</span>أول مَن نشر النظام أو اللائحة وفقًا لآخر تعديل, وبذلك اختصرت على الباحث وقتًا هائلاً في التحقق مما إذا كان قد صدر تعديلات على النص، أو إلغاء مواد أو إصدار مواد مكررة على التشريع.. مع إمكانية تتبع التعديلات الجديدة والرجوع إلى تواريخ التعديلات... إلخ.</p>
+
+            <p class="simple-text"><span class="item-number">7.</span> أول من نشر الأحكام القضائية بعد تحويلها من نصوص ورقية إلى نصوص إلكترونية، وتنشر الموسوعة أحكام وقرارات المحاكم واللجان القضائية التالية:</p>
+            <ul class="terms-list">
+                <li>أحكام وقرارات المحكمة العليا.</li>
+                <li>محكمة الاستئناف.</li>
+                <li>ديوان المظالم.</li>
+                <li>لجنة الفصل في تنازع الاختصاص بالمجلس الأعلى للقضاء.</li>
+                <li>لجنة الفصل في منازعات الأوراق المالية.</li>
+                <li>لجنة الاستئناف في منازعات الأوراق المالية.</li>
+                <li>لجنة النظر في مخالفات نظام حماية حقوق المؤلف.</li>
+                <li>لجنة الفصل في المخالفات والمنازعات الضريبية.</li>
+                <li>اللجنة الاستئنافية للمخالفات والمنازعات الضريبية.</li>
+                <li>اللجنة العليا لتسوية الخلافات العمالية بوزارة العمل.</li>
+                <li>الهيئة العليا لتسوية الخلافات العمالية بوزارة العمل.</li>
+                <li>اللجنة الجمركية الاستئنافية.</li>
+                <li>اللجنة القانونية بوزارة التجارة.</li>
+                <li>لجنة الفصل في المخالفات والمنازعات التأمينية.</li>
+                <li>أحكام القضاء العام.</li>
+                <li>مدونة الأحكام القضائية.</li>
+            </ul>
+
+            <p class="simple-text"><span class="item-number">8.</span> ول من ربط المواد القانونية في الأنظمة بما صدر حولها من أحكام قضائية، وأول من نشر نصوص المواد التي ترد في الأحكام القضائية لتسهيل الرجوع إليها.</p>
+
+            <p class="simple-text"><span class="item-number">9.</span> ثراء الموسوعة باحتوائها على أكثر من 25000 من التشريعات الأساسية والعادية والفرعية (أنظمة- لوائح تنفيذية- لوائح تنظيمية- تعاميم.. إلخ) ويجرى تحديثها فورًا. (الإحصائية حتى منتصف العام 2021).</p>
+
+            <p class="simple-text"><span class="item-number">10.</span> تتضمن الموسوعة ملفات خاصة عن المعاهدات التي وقعت عليها المملكة.</p>
+
+            <p class="simple-text"><span class="item-number">11.</span> تتيح شبكة المحامين العرب ترجمة الأنظمة إلى اللغة الإنجليزية لمن يطلبها.</p>
+            
+            <p class="simple-text"><span class="item-number">12.</span> يتضمن موقع "محامو المملكة" ملفاً صحفياً منذ إطلاق الموسوعة يتضمن أخباراً صحفية ومقالات قانونية ذات علاقة بموضوعات محددة أو ذات علاقة بالقانون بشكل عام.</p>
+
+            <p class="simple-text" style="margin-top: 30px;">يمكنكم زيارة موسوعة "محامو المملكة" من خلال الرابط التالي:</p>
+            <p class="simple-text" style="text-align: center; text-decoration: underline; text-align: right;">
+                <a href="https://www.mohamoon-ksa.com/" target="_blank" style="color: #000;">https://www.mohamoon-ksa.com/</a>
+            </p>
+
+            <p class="simple-text" style="margin-top: 20px;">كما يمكنكم التواصل مع خدمة العملاء عن طريق:</p>
+            <p class="simple-text" style="text-align: center; text-decoration: underline; text-align: right;">
+                <a href="mailto:contact@mohamoon.com" style="color: #000; ">contact@mohamoon.com</a>
+            </p>
+
+            <p class="simple-text" style="margin-top: 30px;">اعرف المزيد عن خدماتنا من خلال زيارة:</p>
+
+            <p class="simple-text"><span class="item-number">1.</span> خدمة تحضير الأسانيد القانونية.</p>
+
+            <p class="simple-text"><span class="item-number">2.</span> البحث في كشاف الجرائد الرسمية.</p>
+
+            <p class="simple-text"><span class="item-number">3.</span> البحث في اللوائح التشريعية.</p>
+
+            <p class="simple-text"><span class="item-number">4.</span> البحث في الملف الصحفي القانوني.</p>
+            
+            <div class="orange-divider" style="margin-top: 40px;"></div>
+
+            <!-- قسم الأسئلة الشائعة -->
+            <div style="margin-top: 60px;">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h2 style="color: #00a19a; font-size: 26px; font-weight: bold; margin-bottom: 10px; text-align: center;">الأسئلة الشائعة</h2>
+                    <div style="display: inline-block; height: 1px; width: 100%; background-color: #eeeeee; margin-top: 5px;"></div>
+                </div>
+
+                <!-- السؤال الأول -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">1- ما هي موسوعة (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">هي قاعدة بيانات قانونية كبرى مملوكة لشبكة المحامين العرب, وهي أول موسوعة قانونية إلكترونية في المملكة العربية السعـودية يتركز نشاطها على تحويل جميع ما نشرته جريدة (أم القرى) من أنظمة ولوائح, وذلك بدءًا من أول عدد من (أم القرى) بتاريخ 15 جمادى الأولى 1343هـ الموافق 12 ديسمبر 1924م، وحتى تاريخ اليوم وفقًا لتصنيف وفهرسة خاصة بالموسوعة وكذلك ما تنشره المواقع الإلكترونية الرسمية من أنظمة ولوائح وقرارات وغيرها من صور ورقية إلى نصوص إلكترونية, بالإضافة إلى العديد من الخدمات الأخرى مثل:</p>
+                <p class="simple-text" style="margin-right: 20px;">(عرض النص في نسخته وفقًا لآخر تعديل - وربط التشريعات بما صدر عنها من أحكام قضائية وإعداد بطاقة تعريف لكل تشريع وغيرها الكثير من الخدمات التي لا غنى عنها لكل مشتغل بالقانون), وقد تم إطلاق الموسوعة في العام 2001م.</p>
+                <p class="simple-text" style="margin-right: 20px;">ويجري تحديثها يومياً بكل ما يصدر حديثاً من تشريعات أو أحكام قضائية.</p>
+                
+                <!-- السؤال الثاني -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">2- ما هي شبكة المحامين العرب؟</p>
+                <p class="simple-text" style="margin-right: 20px;">هي مشروع ثقافي إنساني توعوي انطلق في أول العام 1999م؛ مستهدفًا نشر الوعي القانوني بين أبناء الأمة العربية من خليجها إلى محيطها، بواسطة النشر بمختلف أنواعه، ورفع مستوى وكفاءة المشتغلين بالقانون عن طريق التدريب المرتكز على الجوانب العملية والتطبيقية للمتدربين، وتيسير الوصول للمعلومة القانونية للمختصين من رجال القضاء والقانون وذلك بتسهيل عملية البحث عن الكلمات والمفردات القانونية وصولًا إلى المعلومة المطلوبة، مستفيدًا من ثورة تقنية المعلومات الإلكترونية وذلك بتحويل النصوص -ولأول مرة في العالم العربي- من نصوص ورقية أو صور إلى نصوص مكتوبة، وقد انطلق المشروع بموجب فكرة ومبادرة شخصية وتمويل من مؤسس الشبكة (المحامي عبدالله الناصري)، وقد باشرت الشبكة نشاطها منذ تاريخ إنشائها، وفي العام 2007م تم تسجيل الشبكة في المملكة العربية السعودية كشركة ذات مسؤولية محدودة ، ثم تملكت الشركة شركات أخرى مساندة لها في تحقيق أهدافها.</p>
+
+                <!-- السؤال الثالث -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">3- لماذا أشترك بموسوعة (محامو المملكة)؟</p>
+                <ul style="list-style-type: disc; padding-right: 20px; margin-right: 20px;">
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) عملت على تحويل جميع ما نشرته جريدة (أم القرى) -من أنظمة ولوائح وقرارات- من صور ورقية إلى نصوص إلكترونية وبالتالي يسهل البحث داخل محتوى أي تشريع.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) تنشر الأنظمة السعودية بدءاً من أول عدد من (أم القرى) بتاريخ 15 جمادى الأولى 1343هـ الموافق 12 ديسمبر 1924م، وحتى تاريخ اليوم وفقاً لتصنيف وفهرسة خاصة بالموسوعة.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) تعتمد المواقع الرسمية للجهات الحكومية كمصادر للتشريعات الفرعية، وتضيف كل جديد منها إلى الموسوعة.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة)أول موسوعة قانونية تنشر التشريعات وفقًا لستة تصنيفات، وهذا التصنيف مبتكَر والشبكة أول من قام به، وذلك كما يلي:</li>
+                </ul>
+                <ol style="padding-right: 60px; margin-top: 10px; margin-right: 20px;">
+                    <li class="simple-text" style="margin-bottom: 5px;">التشريعات (الأنظمة) السارية.</li>
+                    <li class="simple-text" style="margin-bottom: 5px;">التشريعات (الأنظمة) الملغاة.</li>
+                    <li class="simple-text" style="margin-bottom: 5px;">التشريعات (الأنظمة) الموقوفة.</li>
+                    <li class="simple-text" style="margin-bottom: 5px;">التشريعات (الأنظمة) المؤجلة النفاذ.</li>
+                    <li class="simple-text" style="margin-bottom: 5px;">التشريعات (الأنظمة) التي تنشرها المواقع الحكومية ولم تُنشر بعد في الجريدة الرسمية.</li>
+                    <li class="simple-text" style="margin-bottom: 5px;">التشريعات التي صدرت ولم تُنشر في الجريدة الرسمية أو في المواقع الحكومية.</li>
+                </ol>
+                <ul style="list-style-type: disc; padding-right: 20px; margin-right: 20px;">
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) أول موسوعة قانونية سعودية تنشر "بطاقة تعريف للنظام" تتضمن أهم البيانات التي يحتاج إليها الباحث بشكل سريع.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) تنشر الأنظمة واللوائح وجميع التشريعات في نسختها وفقاً لآخر تعديل مع إجراء تعديلات مرئية على النصوص.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) تنشر آلاف الأحكام القضائية وقرارات اللجان بصيغة (word) مع تحديث هذه الأحكام يومياً بكل ما يصدر حديثاً من مختلف الجهات القضائية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) أول من ربط المواد القانونية في الأنظمة بما صدر حولها من أحكام قضائية، وأول من نشر نصوص المواد التي ترد في الأحكام القضائية لتسهيل الرجوع إليها.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">ثراء الموسوعة: باحتوائها على أكثر من 25000 من التشريعات الأساسية والعادية والفرعية (أنظمة- لوائح تنفيذية- لوائح تنظيمية- تعاميم... إلخ)، ويجري تحديثها يومياً.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) تتضمن ملفات خاصة عن المعاهدات التي وقعت عليها المملكة.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن شبكة المحامين العرب تتيح ترجمة الأنظمة إلى اللغة الإنجليزية لمن يطلبها من مشتركي موسوعة تشريعات الخليج بالإنجليزية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لأن موسوعة (محامو المملكة) تنشر يومياً ملفاً صحفياً منذ إطلاق الموسوعة يتضمن أخباراً صحفية ومقالات قانونية ذات علاقة بموضوعات محددة أو ذات علاقة بالقانون بشكل عام.</li>
+                </ul>
+
+                <!-- محتويات الموسوعة -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">4- ما هي محتويات موسوعة (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">تنشر موسوعة (محامو المملكة) ما يلي:</p>
+                <ul style="list-style-type: disc; padding-right: 20px; margin-right: 20px;">
+                    <li class="simple-text" style="margin-bottom: 10px;">جميع التشريعات المنشورة بالجريدة الرسمية (أم القرى) منذ أول عدد لها وحتى الآن.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">جميع ما يتم نشره من التشريعات الفرعية بأنواعها.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">جميع ما تنشره المحاكم في المملكة من أحكام القضاء.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">ملف صحفي قانوني يتضمن ما تنشره الصحافة من موضوعات صحفية ذات علاقة بالقانون.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">المعاهدات الدولية التي تنشرها الجريدة الرسمية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">جلسات مجلس الشورى.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">الفتاوى الرسمية.</li>
+                </ul>
+
+                <!-- الجهات القضائية -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">5- ما هي الجهات القضائية التي يمكنني الاطلاع عليها ونسخ أحكامها وقراراتها من خلال (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">تنشر موسوعة (محامو المملكة) أحكام وقرارات المحاكم واللجان القضائية التالية:</p>
+                <ul style="list-style-type: disc; padding-right: 20px; margin-right: 20px;">
+                    <li class="simple-text" style="margin-bottom: 10px;">أحكام وقرارات المحكمة العليا.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">محكمة الاستئناف.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">ديوان المظالم.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لجنة الفصل في تنازع الاختصاص بالمجلس الأعلى.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لجنة الفصل في منازعات الأوراق.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لجنة الاستئناف في منازعات الأوراق المالية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لجنة النظر في مخالفات نظام حماية حقوق المؤلف.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لجنة الفصل في المخالفات والمنازعات الضريبية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">اللجنة الاستئنافية للمخالفات والمنازعات الضريبية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">اللجنة العليا لتسوية الخلافات العمالية بوزارة العمل.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">الهيئة العليا لتسوية الخلافات العمالية بوزارة العمل.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">اللجنة الجمركية الاستئنافية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">اللجنة القانونية بوزارة التجارة.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">لجنة الفصل في المخالفات والمنازعات التأمينية.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">أحكام القضاء العام.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">مدونة الأحكام القضائية.</li>
+                </ul>
+
+                <!-- كيفية الوصول للتشريعات -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">6- كيف استطيع الوصول لتشريع او حكم قضائي معين على موسوعة (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">يمكن الوصول لأي تشريع أو حكم قضائي معين من خلال محرك البحث الذكي الذي يمكنكم من الوصول للتشريع من خلال عدة طرق، كالآتي:</p>
+                <ul style="list-style-type: disc; padding-right: 20px; margin-right: 20px;">
+                    <li class="simple-text" style="margin-bottom: 10px;">باحث أرقام الوثائق (البحث برقم الوثيقة أو نوع الوثيقة).</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">من خلال محرك البحث باستخدام كامل الجملة أو كل كلمة.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">البحث عن النظام حسب حالة سريانه (سار - ملغى - موقوف - مؤجل النفاذ - صدر ولم ينشر بالجريدة الرسمية - صدر ولم يُستدل على نشره).</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">البحث عن الأحكام القضائية من خلال (كامل الجملة - بالكلمة - بالمحكمة - برقم الحكم أو القرار - سنة الحكم أو القرار - برقم القضية - سنة القضية - تاريخ الجلسة).</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">الاستعانة بقسم خدمات العملاء والذين يتواجدون للخدمة أثناء الدوام عن طريق محادثة فورية.</li>
+                </ul>
+
+                <!-- عرض التشريعات -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">7- كيف يتم عرض التشريعات على موسوعة (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">يتم عرض التشريعات كما يلي:</p>
+                <ul style="list-style-type: disc; padding-right: 20px; margin-right: 20px;">
+                    <li class="simple-text" style="margin-bottom: 10px;">نشر التشريع وفقاً لآخر تعديل وهذا سيوفر آلاف الساعات من البحث.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">نشر النسخة الأصلية من التشريع.</li>
+                    <li class="simple-text" style="margin-bottom: 10px;">يمكن تزويد العميل بنسخة pdf لكل تشريع.</li>
+                </ul>
+
+                <!-- النسخة الإنجليزية -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">8- هل يوجد نسخة مترجمة من التشريعات المنشورة بموسوعة (محامو المملكة) للغة الإنجليزية؟</p>
+                <p class="simple-text" style="margin-right: 20px;">نعم, يوجد نسخ مترجمة من التشريعات المنشورة بموسوعات شبكة المحامين العرب ومنها موسوعة (محامو المملكة) وهي منشورة على موسوعة تشريعات الخليج باللغة الإنجليزية, وهذا الموقع معني بنشر تشريعات الخليج باللغة الإنجليزية, وفي حالة عدم وجود نسخة مترجمة يتم ترجمتها فورًا بناءً على طلب عميل موسوعة تشريعات الخليج الإنجليزية.</p>
+
+                <!-- تحديث التشريعات -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">9- هل التشريعات المنشورة بموسوعة (محامو المملكة) محدثة؟</p>
+                <p class="simple-text" style="margin-right: 20px;">نعم، يتم تحديث قاعدة بيانات التشريعات والأحكام القضائية يومياً وعلى مدار الساعة من خلال إضافة أي تشريع حديث مع تنفيذ جميع الآثار التي يحدثها التشريع على غيره من التشريعات المرتبطة به سواء بالتعديل أو الإلغاء أو الربط كذات صلة.</p>
+
+                <!-- خدمة تحضير الأسانيد القانونية -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">10- ما هي خدمة تحضير الأسانيد القانونية وكيف يمكنني الاشتراك بها؟</p>
+                <p class="simple-text" style="margin-right: 20px;">خدمة "تحضير الأسانيد القانونية" تقوم على تحقيق التفاعل بين شبكة المحامين العرب وبين العميل، من خلال المساعدة في البحث وتأصيل المعلومة القانونية.</p>
+                <p class="simple-text" style="margin-right: 20px;">فمن خلال هذه الخدمة تنتقل الشبكة من مرحلة عرض التشريعات والأحكام القضائية الصادرة في الدولة، إلى مرحلة متقدمة تتعلق بتجميع التشريعات والأحكام القضائية، التي تتعلق بموضوع قانوني محدد بناء على رغبة العميل.</p>
+                <p class="simple-text" style="margin-right: 20px;">أي أن العميل الذي يطلب "خدمة تحضير الأسانيد القانونية" ليس عليه سوى تحديد التكييف القانوني للوقائع التي يريد البحث فيها، أو فليتقدم بطلبه وسيقوم القسم بتكييفه، بعد ذلك يقوم مستشارو الشبكة بالبحث عن كل ما يتعلق بهذا الموضوع، من قوانين (أنظمة)، أو مراسيم، أو قرارات، أو أحكام قضائية... إلخ تكون قد صدرت في الدولة التي ينتمي إليها العميل.</p>
+                <p class="simple-text" style="margin-right: 20px;">ويمكنكم الاشتراك بخدمة تحضير الأسانيد القانونية من قبل، أو من خلال التواصل مع خدمة العملاء مباشرة عبر خدمة"تواصل"، أو من خلال البريد الإلكتروني التالي:</p>
+                <p class="simple-text" style="margin-right: 20px;">contact@mohamoon.com</p>
+
+                <!-- التواصل مع الشبكة -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">11- كيف يمكنني التواصل مع الشبكة؟</p>
+                <p class="simple-text" style="margin-right: 20px;">يمكن التواصل مع الشبكة من خلال قسم خدمة العملاء مباشرة من خلال برنامج "تواصل".</p>
+                <p class="simple-text" style="margin-right: 20px;">يومياً من السبت إلى الخميس خلال مواعيد العمل الرسمية من الساعة السابعة صباحاً وحتى السابعة مساءً بتوقيت الرياض.</p>
+
+                <!-- طلب البحث عن تشريع أو حكم قضائي -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">12- هل يمكنني طلب البحث عن تشريع أو حكم قضائي معين من خلال قسم خدمة العملاء؟</p>
+                <p class="simple-text" style="margin-right: 20px;">نعم، يمكن طلب البحث عن طريق خدمة العملاء وهي خدمة مجانية متاحة لكافة عملاء مواقع الشبكة من ذوي الاشتراكات السارية، فلا يُشترط لها سوى كون اشتراك العميل ما زال سارياً.</p>
+
+                <!-- المشاركة برأي أو تعليق -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">13- هل يمكنني المشاركة برأي أو تعليق حول موسوعة (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">نعم، ترحب الشبكة بتلقي مقترحاتكم وآراءكم البناءة وملاحظاتكم واستفساراتكم حول أي تشريع أو حكم قضائي، أو حول أي من الموسوعات البالغ عددها (44) موسوعة، ومنها موسوعة (محامو المملكة).</p>
+                <p class="simple-text" style="margin-right: 20px;">يمكنكم التواصل من خلال برنامج "تواصل"</p>
+
+                <!-- تصفح الموسوعة عبر الهواتف -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">14- هل يمكن تصفح موسوعة (محامو المملكة) من خلال تطبيق على الهواتف النقالة؟</p>
+                <p class="simple-text" style="margin-right: 20px;">يمكن في الوقت الحالي تصفح موسوعة (محامو المملكة) والاستفادة من الخدمات التي تقدمها من خلال تصفح الموسوعة على متصفح الهواتف النقالة والأجهزة اللوحية وأجهزة الكومبيوتر المكتبية وأجهزة التابلت، حيث يدعم الموقع جميع أنواع المتصفحات، وحالياً يجري الإعداد لإطلاق تطبيق على الجوال.</p>
+
+                <!-- الاشتراك بالموسوعة -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">15- كيف يمكنني الاشتراك بموسوعة (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">يمكن الاشتراك من خلال ملء طلب الاشتراك من هنا ثم استكمال متطلبات الاشتراك.</p>
+
+                <!-- الخدمات غير المدفوعة -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">16- هل تقدم شبكة المحامين العرب خدمات غير مدفوعة؟</p>
+                <p class="simple-text" style="margin-right: 20px;">نعم، تقدم شبكة المحامين العرب العديد من الخدمات غير المدفوعة، مثل :</p>
+                <p class="simple-text" style="margin-right: 40px;">1- إرسال الاستشارات وطلب المحامين من خلال صفحة أحتاج محامي</p>
+                <p class="simple-text" style="margin-right: 40px;">2- الاشتراك في خدمة نشرة الأخبار القانونية</p>
+                <p class="simple-text" style="margin-right: 40px;">3- خدمة البحث في الأسانيد القانونية</p>
+                <p class="simple-text" style="margin-right: 40px;">4- البحث بمكشاف الجرائد الرسمية</p>
+                <p class="simple-text" style="margin-right: 40px;">5- البحث بالروابط التشريعية</p>
+                <p class="simple-text" style="margin-right: 40px;">6- البحث بالملف الصحفي القانوني</p>
+                <p class="simple-text" style="margin-right: 40px;">7- الاشتراك في منتدى المحامين العرب</p>
+                <p class="simple-text" style="margin-right: 40px;">8- الموسوعة القانونية الإلكترونية للتشريعات والأحكام القضائية المتعلقة بفيروس كورونا</p>
+
+                <!-- شروط الاشتراك وسياسة الخصوصية -->
+                <p class="simple-text" style="font-weight: bold; margin-top: 25px;">17- ما هي شروط الاشتراك وسياسة الخصوصية لموسوعة (محامو المملكة)؟</p>
+                <p class="simple-text" style="margin-right: 20px;">يمكن الاطلاع على سياسة الخصوصية وشروط الاستخدام من خلال الروابط الآتية: سياسة الخصوصية , شروط الاستخدام</p>
+            </div>
+            
+            <div class="orange-divider" style="margin-top: 40px;"></div>
+        </div>
+    </main>
+
+     <!-- Footer Social Section - Separate from Footer -->
+     <section class="social-share-section">
+           <div style="display: flex; align-items: center; justify-content: space-between; background-color: rgb(245, 245, 245); border-radius: 143px; padding: 10px 20px; margin: 40px 0px 20px; width: 1200px; height: 91px; font-size: 12.8px;" data-original-font-size="16">
+            <!-- Social Media Sharing - Left Side -->
+                <!-- Last Update - Right Side -->
+                <div style="display: flex; align-items: center; color: #158885; font-size: 16px;">
+                    <img src="../assets/icons/clock.svg" alt="الساعة" width="16" height="16" style="margin-left: 5px;">
+                    <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">آخر تعديل 19 ذو القعدة 1444</span>
+                </div>
+                       <!-- Rating - Middle Right -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; align-items: center; gap: 3px;">
+                    <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">تقييم المحتوى</span>
+                    <div style="display: flex; gap: 2px;">
+                        <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                        <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                        <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                        <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                        <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                    </div>
+                </div>
+                <!-- Followers Count - Middle -->
+                <div style="display: flex; align-items: center; gap: 3px;">
+                    <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">عدد الأصوات:</span>
+                    <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">9130</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span style="margin-right: 5px; font-size: 14px; color: #00a19a;">شارك على</span>
+                <a href="https://linkedin.com/company/mohamoon-ksa" style="color: #00a19a;">
+                    <img src="../assets/icons/ln-soc.svg" alt="لينكد إن" width="26" height="26">
+                </a>
+                <a href="https://twitter.com/mohamoon_ksa" style="color: #00a19a;">
+                    <img src="../assets/icons/x-soc.svg" alt="تويتر" width="26" height="26">
+                </a>
+                <a href="https://instagram.com/mohamoon_ksa" style="color: #00a19a;">
+                    <img src="../assets/icons/in-sco.svg" alt="انستغرام" width="26" height="26">
+                </a>
+                <a href="https://facebook.com/mohamoon.ksa" style="color: #00a19a;">                
+                    <img src="../assets/icons/fb-soc.svg" alt="فيسبوك" width="26" height="26">
+                </a>
+            </div>   
+        </div>
+    </section>
+    
+    <!-- Footer الموحد -->
+     <!-- Footer -->
+     <footer>
+        <!-- Main Footer -->
+        <div class="main-footer">
+            <div >
+                <div class="footer-content">
+                    <div class="footer-column about-column">
+                        <h3 class="footer-title">عن محامو المملكة</h3>
+                        <p class="footer-text">البوابة القانونية الشاملة للمحامين والمستشارين القانونيين بالسعودية</p>
+                        <p class="footer-text">العربية السعوية</p>
+                    </div>
+                    <div class="footer-column links-column">
+                        <h3 class="footer-title">روابط سريعة</h3>
+                        <ul class="footer-links">
+                            <li><a href="../index.html">الرئيسية</a></li>
+                            <li><a href="about-site.html">عن الموقع</a></li>
+                            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column contact-column">
+                        <h3 class="footer-title">تواصل معنا</h3>
+                        <p class="contact-item email">info@mohamoon-ksa.com</p>
+                        <p class="contact-item phone">الهاتف: xxx xxxx 11 966+</p>
+                        <p class="contact-item address">العنوان: الرياض, المملكة العربية السعودية</p>
+                    </div>
+                    <div class="footer-column social-column">
+                        <h3 class="footer-title">تابعنا</h3>
+                        <div class="footer-social">
+                            <a href="https://facebook.com/mohamoon.ksa" class="footer-social-icon"><img src="../assets/icons/facebook.png" alt="فيس بوك"></a>
+                            <a href="https://instagram.com/mohamoon_ksa" class="footer-social-icon"><img src="../assets/icons/insta.png" alt="إنستجرام"></a>
+                            <a href="https://twitter.com/mohamoon_ksa" class="footer-social-icon"><img src="../assets/icons/x.png" alt="تويتر"></a>
+                            <a href="https://linkedin.com/company/mohamoon-ksa" class="footer-social-icon"><img src="../assets/icons/ln.png" alt="لينكد إن"></a>
+                        </div>
+                        <a href="tel:+966114567890" class="contact-btn">
+                            <img src="../assets/icons/call.svg" alt="اتصال">
+                            اتصل بنا
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright-text">جميع الحقوق محفوظة © 2024 محامو المملكة</div>
+                <div class="footer-bottom-links">
+                    <a href="../pages/terms.html">الشروط والأحكام</a> | 
+                    <a href="privacy-policy.html">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  
+     
+
+    <!-- ملفات JavaScript بالترتيب الصحيح -->
+<script src="../scripts/load-login-from-file.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/global-components.js"></script>
+<script src="../scripts/profile-modal.js"></script>
+<script src="../scripts/load-asanid-service-modal.js"></script>
+<script src="../scripts/login-modal-fix.js"></script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/load-password-change-modal.js"></script>
+<script src="../scripts/load-profile-modal.js"></script>
+<script src="../scripts/load-settings-modal.js"></script>
+<script src="../scripts/load-user-dashboard-modal.js"></script>
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+
+<!-- وظائف التوب بار -->
+<script src="../scripts/unified-icons.js"></script>
+<script src="../scripts/search-popup.js"></script>
+<script src="../scripts/settings.js"></script>
+<script src="../scripts/simple-zoom.js"></script>
+
+<!-- وظائف الموبايل -->
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+
+<!-- النافبار (آخر شيء) -->
+<script src="../scripts/unified-navbar.js"></script>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const overlay = document.querySelector('.mobile-overlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const overlay = document.querySelector('.mobile-overlay');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function toggleSubmenu(element) {
+            const parent = element.parentElement;
+            const submenu = parent.querySelector('.mobile-submenu');
+            parent.classList.toggle('active');
+            submenu.classList.toggle('active');
+        }
+    </script>
+    
+    <div class="support-icon-fixed">
+        <img src="../assets/icons/support.svg" alt="الدعم والمساعدة">
+    </div>
+    
+    <!-- <script src="../scripts/modify-subscription-modal.js"></script> -->
+
+<!-- سكريبت الموبايل -->
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/unified-icons.js"></script>
+<script src="../scripts/simple-zoom.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+
+<script src="../scripts/global-components.js"></script>
+<script src="../scripts/global-functions.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+
+
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+<script src="../scripts/unified-settings.js"></script>
+<!-- نظام المصادقة والتسجيل -->
+<script src="../scripts/auth-system.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+
+
+
+
+<!-- Core Sliders -->
+<script src="../scripts/slider.js"></script>
+<script src="../scripts/services-slider.js"></script>
+<script src="../scripts/partners-slider.js"></script>
+<script src="../scripts/updates-slider.js"></script>
+<script src="../scripts/load-asanid-service-modal.js"></script>
+
+<!-- Settings and Icons -->
+<script src="../scripts/unified-icons.js"></script>
+
+<!-- Navigation and Menu Scripts -->
+<script src="../scripts/services-menu.js"></script>
+<script src="../scripts/unified-navbar.js"></script>
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+<script src="../scripts/mobile-menu.js"></script>
+
+<!-- Search and Popup -->
+<script src="../scripts/search-popup.js"></script>
+
+<!-- Zoom and Accessibility -->
+<script src="../scripts/simple-zoom.js"></script>
+<script src="../scripts/zoom-control.js"></script>
+
+<!-- Authentication and Profile -->
+        <script src="../scripts/fix-profile-button.js"></script>
+        <script src="../scripts/load-login-from-file.js"></script>
+        <script src="../scripts/login-fix.js"></script>
+<script src="../scripts/settings-menu-handler.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/edit-profile-modal.js"></script>
+
+<!-- Modals and Selectors -->
+<script src="../scripts/asanid-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/enhanced-country-dropdown.js"></script>
+<script src="../scripts/country-selector-modal.js"></script>
+
+<!-- Utility Scripts -->
+<script src="../scripts/link-fixer.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/services-darkmode-fix.js"></script>
+<script src="../scripts/star-rating.js"></script>
+<script src="../scripts/subpages-dark-contrast.js"></script>
+<script src="../scripts/contrast-submenu-fix.js"></script>
+
+<!-- Subscription and Renewal -->
+<script src="../scripts/modify-subscription-modal.js"></script>
+<script src="../scripts/load-modify-subscription-modal.js"></script>
+<script src="../scripts/load-renew-subscription-modal.js"></script>
+<script src="../scripts/renew-subscription-modal.js"></script>
+
+<!-- Additional Containers -->
+<div id="modify-subscription-modal-container"></div>
+<div id="country-selector-container">
+    <!-- This will be loaded dynamically or included here -->
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    showProfileButton();
+});
+</script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/modify-subscription-modal.js"></script>
+<script src="../scripts/load-modify-subscription-modal.js"></script>
+<script src="../scripts/load-renew-subscription-modal.js"></script>
+<script src="../scripts/renew-subscription-modal.js"></script>
+<!-- Include the modify subscription modal HTML -->
+<div id="modify-subscription-modal-container"></div>
+<!-- Include the profile modal HTML -->
+<div id="profile-modal-container"></div>
+
+
+<!-- Include the country selector modal HTML -->
+<div id="country-selector-container">
+    <!-- This will be loaded dynamically or included here -->
+</div>
+
+<!-- Scripts -->
+<script src="../scripts/country-selector-modal.js"></script>
+<!-- إضافة الدوال العامة -->
+<script src="../scripts/global-functions.js"></script>
+<!-- إضافة التحكم في حجم الخط -->
+<script src="../scripts/zoom-control.js"></script>
+
+
+
+    <!-- إضافة سكريبت المكونات العامة -->
+    <script src="../scripts/global-components.js"></script>
+</body>
+</html>

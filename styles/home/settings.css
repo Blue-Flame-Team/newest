@@ -1,0 +1,37 @@
+﻿/* ============================================================
+   إعدادات قائمة الإعدادات والتفاعلات
+   ============================================================ */
+
+.settings-menu {
+    /* position: absolute !important; */
+    /* top: 100% !important; */
+    /* right: 0 !important;
+    transform: none !important;
+    margin-top: 5px !important; */
+}
+
+.main-icons-group {
+    position: relative !important;
+}
+
+.settings-toggle-btn {
+    position: relative !important;
+}
+
+/* Renew Subscription Modal Input Styling */
+.modal-input-custom {
+    width: 434px;
+    height: 46.52px;
+    gap: 24px;
+    transform: rotate(0deg);
+    opacity: 1;
+    
+    /* Additional styling to match project's design */
+    border: 1px solid #17A891; /* Teal border to match project color scheme */
+    border-radius: 8px; /* Rounded corners for modern look */
+    padding: 10px 15px;
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    font-size: 14px;
+    color: #333; /* Dark text color for readability */
+}
+

@@ -1,0 +1,595 @@
+﻿/**
+ * أنماط لوحة المستخدم - محامون المملكة
+ * تحديث جديد لحل التعارضات
+ */
+
+/* النافذة المنبثقة الأساسية */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    direction: rtl;
+    backdrop-filter: blur(5px);
+}
+
+.modal.show {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* محتوى النافذة - Desktop */
+.modal-content {
+    background-color: #444;
+    margin: auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    direction: rtl;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+}
+
+/* عنوان الترحيب */
+.modal-content h2 {
+    color: #ced4da;
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* حاوية الأزرار */
+.dashboard-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+/* أزرار لوحة التحكم */
+.dashboard-btn {
+    background-color: #2b3a63;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.dashboard-btn:hover {
+    background-color: #3a4d7a;
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: #fff;
+}
+
+.dashboard-btn img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+/* زر تسجيل الخروج */
+.logout-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    width: 70%;
+    font-size: 1rem;
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: #c9302c;
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: white;
+}
+
+.logout-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* زر الإغلاق */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== أنماط الموبايل - بأولوية عالية ===== */
+@media screen and (max-width: 767px) {
+    
+    /* إعادة تعيين النافذة للموبايل */
+    #user-dashboard-modal.modal {
+        display: none;
+        position: fixed !important;
+        z-index: 9999 !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        overflow: auto !important;
+        padding: 20px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        backdrop-filter: blur(3px) !important;
+    }
+    
+    #user-dashboard-modal.modal.show {
+        display: flex !important;
+    }
+    
+    /* محتوى النافذة للموبايل */
+    #user-dashboard-modal .modal-content {
+        width: 182px !important;
+        height: 282px !important;
+        max-width: 182px !important;
+        max-height: 282px !important;
+        min-width: 182px !important;
+        min-height: 282px !important;
+        padding: 24px !important;
+        border-radius: 12px !important;
+        background: #FFFFFF !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        overflow: hidden !important;
+        position: relative !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+        text-align: center !important;
+    }
+    
+    /* إخفاء العنوان في الموبايل */
+    #user-dashboard-modal .modal-content h2 {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* إخفاء معلومات المستخدم */
+    #user-dashboard-modal .modal-content .user-info {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* إخفاء زر الإغلاق */
+    #user-dashboard-modal .close-modal {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* حاوية الأزرار - تحريك للأسفل */
+    #user-dashboard-modal .dashboard-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        margin: 0 !important;
+        margin-top: 20px !important;
+        padding: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        flex: 1 !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+    
+    #user-dashboard-modal .dashboard-buttons::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        background: transparent !important;
+    }
+    
+    /* أزرار الموبايل */
+    #user-dashboard-modal .dashboard-btn,
+    #user-dashboard-modal a.dashboard-btn {
+        width: 134px !important;
+        height: 34px !important;
+        max-width: 134px !important;
+        max-height: 34px !important;
+        min-width: 134px !important;
+        min-height: 34px !important;
+        background-color: #2D3748 !important;
+        background: #2D3748 !important;
+        color: #ffffff !important;
+        border-radius: 6px !important;
+        padding: 8px 19.77px !important;
+        font-size: 12px !important;
+        font-family: 'Droid Arabic Kufi', Arial, sans-serif !important;
+        font-weight: 500 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        margin: 0 auto !important;
+        text-align: right !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        border: none !important;
+        outline: none !important;
+        transition: all 0.2s ease !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+    
+    #user-dashboard-modal .dashboard-btn:hover,
+    #user-dashboard-modal a.dashboard-btn:hover,
+    #user-dashboard-modal .dashboard-btn:focus,
+    #user-dashboard-modal a.dashboard-btn:focus {
+        background-color: #4A5568 !important;
+        background: #4A5568 !important;
+        transform: none !important;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        outline: none !important;
+    }
+    
+    #user-dashboard-modal .dashboard-btn:visited,
+    #user-dashboard-modal a.dashboard-btn:visited,
+    #user-dashboard-modal .dashboard-btn:active,
+    #user-dashboard-modal a.dashboard-btn:active {
+        color: #ffffff !important;
+        text-decoration: none !important;
+        background-color: #2D3748 !important;
+        background: #2D3748 !important;
+    }
+    
+    /* أيقونات الأزرار */
+    #user-dashboard-modal .dashboard-btn img,
+    #user-dashboard-modal a.dashboard-btn img {
+        width: 16px !important;
+        height: 16px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
+        margin-left: 0 !important;
+        margin-right: 6px !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        flex-shrink: 0 !important;
+        filter: brightness(0) invert(1) !important;
+        opacity: 0.9 !important;
+        object-fit: contain !important;
+    }
+    
+    /* نصوص الأزرار */
+    #user-dashboard-modal .dashboard-btn span,
+    #user-dashboard-modal a.dashboard-btn span {
+        direction: rtl !important;
+        text-align: right !important;
+        flex: 1 !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        color: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* زر تسجيل الخروج */
+    #user-dashboard-modal .logout-btn,
+    #user-dashboard-modal a.logout-btn {
+        width: 134px !important;
+        height: 34px !important;
+        max-width: 134px !important;
+        max-height: 34px !important;
+        min-width: 134px !important;
+        min-height: 34px !important;
+        background-color: #E53E3E !important;
+        background: #E53E3E !important;
+        color: #ffffff !important;
+        border-radius: 6px !important;
+        padding: 8px 19.77px !important;
+        font-size: 12px !important;
+        font-family: 'Droid Arabic Kufi', Arial, sans-serif !important;
+        font-weight: 500 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        margin: 0 auto !important;
+        text-align: right !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        border: none !important;
+        outline: none !important;
+        transition: all 0.2s ease !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+    
+    #user-dashboard-modal .logout-btn:hover,
+    #user-dashboard-modal a.logout-btn:hover,
+    #user-dashboard-modal .logout-btn:focus,
+    #user-dashboard-modal a.logout-btn:focus {
+        background-color: #C53030 !important;
+        background: #C53030 !important;
+        transform: none !important;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        outline: none !important;
+    }
+    
+    #user-dashboard-modal .logout-btn:visited,
+    #user-dashboard-modal a.logout-btn:visited,
+    #user-dashboard-modal .logout-btn:active,
+    #user-dashboard-modal a.logout-btn:active {
+        color: #ffffff !important;
+        text-decoration: none !important;
+        background-color: #E53E3E !important;
+        background: #E53E3E !important;
+    }
+    
+    /* أيقونة تسجيل الخروج */
+    #user-dashboard-modal .logout-btn img,
+    #user-dashboard-modal a.logout-btn img {
+        width: 16px !important;
+        height: 16px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
+        margin-left: 0 !important;
+        margin-right: 6px !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        flex-shrink: 0 !important;
+        filter: brightness(0) invert(1) !important;
+        opacity: 0.9 !important;
+        object-fit: contain !important;
+    }
+    
+    /* نص تسجيل الخروج */
+    #user-dashboard-modal .logout-btn span,
+    #user-dashboard-modal a.logout-btn span {
+        direction: rtl !important;
+        text-align: right !important;
+        flex: 1 !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        color: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+}
+
+/* إزالة أنماط النافذة القديمة إذا كانت موجودة */
+.user-dashboard-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    direction: rtl;
+}
+
+.user-dashboard-modal.show {
+    display: block;
+}
+
+.dashboard-content {
+    background-color: #444;
+    margin: 15% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+.dashboard-title {
+    color: #ced4da;
+    margin: 10px 0 20px;
+    font-size: 1.5rem;
+}
+
+.dashboard-frame-label {
+    color: #ced4da;
+    font-size: 0.8rem;
+    margin: 10px 0;
+}
+
+.dashboard-buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.dashboard-button {
+    background-color: #2b3a63;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.dashboard-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.logout-button {
+    background-color: #d9534f;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.dashboard-close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #aaa;
+    font-size: var(--font-2xl);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dashboard-close:hover {
+    color: #fff;
+}
+
+/* تأثيرات التحويم */
+.dashboard-button:hover {
+    opacity: 0.9;
+}
+
+/* استجابة للهواتف */
+@media only screen and (max-width: 600px) {
+    .dashboard-content {
+        margin: 25% auto;
+        width: 95%;
+    }
+    
+    .dashboard-buttons-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .logout-button {
+        width: 90%;
+    }
+}
+
+/* إزالة أي مسافات زائدة في نهاية الصفحة */
+html, body {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.main-footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* التأكد من عدم وجود مسافات زائدة بعد تسجيل الخروج */
+#user-dashboard-modal .modal-content {
+    margin-bottom: 0 !important;
+    padding-bottom: 24px !important;
+}
+
+/* ===== أنماط الموبايل - بأولوية عالية ===== */
+
+/* قواعد نهائية شاملة لإزالة جميع المسافات الزائدة */
+#user-dashboard-modal {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#user-dashboard-modal.modal {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#user-dashboard-modal .modal-content {
+    margin-bottom: 0 !important;
+}
+
+#user-dashboard-modal .logout-btn,
+#user-dashboard-modal a.logout-btn {
+    margin-bottom: 0 !important;
+}
+
+#user-dashboard-modal .dashboard-buttons {
+    margin-bottom: 0 !important;
+}
+
+.modal {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* قواعد شاملة للموبايل أيضاً */
+@media (max-width: 768px) {
+    #user-dashboard-modal {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    #user-dashboard-modal .modal-content {
+        margin-bottom: 0 !important;
+        padding-bottom: 24px !important;
+    }
+    
+    #user-dashboard-modal .logout-btn,
+    #user-dashboard-modal a.logout-btn {
+        margin-bottom: 0 !important;
+    }
+    
+    #user-dashboard-modal .dashboard-buttons {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* إزالة أي مسافات زائدة في نهاية الصفحة */
+

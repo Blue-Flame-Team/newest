@@ -1,0 +1,1405 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإحصائيات - محامون المملكة</title>
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- أوراق الأنماط -->
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/font-normalization.css">
+    <link rel="stylesheet" href="../styles/analytics/header.css">
+    <link rel="stylesheet" href="../styles/analytics/main.css">
+    <link rel="stylesheet" href="../styles/faq/footer.css">
+    <link rel="stylesheet" href="../styles/home/settings.css">
+    <link rel="stylesheet" href="../styles/search-popup.css">
+    <link rel="stylesheet" href="../styles/login-modal.css">
+
+    <!-- ناف بار بالخلفية الفيروزية للصفحات الفرعية -->
+    <link rel="stylesheet" href="../styles/subpages-navbar.css">
+    <!-- إصلاح لقائمة الموبايل -->
+     <!-- أوراق الأنماط للموبايل -->
+     <link rel="stylesheet" href="../styles/shared/universal-settings-menu.css">
+    <link rel="stylesheet" href="../styles/home/topbar.css">
+    <link rel="stylesheet" href="../styles/mobile-navbar.css">
+    <link rel="stylesheet" href="../styles/mobile-view.css">
+    <link rel="stylesheet" href="../styles/mobile-menu.css">
+    <link rel="stylesheet" href="../styles/hamburger-fix.css">
+    <link rel="stylesheet" href="../styles/mobile-dropdown.css">
+    <link rel="stylesheet" href="../styles/navbar-mobile-fix.css">
+    <link rel="stylesheet" href="../styles/home/mobile-settings.css">
+    <link rel="stylesheet" href="../styles/subpage.css">
+    <link rel="stylesheet" href="../styles/faq/responsive.css">
+    <link rel="stylesheet" href="../styles/social-share-section.css">
+    <link rel="stylesheet" href="../styles/simple-zoom.css">
+<style>
+/* Font normalization for Droid Arabic Kufi */
+* {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+body, html {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td, th, select, option {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+.title, .text, .content, .description, .heading, .label, .item, .menu-item, .nav-item {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Analytics Section Mobile Layout */
+    .analytics-section,
+    body .analytics-section,
+    html body .analytics-section {
+        padding: 25px 0 !important;
+        margin-bottom: 40px !important;
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf9 100%) !important;
+        border-radius: 0 !important;
+        position: relative !important;
+    }
+    
+    .analytics-section::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 2px !important;
+        background: linear-gradient(90deg, transparent 0%, #00a19a 50%, transparent 100%) !important;
+    }
+    
+    .analytics-section .container {
+        padding: 0 20px !important;
+        max-width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    
+    .stats-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        align-items: center !important;
+    }
+    
+    /* Recently Viewed Section - Strong Specificity */
+    .analytics-section .stats-wrapper .recently-viewed,
+    body .analytics-section .recently-viewed,
+    html body .recently-viewed {
+        width: 100% !important;
+        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+        border-radius: 12px !important;
+        padding: 20px 18px !important;
+        box-shadow: 0 4px 12px rgba(0,161,154,0.15) !important;
+        margin-bottom: 0 !important;
+        max-width: 400px !important;
+        border: 1px solid rgba(0,161,154,0.1) !important;
+        display: block !important;
+        position: relative !important;
+    }
+    
+    .analytics-section .recent-title,
+    body .analytics-section .recent-title,
+    html body .recent-title {
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        margin-bottom: 16px !important;
+        text-align: center !important;
+        padding-bottom: 8px !important;
+        border-bottom: 2px solid rgba(0,161,154,0.2) !important;
+        position: relative !important;
+        display: block !important;
+    }
+    
+    .recent-title::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -2px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 60px !important;
+        height: 2px !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        border-radius: 1px !important;
+    }
+    
+    .analytics-section .recently-viewed-list,
+    body .analytics-section .recently-viewed-list,
+    html body .recently-viewed-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .analytics-section .recently-viewed-item,
+    body .analytics-section .recently-viewed-item,
+    html body .recently-viewed-item {
+        background: linear-gradient(135deg, #f8fffe 0%, #e8f7f6 100%) !important;
+        border-radius: 10px !important;
+        padding: 16px 18px !important;
+        border-right: 4px solid #00a19a !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid rgba(0,161,154,0.2) !important;
+        border-left: 1px solid rgba(0,161,154,0.2) !important;
+        border-top: 1px solid rgba(0,161,154,0.2) !important;
+        border-bottom: 1px solid rgba(0,161,154,0.2) !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+    
+    .analytics-section .recently-viewed-item:hover,
+    body .analytics-section .recently-viewed-item:hover,
+    html body .recently-viewed-item:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0,161,154,0.2) !important;
+        background: linear-gradient(135deg, #e8f7f6 0%, #d0f0ef 100%) !important;
+    }
+    
+    .analytics-section .recently-viewed-item div,
+    body .analytics-section .recently-viewed-item div,
+    html body .recently-viewed-item div {
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 15px !important;
+        color: #333 !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        font-weight: 500 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    
+    .analytics-section .view-all-btn,
+    body .analytics-section .view-all-btn,
+    html body .view-all-btn {
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 10px !important;
+        padding: 14px 20px !important;
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        width: 100% !important;
+        cursor: pointer !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(0,161,154,0.3) !important;
+        text-decoration: none !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+    }
+    
+    .view-all-btn:hover {
+        background: linear-gradient(135deg, #008a84 0%, #007772 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,161,154,0.4) !important;
+    }
+    
+    .view-all-btn:active {
+        transform: translateY(0px) !important;
+        box-shadow: 0 2px 6px rgba(0,161,154,0.3) !important;
+    }
+    
+    /* Visits Section */
+    .visits-section {
+        width: 100% !important;
+        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+        border-radius: 12px !important;
+        padding: 20px 15px !important;
+        box-shadow: 0 4px 12px rgba(0,161,154,0.15) !important;
+        margin-top: 0 !important;
+        overflow: visible !important;
+        max-width: 400px !important;
+        border: 1px solid rgba(0,161,154,0.1) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+    }
+    
+    /* Add a title for visits table */
+    .visits-section::before {
+        content: 'جدول الزيارات' !important;
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        margin-bottom: 15px !important;
+        display: block !important;
+        text-align: center !important;
+        position: relative !important;
+        padding-bottom: 8px !important;
+        border-bottom: 2px solid rgba(0,161,154,0.2) !important;
+        width: 100% !important;
+    }
+    
+    .visits-section::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 35px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 60px !important;
+        height: 2px !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        border-radius: 1px !important;
+    }
+    
+    .visits-table {
+        width: 100% !important;
+        max-width: 370px !important;
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+        margin: 50px auto 0 !important;
+        background: white !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 2px 6px rgba(0,161,154,0.1) !important;
+        position: relative !important;
+        z-index: 5 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .visits-header {
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        color: white !important;
+        padding: 12px 8px !important;
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border: none !important;
+        height: 45px !important;
+        vertical-align: middle !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        white-space: nowrap !important;
+        position: relative !important;
+    }
+    
+    .visits-header:first-child {
+        border-radius: 8px 0 0 0 !important;
+    }
+    
+    .visits-header:last-child {
+        border-radius: 0 8px 0 0 !important;
+    }
+    
+    /* Column widths for better layout */
+    .visits-table th:first-child,
+    .visits-table td:first-child {
+        width: 70% !important;
+        text-align: right !important;
+        padding-right: 12px !important;
+    }
+    
+    .visits-table th:last-child,
+    .visits-table td:last-child {
+        width: 30% !important;
+        text-align: center !important;
+        font-weight: 500 !important;
+        color: #007772 !important;
+    }
+    
+    .visits-table tbody tr:last-child td:first-child,
+    .visits-table tbody tr:last-child td:last-child {
+        border-radius: 0 0 8px 8px !important;
+    }
+    
+    .visits-table tbody tr {
+        border-bottom: 1px solid #eee !important;
+    }
+    
+    .visits-table tbody tr:hover {
+        background: linear-gradient(135deg, #f8fffe 0%, #e8f7f6 100%) !important;
+        transition: all 0.2s ease !important;
+        cursor: pointer !important;
+    }
+    
+    .visits-table td {
+        padding: 10px 8px !important;
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 13px !important;
+        color: #333 !important;
+        text-align: center !important;
+        border: none !important;
+        line-height: 1.3 !important;
+        height: 40px !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        white-space: nowrap !important;
+        font-weight: 400 !important;
+    }
+    
+    .visits-total-row {
+        background: linear-gradient(135deg, #e8f7f6 0%, #d0f0ef 100%) !important;
+        font-weight: 600 !important;
+        border-top: 2px solid #00a19a !important;
+    }
+    
+    .visits-total-row td {
+        border-bottom: none !important;
+        height: 45px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: #00a19a !important;
+        padding: 12px 8px !important;
+    }
+    
+    .visits-total-cell {
+        color: #00a19a !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+    }
+    
+    /* Docs Section Mobile */
+    .docs-section, .printed-docs-section,
+    body .docs-section, body .printed-docs-section,
+    html body .docs-section, html body .printed-docs-section {
+        padding: 25px 0 !important;
+        margin-top: 40px !important;
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf9 100%) !important;
+        border-radius: 0 !important;
+        position: relative !important;
+    }
+    
+    .docs-section::before, .printed-docs-section::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 2px !important;
+        background: linear-gradient(90deg, transparent 0%, #00a19a 50%, transparent 100%) !important;
+    }
+    
+    .docs-section .container, .printed-docs-section .container {
+        padding: 0 20px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    
+    .section-with-title {
+        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+        border-radius: 12px !important;
+        padding: 20px 18px !important;
+        box-shadow: 0 4px 12px rgba(0,161,154,0.15) !important;
+        margin-bottom: 40px !important;
+        max-width: 400px !important;
+        width: 100% !important;
+        border: 1px solid rgba(0,161,154,0.1) !important;
+    }
+    
+    .section-title {
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        margin-bottom: 16px !important;
+        text-align: center !important;
+        padding-bottom: 8px !important;
+        border-bottom: 2px solid rgba(0,161,154,0.2) !important;
+        position: relative !important;
+    }
+    
+    .section-title::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -2px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 60px !important;
+        height: 2px !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        border-radius: 1px !important;
+    }
+    
+    .docs-content, .printed-docs-content {
+        width: 100% !important;
+    }
+    
+    .docs-section .recently-used-docs-list,
+    .printed-docs-section .printed-docs-list,
+    body .docs-section .recently-used-docs-list,
+    body .printed-docs-section .printed-docs-list,
+    html body .recently-used-docs-list,
+    html body .printed-docs-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .docs-section .recently-used-docs-item,
+    .printed-docs-section .printed-docs-item,
+    body .docs-section .recently-used-docs-item,
+    body .printed-docs-section .printed-docs-item,
+    html body .recently-used-docs-item,
+    html body .printed-docs-item {
+        background: linear-gradient(135deg, #f8fffe 0%, #e8f7f6 100%) !important;
+        border-radius: 10px !important;
+        padding: 16px 18px !important;
+        border-right: 4px solid #00a19a !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid rgba(0,161,154,0.2) !important;
+        border-left: 1px solid rgba(0,161,154,0.2) !important;
+        border-top: 1px solid rgba(0,161,154,0.2) !important;
+        border-bottom: 1px solid rgba(0,161,154,0.2) !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
+        list-style: none !important;
+        text-decoration: none !important;
+    }
+    
+    .docs-section .recently-used-docs-item:hover,
+    .printed-docs-section .printed-docs-item:hover,
+    body .docs-section .recently-used-docs-item:hover,
+    body .printed-docs-section .printed-docs-item:hover,
+    html body .recently-used-docs-item:hover,
+    html body .printed-docs-item:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0,161,154,0.2) !important;
+        background: linear-gradient(135deg, #e8f7f6 0%, #d0f0ef 100%) !important;
+        cursor: pointer !important;
+    }
+    
+    .docs-section .recently-used-docs-item div,
+    .printed-docs-section .printed-docs-item div,
+    body .docs-section .recently-used-docs-item div,
+    body .printed-docs-section .printed-docs-item div,
+    html body .recently-used-docs-item div,
+    html body .printed-docs-item div {
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 15px !important;
+        color: #333 !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        font-weight: 500 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        text-decoration: none !important;
+        border: none !important;
+        background: none !important;
+    }
+    
+    /* Page Title Mobile */
+    .terms-title,
+    body .terms-title,
+    html body .terms-title {
+        font-size: 24px !important;
+        margin: 20px 20px 30px !important;
+        text-align: center !important;
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-weight: 700 !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        position: relative !important;
+        padding-bottom: 15px !important;
+    }
+    
+    .terms-title::after,
+    body .terms-title::after,
+    html body .terms-title::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 80px !important;
+        height: 3px !important;
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        border-radius: 2px !important;
+    }
+    
+    /* Hide navbar on mobile */
+    .navbar {
+        display: none !important;
+    }
+    
+    /* Breadcrumb mobile */
+    .breadcrumb {
+        width: 100% !important;
+        padding: 8px 0 !important;
+        background: #f8f9fa !important;
+    }
+    
+    .breadcrumb .container {
+        padding: 0 20px !important;
+    }
+    
+    .breadcrumb ul {
+        font-size: 12px !important;
+        gap: 5px !important;
+    }
+    
+    .breadcrumb li {
+        font-size: 12px !important;
+    }
+    
+    .breadcrumb li a, .breadcrumb li span {
+        font-size: 12px !important;
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+    }
+}
+
+/* Very Small Mobile Screens */
+@media (max-width: 480px) {
+    .stats-wrapper {
+        gap: 40px !important;
+        max-width: 350px !important;
+    }
+    
+    .recently-viewed, .visits-section {
+        max-width: 350px !important;
+        padding: 16px 14px !important;
+    }
+    
+    .analytics-section .container {
+        padding: 0 15px !important;
+    }
+    
+    .docs-section .container, .printed-docs-section .container {
+        padding: 0 15px !important;
+    }
+    
+    .section-with-title {
+        max-width: 350px !important;
+        padding: 16px 14px !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .visits-table {
+        min-width: 280px !important;
+    }
+    
+    .visits-header {
+        font-size: 14px !important;
+        padding: 10px 8px !important;
+    }
+    
+    .visits-table td {
+        font-size: 12px !important;
+        padding: 8px 6px !important;
+    }
+    
+    .visits-total-cell {
+        font-size: 13px !important;
+    }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .analytics-section .container {
+        padding: 0 30px !important;
+    }
+    
+    .stats-wrapper {
+        gap: 40px !important;
+    }
+    
+    .recently-viewed, .visits-section {
+        padding: 25px 20px !important;
+    }
+    
+    .section-with-title {
+        padding: 25px 20px !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .docs-section, .printed-docs-section {
+        margin-top: 40px !important;
+    }
+}
+
+/* MOBILE ONLY OVERRIDE - STRONGEST SELECTORS */
+@media (max-width: 768px) {
+    html body .analytics-section * {
+        box-sizing: border-box !important;
+    }
+
+    html body .analytics-section .recently-viewed,
+    html body .analytics-section .visits-section,
+    html body .docs-section .section-with-title,
+    html body .printed-docs-section .section-with-title {
+        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+        border: 1px solid rgba(0,161,154,0.1) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,161,154,0.15) !important;
+    }
+
+    html body .analytics-section .recently-viewed-item,
+    html body .analytics-section .recently-used-docs-item,
+    html body .analytics-section .printed-docs-item {
+        background: linear-gradient(135deg, #f8fffe 0%, #e8f7f6 100%) !important;
+        border: 1px solid rgba(0,161,154,0.2) !important;
+        border-right: 4px solid #00a19a !important;
+        border-radius: 10px !important;
+        padding: 16px 18px !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        transition: all 0.3s ease !important;
+        margin: 0 !important;
+        list-style: none !important;
+        text-decoration: none !important;
+    }
+
+    html body .analytics-section .recently-viewed-item div,
+    html body .analytics-section .recently-used-docs-item div,
+    html body .analytics-section .printed-docs-item div {
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 15px !important;
+        color: #333 !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        font-weight: 500 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    html body .analytics-section .view-all-btn,
+    html body .docs-section .view-all-btn,
+    html body .printed-docs-section .view-all-btn {
+        background: linear-gradient(135deg, #00a19a 0%, #008a84 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 10px !important;
+        padding: 14px 20px !important;
+        font-family: "Droid Arabic Kufi", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        width: 100% !important;
+        cursor: pointer !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(0,161,154,0.3) !important;
+        text-decoration: none !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+
+    html body .analytics-section .view-all-btn:hover,
+    html body .docs-section .view-all-btn:hover,
+    html body .printed-docs-section .view-all-btn:hover {
+        background: linear-gradient(135deg, #008a84 0%, #007772 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,161,154,0.4) !important;
+    }
+
+    html body .analytics-section .view-all-btn:active,
+    html body .docs-section .view-all-btn:active,
+    html body .printed-docs-section .view-all-btn:active {
+        transform: translateY(0px) !important;
+        box-shadow: 0 2px 6px rgba(0,161,154,0.3) !important;
+    }
+}
+</style>
+    <!-- إضافة سكريبت المكونات العامة -->
+    <script src="../scripts/global-components.js"></script>
+    <script src="../scripts/add-login-button.js"></script>
+</head>
+<body>
+ <!-- القائمة الجانبية للموبايل -->
+ <div class="mobile-menu-overlay">
+    <div class="mobile-side-menu">
+        <div class="mobile-side-menu-links">
+            <a href="../index.html" style="color: var(--primary-color);">الرئيسية</a>
+            
+            <!-- زر نبذة عنا -->
+            <a href="#" id="about-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                نبذة عنا
+                <img src="../assets/icons/menu-Down.svg" alt="سهم" class="dropdown-arrow-svg">
+            </a>
+            
+            <!-- القائمة المنسدلة لنبذة عنا -->
+            <div id="about-submenu" class="submenu-container">
+                <a href="about-site.html">عن الموقع</a>
+                <a href="about-site.html">عن الشبكة</a>
+            </div>
+            
+            <!-- زر سياستنا -->
+            <a href="#" id="policies-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                سياستنا
+                <span class="dropdown-arrow">▼</span>
+            </a>
+            
+            <!-- القائمة المنسدلة لسياستنا -->
+            <div id="policies-submenu" class="submenu-container">
+                <a href="privacy-policy.html">سياسة الخصوصية</a>
+                <a href="terms.html">الشروط والأحكام</a>
+            </div>
+            
+            <a href="jornal-profile-view.html">جريدة أم القرى</a>
+            <a href="asanid-service.html">خدمة الأسانيد</a>
+            <a href="faq.html" class="colored-link active">الأسئلة الشائعة</a>
+        </div>
+        <div class="mobile-side-menu-buttons">
+            <a href="../index.html#subscribe" class="subscribe-btn">اشترك معنا</a>
+            <a href="#login-modal" class="login-btn" id="mobile-login-btn">تسجيل الدخول</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+ <!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-content">
+            <div class="logo">
+                <!-- 1. اللوجو على اليمين -->
+                <a href="../index.html" class="logo-link" data-original-font-size="16">
+                    <img src="../assets/images/logo.png" alt="محامون المملكة">
+                </a>
+                
+                <!-- 2. زر اشترك معنا -->
+                <a href="../index.html#subscribe" class="mobile-subscribe-btn" data-original-font-size="16">اشترك معنا</a>
+                
+                <!-- 3. جميع الأيقونات معاً -->
+                <div class="mobile-icons">
+                    <!-- 4. قائمة الهامبرغر في البداية (على اليسار) -->
+                    <div class="hamburger-menu" style="opacity: 1; visibility: visible; display: flex; z-index: 9999;">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <div class="zoom-group">
+                        <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                            <img src="../assets/icons/search-zoom-out.png" alt="تصغير">
+                        </button>
+                        <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16" style="pointer-events: auto; opacity: 1;">
+                            <img src="../assets/icons/search-zoom-in.png" alt="تكبير">
+                        </button>
+                    </div>
+                    
+                    <!-- أيقونة البحث -->
+                    <button class="icon-btn search-btn" data-original-font-size="16">
+                        <img src="../assets/icons/search.png" alt="بحث">
+                    </button>
+                    
+                    <!-- أيقونة الملف الشخصي (تظهر بعد تسجيل الدخول) -->
+                    
+                    <!-- أيقونة الإعدادات -->
+                    <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                        <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                    </button>
+                    
+                    <button class="icon-btn profile-btn" id="mobile-profile-btn" style="display: none;" data-original-font-size="16">
+                        <img src="../assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                    </button>
+                </div>
+                
+                <!-- قائمة الإعدادات -->
+                <div class="settings-menu">
+                    <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                        <span>تباين</span>
+                        <img src="../assets/icons/Eye off.svg" alt="تباين">
+                    </a>
+                    <!-- قائمة خيارات التباين الفرعية -->
+                    <div class="contrast-submenu">
+                        <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                            <span>تباين فاتح</span>
+                            <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                        </a>
+                        <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                            <span>تباين داكن</span>
+                            <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                        </a>
+                    </div>
+                    <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                        <span>الاحصائيات</span>
+                        <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                    </a>
+                    <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                        <span>خروج</span>
+                        <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                    </a>
+                </div>
+            </div>
+
+            <div class="top-elements">           
+                <!-- Elementos originales para vista desktop -->
+                <div class="top-icons">
+                    <a href="faq.html" class="common-questions" data-original-font-size="16">
+                        <span class="question-mark">
+                            <img src="../assets/icons/question.svg" alt="الأسئلة الشائعة">
+                        </span>
+                        <span class="questions-text">الأسئلة الشائعة</span>
+                    </a>
+                    <div class="zoom-group">
+                        <button class="icon-btn zoom-out-btn" onclick="changeFontSize(-10)" title="تصغير النص" data-original-font-size="16">
+                            <img src="../assets/icons/search-zoom-out.svg" alt="تصغير">
+                        </button>
+                        <button class="icon-btn zoom-in-btn" onclick="changeFontSize(10)" title="تكبير النص" data-original-font-size="16">
+                            <img src="../assets/icons/search-zoom-in.svg" alt="تكبير">
+                        </button>
+                    </div>
+                    
+                    <div class="main-icons-group">
+                        <button class="icon-btn search-btn" data-original-font-size="16">
+                            <img src="../assets/icons/search.png" alt="بحث">
+                        </button>
+                        <button class="icon-btn" onclick="window.location.href='../index.html#contact'" data-original-font-size="16">
+                            <img src="../assets/icons/location.png" alt="الموقع">
+                        </button>
+                        <button class="icon-btn" data-original-font-size="16">
+                            <img src="../assets/icons/call.png" alt="اتصال">
+                        </button>
+                        <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                            <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                        </button>
+                        <button class="icon-btn profile-btn profile-icon-btn" style="display: none;" data-original-font-size="16" data-profile-setup="true">
+                            <img src="../assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                        </button>
+                        <div class="settings-menu">
+                            <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                                <span>تباين</span>
+                                <img src="../assets/icons/Eye off.svg" alt="تباين">
+                            </a>
+                            <!-- قائمة خيارات التباين الفرعية -->
+                            <div class="contrast-submenu">
+                                <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                    <span>تباين فاتح</span>
+                                    <img src="../assets/icons/Eye off.svg" alt="تباين فاتح">
+                                </a>
+                                <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                    <span>تباين داكن</span>
+                                    <img src="../assets/icons/Eye off-dark.svg" alt="تباين داكن">
+                                </a>
+                            </div>
+                            <a href="../pages/analytics.html" class="settings-option stats-option" data-original-font-size="16">
+                                <span>الاحصائيات</span>
+                                <img src="../assets/icons/status-up.svg" alt="الاحصائيات">
+                            </a>
+                            <a href="javascript:void(0);" class="settings-option logout-option" data-original-font-size="16">
+                                <span>خروج</span>
+                                <img src="../assets/icons/logout.svg" alt="تسجيل الخروج">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-actions">
+                <a href="../index.html#subscribe" class="join-btn" data-original-font-size="16">إشترك معنا</a>
+                <a href="#" class="login-btn" id="login-btn" data-original-font-size="16">تسجيل الدخول</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <ul class="main-menu">
+                    <li class="menu-item"><a href="../index.html">الرئيسية</a></li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);" class="active">نبذة عنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="about-site.html" class="active">عن الموقع</a>
+                            <a href="about-site.html">عن الشبكة</a>
+                        </div>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);">سياستنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="privacy-policy.html">سياسة الخصوصية</a>
+                            <a href="terms.html">شروط الإشتراك</a>
+                        </div>
+                    </li>
+                    <li class="menu-item"><a href="jornal-profile-view.html">جريدة أم القرى</a></li>
+                    <li class="menu-item"><a href="asanid-service.html">خدمة الأسانيد</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">محامي المملكة</a></li>
+                <li><span>الإحصائيات</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <h1 class="terms-title" style="color: #1e9191; text-align: center;">الإحصائيات</h1>
+    <!-- الإحصائيات -->
+    <section class="analytics-section">
+        <div class="container">
+
+            <div class="stats-wrapper">
+                <div class="recently-viewed">
+                    <h3 class="recent-title">مشاهد مؤخرا</h3>
+                    <div class="recently-viewed-list">
+                        <div class="recently-viewed-item">
+                            <div>أنظمة سارية</div>
+                        </div>
+                        <div class="recently-viewed-item">
+                            <div>أنظمة سارية جزئيا</div>
+                        </div>
+                        <div class="recently-viewed-item">
+                            <div>أنظمة موقفة النفاذ</div>
+                        </div>
+                        <div class="recently-viewed-item">
+                            <div>أنظمة سارية</div>
+                        </div>
+                    </div>
+                    <button class="view-all-btn">مشاهدة الكل</button>
+                </div>
+                
+                <div class="visits-section">
+                    <table class="visits-table">
+                        <thead>
+                            <tr>
+                                <th class="visits-header">الأعلى زيارة</th>
+                                <th class="visits-header">الزيارات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>أنظمة سارية</td>
+                                <td>2000</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة سارية جزئياً</td>
+                                <td>1100</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة موجلة النفاذ</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة سارية</td>
+                                <td>720</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة سارية جزئياً</td>
+                                <td>655</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة موجلة النفاذ</td>
+                                <td>612</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة سارية</td>
+                                <td>567</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة سارية جزئياً</td>
+                                <td>546</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة موجلة النفاذ</td>
+                                <td>354</td>
+                            </tr>
+                            <tr>
+                                <td>أنظمة سارية</td>
+                                <td>354</td>
+                            </tr>
+                            <tr class="visits-total-row">
+                                <td class="visits-total-cell">مجموع الزيارات</td>
+                                <td class="visits-total-cell">4560</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- آخر المستندات استخداماً -->
+    <section class="docs-section">
+        <div class="container">
+            <div class="section-with-title">
+                <h2 class="section-title">آخر المستندات استخداماً</h2>
+                <div class="docs-content">
+                    <div class="recently-used-docs-list">
+                        <div class="recently-used-docs-item">
+                            <div>أنظمة سارية</div>
+                        </div>
+                        <div class="recently-used-docs-item">
+                            <div>أنظمة سارية جزئيا</div>
+                        </div>
+                        <div class="recently-used-docs-item">
+                            <div>أنظمة مؤجلة النفاذ</div>
+                        </div>
+                        <div class="recently-used-docs-item">
+                            <div>أنظمة سارية</div>
+                        </div>
+                    </div>
+                    <button class="view-all-btn">مشاهدة الكل</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- آخر المستندات قمت بطباعتها -->
+    <section class="printed-docs-section">
+        <div class="container">
+            <div class="section-with-title">
+                <h2 class="section-title">آخر المستندات قمت بطباعتها</h2>
+                <div class="printed-docs-content">
+                    <div class="printed-docs-list">
+                        <div class="printed-docs-item">
+                            <div>أنظمة سارية</div>
+                        </div>
+                        <div class="printed-docs-item">
+                            <div>أنظمة سارية جزئيا</div>
+                        </div>
+                        <div class="printed-docs-item">
+                            <div>أنظمة مؤجلة النفاذ</div>
+                        </div>
+                        <div class="printed-docs-item">
+                            <div>أنظمة سارية</div>
+                        </div>
+                    </div>
+                    <button class="view-all-btn">مشاهدة الكل</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+  
+        <section class="social-share-section">
+            <div style="display: flex; align-items: center; justify-content: space-between; background-color: rgb(245, 245, 245); border-radius: 143px; padding: 10px 20px; margin: 40px 0px 20px; width: 1200px; height: 91px; font-size: 12.8px;" data-original-font-size="16">
+             <!-- Social Media Sharing - Left Side -->
+                 <!-- Last Update - Right Side -->
+                 <div style="display: flex; align-items: center; color: #158885; font-size: 16px;">
+                     <img src="../assets/icons/clock.svg" alt="الساعة" width="16" height="16" style="margin-left: 5px;">
+                     <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">آخر تعديل 19 ذو القعدة 1444</span>
+                 </div>
+                        <!-- Rating - Middle Right -->
+             <div style="display: flex; align-items: center; gap: 8px;">
+                 <div style="display: flex; align-items: center; gap: 3px;">
+                     <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">تقييم المحتوى</span>
+                     <div style="display: flex; gap: 2px;">
+                         <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                         <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                         <img src="../assets/icons/star.png" alt="نجمة غير مفعلة" width="16" height="16">
+                         <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                         <img src="../assets/icons/star2.png" alt="نجمة مفعلة" width="16" height="16">
+                     </div>
+                 </div>
+                 <!-- Followers Count - Middle -->
+                 <div style="display: flex; align-items: center; gap: 3px;">
+                     <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">عدد الأصوات:</span>
+                     <span style="font-family: 'Droid Arabic Kufi', sans-serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 0%; text-align: right; color: #158885;">9130</span>
+                 </div>
+             </div>
+             <div style="display: flex; align-items: center; gap: 5px;">
+                 <span style="margin-right: 5px; font-size: 14px; color: #00a19a;">شارك على</span>
+                 <a href="#" style="color: #00a19a;">
+                     <img src="../assets/icons/ln-soc.svg" alt="لينكد إن" width="26" height="26">
+                 </a>
+                 <a href="#" style="color: #00a19a;">
+                     <img src="../assets/icons/x-soc.svg" alt="تويتر" width="26" height="26">
+                 </a>
+                 <a href="#" style="color: #00a19a;">
+                     <img src="../assets/icons/in-sco.svg" alt="انستغرام" width="26" height="26">
+                 </a>
+                 <a href="#" style="color: #00a19a;">                
+                     <img src="../assets/icons/fb-soc.svg" alt="فيسبوك" width="26" height="26">
+                 </a>
+             </div>   
+         </div>
+     </section>
+     
+     <!-- Footer -->
+     <footer>
+         <!-- Main Footer -->
+         <div class="main-footer">
+                 <div class="footer-content">
+                     <div class="footer-column about-column">
+                         <h3 class="footer-title">عن محامو المملكة</h3>
+                         <p class="footer-text">البوابة القانونية الشاملة للمحامين والمستشارين القانونيين بالسعودية</p>
+                         <p class="footer-text">العربية السعوية</p>
+                     </div>
+                     <div class="footer-column links-column">
+                         <h3 class="footer-title">روابط سريعة</h3>
+                         <ul class="footer-links">
+                             <li><a href="../index.html">الرئيسية</a></li>
+                             <li><a href="#">عن الموقع</a></li>
+                             <li><a href="#">الأسئلة الشائعة</a></li>
+                         </ul>
+                     </div>
+                     <div class="footer-column contact-column">
+                         <h3 class="footer-title">تواصل معنا</h3>
+                         <p class="contact-item email">info@mohamoon-ksa.com</p>
+                         <p class="contact-item phone">الهاتف: xxx xxxx 11 966+</p>
+                         <p class="contact-item address">العنوان: الرياض, المملكة العربية السعودية</p>
+                     </div>
+                     <div class="footer-column social-column">
+                         <h3 class="footer-title">تابعنا</h3>
+                         <div class="footer-social">
+                             <a href="#" class="footer-social-icon"><img src="../assets/icons/facebook.png" alt="فيس بوك"></a>
+                             <a href="#" class="footer-social-icon"><img src="../assets/icons/insta.png" alt="إنستجرام"></a>
+                             <a href="#" class="footer-social-icon"><img src="../assets/icons/x.png" alt="تويتر"></a>
+                             <a href="#" class="footer-social-icon"><img src="../assets/icons/ln.png" alt="لينكد إن"></a>
+                         </div>
+                         <a href="#" class="contact-btn">
+                             <img src="../assets/icons/call.svg" alt="اتصال">
+                             اتصل بنا
+                         </a>
+                     </div>
+                 </div>
+         </div>
+    
+         <!-- Footer Bottom -->
+         <div class="footer-bottom">
+             <div class="container">
+                 <div class="copyright-text">جميع الحقوق محفوظة © 2024 محامو المملكة</div>
+                 <div class="footer-bottom-links">
+                     <a href="../pages/terms.html">الشروط والأحكام</a> | 
+                     <a href="#">سياسة الخصوصية</a>
+                 </div>
+             </div>
+         </div>
+     </footer>
+
+    <script src="../scripts/main.js"></script>
+    
+
+    
+      <!-- نافذة تسجيل الدخول المنبثقة -->
+      <div class="login-modal" id="login-modal">
+        <div class="login-modal-content">
+            <div class="login-modal-header">
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="login-modal-body">
+                <h2 class="login-title">الوصول السريع</h2>
+                
+                <div class="phone-login-section">
+                    <div class="phone-input-row">
+                        <div class="country-code-select">
+                            <div class="country-flag">
+                                <img src="../assets/icons/flag-for-flag-egypt-svgrepo-com 1.png" alt="مصر" class="flag-img">
+                            </div>
+                            <span class="code">+20</span>
+                        </div>
+                        <div class="phone-field">
+                            <input type="tel" placeholder="رقم الهاتف" class="login-input">
+                        </div>
+                    </div>
+                    
+                    <button class="send-code-btn">ارسل رمز التحقق</button>
+                    <p class="error-msg">يجب إدخال رقم الهاتف</p>
+                </div>
+                
+                <div class="separator">
+                    <span>أو يمكنك تسجيل الدخول باسم المستخدم وكلمة المرور</span>
+                </div>
+                
+                <div class="credentials-login-section">
+                    <input type="text" placeholder="اسم المستخدم" class="login-input">
+                    <div class="password-field">
+                        <input type="password" placeholder="كلمة المرور" class="login-input">
+                        <button class="toggle-password">
+                            <img src="../assets/icons/eye.png" alt="إظهار" class="eye-icon">
+                        </button>
+                    </div>
+                    <button class="login-submit-btn">دخول</button>
+                    <a href="#" class="forgot-password">هل نسيت كلمة السر؟</a>
+                </div>
+                
+                <div class="help-section">
+                    <a href="#" class="help-btn customer-service">
+                        <span>خدمة العملاء</span>
+                        <img src="../assets/icons/support.png" alt="خدمة" class="help-icon">
+                    </a>
+                                        <a href="#" class="help-btn self-help">
+                        <span>المساعدة الذاتية</span>
+                        <img src="../assets/icons/message-search.png" alt="مساعدة" class="help-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ملفات JavaScript بالترتيب الصحيح -->
+<script src="scripts/global-components.js"></script>
+<script src="scripts/global-functions.js"></script>
+<script src="scripts/sub-settings.js"></script>
+
+
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+<script src="../scripts/unified-settings.js"></script>
+<!-- نظام المصادقة والتسجيل -->
+<script src="../scripts/auth-system.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+
+
+
+<!-- Core Sliders -->
+<script src="../scripts/slider.js"></script>
+<script src="../scripts/services-slider.js"></script>
+<script src="../scripts/partners-slider.js"></script>
+<script src="../scripts/updates-slider.js"></script>
+<script src="../scripts/load-asanid-service-modal.js"></script>
+
+<!-- Settings and Icons -->
+<script src="../scripts/unified-icons.js"></script>
+
+<!-- Navigation and Menu Scripts -->
+<script src="../scripts/services-menu.js"></script>
+<script src="../scripts/unified-navbar.js"></script>
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+<script src="../scripts/mobile-menu.js"></script>
+
+<!-- Search and Popup -->
+<script src="../scripts/search-popup.js"></script>
+
+<!-- Zoom and Accessibility -->
+<script src="../scripts/simple-zoom.js"></script>
+<script src="../scripts/zoom-control.js"></script>
+
+<!-- Authentication and Profile -->
+        <script src="../scripts/fix-profile-button.js"></script>
+        <script src="../scripts/load-login-from-file.js"></script>
+        <script src="../scripts/login-fix.js"></script>
+<script src="../scripts/settings-menu-handler.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/edit-profile-modal.js"></script>
+
+<!-- Modals and Selectors -->
+<script src="../scripts/asanid-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/enhanced-country-dropdown.js"></script>
+<script src="../scripts/country-selector-modal.js"></script>
+
+<!-- Utility Scripts -->
+<script src="../scripts/link-fixer.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/services-darkmode-fix.js"></script>
+<script src="../scripts/star-rating.js"></script>
+<script src="../scripts/subpages-dark-contrast.js"></script>
+<script src="../scripts/contrast-submenu-fix.js"></script>
+
+<!-- Subscription and Renewal -->
+<script src="../scripts/modify-subscription-modal.js"></script>
+<script src="../scripts/load-modify-subscription-modal.js"></script>
+<script src="../scripts/load-renew-subscription-modal.js"></script>
+<script src="../scripts/renew-subscription-modal.js"></script>
+
+<!-- Additional Containers -->
+<div id="modify-subscription-modal-container"></div>
+<div id="country-selector-container">
+    <!-- This will be loaded dynamically or included here -->
+</div>
+
+<!-- النافبار (آخر شيء) -->
+<script src="../scripts/unified-navbar.js"></script>
+    <!-- Ø£ÙŠÙ‚ÙˆÙ†Ø© Ø§Ù„Ø¯Ø¹Ù… Ø§Ù„Ø«Ø§Ø¨ØªØ© -->
+    <div class="support-icon-fixed">
+        <img src="../assets/icons/support.svg" alt="Ø§Ù„Ø¯Ø¹Ù… ÙˆØ§Ù„Ù…Ø³Ø§Ø¹Ø¯Ø©">
+    </div>
+    <script src="scripts/asanid-modal.js"></script>
+
+    <!-- Scripts -->
+    <script src="../scripts/profile-icons-universal-fix.js"></script>
+    <script src="../scripts/edit-profile-modal.js"></script>
+    <script src="../scripts/password-change-modal.js"></script>
+    <script src="../scripts/enhanced-country-dropdown.js"></script>
+    <script src="../scripts/star-rating.js"></script>
+    <script src="../scripts/subpages-dark-contrast.js"></script>
+    <script src="../scripts/contrast-submenu-fix.js"></script>
+    <script src="../scripts/unified-settings.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

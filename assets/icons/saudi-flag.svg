@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20">
+  <!-- خلفية خضراء -->
+  <rect width="30" height="20" fill="#006C35"/>
+  
+  <!-- الشهادة والسيف (مبسط) -->
+  <g fill="white" font-family="Arial" font-size="3" text-anchor="middle">
+    <!-- الشهادة -->
+    <text x="15" y="8">لا إله إلا الله</text>
+    <text x="15" y="12">محمد رسول الله</text>
+    
+    <!-- السيف -->
+    <line x1="8" y1="15" x2="22" y2="15" stroke="white" stroke-width="1"/>
+    <circle cx="8" cy="15" r="0.5" fill="white"/>
+  </g>
+</svg> 

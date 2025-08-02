@@ -1,0 +1,114 @@
+﻿/* Main Content Styling for Privacy Policy Page */
+
+:root {
+    --primary-color: #00a19a;
+    --secondary-color: #005f59;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --border-color: #ddd;
+    --section-divider: #e0f2f2;
+    --white: #fff;
+}
+
+.terms-content {
+    padding: 30px 0 60px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.terms-content .container {
+    max-width: 1000px;
+}
+
+.simple-text {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: var(--font-base);
+    color: #000;
+    text-align: right;
+}
+
+.terms-title {
+    color: var(--primary-color);
+    font-size: var(--font-2xl);
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.terms-subtitle {
+    color: #FF7A00;
+    font-size: var(--font-lg);
+    margin-bottom: 25px;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* Terms Item - simplified, no boxes */
+.terms-item {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+.item-number {
+    display: inline;
+    font-weight: bold;
+    color: #000;
+    font-size: var(--font-base);
+    margin-left: 5px;
+}
+
+.item-content {
+    display: inline;
+}
+
+.item-content p {
+    display: inline;
+    line-height: 1.7;
+    font-size: var(--font-base);
+    text-align: right;
+    color: #000;
+    margin: 0;
+}
+
+/* Terms Sections */
+.terms-section {
+    margin-bottom: 25px;
+    padding-top: 20px;
+}
+
+/* Lists styling */
+.terms-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.terms-list li {
+    color: #000;
+    font-size: var(--font-base);
+    line-height: 1.6;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+/* Orange divider */
+.orange-divider {
+    height: 3px;
+    width: 50px;
+    background-color: #f58220;
+    margin: 0 auto 30px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .terms-title {
+        font-size: var(--font-xl);
+    }
+    
+    .terms-subtitle {
+        font-size: var(--font-base);
+    }
+}
+

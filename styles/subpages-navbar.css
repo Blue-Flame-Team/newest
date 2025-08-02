@@ -1,0 +1,253 @@
+﻿/* تنسيق الناف بار بالخلفية الفيروزية لجميع الصفحات الفرعية */
+@import url('https://fonts.googleapis.com/css2?family=Droid+Arabic+Kufi:wght@400;700&display=swap');
+
+/* ناف بار الديسكتوب */
+body:not(.home-page) .top-bar {
+    background-color: #158885 !important;
+    background-image: none !important;
+}
+
+/* تنسيق الناف بار الأساسي للصفحات الفرعية */
+body:not(.home-page) .navbar {
+    background-color: #158885;
+    padding: 10px 0;
+    direction: rtl;
+}
+
+body:not(.home-page) .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* تنسيق القائمة الرئيسية */
+body:not(.home-page) .main-menu {
+    display: flex !important;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 15px;
+    gap: 30px;
+    width: 100%;
+}
+
+/* تنسيق عناصر القائمة */
+body:not(.home-page) .menu-item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+body:not(.home-page) .menu-item a {
+    color: #fff !important;
+    font-weight: 600;
+    font-size: var(--font-xl);
+    font-family: 'Droid Arabic Kufi', sans-serif;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+body:not(.home-page) .menu-item a:hover {
+    color: #fff !important;
+}
+
+/* تنسيق القائمة المنسدلة */
+body:not(.home-page) .dropdown {
+    position: relative;
+}
+
+body:not(.home-page) .dropdown-arrow {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+body:not(.home-page) .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    z-index: 9999;
+    display: none;
+    margin-top: 5px;
+}
+
+body:not(.home-page) .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+body:not(.home-page) .dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+body:not(.home-page) .dropdown-menu a {
+    color: #4a4a4a !important;
+    padding: 12px 20px;
+    display: block;
+    transition: all 0.3s;
+    text-decoration: none;
+    justify-content: flex-start;
+}
+
+body:not(.home-page) .dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #000 !important;
+    padding-right: 25px;
+}
+
+/* ناف بار الموبايل */
+@media (max-width: 767px) {
+    /* الناف بار للموبايل بالكامل */
+    body:not(.home-page) .top-bar {
+        width: 100%;
+        max-width: 390px;
+        height: 60px !important;
+        background-color: #158885 !important;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        direction: rtl;
+        z-index: 1000;
+    }
+    
+    /* إعادة ترتيب العناصر في الشريط العلوي */
+    body:not(.home-page) .top-bar-content {
+        width: 100%;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        padding: 0 10px !important;
+        justify-content: space-between !important;
+    }
+    
+    /* قسم اللوجو وتنسيقه */
+    body:not(.home-page) .top-bar .logo {
+        order: 3 !important; /* على الطرف الأيمن */
+        margin-right: 5px !important;
+    }
+    
+    body:not(.home-page) .top-bar .logo img {
+        width: 127.9px !important;
+        height: 32px !important;
+        object-fit: contain !important;
+    }
+
+    /* زر اشترك معنا */
+    body:not(.home-page) .mobile-subscribe-btn {
+        order: 2 !important; /* في الوسط قبل اللوجو */
+        width: 64px !important;
+        height: 24px !important;
+        background-color: #fff !important;
+        color: #158885 !important; /* لون النص أخضر مع زر أبيض */
+        border-radius: 4px;
+        font-size: 11px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none;
+        padding: 0 !important;
+        margin: 0 8px !important;
+    }
+
+    /* قسم الأيقونات والقائمة */
+    body:not(.home-page) .top-elements {
+        order: 1 !important; /* على الطرف الأيسر */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin-left: 5px !important;
+    }
+    
+    /* أيقونات الموبايل */
+    body:not(.home-page) .mobile-icons {
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+    }
+    
+    /* المسافات بين الأيقونات */
+    body:not(.home-page) .mobile-icons .icon-btn,
+    body:not(.home-page) .mobile-icons .search-btn,
+    body:not(.home-page) .mobile-icons .settings-toggle-btn {
+        margin: 0 4px !important;
+        padding: 0 !important;
+    }
+
+    /* حجم الأيقونات بالضبط */
+    body:not(.home-page) .mobile-icons .icon-btn img,
+    body:not(.home-page) .mobile-icons .search-btn img,
+    body:not(.home-page) .mobile-icons .settings-toggle-btn img,
+    body:not(.home-page) .zoom-group .icon-btn img {
+        width: 15.48px !important;
+        height: 15.48px !important;
+        object-fit: contain !important;
+        filter: brightness(0) invert(1) !important; /* تحويل الأيقونات إلى اللون الأبيض */
+    }
+    
+    /* إخفاء مجموعة أيقونات التكبير والتصغير لضبط الترتيب */
+    body:not(.home-page) .zoom-group {
+        display: none !important;
+    }
+
+    /* قائمة الهامبرغر */
+    body:not(.home-page) .hamburger-menu {
+        width: 32px !important;
+        height: 23px !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        margin: 0 !important;
+        cursor: pointer !important;
+        z-index: 2000 !important;
+    }
+
+    body:not(.home-page) .hamburger-menu span {
+        display: block !important;
+        width: 22px !important;
+        height: 2px !important;
+        background-color: white !important; /* شرائط الهامبرغر باللون الأبيض */
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* المسافة بين شرائط الهامبرغر */
+    body:not(.home-page) .hamburger-menu span:nth-child(1) {
+        top: 4px !important;
+    }
+    
+    body:not(.home-page) .hamburger-menu span:nth-child(2) {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+    
+    body:not(.home-page) .hamburger-menu span:nth-child(3) {
+        bottom: 4px !important;
+    }
+    
+    /* إخفاء العناصر غير المطلوبة في الموبايل */
+    body:not(.home-page) .top-bar .main-menu,
+    body:not(.home-page) .top-bar .top-actions,
+    body:not(.home-page) .top-bar .common-questions {
+        display: none !important;
+    }
+}
+

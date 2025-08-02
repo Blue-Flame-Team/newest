@@ -1,0 +1,70 @@
+<!-- نافذة الدعم والمساعدة -->
+<div id="support-modal" style="
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    direction: rtl;
+    overflow: auto;
+    padding-top: 60px;
+">
+    <div style="
+        background-color: white;
+        margin: 20px auto;
+        width: calc(100% - 40px);
+        max-width: 600px;
+        border-radius: 20px;
+        padding: 25px;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        margin-bottom: 40px;
+    ">
+        <span onclick="closeSupportModal()" style="
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        ">&times;</span>
+        
+        <h2 style="text-align: center; margin-bottom: 20px;">مركز المساعدة</h2>
+        
+        <div class="support-content">
+            <div class="support-section">
+                <h3>الأسئلة الشائعة</h3>
+                <div class="faq-item">
+                    <div class="faq-question">كيف أقوم بتغيير كلمة المرور؟</div>
+                    <div class="faq-answer">يمكنك تغيير كلمة المرور من خلال الملف الشخصي في قسم الإعدادات</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">كيف أتواصل مع خدمة العملاء؟</div>
+                    <div class="faq-answer">يمكنك التواصل معنا عبر البريد الإلكتروني: support@example.com</div>
+                </div>
+            </div>
+            
+            <div class="support-section">
+                <h3>نموذج الدعم</h3>
+                <form id="support-form">
+                    <div class="form-group">
+                        <label for="support-name">الاسم</label>
+                        <input type="text" id="support-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-email">البريد الإلكتروني</label>
+                        <input type="email" id="support-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-message">رسالتك</label>
+                        <textarea id="support-message" required></textarea>
+                    </div>
+                    <button type="submit" onclick="submitSupportForm(event)">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 

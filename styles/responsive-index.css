@@ -1,0 +1,150 @@
+/* Responsive Styles for Index Page */
+
+/* Global Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Top Bar Responsiveness */
+@media screen and (max-width: 768px) {
+    .top-bar .top-bar-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-bar .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .top-bar .top-elements,
+    .top-bar .top-actions {
+        display: none;
+    }
+
+    .mobile-icons {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Navbar Responsiveness */
+@media screen and (max-width: 991px) {
+    .navbar .main-menu {
+        display: none;
+    }
+
+    .navbar .mobile-menu-overlay {
+        display: block;
+    }
+}
+
+/* Hero Section Responsiveness */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Services Section Responsiveness */
+@media screen and (max-width: 768px) {
+    .services-cards {
+        flex-direction: column;
+    }
+
+    .service-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Latest Updates Responsiveness */
+@media screen and (max-width: 768px) {
+    .latest-updates-section .updates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Partners Section Responsiveness */
+@media screen and (max-width: 768px) {
+    .partners-section .partners-slider {
+        flex-direction: column;
+    }
+
+    .partners-section .partner-logo {
+        margin: 10px;
+    }
+}
+
+/* Contact Section Responsiveness */
+@media screen and (max-width: 768px) {
+    .contact-section .contact-form {
+        flex-direction: column;
+    }
+
+    .contact-section .form-group {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Footer Responsiveness */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Typography Responsiveness */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p, span, a {
+        font-size: 14px;
+    }
+}
+
+/* Buttons Responsiveness */
+@media screen and (max-width: 768px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+} 

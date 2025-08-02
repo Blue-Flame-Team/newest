@@ -1,0 +1,109 @@
+/* تحسين زر محرك البحث */
+.search-popup-button.engine {
+    background-color: #ff6b35 !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    font-family: 'Droid Arabic Kufi', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    min-width: 120px !important;
+    text-align: center !important;
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 1000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.search-popup-button.engine:hover {
+    background-color: #e55a2b !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3) !important;
+}
+
+.search-popup-button.engine:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 6px rgba(255, 107, 53, 0.2) !important;
+}
+
+/* التأكد من أن الحاوي مرئي */
+.search-buttons-container {
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    margin: 10px 0 !important;
+}
+
+/* التأكد من أن النافذة المنبثقة مرئية */
+.search-popup-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 9999 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.search-popup-overlay.active,
+.search-popup-overlay[style*="flex"] {
+    display: flex !important;
+}
+
+.search-popup {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 30px !important;
+    max-width: 500px !important;
+    width: 90% !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    position: relative !important;
+    transform: scale(0.9) !important;
+    opacity: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-popup.active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+/* إضافة تأثير للزر عند التحميل */
+@keyframes engineButtonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.search-popup-button.engine.loaded {
+    animation: engineButtonPulse 0.6s ease-in-out !important;
+}
+
+/* تحسين للموبايل */
+@media (max-width: 768px) {
+    .search-popup {
+        width: 95% !important;
+        padding: 20px !important;
+    }
+    
+    .search-popup-button.engine {
+        min-width: 100px !important;
+        padding: 10px 15px !important;
+        font-size: 14px !important;
+    }
+    
+    .search-buttons-container {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+} 

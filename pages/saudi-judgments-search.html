@@ -1,0 +1,493 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الأحكام السعودية - البحث في الأحكام والقرارات</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/font-normalization.css">
+    <link rel="stylesheet" href="../styles/general-search-engine/header.css">
+    <link rel="stylesheet" href="../styles/faq/footer.css">
+    <link rel="stylesheet" href="../styles/search-engine.css">
+    <link rel="stylesheet" href="../styles/login-modal.css">
+    <link rel="stylesheet" href="../styles/home/settings.css">
+    <link rel="stylesheet" href="../styles/mobile-menu.css">
+    <link rel="stylesheet" href="../styles/hamburger-fix.css">
+    <link rel="stylesheet" href="../styles/social-share-section.css">
+    <link rel="stylesheet" href="../styles/shared/universal-settings-menu.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/simple-zoom.css">
+<style>
+/* ?????????? ???? Droid Arabic Kufi ?????? ???????? ?????????????? */
+* {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+body, html {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td, th, select, option {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+.title, .text, .content, .description, .heading, .label, .item, .menu-item, .nav-item {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+</style></head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link" data-original-font-size="16">
+                        <img src="../assets/images/logo.png" alt="محامون المملكة">
+                    </a>
+                    
+                    <a href="../index.html#subscribe" class="mobile-subscribe-btn" data-original-font-size="16">اشترك معنا</a>
+                    
+                    <div class="mobile-icons">
+                        <div class="hamburger-menu" style="opacity: 1; visibility: visible; display: flex; z-index: 9999;">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                        <div class="zoom-group">
+                            <button class="icon-btn zoom-out-btn" title="تصغير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-out.png" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn" title="تكبير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-in.png" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <button class="icon-btn search-btn" data-original-font-size="16">
+                            <img src="../assets/icons/search.png" alt="بحث">
+                        </button>
+                        
+                        <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                            <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                        </button>
+                    </div>
+
+                    <div class="settings-menu">
+                        <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                            <span>تباين</span>
+                            <i class="fas fa-eye-slash"></i>
+                        </a>
+                        <div class="contrast-submenu">
+                            <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                <span>تباين فاتح</span>
+                                <i class="fas fa-sun"></i>
+                            </a>
+                            <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                <span>تباين داكن</span>
+                                <i class="fas fa-moon"></i>
+                            </a>
+                        </div>
+                        <a href="#" class="settings-option stats-option" data-original-font-size="16">
+                            <span>الاحصائيات</span>
+                            <i class="fas fa-chart-line"></i>
+                        </a>
+                        <a href="#" class="settings-option logout-option" data-original-font-size="16">
+                            <span>خروج</span>
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="top-elements">           
+                    <div class="top-icons">
+                        <a href="faq.html" class="common-questions" data-original-font-size="16">
+                            <span class="question-mark">
+                                <img src="../assets/icons/question.svg" alt="الأسئلة الشائعة">
+                            </span>
+                            <span class="questions-text">الأسئلة الشائعة</span>
+                        </a>
+                        
+                        <div class="zoom-group">
+                            <button class="icon-btn zoom-out-btn" title="تصغير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-out.svg" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn" title="تكبير النص" data-original-font-size="16">
+                                <img src="../assets/icons/search-zoom-in.svg" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <div class="main-icons-group">
+                            <button class="icon-btn search-btn" data-original-font-size="16">
+                                <img src="../assets/icons/search.png" alt="بحث">
+                            </button>
+                            <button class="icon-btn" onclick="window.location.href='../index.html#contact'" data-original-font-size="16">
+                                <img src="../assets/icons/location.png" alt="الموقع">
+                            </button>
+                            <button class="icon-btn" data-original-font-size="16">
+                                <img src="../assets/icons/call.png" alt="اتصال">
+                            </button>
+                            <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                                <img src="../assets/icons/setting-2.png" alt="الإعدادات">
+                            </button>
+                            
+                            <div class="settings-menu">
+                                <a href="#" class="settings-option contrast-option" data-original-font-size="16">
+                                    <span>تباين</span>
+                                    <i class="fas fa-eye-slash"></i>
+                                </a>
+                                <div class="contrast-submenu">
+                                    <a href="#" class="settings-option contrast-light" data-original-font-size="16">
+                                        <span>تباين فاتح</span>
+                                        <i class="fas fa-sun"></i>
+                                    </a>
+                                    <a href="#" class="settings-option contrast-dark" data-original-font-size="16">
+                                        <span>تباين داكن</span>
+                                        <i class="fas fa-moon"></i>
+                                    </a>
+                                </div>
+                                <a href="#" class="settings-option stats-option" data-original-font-size="16">
+                                    <span>الاحصائيات</span>
+                                    <i class="fas fa-chart-line"></i>
+                                </a>
+                                <a href="#" class="settings-option logout-option" data-original-font-size="16">
+                                    <span>خروج</span>
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="top-actions">
+                        <button class="login-btn" id="login-btn" data-original-font-size="16">تسجيل الدخول</button>
+                        <a href="../index.html#subscribe" class="join-btn" data-original-font-size="16">اشترك معنا</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-side-menu">
+            <div class="mobile-side-menu-links">
+                <a href="../index.html">الرئيسية</a>
+                
+                <button type="button" id="about-toggle" class="dropdown-button">نبذة عنا &#9662;</button>
+                <div id="about-submenu" class="submenu-container">
+                    <a href="about-site.html">عن الموقع</a>
+                    <a href="#">عن الشبكة</a>
+                </div>
+                
+                <button type="button" id="policies-toggle" class="dropdown-button">سياستنا &#9662;</button>
+                <div id="policies-submenu" class="submenu-container">
+                    <a href="privacy-policy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">الشروط والأحكام</a>
+                </div>
+                
+                <a href="jornal-profile-view.html">جريدة أم القرى</a>
+                <a href="asanid-service.html">خدمة الأسانيد</a>
+                <a href="faq.html" class="colored-link">الأسئلة الشائعة</a>
+            </div>
+            <div class="mobile-side-menu-buttons">
+                <a href="../index.html#subscribe" class="subscribe-btn">اشترك معنا</a>
+                <a href="#" class="login-btn" id="mobile-login-btn" data-original-font-size="16">تسجيل الدخول</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <ul class="main-menu">
+                    <li class="menu-item"><a href="../index.html">الرئيسية</a></li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);">نبذة عنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="about-site.html">عن الموقع</a>
+                            <a href="#">عن الشبكة</a>
+                        </div>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);">سياستنا <img src="../assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="privacy-policy.html">سياسة الخصوصية</a>
+                            <a href="terms.html">شروط الإشتراك</a>
+                        </div>
+                    </li>
+                    <li class="menu-item"><a href="jornal-profile-view.html">جريدة أم القرى</a></li>
+                    <li class="menu-item"><a href="asanid-service.html">خدمة الأسانيد</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- باحث الأحكام السعودية -->
+        <div id="saudi-judgments-search-content" class="tab-content">
+            <div class="search-instructions">
+                <h1>بوابة الأحكام السعودية</h1>
+                <h3>البحث في الأحكام و القرارات</h3>
+                <p class="help-text">في حال الحاجة للمساعدة يمكنكم التواصل بقسم <span class="underlined">خدمات العملاء</span></p>
+            </div>
+            
+            <!-- حقول البحث الخاصة بباحث الأحكام السعودية -->
+            <div class="saudi-judgments-search-form">
+                <div class="search-field">
+                    <input type="text" class="form-input" placeholder="كلمات البحث...">
+                </div>
+                
+                <div class="search-field">
+                    <div class="dropdown">
+                        <div class="dropdown-selected">
+                            <span>البحث عن...</span>
+                            <i class="dropdown-arrow"></i>
+                        </div>
+                        <div class="dropdown-options search-type-options">
+                            <div class="dropdown-option">النص الكامل للحكم</div>
+                            <div class="dropdown-option">المبادئ</div>
+                            <div class="dropdown-option">الحيثيات</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search-field">
+                    <div class="dropdown">
+                        <div class="dropdown-selected">
+                            <span>المحكمة...</span>
+                            <i class="dropdown-arrow"></i>
+                        </div>
+                        <div class="dropdown-options court-options">
+                            <div class="dropdown-option">المحكمة العليا</div>
+                            <div class="dropdown-option">محكمة الاستئناف</div>
+                            <div class="dropdown-option">المحكمة الإدارية</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search-field">
+                    <input type="text" class="form-input" placeholder="رقم الحكم/القرار...">
+                </div>
+                
+                <div class="search-field">
+                    <div class="dropdown">
+                        <div class="dropdown-selected">
+                            <span>سنة الحكم/القرار...</span>
+                            <i class="dropdown-arrow"></i>
+                        </div>
+                        <div class="dropdown-options year-options">
+                            <div class="dropdown-option">1445</div>
+                            <div class="dropdown-option">1444</div>
+                            <div class="dropdown-option">1443</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search-field">
+                    <input type="text" class="form-input" placeholder="رقم القضية...">
+                </div>
+                
+                <div class="search-field">
+                    <div class="dropdown">
+                        <div class="dropdown-selected">
+                            <span>سنة القضية...</span>
+                            <i class="dropdown-arrow"></i>
+                        </div>
+                        <div class="dropdown-options year-options">
+                            <div class="dropdown-option">1445</div>
+                            <div class="dropdown-option">1444</div>
+                            <div class="dropdown-option">1443</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search-field">
+                    <input type="text" class="form-input" placeholder="تاريخ الجلسة (بالتقويم الهجري)">
+                </div>
+                
+                <div class="search-field">
+                    <input type="text" class="form-input" placeholder="تاريخ الجلسة (بالتقويم الميلادي)">
+                </div>
+                
+                <div class="search-field">
+                    <button class="search-button">بحث</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Social Share Section -->
+    <section class="social-share-section">
+        <div class="social-div">
+            <div class="last-update">
+                <span>آخر تحديث: ٢٠ يوليو ٢٠٢٤</span>
+            </div>
+            
+            <div class="content-rating">
+                <div class="rating-stars">
+                    <img src="../assets/icons/Star 1.svg" alt="نجمة">
+                    <img src="../assets/icons/Star 1.svg" alt="نجمة">
+                    <img src="../assets/icons/Star 1.svg" alt="نجمة">
+                    <img src="../assets/icons/Star 1.svg" alt="نجمة">
+                    <img src="../assets/icons/Star 1.svg" alt="نجمة">
+                </div>
+                <span>تقييم المحتوى</span>
+            </div>
+            
+            <div class="follower-count">
+                <span>٩١٣٠</span>
+                <span>متابع</span>
+            </div>
+            
+            <div class="social-sharing">
+                <span>مشاركة:</span>
+                <div class="social-icons">
+                    <a href="#"><img src="../assets/icons/FB.svg" alt="فيسبوك"></a>
+                    <a href="#"><img src="../assets/icons/IN.svg" alt="إنستغرام"></a>
+                    <a href="#"><img src="../assets/icons/X.svg" alt="تويتر"></a>
+                    <a href="#"><img src="../assets/icons/LN.svg" alt="لينكدإن"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>تسجيل الدخول</h2>
+            <form class="login-form">
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit">دخول</button>
+                <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    
+    <script src="../scripts/pages-login-modal.js"></script>
+    
+    
+
+<script src="../scripts/search-popup.js"></script>
+<script src="../scripts/settings.js"></script>
+<script src="../scripts/unified-navbar.js"></script>
+    <!-- Ø£ÙŠÙ‚ÙˆÙ†Ø© Ø§Ù„Ø¯Ø¹Ù… Ø§Ù„Ø«Ø§Ø¨ØªØ© -->
+    <div class="support-icon-fixed">
+        <img src="../assets/icons/support.svg" alt="Ø§Ù„Ø¯Ø¹Ù… ÙˆØ§Ù„Ù…Ø³Ø§Ø¹Ø¯Ø©">
+    </div>
+    <!-- Search Popup Overlay -->
+    <div id="searchPopupOverlay" class="search-popup-overlay" style="display: flex;">
+        <div class="search-popup active">
+            <div class="search-buttons-container">
+                <button class="search-popup-button search">Ø¨Ø­Ø«</button>
+                <button class="search-popup-button engine">Ù…Ø­Ø±Ùƒ Ø§Ù„Ø¨Ø­Ø«</button>
+            </div>
+            <input type="text" class="search-popup-input" placeholder="Ø§Ø¨Ø­Ø« ÙÙŠ Ø§Ù„Ø§Ø­ÙƒØ§Ù… Ùˆ Ø§Ù„Ø§Ù†Ø¸Ù…Ù‡ ...">
+        </div>
+    </div>
+    <script src="scripts/asanid-modal.js"></script>
+
+    <!-- Scripts -->
+   <script src="scripts/global-components.js"></script>
+<script src="scripts/global-functions.js"></script>
+<script src="scripts/sub-settings.js"></script>
+
+
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+<script src="../scripts/unified-settings.js"></script>
+<!-- نظام المصادقة والتسجيل -->
+<script src="../scripts/auth-system.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+
+
+
+<!-- Core Sliders -->
+<script src="../scripts/slider.js"></script>
+<script src="../scripts/services-slider.js"></script>
+<script src="../scripts/partners-slider.js"></script>
+<script src="../scripts/updates-slider.js"></script>
+<script src="../scripts/load-asanid-service-modal.js"></script>
+
+<!-- Settings and Icons -->
+<script src="../scripts/unified-icons.js"></script>
+
+<!-- Navigation and Menu Scripts -->
+<script src="../scripts/services-menu.js"></script>
+<script src="../scripts/unified-navbar.js"></script>
+<script src="../scripts/unified-mobile-menu.js"></script>
+<script src="../scripts/hamburger-menu.js"></script>
+<script src="../scripts/mobile-dropdown.js"></script>
+<script src="../scripts/mobile-menu.js"></script>
+
+<!-- Search and Popup -->
+<script src="../scripts/search-popup.js"></script>
+
+<!-- Zoom and Accessibility -->
+<script src="../scripts/simple-zoom.js"></script>
+<script src="../scripts/zoom-control.js"></script>
+
+<!-- Authentication and Profile -->
+        <script src="../scripts/fix-profile-button.js"></script>
+        <script src="../scripts/load-login-from-file.js"></script>
+        <script src="../scripts/login-fix.js"></script>
+<script src="../scripts/settings-menu-handler.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+<script src="../scripts/load-edit-profile-modal.js"></script>
+<script src="../scripts/edit-profile-modal.js"></script>
+
+<!-- Modals and Selectors -->
+<script src="../scripts/asanid-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/enhanced-country-dropdown.js"></script>
+<script src="../scripts/country-selector-modal.js"></script>
+
+<!-- Utility Scripts -->
+<script src="../scripts/link-fixer.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/services-darkmode-fix.js"></script>
+<script src="../scripts/star-rating.js"></script>
+<script src="../scripts/subpages-dark-contrast.js"></script>
+<script src="../scripts/contrast-submenu-fix.js"></script>
+
+<!-- Subscription and Renewal -->
+<script src="../scripts/modify-subscription-modal.js"></script>
+<script src="../scripts/load-modify-subscription-modal.js"></script>
+<script src="../scripts/load-renew-subscription-modal.js"></script>
+<script src="../scripts/renew-subscription-modal.js"></script>
+
+<!-- Additional Containers -->
+<div id="modify-subscription-modal-container"></div>
+<div id="country-selector-container">
+    <!-- This will be loaded dynamically or included here -->
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

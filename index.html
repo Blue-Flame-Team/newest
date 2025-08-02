@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>البوابة - بوابة الأنظمة والقوانين</title> 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/font-normalization.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/global.css?v=2.0">
+    <link rel="stylesheet" href="styles/home/topbar.css">
+    <link rel="stylesheet" href="styles/home/navbar.css">
+    <link rel="stylesheet" href="styles/home/header.css">
+    <link rel="stylesheet" href="styles/home/services.css">
+    <link rel="stylesheet" href="styles/login-modal.css">
+    <link rel="stylesheet" href="styles/home/latest-updates.css">
+    <link rel="stylesheet" href="styles/home/contact.css">
+    <link rel="stylesheet" href="styles/home/subscribe.css">
+    <link rel="stylesheet" href="styles/home/partners.css">
+    <link rel="stylesheet" href="styles/search-popup.css">
+    <link rel="stylesheet" href="styles/home/footer.css">
+    <link rel="stylesheet" href="styles/shared/universal-settings-menu.css">
+    <link rel="stylesheet" href="styles/mobile-navbar.css">
+    <link rel="stylesheet" href="styles/mobile-view.css">
+    <link rel="stylesheet" href="styles/mobile-menu.css">
+    <link rel="stylesheet" href="styles/hamburger-fix.css">
+    <link rel="stylesheet" href="styles/mobile-dropdown.css">
+    <link rel="stylesheet" href="styles/navbar-mobile-fix.css">
+    <!-- <link rel="stylesheet" href="styles/subpage.css"> -->
+    <link rel="stylesheet" href="styles/faq/responsive.css">
+    <link rel="stylesheet" href="styles/social-share-section.css">
+    <link rel="stylesheet" href="../styles/simple-zoom.css">
+    <link rel="stylesheet" href="../styles/home/mobile-settings.css">
+    <!-- Latest Updates styles are now in external file updates-new.css -->
+    <!-- <link rel="stylesheet" href="styles/home/background-section.css"> -->
+        <!-- <link rel="stylesheet" href="styles/simple-zoom.css"> -->
+    <!-- <link rel="stylesheet" href="styles/password-change-mobile.css">
+    <script src="scripts/edit-profile-modal.js"></script>
+    <link rel="stylesheet" href="styles/shared/universal-settings-menu.css">
+    <link rel="stylesheet" href="styles/shared/zoom-styles.css">
+    <script src="scripts/font-zoom.js"></script>
+    <link rel="stylesheet" href="styles/responsive-index.css"> -->
+ 
+<style>
+* {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+body, html {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li, td, th, select, option {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+.title, .text, .content, .description, .heading, .label, .item, .menu-item, .nav-item {
+    font-family: "Droid Arabic Kufi", sans-serif !important;
+}
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+.desktop-only {
+    display: block !important;
+}
+.mobile-only {
+    display: none !important;
+}
+@media (max-width: 991px) {
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+}
+@media (min-width: 992px) {
+    .sidebar-btn {
+        border-top-right-radius: 12px !important;
+        border-bottom-right-radius: 12px !important;
+    }
+}
+body.dark-contrast {
+    .btn.primary-btn,
+    .hero-buttons .btn.primary-btn,
+    a.btn.primary-btn,
+    a[class*="btn primary-btn"],
+    .hero-buttons a.btn.primary-btn,
+    .hero-content .btn.primary-btn {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid #000000 !important;
+        border-color: #000000 !important;
+    }
+        .section-title {
+        color: #000000 !important;
+    }
+/
+    .sidebar-btn {
+        background-color: #000000 !important;
+    }
+    .service-card .card-icon img,
+    .services-cards .card-icon img {
+        filter: brightness(0) !important;
+    }
+    .details-icon,
+    .details-button img:not([src*="services-arrow"]),
+    img[src*="Vector.png"] {
+        filter: brightness(0) !important; 
+    }
+    .section-title.text-center {
+        color: #000000 !important;
+    }
+    .footer-content {
+        background-color: #121212 !important;
+    }
+    .copyright {
+        background-color: #090909 !important;
+    }
+    .tab-publish.active,
+    .tab-publish {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border-color: #000000 !important;
+    }
+    h2.section-title.text-center {
+        color: #000000 !important;
+        background-color: transparent !important;
+    }
+    .sidebar-btn {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+    }
+    .contact-title {
+        color: #000000 !important;
+    }
+    .subscribe-title {
+        color: #000000 !important;
+    }
+    .subscribe-btn,
+    .subscribe-button {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border-color: #000000 !important;
+    }
+    .partners-title {
+        color: #000000 !important;
+    }
+    .register-text,
+    .register-text .subscribe-question,
+    .register-text .register-link {
+        color: #000000 !important;
+    }
+    img[src*="logo.png"],
+    .slide-img,
+    .arrow-icon,
+    img[src*="services-arrow.svg"],
+    .slider-arrow img,
+    img[src*="support.svg"],
+    img[src*="support.png"] {
+        filter: none !important;
+    }
+    .top-bar .top-icons img,
+    .top-bar .zoom-group img,
+    .top-bar .main-icons-group img,
+    .top-bar .icon-btn img,
+    .top-bar .mobile-icons img,
+    .top-icons img,
+    .zoom-group img,
+    .main-icons-group img,
+    .mobile-icons img,
+    .icon-btn img,
+    img[src*="question.svg"],
+    img[src*="search-zoom-out.svg"],
+    img[src*="search-zoom-in.svg"],
+    img[src*="search-zoom-out.png"],
+    img[src*="search-zoom-in.png"],
+    img[src*="search.png"],
+    img[src*="location.png"],
+    img[src*="call.png"],
+    img[src*="setting-2.png"],
+    img[src*="profile-circle.svg"] {
+        filter: none !important;
+        opacity: 1 !important;
+        brightness: 1 !important;
+        -webkit-filter: none !important;
+    }
+    .community-programs-section h3,
+    h3[data-original-font-size="24"] {
+        color: #000000 !important;
+    }
+    .sub-header h3,
+    .sub-header.desktop-only h3,
+    .sub-header.mobile-only h3 {
+        color: #000000 !important;
+    }
+    .btn.primary-btn,
+    .hero-buttons .btn.primary-btn,
+    a.btn.primary-btn,
+    button.btn.primary-btn,
+    a[class*="btn primary-btn"],
+    .hero-buttons a.btn.primary-btn,
+    .hero-content .btn.primary-btn,
+    .hero-content a.btn.primary-btn {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid #000000 !important;
+        border-color: #000000 !important;
+    }
+    .top-bar,
+    .navbar {
+    }
+    .btn.primary-btn:hover,
+    .btn.primary-btn:focus,
+    .btn.primary-btn:active,
+    .btn.primary-btn:visited,
+    a.btn.primary-btn:hover,
+    a.btn.primary-btn:focus,
+    a.btn.primary-btn:active,
+    a.btn.primary-btn:visited,
+    .hero-content .btn.primary-btn:hover,
+    .hero-content .btn.primary-btn:focus,
+    .hero-content .btn.primary-btn:active,
+    .hero-content .btn.primary-btn:visited {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border-color: #000000 !important;
+    }
+    * .btn.primary-btn,
+    * a.btn.primary-btn,
+    .hero-section .btn.primary-btn,
+    .hero-section a.btn.primary-btn {
+        background-color: #000000 !important;
+        background: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid #000000 !important;
+    }
+    body.dark-contrast .top-bar img,
+    body.dark-contrast .top-icons img,
+    body.dark-contrast .zoom-group img,
+    body.dark-contrast .main-icons-group img,
+    body.dark-contrast .mobile-icons img,
+    body.dark-contrast .icon-btn img,
+    body.dark-contrast img[src*="question.svg"],
+    body.dark-contrast img[src*="search-zoom-out.svg"], 
+    body.dark-contrast img[src*="search-zoom-in.svg"],
+    body.dark-contrast img[src*="search-zoom-out.png"],
+    body.dark-contrast img[src*="search-zoom-in.png"], 
+    body.dark-contrast img[src*="search.png"],
+    body.dark-contrast img[src*="location.png"],
+    body.dark-contrast img[src*="call.png"],
+    body.dark-contrast img[src*="setting-2.png"],
+    body.dark-contrast img[src*="profile-circle.svg"] {
+        filter: none !important;
+        -webkit-filter: none !important;
+        opacity: 1 !important;
+        brightness: 1 !important;
+    }
+}
+.top-bar .logo {
+    margin-right:0 1px !important;
+    padding-right: 0 !important;
+}
+
+.top-bar .logo-link {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+@media (min-width: 991px) {
+    .top-bar .logo {
+        margin-right: 15px !important;
+    }
+}
+@media (max-width: 990px) and (min-width: 769px) {
+    .top-bar .logo {
+        margin-right: 10px !important;
+    }
+}
+@media (max-width: 768px) {
+    .top-bar .logo {
+        margin-right: 10px !important;
+    }
+}
+.settings-menu {
+    /* position: absolute !important; */
+    /* top: 100% !important; */
+    /* right: 0 !important;
+    transform: none !important;
+    margin-top: 5px !important; */
+}
+.main-icons-group {
+    position: relative !important;
+}
+
+.settings-toggle-btn {
+    position: relative !important;
+}
+</style>
+
+
+
+    <script src="scripts/login-modal.js"></script>
+    <script src="scripts/profile-modal.js"></script>
+   
+    <!-- Country Selector Styles -->
+    <link rel="stylesheet" href="styles/country-selector-modal.css">
+    <!-- إضافة سكريبت المكونات العامة -->
+    <script src="scripts/global-components.js"></script>
+</head>
+<body>
+    <div class="mobile-menu-overlay">
+        <div class="mobile-side-menu">
+            <div class="mobile-side-menu-links">
+                <a href="index.html" class="active" style="color: var(--primary-color);">الرئيسية</a>
+                
+                <a href="#" id="about-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                    نبذة عنا
+                    <img src="assets/icons/menu-Down.svg" alt="سهم" class="dropdown-arrow-svg">
+                </a>
+                
+                <div id="about-submenu" class="submenu-container">
+                    <a href="pages/about-site.html">عن الموقع</a>
+                    <a href="pages/about-site.html">عن الشبكة</a>
+                </div>
+                
+                <a href="#" id="policies-toggle" class="dropdown-button active" style="color: var(--primary-color);">
+                    سياستنا
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                
+                <div id="policies-submenu" class="submenu-container">
+                    <a href="pages/privacy-policy.html">سياسة الخصوصية</a>
+                    <a href="pages/terms.html">الشروط والأحكام</a>
+                </div>
+                
+                <a href="pages/jornal-profile-view.html">جريدة أم القرى</a>
+                <a href="pages/asanid-service.html">خدمة الأسانيد</a>
+                <a href="pages/faq.html" class="colored-link">الأسئلة الشائعة</a>
+            </div>
+            <div class="mobile-side-menu-buttons">
+                <a href="#subscribe" class="subscribe-btn">اشترك معنا</a>
+                <a href="#login-modal" class="login-btn" id="mobile-login-btn" data-original-font-size="16">تسجيل الدخول</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="logo">
+                    <!-- 1. اللوجو على اليمين -->
+                    <a href="index.html" class="logo-link" data-original-font-size="16">
+                        <img src="assets/images/logo.png" alt="محامون المملكة">
+                    </a>
+                    
+                    <!-- 2. زر اشترك معنا -->
+                    <a href="#subscribe" class="mobile-subscribe-btn" data-original-font-size="16">اشترك معنا</a>
+                    
+                    <!-- 3. جميع الأيقونات معاً -->
+                    <div class="mobile-icons">
+                        <!-- 4. قائمة الهامبرغر في البداية (على اليسار) -->
+                        <div class="hamburger-menu" style="opacity: 1; visibility: visible; display: flex; z-index: 9999;">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                        <!-- أيقونات التكبير والتصغير -->
+                        <div class="zoom-group" data-zoom-group="main" id="main-zoom-group">
+                            <button class="icon-btn zoom-out-btn decrease-font-size" 
+                                    title="تصغير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="decrease"
+                                    data-debug-id="zoom-out-main">
+                                <img src="assets/icons/search-zoom-out.svg" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn increase-font-size" 
+                                    title="تكبير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="increase"
+                                    data-debug-id="zoom-in-main">
+                                <img src="assets/icons/search-zoom-in.svg" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <!-- أيقونة البحث -->
+                        <button class="icon-btn search-btn" data-original-font-size="16">
+                            <img src="assets/icons/search.png" alt="بحث">
+                        </button>
+                        
+                        <!-- أيقونة الملف الشخصي (تظهر بعد تسجيل الدخول) -->
+                        
+                        <!-- أيقونة الإعدادات -->
+                         <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                        <img src="/assets/icons/setting-2.png" alt="الإعدادات">
+                    </button>
+                    
+                    <button class="icon-btn profile-btn" id="mobile-profile-btn" style="display: none;" data-original-font-size="16">
+                        <img src="/assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                    </button>
+                    </div>
+                    <script src="scripts/profile-button.js"></script>
+
+<div id="settings-menu-container-index"></div>
+                    <!-- قائمة الإعدادات -->
+
+                </div>
+                <div class="top-elements">           
+                    <!-- Elementos originales para vista desktop -->
+                    <div class="top-icons">
+                        <a href="pages/faq.html" class="common-questions" data-original-font-size="16">
+                            <span class="question-mark">
+                                <img src="assets/icons/question.svg" alt="الأسئلة الشائعة">
+                            </span>
+                            <span class="questions-text">الأسئلة الشائعة</span>
+                        </a>
+                        <div class="zoom-group" data-zoom-group="main" id="main-zoom-group">
+                            <button class="icon-btn zoom-out-btn decrease-font-size" 
+                                    title="تصغير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="decrease"
+                                    data-debug-id="zoom-out-main">
+                                <img src="assets/icons/search-zoom-out.svg" alt="تصغير">
+                            </button>
+                            <button class="icon-btn zoom-in-btn increase-font-size" 
+                                    title="تكبير النص" 
+                                    data-original-font-size="16" 
+                                    data-zoom-action="increase"
+                                    data-debug-id="zoom-in-main">
+                                <img src="assets/icons/search-zoom-in.svg" alt="تكبير">
+                            </button>
+                        </div>
+                        
+                        <div class="main-icons-group">
+                            <button class="icon-btn search-btn" data-original-font-size="16">
+                                <img src="assets/icons/search.png" alt="بحث">
+                            </button>
+                            <button class="icon-btn" onclick="window.location.href='#contact'" data-original-font-size="16">
+                                <img src="assets/icons/location.png" alt="الموقع">
+                            </button>
+                            <button class="icon-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" data-original-font-size="16">
+                                <img src="assets/icons/call.png" alt="اتصال">
+                            </button>
+                            <button class="icon-btn settings-toggle-btn" data-original-font-size="16">
+                                <img src="assets/icons/setting-2.png" alt="الإعدادات">
+                            </button>
+                            <button class="icon-btn profile-btn profile-icon-btn" style="display: none;" data-original-font-size="16" data-profile-setup="true">
+                            <img src="assets/icons/profile-circle.svg" alt="الملف الشخصي">
+                        </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <a href="#subscribe" class="join-btn" data-original-font-size="16">إشترك معنا</a>
+                    <a href="#" class="login-btn" id="login-btn" data-original-font-size="16">تسجيل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <ul class="main-menu">
+                    <li class="menu-item"><a href="index.html" class="active">الرئيسية</a></li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);">نبذة عنا <img src="assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="pages/about-site.html">عن الموقع</a>
+                            <a href="pages/about-site.html">عن الشبكة</a>
+                        </div>
+                    </li>
+                    <li class="menu-item dropdown">
+                        <a href="javascript:void(0);">سياستنا <img src="assets/icons/Down.png" alt="" class="dropdown-arrow"></a>
+                        <div class="dropdown-hover-area"></div>
+                        <div class="dropdown-menu">
+                            <a href="pages/privacy-policy.html">سياسة الخصوصية</a>
+                            <a href="pages/terms.html">شروط الإشتراك</a>
+                        </div>
+                    </li>
+                    <li class="menu-item"><a href="pages/jornal-profile-view.html">جريدة أم القرى</a></li>
+                    <li class="menu-item"><a href="pages/asanid-service.html">خدمة الأسانيد</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero-section">
+        <img src="assets/icons/Details.svg" alt="تفاصيل" class="details-icon">
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide active">
+                    <img src="assets/images/hero.png" class="slide-img" alt="البوابة القانونية السعودية">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">البوابة القانونية السعودية الشاملة</h1>
+                            <p class="hero-text">اكتشف الأحكام والفتاوى والأنظمة القانونية في المملكة العربية السعودية</p>
+                            <div class="hero-buttons">
+                                <a href="#" class="btn primary-btn">سجل الآن</a>
+                                <a href="#" class="btn secondary-btn">تعرف على المزيد</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/Component 33.png" class="slide-img" alt="البوابة القانونية السعودية">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">البوابة القانونية السعودية الشاملة</h1>
+                            <p class="hero-text">اكتشف الأحكام والفتاوى والأنظمة القانونية في المملكة العربية السعودية</p>
+                            <div class="hero-buttons">
+                                <a href="#" class="btn primary-btn">سجل الآن</a>
+                                <a href="#" class="btn secondary-btn">تعرف على المزيد</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="assets/images/Frame 2139.png" class="slide-img" alt="البوابة القانونية السعودية">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">البوابة القانونية السعودية الشاملة</h1>
+                            <p class="hero-text">اكتشف الأحكام والفتاوى والأنظمة القانونية في المملكة العربية السعودية</p>
+                            <div class="hero-buttons">
+                                <a href="#" class="btn primary-btn">سجل الآن</a>
+                                <a href="#" class="btn secondary-btn">تعرف على المزيد</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
+        <div class="details-button">
+            <img src="assets/icons/Vector.png" alt="للتفاصيل">
+            <span>للتفاصيل</span>
+        </div>
+     
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <!-- قسم الخلفية -->
+        <div class="background-section">
+            <!-- قسم الخدمات -->
+            <section class="services-section">
+                <div class="container">
+                    <div class="services-header">
+                        <h2 class="section-title">خدماتنا</h2>
+                    </div>
+                    
+                    <!-- القسم العلوي -->
+                    <div class="services-top">
+                        <!-- القائمة الجانبية -->
+                        <div class="sidebar-menu">
+                            <a href="pages/asanid-service.html" class="sidebar-link">
+                                <div class="sidebar-btn">خدمة الأسانيد</div>
+                            </a>
+                            <a href="pages/installment-sale.html" class="sidebar-link">
+                                <div class="sidebar-btn">الفتاوى الشرعية</div>
+                            </a>
+                            <a href="pages/council-sessions.html" class="sidebar-link">
+                                <div class="sidebar-btn">جلسات مجلس الوزراء</div>
+                            </a>
+                        </div>
+
+                        <div class="main-content-wrapper">
+                            <!-- العنوان الفرعي - فوق التبويبات في الكمبيوتر -->
+                            <div class="sub-header desktop-only">
+                            <h3>الأكثر استخداماً</h3>
+                        </div>
+                            
+                            <!-- العنوان الفرعي - فوق التبويبات في الموبايل -->
+                            <div class="sub-header mobile-only">
+                                <h3>الأكثر استخداماً</h3>
+                            </div>
+                            
+                            <!-- شريط التبويب -->
+                            <div class="tab-container">
+                                <button class="tab-publish active">نشر الأنظمة</button>
+                                <button onclick="window.location.href='pages/judgments-display.html'" class="tab-portal">بوابة الأحكام السعودية</button>
+                            </div>
+                            <!-- شريط السلايدر -->
+                            <div class="services-slider">
+                            
+                            <!-- شريط السلايدر -->
+                            <div class="services-slider">
+
+                                <!-- بطاقات الخدمات -->
+                                <div class="services-cards">
+                                    <!-- بطاقة 1 - أنظمة سارية -->
+                                    <div class="service-card">
+                                        <div class="card-icon">
+                                        <img src="assets/icons/Group 2057.png" alt="أنظمة سارية">
+                                        </div>
+                                        <h3 class="service-title">أنظمة سارية</h3>
+                                        <p class="card-desc">الأنظمة والقوانين التي تم إقرارها لتصبح لائحة التعديلات</p>
+                                        <a href="pages/valid-regulations.html" class="more-btn">التعرف على المزيد</a>
+                                    </div>
+                                    
+                                    <!-- بطاقة 2 - أنظمة سارية جزئياً -->
+                                    <div class="service-card">
+                                        <div class="card-icon">
+                                        <img src="assets/icons/timer.png" alt="أنظمة سارية جزئياً">
+                                        </div>
+                                        <h3 class="service-title">أنظمة سارية جزئياً</h3>
+                                        <p class="card-desc">الأنظمة والقوانين التي تم إقرارها لتصبح لائحة التعديلات</p>
+                                        <a href="pages/valid-regulations.html" class="more-btn">التعرف على المزيد</a>
+                                    </div>
+                                    
+                                    <!-- بطاقة 3 - أنظمة وثيقة الصلة -->
+                                    <div class="service-card">
+                                        <div class="card-icon">
+                                        <img src="assets/icons/close-square.png" alt="أنظمة وثيقة الصلة">
+                                        </div>
+                                        <h3 class="service-title">أنظمة وثيقة الصلة</h3>
+                                        <p class="card-desc">الأنظمة والقوانين التي تم إقرارها لتصبح لائحة التعديلات</p>
+                                        <a href="pages/judicial-rulings-links.html" class="more-btn">التعرف على المزيد</a>
+                                    </div>
+                                    
+                                    <!-- بطاقة 4 - أنظمة صدرت ولم تنشر بعد -->
+                                    <div class="service-card">
+                                        <div class="card-icon">
+                                        <img src="assets/icons/book.png" alt="أنظمة صدرت ولم تنشر بعد">
+                                        </div>
+                                        <h3 class="service-title">أنظمة صدرت ولم تنشر بعد بالجريدة الرسمية</h3>
+                                        <p class="card-desc">الأنظمة والقوانين التي تم إقرارها لتصبح لائحة التعديلات</p>
+                                        <a href="http://127.0.0.1:5504/pages/general-search-engine.html" class="more-btn">التعرف على المزيد</a>
+                                    </div>
+                                <a href="pages/our-services.html" class="slider-arrow prev">
+                                    <img src="assets/icons/services-arrow.svg" alt="السابق" class="arrow-icon">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- العنوان السفلي -->
+                <div class="community-programs-section">
+                    <h3 data-original-font-size="24" style="font-size: 24px;">برامج ومبادرات دعم وتمكين فئات المجتمع</h3>
+                </div>
+                </div>
+                
+            </section>
+        </div>
+
+
+
+        <section class="latest-updates-section">
+            <div class="container">
+                <div class="updates-header">
+                    <h2 class="section-title text-center">أحدث التحديثات</h2>
+                    <a href="pages/about-site.html" class="all-news-link">
+                        <span class="list-icon">☰</span>
+                        <span>جميع الأخبار</span>
+                    </a>
+                </div>
+                
+                <div class="updates-content">
+                    <div class="updates-cards-slider" id="updatesSlider">
+                        <div class="slider-container">
+                            <!-- بطاقة التحديث الأولى -->
+                            <div class="update-card" data-original-font-size="16" style="font-size: 16px; display: block;">
+                                <div class="card-image" data-original-font-size="16" style="font-size: 16px;">
+                                    <img src="assets/images/Component 33.png" alt="تشريعات الاستثمار">
+                                </div>
+                            </div>
+                            
+                            <!-- بطاقة التحديث الثانية -->
+                            <div class="update-card" data-original-font-size="16" style="font-size: 16px; display: block;">
+                                <div class="card-image" data-original-font-size="16" style="font-size: 16px;">
+                                    <img src="assets/images/Component 33.png" alt="تشريعات الاستثمار">
+                                </div>
+                            </div>
+                            
+                            <!-- بطاقة التحديث الثالثة -->
+                            <div class="update-card" data-original-font-size="16" style="font-size: 16px; display: block;">
+                                <div class="card-image" data-original-font-size="16" style="font-size: 16px;">
+                                    <img src="assets/images/Component 33.png" alt="تشريعات الاستثمار">
+                                </div>
+                            </div>
+                            
+                            <!-- بطاقة التحديث الرابعة -->
+                            <div class="update-card" data-original-font-size="16" style="font-size: 16px; display: block;">
+                                <div class="card-image" data-original-font-size="16" style="font-size: 16px;">
+                                    <img src="assets/images/Component 33.png" alt="تشريعات الاستثمار">
+                                </div>
+                            </div>
+                            
+                            <!-- بطاقة التحديث الخامسة -->
+                            <div class="update-card" data-original-font-size="16" style="font-size: 16px; display: block;">
+                                <div class="card-image" data-original-font-size="16" style="font-size: 16px;">
+                                    <img src="assets/images/Component 33.png" alt="تشريعات الاستثمار">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- النقاط السفلية -->
+                    <div class="slider-controls">
+                        <div class="slider-navigation">
+                            <div class="updates-nav-dots" id="sliderDots" data-original-font-size="16" style="font-size: 16px;">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- تواصل معنا -->    
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <h2 class="contact-title">تواصل معنا</h2>
+                
+                <div class="contact-content">
+                    <div class="map-container">
+                        <div class="map-overlay">
+                            <h2 class="map-title">محامو المملكة</h2>
+                            <a href="https://maps.google.com/?q=24.7136,46.6753" target="_blank" class="map-directions">عرض الاتجاهات علي الخريطة</a>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.674457248269!2d46.63011271540214!3d24.713454784128518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3e0a9ec8f49%3A0x765429237f37278!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1653377670055!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="info-right">
+                            <div class="info-section email-info">
+                                <h3 class="info-title">البريد الإلكتروني</h3>
+                                <a href="mailto:contact@mohamoon.com" class="email-link">
+                                    <span class="contact-email">contact@mohamoon.com</span>
+                                    <img src="assets/icons/sms.svg" alt="email" />
+                                </a>
+                            </div>
+                            
+                            <div class="info-section contact-info">
+                                <h3 class="info-title">معلومات الاتصال</h3>
+                                <a href="tel:+00966115620477" class="phone-link">
+                                    <span class="contact-phone">+00966115620477</span>
+                                    <img src="assets/icons/call.svg" alt="phone" />
+                                </a>
+                                <a href="https://wa.me/966555080349" class="whatsapp-link">
+                                    <span class="contact-whatsapp">+00966555080349</span>
+                                    <img src="assets/icons/whatsapp.svg" alt="whatsapp" />
+                                </a>
+                            </div>
+                            
+                            <div class="info-section">
+                                <h3 class="follow-us-title">تابعنا</h3>
+                                <div class="social-links">
+                                    <a href="https://twitter.com" target="_blank" class="social-link">
+                                        <img src="assets/icons/X.svg" alt="X" />
+                                    </a>
+                                    <a href="https://instagram.com" target="_blank" class="social-link">
+                                        <img src="assets/icons/IN.svg" alt="Instagram" />
+                                    </a>
+                                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                                        <img src="assets/icons/LN.svg" alt="LinkedIn" />
+                                    </a>
+                                    <a href="https://facebook.com" target="_blank" class="social-link">
+                                        <img src="assets/icons/FB.svg" alt="facebook" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-left">
+                            <div class="info-section">
+                                <h3 class="info-title">العنوان</h3>
+                                <p class="info-text">المملكة العربية السعودية</p>
+                                <p class="info-text">الرياض - القيروان</p>
+                            </div>
+                            
+                            <div class="info-section">
+                                <h3 class="info-title">أوقات الدوام</h3>
+                                <p class="info-text">من الأحد إلى الخميس من</p>
+                                <p class="info-text">الساعة 08:00 صباحاً -</p>
+                                <p class="info-text">وحتى الساعة 5:00 مساء</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="contact-footer"></div>
+            </div>
+        </section>
+        <!-- قسم اشترك معنا -->
+        <section class="subscribe-section" id="subscribe">
+            <div class="container">
+                <div class="subscribe-box">
+                    <div class="title-line"></div>
+                    <h2 class="subscribe-title">اشتـرك معنـا</h2>
+                    
+                    <form class="subscribe-form">
+                        <input type="text" class="form-input" placeholder="أسم المستخدم">
+                        <input type="email" class="form-input" placeholder="البريد الالكتروني">
+                        <button type="submit" class="subscribe-btn">اشتراك</button>
+                    </form>
+                    
+                    <div class="register-text">
+                        <span class="subscribe-question">هل انت مشترك جديد؟</span>
+                        <a href="pages/subscribe.html" class="register-link">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم عملائنا -->
+        <section class="partners-section">
+            <div class="partners-container">
+                <div class="partners-title-container">
+                    <h2 class="partners-title">عملاؤنا</h2>
+                </div>
+                <div class="partners-content">
+                    <button class="next-button">
+                        <img src="assets/icons/next.svg" alt="التالي">
+                    </button>
+                    <div class="partners-logos">
+                        <div class="logos-slider">
+                            <div class="partner-logo">
+                                <img src="assets/clients/1.svg" alt="عميل 1">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/2.svg" alt="عميل 2">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/3.svg" alt="عميل 3">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/4.svg" alt="عميل 4">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/5.svg" alt="عميل 5">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/6.svg" alt="عميل 6">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/7.svg" alt="عميل 7">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/8.svg" alt="عميل 8">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/9.svg" alt="عميل 9">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/10.svg" alt="عميل 10">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/11.svg" alt="عميل 11">
+                            </div>
+                            <!-- نسخة مكررة للانتقال السلس -->
+                            <div class="partner-logo">
+                                <img src="assets/clients/1.svg" alt="عميل 1">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/2.svg" alt="عميل 2">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/3.svg" alt="عميل 3">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/4.svg" alt="عميل 4">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/5.svg" alt="عميل 5">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/6.svg" alt="عميل 6">
+                            </div>
+                            <div class="partner-logo">
+                                <img src="assets/clients/7.svg" alt="عميل 7">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <!-- عن محامو المملكة -->
+                    <div class="footer-column about-column">
+                    <h3 class="footer-title">عن محامو المملكة</h3>
+                        <p class="footer-text">
+                            البوابة القانونية الشاملة للمحامين<br>
+                            والمهتمين بالشأن القانوني في المملكة<br>
+                            العربية السعودية
+                        </p>
+                    </div>
+
+                    <!-- روابط سريعة -->
+                    <div class="footer-column links-column">
+                        <h3 class="footer-title">روابط سريعة</h3>
+                        <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="pages/about-site.html">عن الموقع</a></li>
+                        <li><a href="pages/faq.html">الأسئلة الشائعة</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- تواصل معنا -->
+                    <div class="footer-column contact-column">
+                        <h3 class="footer-title">تواصل معنا</h3>
+                        <p class="contact-item">info@mohamoon-ksa.com</p>
+                    <p class="contact-item">الهاتف: xxx xxxx 11 966+</p>
+                        <p class="contact-item">العنوان: الرياض، المملكة العربية السعودية</p>
+                    </div>
+
+                    <!-- التواصل الاجتماعي -->
+                    <div class="footer-column social-column">
+                    <h3 class="social-title">تابعنا</h3>
+                        <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">
+                            <img src="assets/icons/FB.svg" alt="facebook">
+                            </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">
+                            <img src="assets/icons/IN.svg" alt="instagram">
+                            </a>
+                        <a href="https://twitter.com" target="_blank" class="social-icon">
+                            <img src="assets/icons/X.svg" alt="twitter">
+                            </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-icon">
+                            <img src="assets/icons/LN.svg" alt="linkedin">
+                            </a>
+                        </div>
+                        <div class="contact-btn-container">
+                        <a href="#contact" class="contact-btn">
+                            اتصل بنا
+                            <img src="assets/icons/call2.png" alt="اتصل" class="contact-btn-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                    <div class="copyright-content">
+                        <div class="copyright-row">
+                        <p class="copyright-text">جميع الحقوق محفوظة © 2024 محامو المملكة</p>
+                        </div>
+                        <div class="copyright-row">
+                        <div class="policy-links">
+                            <a href="pages/terms.html">الشروط والأحكام</a>
+                            <span class="separator">|</span>
+                            <a href="pages/privacy-policy.html">سياسة الخصوصية</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+<!-- JavaScript Files<!-- Utility Scripts -->
+<script src="scripts/global-components.js"></script>
+<script src="scripts/global-functions.js"></script>
+<script src="scripts/sub-settings.js"></script>
+
+
+
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modal-manager.js"></script>
+<script src="../scripts/persistent-login.js"></script>
+<script src="../scripts/sub-settings.js"></script>
+<script src="../scripts/unified-settings.js"></script>
+<!-- نظام المصادقة والتسجيل -->
+<script src="../scripts/auth-system.js"></script>
+<script src="../scripts/login-modal.js"></script>
+<script src="../scripts/password-change-modal.js"></script>
+<script src="../scripts/profile-button.js"></script>
+
+
+
+
+<!-- Core Sliders -->
+<script src="scripts/slider.js"></script>
+<script src="scripts/services-slider.js"></script>
+<script src="scripts/partners-slider.js"></script>
+<script src="scripts/updates-slider.js"></script>
+<script src="scripts/load-asanid-service-modal.js"></script>
+
+<!-- Settings and Icons -->
+<script src="scripts/unified-icons.js"></script>
+
+<!-- Navigation and Menu Scripts -->
+<script src="scripts/services-menu.js"></script>
+<script src="scripts/unified-navbar.js"></script>
+<script src="scripts/unified-mobile-menu.js"></script>
+<script src="scripts/hamburger-menu.js"></script>
+<script src="scripts/mobile-dropdown.js"></script>
+<script src="scripts/mobile-menu.js"></script>
+
+<!-- Search and Popup -->
+<script src="scripts/search-popup.js"></script>
+
+<!-- Zoom and Accessibility -->
+<script src="scripts/simple-zoom.js"></script>
+<script src="scripts/zoom-control.js"></script>
+
+<!-- Authentication and Profile -->
+        <script src="scripts/fix-profile-button.js"></script>
+        <script src="scripts/load-login-from-file.js"></script>
+        <script src="scripts/login-fix.js"></script>
+<script src="scripts/settings-menu-handler.js"></script>
+<script src="scripts/login-modal.js"></script>
+<script src="scripts/profile-button.js"></script>
+<script src="scripts/load-edit-profile-modal.js"></script>
+<script src="scripts/edit-profile-modal.js"></script>
+
+<!-- Modals and Selectors -->
+<script src="scripts/asanid-modal.js"></script>
+<script src="scripts/password-change-modal.js"></script>
+<script src="scripts/enhanced-country-dropdown.js"></script>
+<script src="scripts/country-selector-modal.js"></script>
+
+<!-- Utility Scripts -->
+<script src="scripts/link-fixer.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/services-darkmode-fix.js"></script>
+<script src="scripts/star-rating.js"></script>
+<script src="scripts/subpages-dark-contrast.js"></script>
+<script src="scripts/contrast-submenu-fix.js"></script>
+
+<!-- Subscription and Renewal -->
+<script src="scripts/modify-subscription-modal.js"></script>
+<script src="scripts/load-modify-subscription-modal.js"></script>
+<script src="scripts/load-renew-subscription-modal.js"></script>
+<script src="scripts/renew-subscription-modal.js"></script>
+
+<!-- Additional Containers -->
+<div id="modify-subscription-modal-container"></div>
+<div id="country-selector-container">
+    <!-- This will be loaded dynamically or included here -->
+</div>
+
+   
+
+
+
+
+
+
+
+
+
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                fetch('include/settings-menu.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        const container = document.getElementById('settings-menu-container-index');
+                        if (container) {
+                            container.innerHTML = data;
+                            // إرسال حدت عند تحميل القائمة
+                            document.dispatchEvent(new Event('settingsMenuLoaded'));
+                        }
+                    })
+
+            });
+        </script>
+
+
+
+</body>    
+</html>
+

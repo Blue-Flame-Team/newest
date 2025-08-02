@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مودال الإعدادات</title>
+    <link rel="stylesheet" href="../styles/settings-modal.css">
+    <style>
+        /* تأكيد من وجود الفئات */
+        .settings-modal {
+            position: relative;
+            width: 250px;
+            margin: 20px auto;
+        }
+        .settings-toggle-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="settings-modal-container" class="settings-modal">
+        <button id="settings-toggle-btn" class="settings-toggle-btn">الإعدادات</button>
+        <div id="settings-menu" class="settings-menu">
+            <div id="contrast-option" class="settings-option contrast-option">
+                التباين
+                <div id="contrast-submenu" class="contrast-submenu">
+                    <div id="contrast-light" class="settings-option contrast-light">فاتح</div>
+                    <div id="contrast-dark" class="settings-option contrast-dark">داكن</div>
+                </div>
+            </div>
+            <div id="zoom-in-btn" class="settings-option zoom-in-btn">تكبير</div>
+            <div id="zoom-out-btn" class="settings-option zoom-out-btn">تصغير</div>
+            <div id="zoom-reset-btn" class="settings-option zoom-reset-btn">إعادة ضبط التكبير</div>
+            <div id="logout-option" class="settings-option logout-option">تسجيل الخروج</div>
+        </div>
+    </div>
+
+    <script src="../scripts/settings-modal.js"></script>
+    <script>
+        // تأكيد إضافي من تحميل الملف
+
+    </script>
+</body>
+</html> 

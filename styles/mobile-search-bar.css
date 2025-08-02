@@ -1,0 +1,179 @@
+/* Mobile Search Bar Styles */
+.mobile-search-bar-container {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    transition: bottom 0.3s ease;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.mobile-search-bar-container.show {
+    bottom: 0;
+}
+
+.mobile-search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.mobile-search-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: "Droid Arabic Kufi", sans-serif;
+}
+
+.mobile-search-button {
+    background-color: var(--primary-color, #00a59a);
+    border: none;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-search-button img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.mobile-search-filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.filter-btn {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color, #00a59a);
+    color: white;
+    border-color: var(--primary-color, #00a59a);
+}
+
+/* Mobile Search Popup Styles */
+.mobile-search-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-search-overlay.active {
+    display: flex;
+}
+
+.mobile-search-popup {
+    width: 250px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    z-index: 10000;
+    max-width: none;
+    left: auto;
+    right: 20px;
+    top: 60px;
+    transform: none;
+    font-size: 16px;
+}
+
+.mobile-search-popup .search-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.mobile-search-popup .search-popup-button {
+    flex-grow: 1;
+    padding: 8px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-search-popup .search-popup-button.search {
+    background-color: #00a59a;
+    color: white;
+}
+
+.mobile-search-popup .search-popup-button.engine {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.mobile-search-popup .search-popup-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Droid Arabic Kufi", sans-serif;
+}
+
+/* Responsive adjustments */
+@media (min-width: 769px) {
+    .mobile-search-bar-container {
+        display: none;
+    }
+
+    .mobile-search-overlay {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-search-input {
+        font-size: 14px;
+    }
+
+    .filter-btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .mobile-search-popup {
+        width: 250px;
+        right: 20px;
+        top: 60px;
+    }
+
+    .mobile-search-popup .search-popup-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .mobile-search-popup .search-popup-input {
+        font-size: 14px;
+    }
+} 

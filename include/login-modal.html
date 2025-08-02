@@ -1,0 +1,63 @@
+    
+ 
+    
+    <!-- نافذة تسجيل الدخول المنبثقة -->
+    <div class="login-modal" id="login-modal" style="display: none;">
+        <div class="login-modal-content">
+            <div class="login-modal-header">
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="login-modal-body">
+                <h2 class="login-title">الوصول السريع</h2>
+                
+                <div class="phone-login-section">
+                    <div class="phone-input-row">
+                        <div class="country-code-select">
+                            <div class="country-flag">
+                                <img src="assets/icons/flag-for-flag-egypt-svgrepo-com 1.png" alt="مصر" class="flag-img">
+                            </div>
+                            <span class="code">+20</span>
+                        </div>
+                        <div class="phone-field">
+                            <input type="tel" placeholder="رقم الهاتف" class="login-input" autocomplete="tel">
+                        </div>
+                    </div>
+                    
+                    <button class="send-code-btn">ارسل رمز التحقق</button>
+                    <p class="error-msg">يجب إدخال رقم الهاتف</p>
+                </div>
+                
+                <div class="separator">
+                    <span>أو يمكنك تسجيل الدخول باسم المستخدم وكلمة المرور</span>
+                </div>
+                
+                <form onsubmit="handleLogin(event)">
+                    <div class="credentials-login-section">
+                        <input type="text" placeholder="اسم المستخدم" class="login-input" autocomplete="username">
+                        <div class="password-field">
+                            <input type="password" placeholder="كلمة المرور" class="login-input" autocomplete="current-password">
+                            <button type="button" class="toggle-password">
+                                <img src="assets/icons/eye.png" alt="إظهار" class="eye-icon">
+                            </button>
+                        </div>
+                        <button type="submit" class="login-submit-btn">دخول</button>
+                        <a href="#" class="forgot-password">هل نسيت كلمة السر؟</a>
+                    </div>
+                </form>
+
+                <div class="help-section">
+                    <a href="#" class="help-btn customer-service">
+                        <span>خدمة العملاء</span>
+                        <img src="assets/icons/support.png" alt="خدمة" class="help-icon">
+                    </a>
+                    <a href="#" class="help-btn self-help">
+                        <span>المساعدة الذاتية</span>
+                        <img src="assets/icons/message-search.png" alt="مساعدة" class="help-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ملف JavaScript لإصلاح نافذة تسجيل الدخول - جميع الأجهزة -->
+    <script src="scripts/login-modal-fix.js"></script>

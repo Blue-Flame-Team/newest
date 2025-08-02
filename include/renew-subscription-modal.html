@@ -1,0 +1,214 @@
+<!-- Subscription Renewal Modal -->
+<style>
+    #renew-subscription-modal {
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    }
+
+    #renew-subscription-modal.show {
+        display: flex !important;
+    }
+
+    #renew-subscription-modal .modal-content {
+        background-color: white;
+        border-radius: 16px;
+        width: 434px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    #renew-subscription-modal .close-modal {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #renew-subscription-modal h2 {
+        text-align: center;
+        color: #17A891;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+    }
+
+    #renew-subscription-modal .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #renew-subscription-modal .form-group label {
+        color: #17A891;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: right;
+    }
+
+    #renew-subscription-modal .modal-input {
+        width: 100%;
+        height: 46px;
+        border: 1px solid #ACACAC;
+        border-radius: 8px;
+        font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+        font-size: 14px;
+        text-align: right;
+        padding: 0 15px;
+        direction: rtl;
+        color: #ACACAC;
+        appearance: none;
+    }
+
+    #renew-subscription-modal .modal-input:focus {
+        outline: none;
+        border-color: #17A891;
+    }
+
+    #renew-subscription-modal select {
+        background: url('assets/icons/menu-Down.svg') no-repeat left 15px center;
+    }
+
+    #renew-subscription-modal .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #renew-subscription-modal .checkbox-container input[type="checkbox"] {
+        margin: 0;
+        accent-color: #17A891;
+    }
+
+    #renew-subscription-modal .checkbox-container label {
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+    }
+
+    #renew-subscription-modal .modal-submit-btn {
+        width: 100%;
+        height: 46px;
+        background-color: #17A891;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #renew-subscription-modal .modal-submit-btn:hover {
+        background-color: #148d79;
+    }
+</style>
+
+<script>
+    function openRenewSubscriptionModal() {
+        const modal = document.getElementById('renew-subscription-modal');
+        if (modal) {
+            modal.classList.add('show');
+        }
+    }
+
+    function closeRenewSubscriptionModal() {
+        const modal = document.getElementById('renew-subscription-modal');
+        if (modal) {
+            modal.classList.remove('show');
+        }
+    }
+
+    function saveRenewSubscription() {
+        // Validate and save logic
+        const userType = document.getElementById('user-type').value;
+        const fullName = document.getElementById('full-name').value;
+        const subscriptionPeriod = document.getElementById('subscription-period').value;
+        const legalSupport = document.getElementById('legal-support').checked;
+
+        if (!userType || !fullName || !subscriptionPeriod) {
+            alert('يرجى ملء جميع الحقول المطلوبة');
+            return;
+        }
+
+        // Here you would typically send data to server
+
+            userType,
+            fullName,
+            subscriptionPeriod,
+            legalSupport
+        });
+
+        closeRenewSubscriptionModal();
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('renew-subscription-modal');
+        if (event.target === modal) {
+            closeRenewSubscriptionModal();
+        }
+    });
+</script>
+
+<div id="renew-subscription-modal" class="modal" dir="rtl">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeRenewSubscriptionModal()">×</span>
+        <h2>تجديد الاشتراك</h2>
+        
+        <div class="form-group">
+            <!-- <label for="user-type">نوع المستخدم</label> -->
+            <select id="user-type" class="modal-input" required>
+                <option value=""> نوع المستخدم</option>
+                <option value="individual">فردي</option>
+                <option value="corporate">شركة</option>
+                <option value="government">حكومي</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <!-- <label for="full-name">الاسم</label> -->
+            <input type="text" id="full-name" class="modal-input modal-input-custom" placeholder="الاسم" required style="width: 400px;
+            height: 46.52008056640625;
+            gap: 24px;
+            angle: 0 deg;
+            opacity: 1;
+            ">
+        </div>
+        
+        <div class="form-group">
+            <!-- <label for="subscription-period">الفترة الزمنية</label> -->
+            <select id="subscription-period" class="modal-input" required>
+                <option value=""> الفترة الزمنية</option>
+                <option value="3months">3 أشهر</option>
+                <option value="6months">6 أشهر</option>
+                <option value="12months">12 شهر</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>خدمات إضافية</label>
+            <div class="checkbox-container">
+                <input type="checkbox" id="legal-support">
+                <label for="legal-support">خدمة الأسانيد القانونية</label>
+            </div>
+        </div>
+        
+        <button onclick="saveRenewSubscription()" class="modal-submit-btn">تعديل</button>
+    </div>
+</div> 

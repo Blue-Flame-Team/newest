@@ -1,0 +1,742 @@
+﻿/* Top Bar Styles */
+
+.top-bar {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    width: 100%;
+    z-index: 1001;
+    direction: rtl;
+    font-size: inherit !important;
+    transform: none !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    /* حذف المنطقة البيضاء نهائياً */
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+}
+
+.top-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+    padding: 0;
+    max-width: 1050px;
+    margin: 0 auto;
+    margin-right: 120px;
+    font-size: inherit !important;
+    transform: none !important;
+    position: relative !important;
+}
+
+.top-bar {
+    padding: 8px 0 !important;
+    margin: 0 !important;
+    /* حذف المنطقة البيضاء العلوية */
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: -80px;
+    order: 1;
+    font-size: inherit !important;
+    transform: none !important;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    transform: none !important;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    direction: rtl;
+    order: 3;
+    margin-left: 30px;
+    font-size: inherit !important;
+    transform: none !important;
+}
+
+.common-questions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: var(--font-sm);
+    direction: rtl;
+    color: #fff;
+    margin-right: 232px;
+    margin-left: 10px;
+    white-space: nowrap;
+    min-width: max-content;
+}
+
+.question-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.question-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.questions-text {
+    font-size: var(--font-sm);
+    font-weight: 500;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.top-elements {
+    display: flex;
+    align-items: center;
+    direction: rtl;
+    order: 2;
+    margin-left: auto;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    direction: rtl;
+}
+
+.top-icons .icon-btn {
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin: 0;
+}
+
+.top-icons .search-btn {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.zoom-group {
+    display: flex;
+    gap: 5px;
+    margin-left: 40px;
+}
+
+.main-icons-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.top-icons .icon-btn:hover {
+    opacity: 1;
+}
+
+.top-icons .icon-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* تنسيقات الأزرار الخاصة بالتوبار - أكثر تحديداً من الأزرار العامة */
+.join-btn {
+    background-color: transparent;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 15px;
+    font-size: var(--font-base);
+    font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid #fff;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: none;
+    outline: none;
+}
+
+.login-btn {
+    background-color: rgba(235, 242, 245, 0.95);
+    color: #333;
+    padding: 12px 30px;
+    border-radius: 15px;
+    font-size: var(--font-base);
+    font-weight: 500;
+    transition: var(--transition);
+    margin-right: 15px;
+    min-width: 150px;
+    text-align: center;
+    border: none;
+}
+
+.join-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Styles */
+@media (min-width: 992px) {
+    .search-common span {
+        display: none;
+    }
+    
+    .top-icons {
+        gap: 8px;
+    }
+    
+    .top-actions {
+        gap: 10px;
+    }
+    
+    .join-btn, .login-btn {
+        padding: 8px 20px;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-icons {
+        display: none;
+    }
+    
+    .search-common {
+        display: none;
+    }
+    
+    .top-actions {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        height: 32px;
+    }
+    
+    .join-btn, .login-btn {
+        padding: 5px 10px;
+        font-size: var(--font-xs);
+        min-width: auto;
+    }
+    
+    .top-bar {
+        padding: 10px 0;
+    }
+}
+
+/* Mobile-only horizontal layout for very small screens */
+@media (max-width: 480px) {
+    .top-bar {
+        background-color: #158885 !important;
+        width: 100% !important;
+        height: 58px !important;
+        display: flex !important;
+        align-items: center !important;
+        /* position: fixed !important; */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        z-index: 1001 !important;
+    }
+    
+    .top-bar-content {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+    }
+    
+    .logo {
+        order: 1 !important;
+        flex-shrink: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .logo img {
+        height: 28px !important;
+        width: auto !important;
+        display: block !important;
+    }
+    
+    .top-actions {
+        order: 2 !important;
+        margin-left: 0 !important;
+        gap: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .join-btn {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        min-width: auto !important;
+        display: block !important;
+        background-color: white !important;
+        color: #00a59a !important;
+        border-radius: 8px !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+    
+    .login-btn {
+        display: none !important;
+    }
+    
+    .top-elements {
+        order: 3 !important;
+        flex-shrink: 0 !important;
+        margin-left: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .top-icons {
+        display: flex !important;
+        gap: 6px !important;
+        align-items: center !important;
+    }
+    
+    .common-questions {
+        display: none !important;
+    }
+    
+    .search-common {
+        display: none !important;
+    }
+    
+    .main-icons-group {
+        gap: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    /* Show only 4 specific icons */
+    .zoom-out-btn,
+    .zoom-in-btn,
+    .search-btn,
+    .settings-toggle-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 24px !important;
+        height: 24px !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        cursor: pointer !important;
+    }
+    
+    /* Hide other icons */
+    .location-btn,
+    .call-btn {
+        display: none !important;
+    }
+    
+    .zoom-group {
+        margin-left: 0 !important;
+        gap: 4px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .top-icons .icon-btn img {
+        width: 18px !important;
+        height: 18px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    .hamburger-menu {
+        display: block !important;
+        order: 4 !important;
+        font-size: 20px !important;
+        cursor: pointer !important;
+        padding: 5px !important;
+        color: #fff !important;
+        width: 30px !important;
+        height: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Hide settings submenu on mobile */
+    .settings-menu {
+        display: none !important;
+    }
+}
+
+/* Hide hamburger menu on desktop */
+.hamburger-menu {
+    display: none;
+}
+
+/* ========== حل مشكلة المنطقة البيضاء نهائياً ========== */
+/* هذا الحل يزيل المنطقة البيضاء مع الحفاظ على التصميم الأصلي */
+
+/* إزالة المنطقة البيضاء من html و body */
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    background: transparent !important;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    background: transparent !important;
+}
+
+/* إزالة المنطقة البيضاء من التوب بار */
+.top-bar {
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    position: relative !important;
+    top: 0 !important;
+}
+
+/* إزالة أي مساحة بيضاء من أول عنصر */
+body > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+}
+
+/* حل خاص للديسكتوب فوق 990px - هنا المشكلة الحقيقية */
+@media (min-width: 991px) {
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+    }
+    
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+    }
+    
+    .top-bar {
+        margin: 0 !important;
+        padding: 12px 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        position: relative !important;
+        top: 0 !important;
+        background-color: transparent !important;
+    }
+    
+    .top-bar-content {
+        margin: 0 auto !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        max-width: 1050px;
+        margin-right: 120px;
+    }
+    
+    /* إزالة أي مساحة بيضاء من العناصر الأولى */
+    body > *:first-child {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+    }
+    
+    /* التأكد من عدم وجود مساحة بيضاء قبل التوب بار */
+    .top-bar:before {
+        display: none !important;
+        content: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+/* حل للموبايل والتابلت (تحت 990px) */
+@media (max-width: 990px) {
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    
+    .top-bar {
+        margin: 0 !important;
+        padding: 8px 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+}
+
+/* حل إضافي للشاشات الكبيرة جداً فوق 1200px */
+@media (min-width: 1201px) {
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .top-bar {
+        margin: 0 !important;
+        padding: 12px 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        position: relative !important;
+        top: 0 !important;
+        background-color: transparent !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .top-bar-content {
+        margin: 0 auto !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        max-width: 1200px !important;
+        width: 100% !important;
+    }
+}
+
+/* حل للشاشات العملاقة فوق 1440px */
+@media (min-width: 1441px) {
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    .top-bar {
+        margin: 0 !important;
+        padding: 15px 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        position: relative !important;
+        top: 0 !important;
+        background-color: transparent !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .top-bar-content {
+        margin: 0 auto !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        max-width: 1400px !important;
+        width: 100% !important;
+        padding: 0 20px !important;
+    }
+}
+
+/* حل للشاشات الضخمة فوق 1920px */
+@media (min-width: 1921px) {
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    .top-bar {
+        margin: 0 !important;
+        padding: 18px 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        position: relative !important;
+        top: 0 !important;
+        background-color: transparent !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .top-bar-content {
+        margin: 0 auto !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        max-width: 1800px !important;
+        width: 100% !important;
+        padding: 0 30px !important;
+    }
+}
+
+/* حل للشاشات الفائقة فوق 2560px (4K وما فوق) */
+@media (min-width: 2561px) {
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        background: transparent !important;
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    .top-bar {
+        margin: 0 !important;
+        padding: 20px 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        position: relative !important;
+        top: 0 !important;
+        background-color: transparent !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .top-bar-content {
+        margin: 0 auto !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        max-width: 2400px !important;
+        width: 100% !important;
+        padding: 0 40px !important;
+    }
+}
+

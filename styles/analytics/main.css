@@ -1,0 +1,313 @@
+﻿/* الإحصائيات */
+.analytics-section,
+.docs-section,
+.printed-docs-section {
+    padding: 20px 0;
+}
+
+.terms-title {
+    text-align: center;
+    color: #1e9191;
+    font-size: var(--font-2xl);
+    font-weight: bold;
+    margin: 30px auto;
+    position: relative;
+}
+
+.terms-title::before,
+.terms-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #e67e22;
+}
+
+.terms-title::before {
+    top: -10px;
+}
+
+.terms-title::after {
+    bottom: -10px;
+}
+
+.section-with-title {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: #1e9191;
+    font-size: var(--font-2xl);
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* الخط الفاصل أعلى وأسفل العنوان */
+.section-title::before,
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #e67e22;
+}
+
+.section-title::before {
+    top: -10px;
+}
+
+.section-title::after {
+    bottom: -10px;
+}
+
+.analytics-content,
+.docs-content,
+.printed-docs-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* قسم الإحصائيات */
+.stats-wrapper {
+    display: flex;
+    flex-direction: row; /* لترتيب العناصر لتكون مشاهد مؤخراً على اليمين والزيارات على اليسار */
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px; /* المسافة بين العناصر */
+}
+
+.visits-section {
+    width: 343px;
+    height: 474px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+.recently-viewed {
+    width: 817px;
+    height: 474px;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 15px 20px;
+}
+
+.visits-content,
+.recently-viewed-content {
+    height: 100%;
+}
+
+.visits-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Droid Arabic Kufi", sans-serif;
+}
+
+.visits-table th,
+.visits-table td {
+    padding: 6px 0;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0%;
+}
+
+.visits-header {
+    font-size: var(--font-lg);
+    font-weight: bold;
+    color: #00a59a;
+    padding-bottom: 10px;
+    text-align: right;
+    font-family: "Droid Arabic Kufi", sans-serif;
+}
+
+.visits-table tbody td:first-child {
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0%;
+}
+
+.visits-table tbody td:last-child {
+    font-weight: 400;
+    color: #333;
+    text-align: right;
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0%;
+}
+
+.visits-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.visits-total-row {
+    border-top: 2px solid #eee;
+}
+
+.visits-total-cell {
+    font-weight: bold !important;
+    color: #00a59a !important;
+    font-size: var(--font-lg);
+    padding-top: 10px;
+}
+
+.recent-title {
+    color: #1e9191;
+    font-size: var(--font-lg);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.recently-viewed-list,
+.recently-used-docs-list,
+.printed-docs-list {
+    width: 100%;
+}
+
+.recently-viewed-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 817px;
+    height: 69px;
+    padding: 20px 345px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 16px !important;
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #333;
+}
+
+.recently-used-docs-item,
+.printed-docs-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    height: 69px;
+    padding: 20px 345px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 0 auto 16px auto;
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 16px !important;
+
+    color: #333;
+}
+
+.recently-viewed-item div,
+.recently-used-docs-item div,
+.printed-docs-item div {
+    width: 100%;
+    text-align: center;
+}
+
+.recently-viewed-item:hover,
+.recently-used-docs-item:hover,
+.printed-docs-item:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+/* المستندات */
+.docs-content,
+.printed-docs-content {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    width: 100%;
+}
+
+.visits-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.visits-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.visits-table th,
+.visits-table td {
+    padding: 8px;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+}
+
+.visits-table th {
+    font-weight: bold;
+    color: #1e9191;
+}
+
+.visits-total {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #444;
+}
+
+.view-all-btn {
+    display: block;
+    width: 817px;
+    height: 74px;
+    background-color: #00a59a;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 21px 345px;
+    margin-top: 16px;
+    text-align: center;
+    font-size: var(--font-base);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Droid Arabic Kufi", sans-serif;
+}
+
+/* زر مشاهدة الكل في أقسام المستندات */
+.docs-content .view-all-btn,
+.printed-docs-content .view-all-btn {
+    width: 1200px;
+    margin: 16px auto 0 auto;
+}
+
+.view-all-btn:hover {
+    background-color: #008c82;
+}
+

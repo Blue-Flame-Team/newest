@@ -1,0 +1,416 @@
+﻿/* قسم الشركاء */
+.partners-section {
+    /* width: 1440px; */
+    height: 257px;
+    /* margin: 0 auto; */
+    background-color: #F6F6F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners-content {
+    display: flex;
+    align-items: center;
+}
+
+.partners-title-container {
+    width: 149px;
+    height: 105px;
+    background-color: #EFEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners-title {
+    color: #00A19A;
+    font-family: "Droid Arabic Kufi", sans-serif;
+    font-size: var(--font-3xl);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+}
+
+.next-button {
+    width: 92px;
+    height: 105px;
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 2;
+}
+
+.next-button img {
+    width: 48px;
+    height: 48px;
+    background-color: #F8F8F8;
+    border-radius: 50%;
+    padding: 12px;
+    transition: transform 0.3s ease;
+}
+
+.next-button:hover img {
+    transform: scale(1.1);
+}
+
+.partners-logos {
+    width: 1199px;
+    height: 105px;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.logos-slider {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    gap: 60px;
+    padding: 0 60px;
+    animation: slideLogos 30s linear infinite;
+}
+
+@keyframes slideLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc((160px + 60px) * 11));
+    }
+}
+
+.partner-logo {
+    height: 80px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.partner-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 1440px) {
+    .partners-section {
+        width: 100%;
+    }
+}
+
+/* تنسيق قسم عملاؤنا في حالة الموبايل */
+@media (max-width: 768px) {
+    .partners-section {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+        background-color: #F6F6F6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .partners-container {
+        width: 358px !important;
+        height: 78px !important;
+        display: flex;
+        align-items: center;
+        gap: 7.43px !important;
+        border-radius: 5.94px !important;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .partners-title-container {
+        width: 110px !important;
+        height: 78px !important;
+        padding-top: 11.89px !important;
+        padding-right: 5.94px !important;
+        padding-bottom: 11.89px !important;
+        padding-left: 5.94px !important;
+        border-top-right-radius: 5.94px !important;
+        border-bottom-right-radius: 5.94px !important;
+        background: #EFEEEE !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+    
+    .partners-title {
+        font-size: var(--font-base);
+        margin: 0;
+        color: #00A19A;
+        font-weight: 400;
+        text-align: center;
+        line-height: 1.2;
+    }
+    
+    .partners-content {
+        width: calc(358px - 110px - 7.43px) !important;
+        height: 78px !important;
+        background-color: #FFFFFF;
+        border-radius: 0 !important;
+        border-top-left-radius: 5.94px !important;
+        border-bottom-left-radius: 5.94px !important;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        flex: 1;
+        box-sizing: border-box;
+    }
+    
+    .next-button {
+        display: none;
+    }
+    
+    .partners-logos {
+        width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        cursor: grab;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .logos-slider {
+        display: flex;
+        align-items: center;
+        gap: 7.43px !important;
+        padding: 0 8px;
+        animation: none;
+        position: static;
+        width: max-content;
+        height: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .partner-logo {
+        height: 60px;
+        width: 80px;
+        min-width: 80px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        background-color: transparent;
+        border-radius: 4px;
+        margin: 0;
+        cursor: pointer;
+        transition: transform 0.15s ease, background-color 0.3s ease;
+    }
+    
+    .partner-logo img {
+        max-height: 50px;
+        max-width: 70px;
+        object-fit: contain;
+        filter: grayscale(20%);
+        transition: filter 0.3s ease;
+        user-select: none;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        pointer-events: auto;
+    }
+    
+    .partner-logo:hover {
+        background-color: rgba(0, 161, 154, 0.1);
+        transform: scale(1.05);
+    }
+    
+    .partner-logo:hover img {
+        filter: grayscale(0%);
+    }
+    
+    /* إخفاء scrollbar في المتصفحات المختلفة */
+    .partners-logos::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .partners-logos {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .partners-logos:active {
+        cursor: grabbing;
+    }
+}
+
+/* تحسينات للشاشات الصغيرة جداً */
+@media (max-width: 390px) {
+    .partners-container {
+        width: 95% !important;
+        max-width: 358px !important;
+    }
+    
+    .partners-title-container {
+        width: 100px !important;
+        padding-right: 4px !important;
+        padding-left: 4px !important;
+    }
+    
+    .partners-title {
+        font-size: var(--font-sm);
+    }
+}
+
+@media (max-width: 480px) {
+  .partners-section {
+    width: 100vw !important;
+    min-width: 0 !important;
+    padding: 20px 0 !important;
+    background: #F6F6F6 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow-x: hidden !important;
+  }
+  .partners-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    height: 78px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 7.43px !important;
+    border-radius: 5.94px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 0 auto !important;
+  }
+  .partners-title-container {
+    width: 110px !important;
+    height: 78px !important;
+    padding: 12px 6px !important;
+    border-top-right-radius: 5.94px !important;
+    border-bottom-right-radius: 5.94px !important;
+    background: #EFEEEE !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .partners-title {
+    font-size: 18px !important;
+    margin: 0 !important;
+    color: #00A19A !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+  .partners-content {
+    width: calc(100vw - 110px - 7.43px) !important;
+    height: 78px !important;
+    background: #fff !important;
+    border-radius: 0 !important;
+    border-top-left-radius: 5.94px !important;
+    border-bottom-left-radius: 5.94px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    position: relative !important;
+    flex: 1 !important;
+    box-sizing: border-box !important;
+  }
+  .next-button {
+    display: none !important;
+  }
+  .partners-logos {
+    width: 100% !important;
+    height: 100% !important;
+    background: #fff !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    position: relative !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    cursor: grab !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    box-sizing: border-box !important;
+    scrollbar-width: thin !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 0 !important;
+  }
+  .partners-logos::-webkit-scrollbar {
+    height: 5px !important;
+    background: #eee !important;
+  }
+  .partners-logos::-webkit-scrollbar-thumb {
+    background: #ccc !important;
+    border-radius: 6px !important;
+  }
+  .logos-slider {
+    display: flex !important;
+    align-items: center !important;
+    gap: 24px !important;
+    width: max-content !important;
+    min-width: 100% !important;
+    position: relative !important;
+    right: 0 !important;
+    left: 0 !important;
+    padding: 0 12px !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .partner-logo {
+    height: 60px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    scroll-snap-align: start !important;
+  }
+  .partner-logo img {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+}
+

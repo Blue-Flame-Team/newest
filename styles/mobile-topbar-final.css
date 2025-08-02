@@ -1,0 +1,141 @@
+/* MOBILE TOP BAR - FINAL SOLUTION */
+
+@media screen and (max-width: 480px) {
+    /* إعادة تعيين الـ top bar */
+    .top-bar {
+        background-color: #00a59a !important;
+        height: 58px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        position: static !important;
+        width: 100% !important;
+    }
+    
+    .top-bar .container {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .top-bar-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+    
+    /* ترتيب العناصر من اليمين إلى اليسار */
+    .logo {
+        order: 1 !important;
+        display: flex !important;
+    }
+    
+    .logo img {
+        height: 30px !important;
+        width: auto !important;
+    }
+    
+    .logo a {
+        color: white !important;
+        text-decoration: none !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .join-btn {
+        order: 2 !important;
+        background: white !important;
+        color: #00a59a !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        border: none !important;
+        font-size: 12px !important;
+        font-family: 'Droid Arabic Kufi', sans-serif !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .main-icons-group {
+        order: 3 !important;
+        display: flex !important;
+        gap: 8px !important;
+    }
+    
+    .icon-btn {
+        width: 24px !important;
+        height: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        cursor: pointer !important;
+    }
+    
+    .icon-btn img {
+        width: 18px !important;
+        height: 18px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    .hamburger-menu {
+        order: 4 !important;
+        display: flex !important;
+        width: 30px !important;
+        height: 30px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255,255,255,0.1) !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+    }
+    
+    .hamburger-menu img {
+        width: 20px !important;
+        height: 20px !important;
+        filter: brightness(0) invert(1) !important;
+    }
+    
+    /* إخفاء العناصر غير المطلوبة في الموبايل */
+    .login-btn,
+    .location-btn,
+    .call-btn,
+    .common-questions-link,
+    .settings-menu,
+    .navbar {
+        display: none !important;
+    }
+    
+    /* عرض الأيقونات المطلوبة فقط */
+    .zoom-in-btn,
+    .zoom-out-btn,
+    .search-btn,
+    .settings-toggle-btn {
+        display: flex !important;
+    }
+    
+    /* إخفاء الـ navbar تماماً */
+    .navbar,
+    .main-nav {
+        display: none !important;
+    }
+    
+    /* تصحيح عرض المحتوى */
+    .main-content {
+        margin-top: 0 !important;
+        padding-top: 20px !important;
+    }
+}
+
+/* إخفاء الهامبرجر على سطح المكتب */
+@media screen and (min-width: 481px) {
+    .hamburger-menu {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+ 

@@ -1,0 +1,113 @@
+/* مودال الإعدادات */
+body {
+    font-family: 'Droid Arabic Kufi', Arial, sans-serif;
+    direction: rtl;
+    background-color: #f4f4f4;
+}
+
+.settings-modal {
+    position: relative;
+    width: 250px;
+    margin: 20px auto;
+    z-index: 1000;
+}
+
+.settings-toggle-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.settings-toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.settings-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1100;
+    max-height: 300px;
+    overflow-y: auto;
+    direction: rtl;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.settings-menu.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.settings-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.settings-option:hover {
+    background-color: #f0f0f0;
+}
+
+.contrast-submenu {
+    display: none;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.contrast-submenu.show {
+    display: block;
+    max-height: 100px;
+}
+
+.contrast-submenu .settings-option {
+    padding-right: 30px;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.contrast-option {
+    position: relative;
+}
+
+.contrast-option .contrast-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    z-index: 1200;
+}
+
+/* تأكيد من وجود الفئات */
+.settings-option.zoom-in-btn,
+.settings-option.zoom-out-btn,
+.settings-option.zoom-reset-btn,
+.settings-option.logout-option {
+    display: block;
+    width: 100%;
+    text-align: right;
+} 

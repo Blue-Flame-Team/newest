@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار نظام تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        body {
+            font-family: 'Droid Arabic Kufi', sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #17a891;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .profile-btn {
+            display: none;
+            background: #24516c;
+            margin: 10px;
+        }
+        body.user-logged-in .profile-btn {
+            display: inline-block !important;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>اختبار نظام تسجيل الدخول والبروفايل</h1>
+    
+    <div class="test-section">
+        <h2>نموذج تسجيل الدخول</h2>
+        <div class="login-form">
+            <input type="text" id="username" placeholder="اسم المستخدم" value="testuser">
+            <input type="password" id="password" placeholder="كلمة المرور" value="testpass123">
+            <button onclick="testLogin()">تسجيل الدخول</button>
+            <button onclick="testLogout()">تسجيل الخروج</button>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>أيقونات البروفايل</h2>
+        <button class="profile-btn" id="desktop-profile">الملف الشخصي (ديسكتوب)</button>
+        <button class="profile-btn" id="mobile-profile">الملف الشخصي (موبايل)</button>
+    </div>
+
+    <div class="test-section">
+        <h2>حالة النظام</h2>
+        <div id="status" class="status info">جاري التحميل...</div>
+        <button onclick="checkLoginStatus()">التحقق من الحالة</button>
+        <button onclick="forceShowProfile()">إظهار البروفايل يدوياً</button>
+    </div>
+
+    <div class="test-section">
+        <h2>اختبار سريع</h2>
+        <button onclick="simulateLogin()">محاكاة تسجيل دخول</button>
+        <button onclick="clearAllData()">مسح جميع البيانات</button>
+    </div>
+
+    <script src="scripts/load-login-from-file.js"></script>
+    <script>
+        function testLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // استخدام نظام تسجيل الدخول الموجود
+            if (typeof loginUser === 'function') {
+                loginUser(username, password);
+            } else {
+                // محاكاة تسجيل الدخول
+                const user = { username: username, name: 'مستخدم اختبار' };
+                if (window.updateUIAfterLogin) {
+                    window.updateUIAfterLogin(user);
+                    showStatus('تم تسجيل الدخول بنجاح!', 'success');
+                } else {
+                    // إضافة الكلاس يدوياً
+                    document.body.classList.add('user-logged-in');
+                    showStatus('تم إضافة كلاس تسجيل الدخول', 'success');
+                }
+            }
+            
+            setTimeout(checkLoginStatus, 1000);
+        }
+
+        function testLogout() {
+            if (typeof logoutUser === 'function') {
+                logoutUser();
+            } else {
+                document.body.classList.remove('user-logged-in');
+                localStorage.removeItem('currentUser');
+                localStorage.removeItem('userLoggedIn');
+            }
+            
+            showStatus('تم تسجيل الخروج', 'info');
+            setTimeout(checkLoginStatus, 500);
+        }
+
+        function checkLoginStatus() {
+            const statusDiv = document.getElementById('status');
+            const isLoggedIn = document.body.classList.contains('user-logged-in');
+            const hasUserData = localStorage.getItem('currentUser');
+            
+            let message = `كلاس user-logged-in: ${isLoggedIn ? 'موجود' : 'غير موجود'}<br>`;
+            message += `بيانات المستخدم: ${hasUserData ? 'موجودة' : 'غير موجودة'}<br>`;
+            
+            const profileBtns = document.querySelectorAll('.profile-btn');
+            profileBtns.forEach((btn, index) => {
+                const computedStyle = window.getComputedStyle(btn);
+                message += `زر ${index + 1} (${btn.id}): ${computedStyle.display}<br>`;
+            });
+            
+            statusDiv.innerHTML = message;
+            statusDiv.className = 'status info';
+        }
+
+        function forceShowProfile() {
+            document.body.classList.add('user-logged-in');
+            const profileBtns = document.querySelectorAll('.profile-btn');
+            profileBtns.forEach(btn => {
+                btn.style.display = 'inline-block';
+            });
+            showStatus('تم إجبار إظهار الأيقونات', 'success');
+        }
+
+        function simulateLogin() {
+            localStorage.setItem('currentUser', JSON.stringify({
+                username: 'test',
+                name: 'مستخدم اختبار',
+                isLoggedIn: true
+            }));
+            
+            document.body.classList.add('user-logged-in');
+            showStatus('تم محاكاة تسجيل الدخول', 'success');
+            checkLoginStatus();
+        }
+
+        function clearAllData() {
+            localStorage.clear();
+            document.body.classList.remove('user-logged-in');
+            showStatus('تم مسح جميع البيانات', 'info');
+            checkLoginStatus();
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = message;
+            statusDiv.className = `status ${type}`;
+        }
+
+        // التحقق عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+            
+            // محاولة استخدام النظام الموجود
+            if (localStorage.getItem('currentUser')) {
+                document.body.classList.add('user-logged-in');
+            }
+        });
+    </script>
+</body>
+</html>

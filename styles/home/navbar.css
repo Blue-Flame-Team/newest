@@ -1,0 +1,181 @@
+﻿/* بداية تنسيقات شريط التنقل */
+.navbar {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    padding: 10px 0;
+    direction: rtl;
+    /* حماية من تأثير التكبير */
+    font-size: inherit !important;
+    transform: none !important;
+    margin: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* حماية من تأثير التكبير */
+    font-size: inherit !important;
+    transform: none !important;
+    position: relative !important;
+}
+
+/* قائمة التنقل الرئيسية */
+.main-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 15px;
+    gap: 150px; /* المسافة بين عناصر القائمة */
+    /* حماية من تأثير التكبير */
+    font-size: inherit !important;
+    transform: none !important;
+}
+
+/* عناصر القائمة */
+.menu-item {
+    position: relative;
+    /* حماية من تأثير التكبير */
+    font-size: inherit !important;
+    transform: none !important;
+}
+
+.menu-item a {
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    /* حماية من تأثير التكبير */
+    font-size: inherit !important;
+    transform: none !important;
+}
+
+.menu-item a.active {
+    color: var(--primary-color);
+}
+
+.menu-item a:hover {
+    color: var(--primary-color);
+}
+
+/* تنسيقات القائمة المنسدلة */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* القائمة المنسدلة */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    z-index: 9999;
+    display: none; /* كان مخفي بشكل افتراضي */
+    margin-top: 5px;
+}
+
+/* العنصر عند التحويم - إزالة !important لمنع التضارب مع JavaScript */
+.dropdown:hover .dropdown-menu {
+    display: block; /* إزالة !important */
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* روابط القائمة المنسدلة */
+.dropdown-menu a {
+    color: #4a4a4a !important;
+    padding: 12px 20px;
+    display: block;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #000 !important;
+    padding-right: 25px;
+}
+
+/* ظهور القوائم عند الضغط (للموبايل) */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* تنسيقات متجاوبة */
+@media (max-width: 992px) {
+    .main-menu {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-menu {
+        gap: 10px;
+    }
+    
+    .menu-item a {
+        font-size: var(--font-sm);
+        padding: 6px 8px;
+    }
+}
+
+/* إضافة تصميم القائمة المتنقلة للموبايل */
+@media (max-width: 576px) {
+    .navbar-content {
+        justify-content: flex-end;
+    }
+    
+    .main-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-menu.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: none;
+        padding: 10px 0;
+    }
+}
+
